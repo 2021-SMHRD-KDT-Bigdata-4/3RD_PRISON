@@ -1,14 +1,3 @@
-create table tbl_book(
-   num int not null auto_increment,   -- 자동증가컬럼(1,2,3.....)
-   title varchar(100) not null,
-   author varchar(4000) not null,
-   company varchar(50) not null,
-   isbm varchar(50) not null,
-   count int not null,
-   primary key(num)
-);
-
-
 select * from PRISONER
 
 

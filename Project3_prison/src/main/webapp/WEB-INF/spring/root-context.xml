@@ -11,7 +11,7 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/com" />
+			value="jdbc:mysql://localhost:3306/koko" />
 		<property name="username" value="root" />
 		<property name="password" value="12345" />
 	</bean>
