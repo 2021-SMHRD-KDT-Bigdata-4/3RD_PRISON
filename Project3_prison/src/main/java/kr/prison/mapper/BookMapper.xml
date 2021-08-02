@@ -9,7 +9,7 @@
 		select * from tbl_book
 	</select>
 
-	<select id="bookLista" resultType="bookVO"> 
+	<select id="bookListAjax" resultType="bookVO"> 
 		select * from tbl_book order by num desc
 	</select>
 
