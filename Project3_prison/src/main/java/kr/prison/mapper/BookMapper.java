@@ -1,4 +1,4 @@
-package kr.book.mapper;
+package kr.prison.mapper;
 
 import java.util.List;
 
@@ -6,8 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-
-import kr.book.domain.BookVO;
+import kr.prison.domain.BookVO;
 @Mapper
 public interface BookMapper {
 	// SQL --> X --> Mapper.xml File

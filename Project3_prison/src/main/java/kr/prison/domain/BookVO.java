@@ -1,4 +1,4 @@
-package kr.book.domain;
+package kr.prison.domain;
 
 import lombok.Data;
 

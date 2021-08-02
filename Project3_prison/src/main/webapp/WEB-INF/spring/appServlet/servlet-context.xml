@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="kr.book.prison" />
+	<context:component-scan base-package="kr.prison.web" />
 	
 	
 	

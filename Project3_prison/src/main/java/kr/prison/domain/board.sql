@@ -9,4 +9,4 @@ create table tbl_book(
 );
 insert into tbl_book(title, author, company,isbm,count) values('dodo14','관리자','admin','3123','0');
 
-select * from table3;
+select * from tbl_book;

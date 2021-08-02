@@ -1,4 +1,4 @@
-package kr.book.prison;
+package kr.prison.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
-import kr.book.domain.BookVO;
-import kr.book.mapper.BookMapper;
+
+import kr.prison.domain.BookVO;
+import kr.prison.mapper.BookMapper;
 
 
 //POJO

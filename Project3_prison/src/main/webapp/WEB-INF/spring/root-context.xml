@@ -11,7 +11,7 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/mysql" />
+			value="jdbc:mysql://localhost:3306/com" />
 		<property name="username" value="root" />
 		<property name="password" value="12345" />
 	</bean>
@@ -24,7 +24,7 @@
 	       <property name="configLocation" value="/WEB-INF/mydatis/config.xml"></property>
 	</bean>
 	<!-- mappper interface 를 spring Contatiner에 로딩하고 MapperXML과 내부적으로 연결시키는 동작 scan-->
-	<mybatis-spring:scan base-package="kr.book.mapper" />
+	<mybatis-spring:scan base-package="kr.prison.mapper" />
 	
 	
 	
