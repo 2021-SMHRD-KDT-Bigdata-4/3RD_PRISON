@@ -6,7 +6,7 @@
 <mapper namespace="kr.prison.mapper.CCTVMapper">
 
 	<select id="cctvInsert" resultType="cctvVO">
-		select * from tbl_book
+		select * from CCTVVO
 	</select>
 
 	<select id="bookListAjax" resultType="bookVO">
