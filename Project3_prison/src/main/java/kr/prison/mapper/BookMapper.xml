@@ -3,13 +3,13 @@
       PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.prison.mapper.BookMapper">
+<mapper namespace="kr.prison.mapper.CCTVMapper">
 
-	<select id="bookList" resultType="bookVO">
+	<select id="cctvInsert" resultType="cctvVO">
 		select * from tbl_book
 	</select>
 
-	<select id="bookListAjax" resultType="bookVO"> 
+	<select id="bookListAjax" resultType="bookVO">
 		select * from tbl_book order by num desc
 	</select>
 
