@@ -44,12 +44,10 @@ public interface PrisonMapper {
     @Delete("delete from partorl_history where ph_no=#{ph_no}")
     public int phDelete(int ph_no);
 
-public List<AnomalyDetectionHistory> AnomalyDetectionHistoryAjax();// 바디 부분이 없다 
-	
-	public List<AnomalyDetectionHistory> Anomaly();// 바디 부분이 없다 
-	
-	public List<CCTVVO> CCTVVOAjax();// 바디 부분이 없다   boardDelAjax
 
+    public List<AnomalyDetectionHistory> AnomalyDetectionHistoryAjax();// 바디 부분이 없다
+	
+	public List<AnomalyDetectionHistory> Anomaly();// 바디 부분이 없다
 	
 	public List<DrugManagementVO> DrugManagementVOAjax();// 바디 부분이 없다   boardDelAjax
 	
