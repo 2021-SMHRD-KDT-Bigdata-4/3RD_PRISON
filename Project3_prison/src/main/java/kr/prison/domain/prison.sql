@@ -1,7 +1,7 @@
 select * from PRISONER
 
 
-show * from koko databases;
+show * from ANOMALY_DETECTION_HISTORY;
 
 show tables;
 

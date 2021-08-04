@@ -20,7 +20,7 @@
 
 	function goAjax() {
 		$.ajax({
-			url : '${cpath}/bookListAjax.do',
+			url : '${cpath}/AnomalyDetectionHistoryAjax.do',
 			type : "get",
 			dataType : "json",
 			success : resultHtml,
@@ -45,12 +45,12 @@
 		html += "</tr>";
 		$.each(data,(index,obj)=>{
 			html += "<tr>";
-			html += "<td id='num"+index+"'>"+obj.num+"</td>";
-			html += "<td>"+obj.title+"</td>";
-			html += "<td>"+obj.author+"</td>";
-			html += "<td>"+obj.company+"</td>";
-			html += "<td>"+obj.isbm+"</td>";
-			html += "<td>"+obj.count+"</td>";
+			html += "<td>"+obj.ABNORMAL_HISTORY_NUMBER+"</td>";
+			html += "<td>"+obj.ALERT_DATE+"</td>";
+			html += "<td>"+obj.ANOMALIES+"</td>";
+			html += "<td>"+obj.ACTUAL_ANOMALIES+"</td>";
+			html += "<td>"+obj.PRISON_OFFICER_PO_NO+"</td>";
+			html += "<td>"+obj.CCTV_CCTV_NO+"</td>";
 			html += "</tr>";
 		});
 		html += "</table>";
@@ -76,12 +76,12 @@
 					</tr>
 					<c:forEach var="vo" items="${list}">
 						<tr>
-							<td>${vo.num}</td>
-							<td>${vo.title}</td>
-							<td>${vo.author}</td>
-							<td>${vo.company}</td>
-							<td>${vo.isbm}</td>
-							<td>${vo.count}</td>
+							<td>${vo.ABNORMAL_HISTORY_NUMBER}</td>
+							<td>${vo.ALERT_DATE}</td>
+							<td>${vo.ANOMALIES}</td>
+							<td>${vo.ACTUAL_ANOMALIES}</td>
+							<td>${vo.PRISON_OFFICER_PO_NO}</td>
+							<td>${vo.CCTV_CCTV_NO}</td>
 						</tr>
 					</c:forEach>
 				</table>

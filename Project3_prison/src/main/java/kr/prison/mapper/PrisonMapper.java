@@ -1,3 +1,5 @@
+package kr.prison.mapper;
+
 import java.util.List;
 
 
@@ -7,11 +9,11 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.Insert;
 
+import kr.prison.domain.AnomalyDetectionHistory;
 import kr.prison.domain.CCTVVO;
+import kr.prison.domain.CollectiveHistoryVO;
 import kr.prison.domain.PatrolHistoryVO;
-import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.DrugManagementVO;
-import kr.prison.domain.SpecDrugHistoryVO;
 
 @Mapper
 public interface PrisonMapper {
@@ -42,4 +44,15 @@ public interface PrisonMapper {
     @Delete("delete from partorl_history where ph_no=#{ph_no}")
     public int phDelete(int ph_no);
 
+public List<AnomalyDetectionHistory> AnomalyDetectionHistoryAjax();// 바디 부분이 없다 
+	
+	public List<AnomalyDetectionHistory> Anomaly();// 바디 부분이 없다 
+	
+	public List<CCTVVO> CCTVVOAjax();// 바디 부분이 없다   boardDelAjax
+
+	
+	public List<DrugManagementVO> DrugManagementVOAjax();// 바디 부분이 없다   boardDelAjax
+	
+	
+	public List<CollectiveHistoryVO> CollectiveHistoryVOAjax();// 바디 부분이 없다   boardDelAjax
 }
