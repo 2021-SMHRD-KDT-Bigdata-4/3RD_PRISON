@@ -27,58 +27,72 @@ public interface PrisonMapper {
     public List<CCTVVO> cctvListAjax();  // CCTV 리스트 가져오기
 
     @Insert("insert into cctv(area, cctv_non, location, active, unique) " +
-            "values(#{cctv_area}, #{cctv_non}, #{cctv_location}, #{cctv_active}, #{cctv_unique})")
+            "values(#{area}, #{cctv_non}, #{location}, #{cctv_active}, #{cctv_unique})")
     public void cctvInsert(CCTVVO vo);   // CCTV 신규 등록
 
     // 활성화 비활성화 tinyint(type)
 
-    @Update("update cctv set active=1, cctv_unique=#{cctv_unique} where cctv_no=#{cctv_no}")
+    @Update("update cctv set active=1, unique=#{unique} where cctv_no=#{cctv_no}")
     public void CCTVUpdateAbled(CCTVVO vo);    // CCTV 활성화
 
-    @Update("update cctv set active=0, cctv_unique=#{cctv_unique} where cctv_no=#{cctv_no}")
+    @Update("update cctv set active=0, unique=#{unique} where cctv_no=#{cctv_no}")
     public void CCTVUpdateDisabled(CCTVVO vo); // CCTV 비활성화
 
     // 순찰기록 관련 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from patrol_history")
     public List<PatrolHistoryVO> phListAjax(); // 순찰기록 가져오기
 
-    @Insert("insert into patrol_history(date, time, location, contents, )")
+    @Insert("insert into patrol_history(date, time, location, contents, prison_officer_po_no) " +
+            "values(#{date}, #{time}, #{location}, #{contents}, #{prison_officer_po_no}")
     public void phInsert(PatrolHistoryVO vo);
 
-    @Update("update")
+    @Update("update patrol_history set contents=#{contents} where ph_no=#{ph_no}")
     public void phUpdate(PatrolHistoryVO vo);
 
     @Delete("delete from partorl_history where ph_no=#{ph_no}")
-    public int phDelete(int ph_no);
+    public int phDelete(int PH_NO);
 
     // 이상행동 감지 내역 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from anomaly_detection_history")
-    public List<AnomalyDetectionHistory> AnomalyDetectionHistoryAjax();
+    public List<AnomalyDetectionHistory> adhListAjax();
 
-    @Insert()
+    @Insert("insert into anomaly_detection_history(anomalies, actual_anomalies, prioson_officer_po_no) " +
+            "values(#{anomalies}, #{actual_anomalies}, #{prison_officer_po_no})")
+    public void adhInsert(AnomalyDetectionHistoryVO vo);
 
-    @Update()
+    @Update("update anomaly_detection_history set ")
+    public void adhUpdate(AnomalyDetectionHistoryVO vo);
 
-    @Delete()
+    @Delete("delete from anomaly_detection_history where abnormal_history_number=#{abnormal_history_number}")
+    public int adhDelete(int ABNORMAL_HISTORY_NUMBER);
 
     // 교정사고 발생내역 (CRUD)-----------------------------------------------------------------------------------------
-    @Select()
+    @Select("select * from collective_history")
+    public List<CollectiveHistoryVO> chListAjax();   // 교정사고 내역 리스트 가져오기
 
-    @Insert()
+    @Insert("insert into collective_history(occuring_place, calssification, details, prisoner_prison_number) " +
+            "values(#{occuring_place, #{classification}, #{details}, #{prisoner_prison_number})")
+    public void chInsert(CollectiveHistroyVO vo);
 
-    @Update()
+    @Update("update collective_history set ")
+    public void chUpdate(CollectiveHistoryVO vo);
 
-    @Delete()
-
+    @Delete("delete from collective_history where calibration_accident_number=#{calibration_accident_number}")
+    public int chDelete(int CALIBRATION_ACCIDENT_NUMBER);
 
     // 교도관 정보 (CRUD)----------------------------------------------------------------------------------------
-    @Select()
+    @Select("select * from prison_officer")
+    public List<PrisonOfficerVO vo> poListAjax();
 
-    @Insert()
+    @Insert("insert into prison_officer() " +
+            "values(#)")
+    public void poInsert(PrisonOfficerVO vo);
 
-    @Update()
+    @Update("update prison_officer set ")
+    public void poUpdate(PrisonOfficerVO vo);
 
-    @Delete()
+    @Delete("delete from prison_officer where po_no=#{po_no}")
+    public int poDelete(int PO_NO)
 
     // 수감자 정보 (CRUD)----------------------------------------------------------------------------------------
     @Select()
@@ -89,6 +103,7 @@ public interface PrisonMapper {
 
     @Delete()
 
+    // 여기까지
     // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
     @Select()
 
