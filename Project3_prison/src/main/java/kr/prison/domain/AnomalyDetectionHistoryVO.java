@@ -6,7 +6,7 @@ import lombok.Data;
 
 
 @Data
-public class AnomalyDetectionHistory {
+public class AnomalyDetectionHistoryVO {
 	private int abnormal_history_number;
 	private Date alert_date;
 	private String anomalies;

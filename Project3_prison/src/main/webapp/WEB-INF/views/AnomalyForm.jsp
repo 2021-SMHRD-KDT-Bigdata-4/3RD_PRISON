@@ -22,15 +22,15 @@
     <form id="frm" method="post" >
                <div class="form-group">
                   <label>제목: </label> 
-                  <input type="text" class="form-control" id="title" name="title">
+                  <input type="text" class="form-control" id="title" name="anomalies">
                </div>
                <div class="form-group">
                   <label>내용:</label> 
-                   <textarea class="form-control" rows="5" id=contents name="contents"></textarea>
+                   <textarea class="form-control" rows="5" id=contents name="actual_anomalies"></textarea>
                </div>   
                <div class="form-group">
                   <label>작성자: </label> 
-                  <input type="text" class="form-control" id="writer" name="writer">
+                  <input type="text" class="form-control" id="writer" name="prioson_officer_po_no">
                </div>               
                <input type="submit" class="btn btn-primary btn-sm" value="글쓰기" >                  
                <input type='reset' value='취소' class='btn btn-warning btn-sm'>   
