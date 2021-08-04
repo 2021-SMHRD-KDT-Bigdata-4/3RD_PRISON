@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class SpecialManagementJailerVO {
-	private int SPECIAL_ADMIN_NUMBER;
-	private String REASON;
-	private int MANAGEMENT_GRADE;
-	private int PRISONER_PRISON_NUMBER;
+	private int special_admin_number;
+	private String reason;
+	private int management_grade;
+	private int prisoner_prison_number;
 }

@@ -5,11 +5,11 @@ import lombok.Data;
 
 @Data
 public class CCTVVO {
-	private int CCTV_NO;
-	private String AREA;
-	private String CCTV_NON;
-	private String LOCATION;
-	private int ACTIVE;
-	private String UNIQUE;
+	private int cctv_no;
+	private String area;
+	private String cctv_non;
+	private String location;
+	private int cctv_active;
+	private String cctv_unique;
 	
 }

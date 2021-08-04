@@ -1,8 +1,8 @@
 package kr.prison.domain;
 
 public class DrugManagementVO {
-	private int DM_NO;
-	private String DRUG_TYPE;
-	private boolean SPEC_DRUG;
-	private int PRISONER_PRISON_NUMBER;
+	private int dm_no;
+	private String drug_type;
+	private boolean spec_drug;
+	private int prisoner_prison_number;
 }
