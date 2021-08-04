@@ -5,24 +5,5 @@
 
 <mapper namespace="kr.prison.mapper.PrisonMapper">
 
-	<select id="AnomalyDetectionHistoryAjax" resultType="kr.prison.domain.AnomalyDetectionHistory"> <!-- DAO는 맵핑 용도로 변경된다 고로 DAO에서 작업할 필요가 없다 -->
-		select * from ANOMALY_DETECTION_HISTORY
-	</select>
 
-	<select id="Anomaly" resultType="kr.prison.domain.AnomalyDetectionHistory"> <!-- DAO는 맵핑 용도로 변경된다 고로 DAO에서 작업할 필요가 없다 -->
-		select * from ANOMALY_DETECTION_HISTORY
-	</select>
-	
-	<select id="CCTVVOAjax" resultType="kr.prison.domain.CCTVVO"> <!-- DAO는 맵핑 용도로 변경된다 고로 DAO에서 작업할 필요가 없다 -->
-		select * from CCTV
-	</select>
-	
-	<select id="CollectiveHistoryVOAjax" resultType="kr.prison.domain.CollectiveHistoryVO"> <!-- DAO는 맵핑 용도로 변경된다 고로 DAO에서 작업할 필요가 없다 -->
-		select * from CORRECTIVE_HISTORY
-	</select>
-	
-	<select id="DrugManagementVOAjax" resultType="kr.prison.domain.DrugManagementVO"> <!-- DAO는 맵핑 용도로 변경된다 고로 DAO에서 작업할 필요가 없다 -->
-		select * from DRUG_MANAGEMENT_HISTORY
-	</select>
-	
 </mapper>

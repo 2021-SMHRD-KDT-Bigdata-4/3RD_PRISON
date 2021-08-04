@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 public class PatrolHistoryVO {
-	private int PH_NO;
-	private Date DATE;
-	private String TIME;
-	private String LOCATION;
-	private String CONTENTS;
-	private int PRISON_OFFICER_PO_NO;
+	private int ph_no;
+	private Date date;
+	private String time;
+	private String location;
+	private String contents;
+	private int prison_officer_po_no;
 
 }

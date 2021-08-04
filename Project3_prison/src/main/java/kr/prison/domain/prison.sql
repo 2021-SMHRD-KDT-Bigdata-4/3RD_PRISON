@@ -1,3 +1,5 @@
+
+select * from ANOMALY_DETECTION_HISTORY
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;

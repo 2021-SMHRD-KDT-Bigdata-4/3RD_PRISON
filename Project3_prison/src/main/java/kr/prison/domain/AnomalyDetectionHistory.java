@@ -7,11 +7,11 @@ import lombok.Data;
 
 @Data
 public class AnomalyDetectionHistory {
-	private int ABNORMAL_HISTORY_NUMBER;
-	private Date ALERT_DATE;
-	private String ANOMALIES;
-	private String ACTUAL_ANOMALIES;
-	private int PRISON_OFFICER_PO_NO;
-	private int CCTV_CCTV_NO;
+	private int abnormal_history_number;
+	private Date alert_date;
+	private String anomalies;
+	private String actual_anomalies;
+	private int prison_officer_po_no;
+	private int cctv_cctv_no;
 	
 }
