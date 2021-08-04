@@ -15,8 +15,24 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+function goWriter() {
+	var formData = $("#frm").serialize();
+	alert(formData)
+	$.ajax({
+		url : '${cpath}/boardInAjax.do',
+		type : "post",
+		data : formData,
+		success : goAjax,
+		error : function() {
+			alert("오류")
+		}
 
+	})
 
+}
+function goWr() {
+	$("#bf").css("display","block");
+}
 
 	function goAjax() {
 		$.ajax({
@@ -89,9 +105,14 @@
 				</table>
 				<input type="button" value="도서목록 가져오기"
 					class="btn btn-info btn-sm" onclick="goAjax()">
+					<input type="button" value="글쓰기" class="btn btn-info btn-sm"
+					onclick="goWr()">
 				<div id="list"></div>
 			</div>
 			<div class="panel-footer">빅데이터 4차 스프링 시험 김남진</div>
+			<div style="display: none;" id="bf">
+				<c:import url="AnomalyForm.jsp" />
+			</div>
 		</div>
 
 

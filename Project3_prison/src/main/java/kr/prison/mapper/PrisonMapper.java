@@ -109,14 +109,16 @@ public interface PrisonMapper {
 //    @Delete()
 //
 //    // 특별관리인원 정보 (CRUD1)----------------------------------------------------------------------------------------
-//    @Select()
-//
+//    @Select("select * from SPECIAL_MANAGEMENT_PERSONNEL")
+//    public List<SpecialManagementJailerVO> SpecialManagementJailerVO();
+//    @Select("select * from SPECIAL_MANAGEMENT_PERSONNEL")
+//    public List<SpecialManagementJailerVO> SpecialManagementJailerVOAjax();
 //    @Insert()
-//
+//		
 //    @Update()
-//
+//		
 //    @Delete()
-
+//		
     public List<DrugManagementVO> DrugManagementVOAjax();// 바디 부분이 없다   boardDelAjax
 	
 	
