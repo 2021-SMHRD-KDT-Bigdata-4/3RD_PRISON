@@ -50,7 +50,7 @@ public interface PrisonMapper {
     public void phUpdate(PatrolHistoryVO vo);
 
     @Delete("delete from partorl_history where ph_no=#{ph_no}")
-    public int phDelete(int PH_NO);
+    public int phDelete(int ph_no);
 
     // 이상행동 감지 내역 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from anomaly_detection_history")
@@ -64,7 +64,7 @@ public interface PrisonMapper {
     public void adhUpdate(AnomalyDetectionHistoryVO vo);
 
     @Delete("delete from anomaly_detection_history where abnormal_history_number=#{abnormal_history_number}")
-    public int adhDelete(int ABNORMAL_HISTORY_NUMBER);
+    public int adhDelete(int abnormal_history_number);
 
     // 교정사고 발생내역 (CRUD)-----------------------------------------------------------------------------------------
     @Select("select * from collective_history")
@@ -78,30 +78,33 @@ public interface PrisonMapper {
     public void chUpdate(CollectiveHistoryVO vo);
 
     @Delete("delete from collective_history where calibration_accident_number=#{calibration_accident_number}")
-    public int chDelete(int CALIBRATION_ACCIDENT_NUMBER);
+    public int chDelete(int calibration_accident_number);
 
     // 교도관 정보 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from prison_officer")
     public List<PrisonOfficerVO vo> poListAjax();
 
-    @Insert("insert into prison_officer() " +
-            "values(#)")
+    @Insert("insert into prison_officer(name, age, gender, rank, position, department, photo) " +
+            "values(#{name}, #{age}, #{gender}, #{rank), #{position}, #{department}, #{photo}")
     public void poInsert(PrisonOfficerVO vo);
 
     @Update("update prison_officer set ")
     public void poUpdate(PrisonOfficerVO vo);
 
     @Delete("delete from prison_officer where po_no=#{po_no}")
-    public int poDelete(int PO_NO)
+    public int poDelete(int po_no)
 
     // 수감자 정보 (CRUD)----------------------------------------------------------------------------------------
-    @Select()
+    @Select("select * from prisoner")
+    public List<JailerVO vo> jailerListAjax();
 
-    @Insert()
+    @Insert("insert into prisoner(name, age, sex, prison_area, room_number, crime_classification, before, photo) " +
+            "values(#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}, #{photo}")
 
-    @Update()
+    @Update("update prisoner set prison_area=#{prison_area}, room_number={room_number} where " +
+            "prison_number=#{prison_number}")
 
-    @Delete()
+    @Delete("delete from prisoner where prison_number=#{prison_number}")
 
     // 여기까지
     // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
