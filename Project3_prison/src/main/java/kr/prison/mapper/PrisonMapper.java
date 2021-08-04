@@ -100,11 +100,14 @@ public interface PrisonMapper {
 
     @Insert("insert into prisoner(name, age, sex, prison_area, room_number, crime_classification, before, photo) " +
             "values(#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}, #{photo}")
+    public void jailerInsert(JailerVO vo);
 
     @Update("update prisoner set prison_area=#{prison_area}, room_number={room_number} where " +
             "prison_number=#{prison_number}")
+    public void jailerUpdate(JailerVO vo);
 
     @Delete("delete from prisoner where prison_number=#{prison_number}")
+    public int jailerDelete(int prison_number)
 
     // 여기까지
     // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
