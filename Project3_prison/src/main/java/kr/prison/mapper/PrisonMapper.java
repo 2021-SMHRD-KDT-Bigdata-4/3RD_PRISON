@@ -82,7 +82,7 @@ public interface PrisonMapper {
 
     // 교도관 정보 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from prison_officer")
-    public List<PrisonOfficerVO vo> poListAjax();
+    public List<PrisonOfficerVO> poListAjax();
 
     @Insert("insert into prison_officer(name, age, gender, rank, position, department, photo) " +
             "values(#{name}, #{age}, #{gender}, #{rank), #{position}, #{department}, #{photo}")
@@ -92,11 +92,11 @@ public interface PrisonMapper {
     public void poUpdate(PrisonOfficerVO vo);
 
     @Delete("delete from prison_officer where po_no=#{po_no}")
-    public int poDelete(int po_no)
+    public int poDelete(int po_no);
 
     // 수감자 정보 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from prisoner")
-    public List<JailerVO vo> jailerListAjax();
+    public List<JailerVO> jailerListAjax();
 
     @Insert("insert into prisoner(name, age, sex, prison_area, room_number, crime_classification, before, photo) " +
             "values(#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}, #{photo}")
@@ -107,35 +107,53 @@ public interface PrisonMapper {
     public void jailerUpdate(JailerVO vo);
 
     @Delete("delete from prisoner where prison_number=#{prison_number}")
-    public int jailerDelete(int prison_number)
+    public int jailerDelete(int prison_number);
 
     // 여기까지
     // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
-    @Select()
+    @Select("select * from drug_management_history")
+    public List<DrugManagementVO> dmListAjax();
 
-    @Insert()
+    @Insert("insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) " +
+            "values(#{drug_type}, #{spec_drug}, #{prisoner_prison_number}")
+    public void dmInsert(DrugManagementVO vo);
 
-    @Update()
+    @Update("update drug_management_history set drug_type=#{drug_type}, spec_drug=#{spec_drug} " +
+            "where dm_no=#{dm_no}")
+    public void dmUpdate(DrugManagementVO vo);
 
-    @Delete()
+    @Delete("delete drug_management_history where dm_no=#{dm_no}")
+    public int dmDelete(int dm_no);
 
     // 특수 약물 복용 내역 (CRUD)----------------------------------------------------------------------------------------
-    @Select()
+    @Select("select * from spec_drug_history")
+    public List<SpecDrugHistoryVO> sdhListAjax();
 
-    @Insert()
+    @Insert("insert into spec_drug_history(taking_date, drug_management_history_dm_no) " +
+            "values(#{taking_date}, #{drug_management_history_dm_no})")
+    public void sdhInsert(SpecDrugHistoryVO vo);
 
-    @Update()
+    @Update("update spec_drug_history set " +
+            "where th_no=#{th_no}")
+    public void sdhUpdate(SpecDrugHistoryVO vo);
 
-    @Delete()
+    @Delete("delete spec_drug_history where th_no=#{th_no}")
+    public int sdhDelete(int th_no);
 
-    // 특별관리인원 정보 (CRUD1)----------------------------------------------------------------------------------------
-    @Select()
+    // 특별관리인원 정보 (CRUD)----------------------------------------------------------------------------------------
+    @Select("select * from special_management_personnel")
+    public List<SpecialManagementJailerVO> smjListAjax();
 
-    @Insert()
+    @Insert("insert into special_management_personnel(reason, management_grade, prisoner_prison_number) " +
+            "values(#{reason}, #{management_grade}, #{prisoner_prison_number})")
+    public void smjInsert(SpecialManagementJailerVO vo);
 
-    @Update()
+    @Update("update special_management_personnel set management_grade=#{management_grade} " +
+            "where special_admin_number=#{special_admin_number}")
+    public void smjUpdate(SpecialManagementJailerVO vo);
 
-    @Delete()
+    @Delete("delete special_management_personnel where special_admin_number=#{special_admin_number}")
+    public void smjDelete(int special_admin_number);
 
     public List<DrugManagementVO> DrugManagementVOAjax();// 바디 부분이 없다   boardDelAjax
 	
