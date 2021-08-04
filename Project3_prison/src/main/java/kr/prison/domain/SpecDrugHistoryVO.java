@@ -5,6 +5,7 @@ import java.sql.Date;
 import lombok.Data;
 
 public class SpecDrugHistoryVO {
-	private int sdh_no;
-	private Date sdh_date;
+	private int TH_NO;
+	private Date TAKING_DATE;
+	private int DRUG_MANAGEMENT_HISTORY_DM_NO;
 }
