@@ -9,8 +9,4 @@
 		select * from CCTVVO
 	</select>
 
-	<select id="bookListAjax" resultType="bookVO">
-		select * from tbl_book order by num desc
-	</select>
-
 </mapper>
