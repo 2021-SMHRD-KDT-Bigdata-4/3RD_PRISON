@@ -33,7 +33,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		// TO - DO
 		List<AnomalyDetectionHistoryVO>list=bookapper.adhListAjax();
 		
-		System.out.println(list);
+		
 		model.addAttribute("list",list); //객체바인딩 특정 개체에 메모리를 저장하거 꺼내갈 수 있다
 		//return "boardList"; // -->ViewResolver(관여(servlet-context.xml 에 설정되있음))-->/WEB-INF/views/boardList.jsp(이름 같아야함) 
 	}
@@ -42,11 +42,18 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		// TO - DO
 		List<AnomalyDetectionHistoryVO>list=bookapper.adhListAjax();
 
-		System.out.println(list);
+		
 		return list; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
 	}
 	
-
+	
+	@RequestMapping("/AnomalyInsert.do") //여기로 요청이오면 아래 메소드를 실행해라 
+	public String adhInsert(AnomalyDetectionHistoryVO vo) { //@ResponseBody 응답을 한다 뭐로? JSON 으로
+		// TO - DO
+		bookapper.adhInsert(vo);
+	
+		return "redirect:/Anomaly.do"; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
+	}
 	
 
 	

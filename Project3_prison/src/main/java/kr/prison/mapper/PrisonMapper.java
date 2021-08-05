@@ -12,9 +12,12 @@ import org.apache.ibatis.annotations.Insert;
 import kr.prison.domain.AnomalyDetectionHistoryVO;
 import kr.prison.domain.CCTVVO;
 import kr.prison.domain.CollectiveHistoryVO;
+import kr.prison.domain.DrugManagementVO;
 import kr.prison.domain.PatrolHistoryVO;
 import kr.prison.domain.JailerVO;
 import kr.prison.domain.PrisonOfficerVO;
+import kr.prison.domain.SpecDrugHistoryVO;
+import kr.prison.domain.SpecialManagementJailerVO;
 
 @Mapper
 public interface PrisonMapper {
@@ -54,7 +57,7 @@ public interface PrisonMapper {
     @Select("select * from anomaly_detection_history")
     public List<AnomalyDetectionHistoryVO> adhListAjax();
 
-    @Insert("insert into anomaly_detection_history(anomalies, actual_anomalies, prioson_officer_po_no) " +
+    @Insert("insert into anomaly_detection_history(anomalies, actual_anomalies, prison_officer_po_no) " +
             "values(#{anomalies}, #{actual_anomalies}, #{prison_officer_po_no})")
     public void adhInsert(AnomalyDetectionHistoryVO vo);
 
@@ -107,33 +110,52 @@ public interface PrisonMapper {
     @Delete("delete from prisoner where prison_number=#{prison_number}")
     public int jailerDelete(int prison_number);
 
-//    // 여기까지
-//    // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
-//    @Select()
-//
-//    @Insert()
-//
-//    @Update()
-//
-//    @Delete()
-//
-//    // 특수 약물 복용 내역 (CRUD)----------------------------------------------------------------------------------------
-//    @Select()
-//
-//    @Insert()
-//
-//    @Update()
-//
-//    @Delete()
-//
-//    // 특별관리인원 정보 (CRUD1)----------------------------------------------------------------------------------------
-//    @Select()
-//
-//    @Insert()
-//
-//    @Update()
-//
-//    @Delete()
 
+    
+    // 약물 복용 정보 (CRUD)----------------------------------------------------------------------------------------
+    @Select("select * from drug_management_history")
+    public List<DrugManagementVO> dmListAjax();
 
+    @Insert("insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) " +
+            "values(#{drug_type}, #{spec_drug}, #{prisoner_prison_number}")
+    public void dmInsert(DrugManagementVO vo);
+
+    @Update("update drug_management_history set drug_type=#{drug_type}, spec_drug=#{spec_drug} " +
+            "where dm_no=#{dm_no}")
+    public void dmUpdate(DrugManagementVO vo);
+
+    @Delete("delete drug_management_history where dm_no=#{dm_no}")
+    public int dmDelete(int dm_no);
+
+    // 특수 약물 복용 내역 (CRUD)----------------------------------------------------------------------------------------
+    @Select("select * from spec_drug_history")
+    public List<SpecDrugHistoryVO> sdhListAjax();
+
+    @Insert("insert into spec_drug_history(taking_date, drug_management_history_dm_no) " +
+            "values(#{taking_date}, #{drug_management_history_dm_no})")
+    public void sdhInsert(SpecDrugHistoryVO vo);
+
+    @Update("update spec_drug_history set " +
+            "where th_no=#{th_no}")
+    public void sdhUpdate(SpecDrugHistoryVO vo);
+
+    @Delete("delete spec_drug_history where th_no=#{th_no}")
+    public int sdhDelete(int th_no);
+
+    // 특별관리인원 정보 (CRUD)----------------------------------------------------------------------------------------
+    @Select("select * from special_management_personnel")
+    public List<SpecialManagementJailerVO> smjListAjax();
+
+    @Insert("insert into special_management_personnel(reason, management_grade, prisoner_prison_number) " +
+            "values(#{reason}, #{management_grade}, #{prisoner_prison_number})")
+    public void smjInsert(SpecialManagementJailerVO vo);
+
+    @Update("update special_management_personnel set management_grade=#{management_grade} " +
+            "where special_admin_number=#{special_admin_number}")
+    public void smjUpdate(SpecialManagementJailerVO vo);
+
+    @Delete("delete special_management_personnel where special_admin_number=#{special_admin_number}")
+    public void smjDelete(int special_admin_number);
+
+ 
 }

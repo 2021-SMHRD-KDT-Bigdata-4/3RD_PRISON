@@ -15,11 +15,15 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+$(document).ready(()=>{
+	goAjax();
+   
+});
 function goWriter() {
 	var formData = $("#frm").serialize();
 	alert(formData)
 	$.ajax({
-		url : '${cpath}/boardInAjax.do',
+		url : '${cpath}/AnomalyInsert.do',
 		type : "post",
 		data : formData,
 		success : goAjax,
