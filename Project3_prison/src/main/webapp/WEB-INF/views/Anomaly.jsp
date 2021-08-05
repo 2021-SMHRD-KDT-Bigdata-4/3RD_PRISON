@@ -15,8 +15,28 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+$(document).ready(()=>{
+	goAjax();
+   
+});
+function goWriter() {
+	var formData = $("#frm").serialize();
+	alert(formData)
+	$.ajax({
+		url : '${cpath}/AnomalyInsert.do',
+		type : "post",
+		data : formData,
+		success : goAjax,
+		error : function() {
+			alert("오류")
+		}
 
+	})
 
+}
+function goWr() {
+	$("#bf").css("display","block");
+}
 
 	function goAjax() {
 		$.ajax({
@@ -34,6 +54,8 @@
 	
 
 	function resultHtml(data) { //data = json == [{obj},{obj},{obj}]
+		alert("성공")
+		console.log(data);
 		var html = "<table class='table'>";
 		html += "<tr>";
 		html += "<td>번호</td>";
@@ -45,12 +67,12 @@
 		html += "</tr>";
 		$.each(data,(index,obj)=>{
 			html += "<tr>";
-			html += "<td>"+obj.ABNORMAL_HISTORY_NUMBER+"</td>";
-			html += "<td>"+obj.ALERT_DATE+"</td>";
-			html += "<td>"+obj.ANOMALIES+"</td>";
-			html += "<td>"+obj.ACTUAL_ANOMALIES+"</td>";
-			html += "<td>"+obj.PRISON_OFFICER_PO_NO+"</td>";
-			html += "<td>"+obj.CCTV_CCTV_NO+"</td>";
+			html += "<td id='abnormal_history_number"+index+"'>"+obj.abnormal_history_number+"</td>";
+			html += "<td>"+obj.alert_date+"</td>";
+			html += "<td>"+obj.anomalies+"</td>";
+			html += "<td>"+obj.actual_anomalies+"</td>";
+			html += "<td>"+obj.prison_officer_po_no+"</td>";
+			html += "<td>"+obj.cctv_cctv_no+"</td>";
 			html += "</tr>";
 		});
 		html += "</table>";
@@ -76,20 +98,25 @@
 					</tr>
 					<c:forEach var="vo" items="${list}">
 						<tr>
-							<td>${vo.ABNORMAL_HISTORY_NUMBER}</td>
-							<td>${vo.ALERT_DATE}</td>
-							<td>${vo.ANOMALIES}</td>
-							<td>${vo.ACTUAL_ANOMALIES}</td>
-							<td>${vo.PRISON_OFFICER_PO_NO}</td>
-							<td>${vo.CCTV_CCTV_NO}</td>
+							<td>${vo.abnormal_history_number}</td>
+							<td>${vo.alert_date}</td>
+							<td>${vo.anomalies}</td>
+							<td>${vo.actual_anomalies}</td>
+							<td>${vo.prison_officer_po_no}</td>
+							<td>${vo.cctv_cctv_no}</td>
 						</tr>
 					</c:forEach>
 				</table>
 				<input type="button" value="도서목록 가져오기"
 					class="btn btn-info btn-sm" onclick="goAjax()">
+					<input type="button" value="글쓰기" class="btn btn-info btn-sm"
+					onclick="goWr()">
 				<div id="list"></div>
 			</div>
 			<div class="panel-footer">빅데이터 4차 스프링 시험 김남진</div>
+			<div style="display: none;" id="bf">
+				<c:import url="AnomalyForm.jsp" />
+			</div>
 		</div>
 
 
