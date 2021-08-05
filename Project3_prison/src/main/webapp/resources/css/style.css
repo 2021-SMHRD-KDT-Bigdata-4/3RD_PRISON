@@ -239,9 +239,13 @@ keyframes loader { 0% {
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -279,6 +283,8 @@ keyframes loader { 0% {
 
 
 
+
+
 rotate
 
 
@@ -296,7 +302,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -334,7 +344,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -371,7 +385,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -407,7 +425,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -445,7 +467,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -482,7 +508,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -520,7 +550,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -556,8 +590,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -595,7 +633,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -633,9 +675,13 @@ transparent
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -673,6 +719,8 @@ transparent
 
 
 
+
+
 rotate
 
 
@@ -690,7 +738,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -728,7 +780,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -765,7 +821,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -801,7 +861,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -839,7 +903,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -876,7 +944,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -914,7 +986,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -950,8 +1026,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -989,7 +1069,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -1035,9 +1119,13 @@ transparent
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -1075,6 +1163,8 @@ transparent
 
 
 
+
+
 rotate
 
 
@@ -1092,7 +1182,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -1130,7 +1224,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1167,7 +1265,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -1205,7 +1307,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -1241,8 +1347,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -1280,7 +1390,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -1300,6 +1414,8 @@ transparent
 ;
 }
 100
+
+
 
 
 
@@ -1339,7 +1455,11 @@ transparent
 
 
 
+
+
 :
+
+
 
 
 
@@ -1375,7 +1495,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -1413,7 +1537,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1450,7 +1578,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -1488,7 +1620,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -1524,8 +1660,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -1563,7 +1703,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -3507,6 +3651,42 @@ transparent
 
 .club-section-1 {
 	text-align: center;
+}
+
+.form{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.input_field label {
+	width: 8%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.input_field select {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	margin-left: 50px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.input_field input {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	margin-left: 50px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .club-content .cc-pic {

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -18,25 +21,37 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 
 <!-- Js Plugins -->
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/jquery.magnific-popup.min.js"></script>
-<script src="../resources/js/jquery.slicknav.js"></script>
-<script src="../resources/js/owl.carousel.min.js"></script>
-<script src="../resources/js/main.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 
 <body>
@@ -76,7 +91,8 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img src="../resources/img/logo.png"
+							<a href="./main.jsp"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -119,8 +135,8 @@
 
 	<!-- Hero Section Begin -->
 	<section class="hero-section set-bg"
-		data-setbg="../resources/img/hero/hero-1.jpg"
-		style='background-image: url("../resources/img/hero/hero-1.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
 
 		<div class="container">
 			<div class="row">
@@ -158,7 +174,7 @@
 	</div>
 	<!-- Trending News Section End -->
 
-	
+
 
 	<!-- Soccer Section Begin -->
 	<section class="soccer-section">
@@ -175,7 +191,8 @@
 			<div class="row">
 				<div class="col-lg-3 col-sm-6 p-0">
 					<div class="soccer-item set-bg"
-						data-setbg="../resources/img/soccer/soccer-1.jpg" style='background-image: url("../resources/img/soccer/soccer-1.jpg");'>
+						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-1.jpg"
+						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-1.jpg");'>
 						<div class="si-tag">Soccer</div>
 						<div class="si-text">
 							<h5>
@@ -190,7 +207,8 @@
 				</div>
 				<div class="col-lg-3 col-sm-6 p-0">
 					<div class="soccer-item set-bg"
-						data-setbg="../resources/img/soccer/soccer-2.jpg" style='background-image: url("../resources/img/soccer/soccer-2.jpg");'>
+						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-2.jpg"
+						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-2.jpg");'>
 						<div class="si-tag">Soccer</div>
 						<div class="si-text">
 							<h5>
@@ -206,7 +224,8 @@
 				</div>
 				<div class="col-lg-3 col-sm-6 p-0">
 					<div class="soccer-item set-bg"
-						data-setbg="../resources/img/soccer/soccer-3.jpg" style='background-image: url("../resources/img/soccer/soccer-3.jpg");'>
+						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-3.jpg"
+						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-3.jpg");'>
 						<div class="si-tag">Soccer</div>
 						<div class="si-text">
 							<h5>
@@ -221,7 +240,8 @@
 				</div>
 				<div class="col-lg-3 col-sm-6 p-0">
 					<div class="soccer-item set-bg"
-						data-setbg="../resources/img/soccer/soccer-4.jpg" style='background-image: url("../resources/img/soccer/soccer-4.jpg");'>
+						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-4.jpg"
+						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-4.jpg");'>
 						<div class="si-tag">Soccer</div>
 						<div class="si-text">
 							<h5>
@@ -258,7 +278,9 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="news-item left-news">
-								<div class="ni-pic set-bg" data-setbg="../resources/img/news/latest-b.jpg" style='background-image: url("../resources/img/news/latest-b.jpg");'>
+								<div class="ni-pic set-bg"
+									data-setbg="${pageContext.request.contextPath}/resources/img/news/latest-b.jpg"
+									style='background-image: url("${pageContext.request.contextPath}/resources/img/news/latest-b.jpg");'>
 									<div class="ni-tag">Soccer</div>
 								</div>
 								<div class="ni-text">
@@ -280,7 +302,9 @@
 						<div class="col-md-6">
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-1.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-1.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -294,7 +318,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-2.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-2.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -308,7 +334,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-3.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-3.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -322,7 +350,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-4.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-4.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -358,7 +388,8 @@
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-1.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-1.jpg"
 										alt=""> <span>Afghanis</span></td>
 									<td>22</td>
 									<td>2</td>
@@ -367,7 +398,8 @@
 								</tr>
 								<tr>
 									<td>2</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-2.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-2.jpg"
 										alt=""> <span>Australia</span></td>
 									<td>20</td>
 									<td>3</td>
@@ -376,7 +408,8 @@
 								</tr>
 								<tr>
 									<td>3</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-3.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-3.jpg"
 										alt=""> <span>Qatar</span></td>
 									<td>18</td>
 									<td>4</td>
@@ -385,7 +418,8 @@
 								</tr>
 								<tr>
 									<td>4</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-4.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-4.jpg"
 										alt=""> <span>Cambodia</span></td>
 									<td>17</td>
 									<td>2</td>
@@ -394,7 +428,8 @@
 								</tr>
 								<tr>
 									<td>5</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-5.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-5.jpg"
 										alt=""> <span>Uzbekistan</span></td>
 									<td>17</td>
 									<td>2</td>
@@ -403,7 +438,8 @@
 								</tr>
 								<tr>
 									<td>6</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-6.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-6.jpg"
 										alt=""> <span>Turkme</span></td>
 									<td>161</td>
 									<td>1</td>
@@ -412,7 +448,8 @@
 								</tr>
 								<tr>
 									<td>7</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-7.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-7.jpg"
 										alt=""> <span>Sri Lanka</span></td>
 									<td>15</td>
 									<td>4</td>
@@ -421,7 +458,8 @@
 								</tr>
 								<tr>
 									<td>8</td>
-									<td class="team-name"><img src="../resources/img/flag/flag-8.jpg"
+									<td class="team-name"><img
+										src="${pageContext.request.contextPath}/resources/img/flag/flag-8.jpg"
 										alt=""> <span>Myanmar</span></td>
 									<td>14</td>
 									<td>3</td>
@@ -453,56 +491,68 @@
 			<div class="row">
 				<div class="video-slider owl-carousel">
 					<div class="col-lg-3">
-						<div class="video-item set-bg" data-setbg="../resources/img/videos/video-1.jpg" style='background-image: url("../resources/img/videos/video-1.jpg");'>
+						<div class="video-item set-bg"
+							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-1.jpg"
+							style='background-image: url("${pageContext.request.contextPath}/resources/img/videos/video-1.jpg");'>
 							<div class="vi-title">
 								<h5>A World Of Infinite Opportunities</h5>
 							</div>
 							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img src="../resources/img/videos/play.png"
+								class="play-btn video-popup"><img
+								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
 								alt=""></a>
 							<div class="vi-time">11:13</div>
 						</div>
 					</div>
 					<div class="col-lg-3">
-						<div class="video-item set-bg" data-setbg="../resources/img/videos/video-2.jpg">
+						<div class="video-item set-bg"
+							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-2.jpg">
 							<div class="vi-title">
 								<h5>Video Games Playing With Imagination</h5>
 							</div>
 							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img src="../resources/img/videos/play.png"
+								class="play-btn video-popup"><img
+								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
 								alt=""></a>
 							<div class="vi-time">11:13</div>
 						</div>
 					</div>
 					<div class="col-lg-3">
-						<div class="video-item set-bg" data-setbg="../resources/img/videos/video-3.jpg">
+						<div class="video-item set-bg"
+							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-3.jpg">
 							<div class="vi-title">
 								<h5>Home Audio Recording For Everyone</h5>
 							</div>
 							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img src="../resources/img/videos/play.png"
+								class="play-btn video-popup"><img
+								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
 								alt=""></a>
 							<div class="vi-time">11:13</div>
 						</div>
 					</div>
 					<div class="col-lg-3">
-						<div class="video-item set-bg" data-setbg="../resources/img/videos/video-4.jpg" style='background-image: url("../resources/img/videos/video-4.jpg");'>
+						<div class="video-item set-bg"
+							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-4.jpg"
+							style='background-image: url("${pageContext.request.contextPath}/resources/img/videos/video-4.jpg");'>
 							<div class="vi-title">
 								<h5>What If They Let You Run The Hubble</h5>
 							</div>
 							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img src="../resources/img/videos/play.png"
+								class="play-btn video-popup"><img
+								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
 								alt=""></a>
 							<div class="vi-time">11:13</div>
 						</div>
 					</div>
 					<div class="col-lg-3">
-						<div class="video-item set-bg" data-setbg="../resources/img/videos/video-4.jpg">
+						<div class="video-item set-bg"
+							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-4.jpg">
 							<div class="vi-title">
 								<h5>What If They Let You Run The Hubble</h5>
 							</div>
 							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img src="../resources/img/videos/play.png"
+								class="play-btn video-popup"><img
+								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
 								alt=""></a>
 							<div class="vi-time">11:13</div>
 						</div>
@@ -526,7 +576,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="news-item popular-item set-bg"
-								data-setbg="../resources/img/news/popular-b.jpg" style='background-image: url("../resources/img/news/popular-b.jpg");'>
+								data-setbg="${pageContext.request.contextPath}/resources/img/news/popular-b.jpg"
+								style='background-image: url("${pageContext.request.contextPath}/resources/img/news/popular-b.jpg");'>
 								<div class="ni-tag tenis">Tenis</div>
 								<div class="ni-text">
 									<h5>
@@ -541,7 +592,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-1.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-1.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -555,7 +608,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-2.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-2.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -569,7 +624,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-3.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-3.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -584,7 +641,8 @@
 						</div>
 						<div class="col-md-6">
 							<div class="news-item popular-item set-bg"
-								data-setbg="../resources/img/news/popular-b.jpg" style='background-image: url("../resources/img/news/popular-b.jpg");'>
+								data-setbg="${pageContext.request.contextPath}/resources/img/news/popular-b.jpg"
+								style='background-image: url("${pageContext.request.contextPath}/resources/img/news/popular-b.jpg");'>
 								<div class="ni-tag football">Football</div>
 								<div class="ni-text">
 									<h5>
@@ -599,7 +657,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-5.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-5.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -613,7 +673,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-6.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-6.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -627,7 +689,9 @@
 							</div>
 							<div class="news-item">
 								<div class="ni-pic">
-									<img src="../resources/img/news/ln-7.jpg" alt="">
+									<img
+										src="${pageContext.request.contextPath}/resources/img/news/ln-7.jpg"
+										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
@@ -661,7 +725,9 @@
 									Fans</span></li>
 						</ul>
 					</div>
-					<div class="vote-option set-bg" data-setbg="../resources/img/news/vote-bg.jpg" style='background-image: url("../resources/img/news/vote-bg.jpg");'>
+					<div class="vote-option set-bg"
+						data-setbg="${pageContext.request.contextPath}/resources/img/news/vote-bg.jpg"
+						style='background-image: url("${pageContext.request.contextPath}/resources/img/news/vote-bg.jpg");'>
 						<div class="vo-text">
 							<h5>In your opinion, which country will win this year</h5>
 							<div class="vt-item">
@@ -689,13 +755,17 @@
 	<!-- Popular News Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section set-bg" data-setbg="../resources/img/footer-bg.jpg" style='background-image: url("../resources/img/footer-bg.jpg");'>
+	<footer class="footer-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/footer-bg.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="../resources/img/logo.png" alt=""></a>
+							<a href="./index.html"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
+								alt=""></a>
 						</div>
 						<ul>
 							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
@@ -797,7 +867,7 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
+				<input type="text" id="search-input" placeholder="Search here.">
 			</form>
 		</div>
 	</div>

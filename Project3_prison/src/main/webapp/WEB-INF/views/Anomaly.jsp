@@ -107,10 +107,9 @@ function goWr() {
 						</tr>
 					</c:forEach>
 				</table>
-				<input type="button" value="도서목록 가져오기"
-					class="btn btn-info btn-sm" onclick="goAjax()">
-					<input type="button" value="글쓰기" class="btn btn-info btn-sm"
-					onclick="goWr()">
+				<input type="button" value="도서목록 가져오기" class="btn btn-info btn-sm"
+					onclick="goAjax()"> <input type="button" value="글쓰기"
+					class="btn btn-info btn-sm" onclick="goWr()">
 				<div id="list"></div>
 			</div>
 			<div class="panel-footer">빅데이터 4차 스프링 시험 김남진</div>
