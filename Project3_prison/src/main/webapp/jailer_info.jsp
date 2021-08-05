@@ -150,6 +150,8 @@
 						<option value="수감번호">수감번호</option>
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search..">
+						<button type="button" class="btn btn-default btn-lg">검색</button>
+						<button type="button" class="btn btn-default btn-lg">추가</button>
 				</div>
 			</form>
 		</div>
@@ -165,9 +167,7 @@
 
 						<!-- Tab panes -->
 						<div class="container">
-							<h2>Hover Rows</h2>
-							<p>The .table-hover class enables a hover state on table
-								rows:</p>
+						
 							<table class="table table-hover">
 								<thead>
 									<tr>
