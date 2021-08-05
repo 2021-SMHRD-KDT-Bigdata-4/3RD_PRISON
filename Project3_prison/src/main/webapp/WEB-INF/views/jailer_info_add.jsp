@@ -9,7 +9,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Specer | Template</title>
+<title>코도소 3차 프로젝트 | 재소자 추가</title>
 
 <!-- Google Font -->
 <link
@@ -17,24 +17,45 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/jquery.magnific-popup.min.js"></script>
-<script src="../resources/js/jquery.slicknav.js"></script>
-<script src="../resources/js/owl.carousel.min.js"></script>
-<script src="../resources/js/main.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<!-- bootstrap -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -52,7 +73,7 @@
 						<div class="ht-info">
 							<ul>
 								<li>20:00 - May 19, 2019</li>
-								<li><a href="login.jsp">Sign in</a></li>
+								<li><a href="#">Logout</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -74,16 +95,18 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img src="../resources/img/logo.png" alt=""></a>
+							<a href="./main.do"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
+								alt=""></a>
 						</div>
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
 							<ul class="main-menu">
-								<li><a href="main.jsp">Home</a></li>
-								<li><a href="#">재소자</a>
+								<li><a href="main.do">Home</a></li>
+								<li class="active"><a href="#">재소자</a>
 									<ul class="dropdown">
-										<li><a href="#">재소자 정보</a></li>
+										<li><a href="jailer_info.do">재소자 정보</a></li>
 										<li><a href="#">약물 내역</a></li>
 										<li><a href="#">특별 약물 내역</a></li>
 									</ul></li>
@@ -114,54 +137,58 @@
 	</header>
 	<!-- Header End -->
 
-	<!-- Contact Section Begin -->
-	<section class="contact-section spad">
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="contact-form">
-						<h2>Login Form</h2>
-						<form action="#">
-							<div class="group-in">
-								<label for="id">ID</label> <input type="text" id="id">
-							</div>
-							<div class="group-in">
-								<label for="password">PASSWORD</label> <input type="text" id="password">
-							</div>
-
-							<button type="submit">Login Now</button>
-						</form>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="contact-info">
-						<h2>Contact Info</h2>
-						<p>It is a long established fact that a reader will be
-							distracted by the readable content of a page when looking at its
-							layout. The point of using Lorem Ipsum is that it has a
-							distribution of letters.</p>
-						<div class="ci-address">
-							<h5>Gwangju Office</h5>
-							<ul>
-								<li>광주 남구 송암로 60 광주CGI센터 2층 </li>
-								<li>010-7140-1774</li>
-								<li>2_3jy@naver.com</li>
-							</ul>
-						</div>
-						<div class="ci-address">
-							<h5>Australia Office</h5>
-							<ul>
-								<li>광주광역시 동구 예술길 31-15 광주아트센터 3층, 스마트인재캠퍼스</li>
-								<li>062-655-1616</li>
-								<li>info.colorlib@gmail.com</li>
-							</ul>
-						</div>
+				<div class="col-lg-12">
+					<div class="bs-text">
+						<h2>재소자 추가</h2>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Contact Section End -->
+	<!-- Breadcrumb Section End -->
+
+
+	<section class="club-section spad-4">
+	<form>
+		<div class="form">
+			<div class="input_field">
+				<label>이름</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>나이</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>성별</label> <select>
+					<option value="male">남자</option>
+					<option value="female">여자</option>
+				</select>
+			</div>
+			<div class="input_field">
+				<label>수감 구역</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>방 번호</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>범죄 분류</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>전과</label> <input type="text" class="input">
+			</div>
+			<div class="input_field">
+				<label>사진</label> <input id = "file_input" type="file" name="uploadFile">
+			</div>
+
+		</div>
+		</form>
+	</section>
+	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
@@ -272,11 +299,12 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
+				<input type="text" id="search-input" placeholder="Search here...">
 			</form>
 		</div>
 	</div>
 	<!-- Search model end -->
+
 </body>
 
 </html>

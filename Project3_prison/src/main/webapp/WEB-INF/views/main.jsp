@@ -42,41 +42,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-	<div class="container">
-		<h2>Spring MVC BOOK BOARD</h2>
-		<div class="panel panel-default">
-			<div class="panel-heading">BOOK BOARD LIST</div>
-			<div class="panel-body">
-				<table class="table">
-					<tr>
-						<td>번호</td>
-						<td>제목</td>
-						<td>조회수</td>
-						<td>작성자</td>
-						<td>작성일</td>
-						<td>삭제</td>
-					</tr>
-					<c:forEach var="vo" items="${list}">
-						<tr>
-							<td>${vo.abnormal_history_number}</td>
-							<td>${vo.alert_date}</td>
-							<td>${vo.anomalies}</td>
-							<td>${vo.actual_anomalies}</td>
-							<td>${vo.prison_officer_po_no}</td>
-							<td>${vo.cctv_cctv_no}</td>
-						</tr>
-					</c:forEach>
-				</table>
-				<input type="button" value="도서목록 가져오기" class="btn btn-info btn-sm"
-					onclick="goAjax()"> <input type="button" value="글쓰기"
-					class="btn btn-info btn-sm" onclick="goWr()">
-				<div id="list"></div>
-			</div>
-			<div class="panel-footer">빅데이터 4차 스프링 시험 김남진</div>
-			<div style="display: none;" id="bf">
-				<c:import url="AnomalyForm.jsp" />
-=======
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -91,7 +56,7 @@
 						<div class="ht-info">
 							<ul>
 								<li>20:00 - May 19, 2019</li>
-								<li><a href="login.jsp">Sign in</a></li>
+								<li><a href="login.do">Sign in</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -106,7 +71,6 @@
 						</div>
 					</div>
 				</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 			</div>
 		</div>
 		<div class="header__nav">
@@ -124,7 +88,7 @@
 								<li class="active"><a href="#">Home</a></li>
 								<li><a href="#">재소자</a>
 									<ul class="dropdown">
-										<li><a href="jailer_info.jsp">재소자 정보</a></li>
+										<li><a href="jailer_info.do">재소자 정보</a></li>
 										<li><a href="#">약물 내역</a></li>
 										<li><a href="#">특별 약물 내역</a></li>
 									</ul></li>
@@ -139,7 +103,7 @@
 										<li><a href="#">교정사고 내역</a></li>
 										<li><a href="#">이상 징후 감지 내역</a></li>
 									</ul></li>
-								<li><a href="./contact.html">Contact Us</a></li>
+								<li><a href="#">Contact Us</a></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>

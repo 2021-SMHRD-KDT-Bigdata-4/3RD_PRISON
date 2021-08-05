@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="kr.book.bshop">
+	<logger name="kr.prison.web">
 		<level value="info" />
 	</logger>
 	

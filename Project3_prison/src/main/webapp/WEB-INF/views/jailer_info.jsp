@@ -9,7 +9,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 재소자 추가</title>
+<title>코도소 3차 프로젝트 | 재소자 정보</title>
 
 <!-- Google Font -->
 <link
@@ -17,36 +17,24 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet" href="../resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet" href="../resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css"
-	type="text/css">
+<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
 <!-- Js Plugins -->
-<script
-	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="../resources/js/jquery-3.3.1.min.js"></script>
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/js/jquery.magnific-popup.min.js"></script>
+<script src="../resources/js/jquery.slicknav.js"></script>
+<script src="../resources/js/owl.carousel.min.js"></script>
+<script src="../resources/js/main.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,18 +83,17 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img
-								src="${pageContext.request.contextPath}/resources/img/logo.png"
+							<a href="./main.do"><img src="../resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
 							<ul class="main-menu">
-								<li><a href="#">Home</a></li>
+								<li><a href="main.do">Home</a></li>
 								<li class="active"><a href="#">재소자</a>
 									<ul class="dropdown">
-										<li><a href="jailer_info.jsp">재소자 정보</a></li>
+										<li><a href="jailer_info.do">재소자 정보</a></li>
 										<li><a href="#">약물 내역</a></li>
 										<li><a href="#">특별 약물 내역</a></li>
 									</ul></li>
@@ -121,7 +108,7 @@
 										<li><a href="#">교정사고 내역</a></li>
 										<li><a href="#">이상 징후 감지 내역</a></li>
 									</ul></li>
-								<li><a href="./contact.html">Contact Us</a></li>
+								<li><a href="#">Contact Us</a></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -139,13 +126,13 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
+		data-setbg="../resources/img/hero/hero-1.jpg"
+		style='background-image: url("../resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>재소자 추가</h2>
+						<h2>재소자 정보</h2>
 					</div>
 				</div>
 			</div>
@@ -153,40 +140,93 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-
-	<section class="club-section spad-4">
-	<form>
-		<div class="form">
-			<div class="input_field">
-				<label>이름</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>나이</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>성별</label> <select>
-					<option value="male">남자</option>
-					<option value="female">여자</option>
-				</select>
-			</div>
-			<div class="input_field">
-				<label>수감 구역</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>방 번호</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>범죄 분류</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>전과</label> <input type="text" class="input">
-			</div>
-			<div class="input_field">
-				<label>사진</label> <input type="file" name="uploadFile">
-			</div>
-
+	<!-- Club Section Begin -->
+	<section class="club-section-1 spad-3">
+		<div class="search-div">
+			<form>
+				<div class="search-jailer-div">
+					<select name="search-jailer" class="search-jailer">
+						<option value="이름">이름</option>
+						<option value="수감번호">수감번호</option>
+					</select> <input class="input-jailer" type="text" name="search"
+						placeholder="Search..">
+					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<a href="jailer_info_add.do"><button type="button"
+							class="btn btn-default btn-lg">추가</button></a>
+				</div>
+			</form>
 		</div>
-		</form>
+	</section>
+	<section class="club-section spad-4">
+		<div class="container">
+			<div class="club-content">
+				<div></div>
+			</div>
+			<div class="club-tab-list">
+				<div class="row">
+					<div class="col-lg-8 m-auto">
+
+						<!-- Tab panes -->
+						<div class="container">
+
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>사진</th>
+										<th>수감번호</th>
+										<th>이름</th>
+										<th>나이</th>
+										<th>성별</th>
+										<th>수감구역</th>
+										<th>방 번호</th>
+										<th>범죄 분류</th>
+										<th>전과</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<!-- Club Section End -->
 
@@ -299,7 +339,7 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here...">
+				<input type="text" id="search-input" placeholder="Search here.....">
 			</form>
 		</div>
 	</div>

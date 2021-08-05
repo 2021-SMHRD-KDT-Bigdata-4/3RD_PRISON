@@ -9,7 +9,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 재소자 정보</title>
+<title>Specer | Template</title>
 
 <!-- Google Font -->
 <link
@@ -35,15 +35,6 @@
 <script src="../resources/js/jquery.slicknav.js"></script>
 <script src="../resources/js/owl.carousel.min.js"></script>
 <script src="../resources/js/main.js"></script>
-<!-- bootstrap -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -61,7 +52,7 @@
 						<div class="ht-info">
 							<ul>
 								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
+								<li><a href="login.jsp">Sign in</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -83,15 +74,14 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img src="../resources/img/logo.png"
-								alt=""></a>
+							<a href="./main.jsp"><img src="../resources/img/logo.png" alt=""></a>
 						</div>
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
 							<ul class="main-menu">
-								<li><a href="#">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
+								<li><a href="main.jsp">Home</a></li>
+								<li><a href="#">재소자</a>
 									<ul class="dropdown">
 										<li><a href="jailer_info.jsp">재소자 정보</a></li>
 										<li><a href="#">약물 내역</a></li>
@@ -124,110 +114,54 @@
 	</header>
 	<!-- Header End -->
 
-	<!-- Breadcrumb Section Begin -->
-	<section class="breadcrumb-section set-bg"
-		data-setbg="../resources/img/hero/hero-1.jpg"
-		style='background-image: url("../resources/img/hero/hero-1.jpg");'>
+	<!-- Contact Section Begin -->
+	<section class="contact-section spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="bs-text">
-						<h2>재소자 정보</h2>
+				<div class="col-lg-6">
+					<div class="contact-form">
+						<h2>Login Form</h2>
+						<form action="#">
+							<div class="group-in">
+								<label for="id">ID</label> <input type="text" id="id">
+							</div>
+							<div class="group-in">
+								<label for="password">PASSWORD</label> <input type="text" id="password">
+							</div>
+
+							<button type="submit">Login Now</button>
+						</form>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Breadcrumb Section End -->
-
-	<!-- Club Section Begin -->
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form>
-				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
-						<option value="수감번호">수감번호</option>
-					</select> <input class="input-jailer" type="text" name="search"
-						placeholder="Search..">
-						<button type="button" class="btn btn-default btn-lg">검색</button>
-						<button type="button" class="btn btn-default btn-lg">추가</button>
-				</div>
-			</form>
-		</div>
-	</section>
-	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
-
-						<!-- Tab panes -->
-						<div class="container">
-						
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>사진</th>
-										<th>수감번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
-									</tr>
-								</tbody>
-							</table>
+				<div class="col-lg-6">
+					<div class="contact-info">
+						<h2>Contact Info</h2>
+						<p>It is a long established fact that a reader will be
+							distracted by the readable content of a page when looking at its
+							layout. The point of using Lorem Ipsum is that it has a
+							distribution of letters.</p>
+						<div class="ci-address">
+							<h5>Gwangju Office</h5>
+							<ul>
+								<li>광주 남구 송암로 60 광주CGI센터 2층 </li>
+								<li>010-7140-1774</li>
+								<li>2_3jy@naver.com</li>
+							</ul>
+						</div>
+						<div class="ci-address">
+							<h5>Australia Office</h5>
+							<ul>
+								<li>광주광역시 동구 예술길 31-15 광주아트센터 3층, 스마트인재캠퍼스</li>
+								<li>062-655-1616</li>
+								<li>info.colorlib@gmail.com</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Club Section End -->
+	<!-- Contact Section End -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
@@ -343,7 +277,6 @@
 		</div>
 	</div>
 	<!-- Search model end -->
-
 </body>
 
 </html>
