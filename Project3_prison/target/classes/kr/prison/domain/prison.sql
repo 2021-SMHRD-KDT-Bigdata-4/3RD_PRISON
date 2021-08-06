@@ -1,18 +1,4 @@
 
-
--- 테이블 전체 삭제
-SET @tables = NULL;
-SET foreign_key_checks = 0; 
- SELECT GROUP_CONCAT(table_schema, '.', table_name) INTO @tables
-   FROM information_schema.tables 
-   WHERE table_schema = 'koko'; -- specify DB name here.
- SET @tables = CONCAT('DROP TABLE ', @tables);
- PREPARE stmt FROM @tables;
- EXECUTE stmt;
- DEALLOCATE PREPARE stmt;
-  
- show tables;
-
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -70,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`CCTV` (
   `AREA` VARCHAR(45) NULL,
   `CCTV_NON` VARCHAR(45) NULL,
   `LOCATION` VARCHAR(45) NULL,
-  `ACTIVE` VARCHAR(45) NULL,
+  `ACTIVE` TINYINT(1) NULL,
   PRIMARY KEY (`CCTV_NO`))
 ENGINE = InnoDB;
 
@@ -144,7 +130,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `koko`.`DRUG_MANAGEMENT_HISTORY` (
   `DM_NO` INT NOT NULL AUTO_INCREMENT,
   `DRUG_TYPE` VARCHAR(45) NULL,
-  `SPEC_DRUG` TINYINT NULL,
+  `SPEC_DRUG` TINYINT(1) NULL,
   `PRISONER_PRISON_NUMBER` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`DM_NO`),
   INDEX `fk_DRUG_MANAGEMENT_HISTORY_PRISONER1_idx` (`PRISONER_PRISON_NUMBER` ASC),
