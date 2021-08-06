@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -9,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 재소자 정보</title>
+<title>코도소 3차 프로젝트 | 교도관 정보</title>
 
 <!-- Google Font -->
 <link
@@ -89,38 +91,40 @@
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<ul class="main-menu">
-								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
-									<ul class="dropdown">
-										<li><a href="jailer_info.do">재소자 정보</a></li>
-										<li><a href="#">약물 내역</a></li>
-										<li><a href="#">특별 약물 내역</a></li>
-									</ul></li>
-								<li><a href="#">교도관</a>
-									<ul class="dropdown">
-										<li><a href="#">교도관 정보</a></li>
-										<li><a href="#">순찰 내역</a></li>
-										<li><a href="#">CCTV 관리</a></li>
-									</ul></li>
-								<li><a href="#">교정사고</a>
-									<ul class="dropdown">
-										<li><a href="#">교정사고 내역</a></li>
-										<li><a href="#">이상 징후 감지 내역</a></li>
-									</ul></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-							<div class="nm-right search-switch">
-								<i class="fa fa-search"></i>
+							<div class="nav-menu">
+								<ul class="main-menu">
+									<li><a href="main.do">Home</a></li>
+									<li class="active"><a href="#">재소자</a>
+										<ul class="dropdown">
+											<li><a href="prisoner_info.do">재소자 정보</a></li>
+											<li><a href="drug_management_history.do">약물 내역</a></li>
+											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+										</ul></li>
+									<li><a href="#">교도관</a>
+										<ul class="dropdown">
+											<li><a href="prison_officer_info.do">교도관 정보</a></li>
+											<li><a href="patrol_history.do">순찰 내역</a></li>
+											<li><a href="cctv.do">CCTV 관리</a></li>
+										</ul></li>
+									<li><a href="#">교정사고</a>
+										<ul class="dropdown">
+											<li><a href="corrective_history.do">교정사고 내역</a></li>
+											<li><a href="anomaly_detection_history.do">이상 징후 감지
+													내역</a></li>
+										</ul></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<div class="nm-right search-switch">
+									<i class="fa fa-search"></i>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="canvas-open">
-					<i class="fa fa-bars"></i>
+					<div class="canvas-open">
+						<i class="fa fa-bars"></i>
+					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 	<!-- Header End -->
 
@@ -132,7 +136,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>재소자 정보</h2>
+						<h2>교도관 정보</h2>
 					</div>
 				</div>
 			</div>
