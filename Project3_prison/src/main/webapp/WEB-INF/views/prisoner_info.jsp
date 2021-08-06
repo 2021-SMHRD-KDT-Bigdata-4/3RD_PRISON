@@ -155,7 +155,7 @@
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search..">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="jailer_info_add.do"><button type="button"
+					<a href="prisoner_info_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>
 			</form>

@@ -151,11 +151,12 @@
 				<div class="search-jailer-div">
 					<select name="search-jailer" class="search-jailer">
 						<option value="이름">이름</option>
-						<option value="수감번호">수감번호</option>
+						<option value="교도관번호">교도관 번호</option>
+						<option value="부서">부서</option>
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search..">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="jailer_info_add.do"><button type="button"
+					<a href="prison_officer_info_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>
 			</form>
@@ -177,52 +178,48 @@
 								<thead>
 									<tr>
 										<th>사진</th>
-										<th>수감번호</th>
+										<th>교도관번호</th>
 										<th>이름</th>
 										<th>나이</th>
 										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
+										<th>급수</th>
+										<th>직책</th>
+										<th>부서</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td><img src="../resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
-										<td>9823</td>
+										<td>2001</td>
 										<td>정지윤</td>
 										<td>24</td>
 										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
+										<td>7급</td>
 										<td>-</td>
+										<td>인사과</td>
 									</tr>
 									<tr>
 										<td><img src="../resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
-										<td>9823</td>
+										<td>2001</td>
 										<td>정지윤</td>
 										<td>24</td>
 										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
+										<td>7급</td>
 										<td>-</td>
+										<td>인사과</td>
 									</tr>
 									<tr>
 										<td><img src="../resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
-										<td>9823</td>
+										<td>2001</td>
 										<td>정지윤</td>
 										<td>24</td>
 										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
+										<td>7급</td>
 										<td>-</td>
+										<td>인사과</td>
 									</tr>
 								</tbody>
 							</table>
