@@ -19,24 +19,24 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/magnific-popup.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/slicknav.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
 <!-- Js Plugins -->
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/jquery.magnific-popup.min.js"></script>
-<script src="../resources/js/jquery.slicknav.js"></script>
-<script src="../resources/js/owl.carousel.min.js"></script>
-<script src="../resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,7 +85,7 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.do"><img src="../resources/img/logo.png"
+							<a href="./main.do"><img src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -130,8 +130,8 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="../resources/img/hero/hero-1.jpg"
-		style='background-image: url("../resources/img/hero/hero-1.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -154,7 +154,7 @@
 						<option value="교도관번호">교도관 번호</option>
 						<option value="부서">부서</option>
 					</select> <input class="input-jailer" type="text" name="search"
-						placeholder="Search..">
+						placeholder="Search${pageContext.request.contextPath}">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
 					<a href="prison_officer_info_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
@@ -189,7 +189,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
+										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
 										<td>2001</td>
 										<td>정지윤</td>
@@ -200,7 +200,7 @@
 										<td>인사과</td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
+										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
 										<td>2001</td>
 										<td>정지윤</td>
@@ -211,7 +211,7 @@
 										<td>인사과</td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
+										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
 										<td>2001</td>
 										<td>정지윤</td>
@@ -340,7 +340,7 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
+				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
