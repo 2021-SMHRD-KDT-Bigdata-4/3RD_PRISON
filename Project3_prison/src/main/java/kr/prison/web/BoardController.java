@@ -149,7 +149,15 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return null;
 
 	}
-
+	@RequestMapping("/looutajax.do")
+	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "redirect:/main.do";
+	}
+	
+	
 }
 
 
