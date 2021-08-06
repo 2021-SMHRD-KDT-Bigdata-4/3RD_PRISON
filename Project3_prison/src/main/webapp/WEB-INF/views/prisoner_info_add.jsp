@@ -204,8 +204,7 @@
 				</div>
 				<div class="input_field">
 					<label>전과</label> <input type="text" id = "before_crime
-" class="input" name="before_crime
-">
+" class="input" name="before_crime">
 				</div>
 				<div class="input_field">
 					

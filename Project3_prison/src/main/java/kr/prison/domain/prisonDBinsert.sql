@@ -28,7 +28,7 @@ insert into prison_officer values('A002', '정지윤', '11111', '24', 'female', 
 insert into prison_officer values('A003', '김은혜', '22222', '27', 'female', '8급', '특수보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prison_officer values('A004', '정종원', '33333', '27', 'male', '8급', '교정교육', '직업훈련과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 =======
-select * from patrol_history;
+select * from PRISONER;
 
 insert into prison_officer values('A001', '강기웅', '12345', '33', 'male', '8급', '일반보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prison_officer('A002', '정지윤', '11111', '24', 'female', '9급', '민원처리', '민원과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 insert into prisoner('3567', '최성우', '24', 'male', 'A동', '11', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prisoner('2481', '주익정', '27', 'male', 'B동', '3', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prisoner('6758', '정지윤', '20', 'female', 'C동', '6', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-
+select 
 
 -- 순찰 기록 -------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (
