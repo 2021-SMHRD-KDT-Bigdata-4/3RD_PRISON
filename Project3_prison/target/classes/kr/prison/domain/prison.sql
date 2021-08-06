@@ -14,7 +14,7 @@ SET foreign_key_checks = 0;
   
  show tables;
 
-select * from PRISON_OFFICER
+select * from PRISONER
 -- MySQL Workbench Forward Engineering
 commit
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
 ENGINE = InnoDB;
 
 select * from prison_officer
-insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '7급', '일반보안', '인사과', 'url')
+insert into prison_officer values('A001', 'kim', '1234', '24', '여자', '7class', 'sec', 'insa', 'url');
 
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`

@@ -178,9 +178,11 @@
 
 	<section class="club-section spad-4">
 		<form id="frm" method="post">
-			<div class="form">
+			<div class="form"><div class="input_field">
+					<label>번호</label> <input type="text" id = "prison_number" class="input" name="prison_number">
+				</div>
 				<div class="input_field">
-					<label>이름</label> <input type="text" id = "prison_number" class="input" name="prison_number">
+					<label>이름</label> <input type="text" id = "name" class="input" name="name">
 				</div>
 				<div class="input_field">
 					<label>나이</label> <input type="text" id = "age" class="input" name="age">
@@ -204,8 +206,7 @@
 					<label>전과</label> <input type="text" id = "before" class="input" name="before">
 				</div>
 				<div class="input_field">
-					<label>사진</label> <input id="file_input" id = "photo" type="file"
-						name="uploadFile">
+					
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg" onclick="insertprison()">추가</button>
