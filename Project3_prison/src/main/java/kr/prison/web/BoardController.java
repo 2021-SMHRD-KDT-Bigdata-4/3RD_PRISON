@@ -35,13 +35,88 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	}
 
-	@RequestMapping("/jailer_info.do")
-	public void jailer_info(Model model) {
+	@RequestMapping("/prisoner_info.do")
+	public void prisoner_info(Model model) {
 
 	}
 
-	@RequestMapping("/jailer_info_add.do")
-	public void jailer_info_add(Model model) {
+	@RequestMapping("/prisoner_info_add.do")
+	public void prisoner_info_add(Model model) {
+
+	}
+
+	@RequestMapping("/prison_officer_info.do")
+	public void prison_officer_info(Model model) {
+
+	}
+
+	@RequestMapping("/prison_officer_info_add")
+	public void prison_officer_info_add(Model model) {
+
+	}
+
+	@RequestMapping("/drug_management_history.do")
+	public void drug_management_history(Model model) {
+
+	}
+
+	@RequestMapping("/drug_management_history_add.do")
+	public void drug_management_history_add(Model model) {
+
+	}
+
+	@RequestMapping("/spec_drug_history.do")
+	public void spec_drug_history(Model model) {
+
+	}
+
+	@RequestMapping("/spec_drug_history_add.do")
+	public void spec_drug_history_add(Model model) {
+
+	}
+
+	@RequestMapping("/patrol_history.do")
+	public void patrol_history(Model model) {
+
+	}
+
+	@RequestMapping("/patrol_history_add.do")
+	public void patrol_history_add(Model model) {
+
+	}
+
+	@RequestMapping("/corrective_history.do")
+	public void corrective_history(Model model) {
+
+	}
+
+	@RequestMapping("/corrective_history_content.do")
+	public void corrective_history_content(Model model) {
+
+	}
+
+	@RequestMapping("/corrective_history_add.do")
+	public void corrective_history_add(Model model) {
+
+	}
+
+	@RequestMapping("/cctv.do")
+	public void cctv(Model model) {
+
+	}
+
+	@RequestMapping("/cctv_add.do")
+	public void cctv_add(Model model) {
+
+	}
+
+	@RequestMapping("/anomaly_detection_history.do")
+	public void anomaly_detection_history(Model model) {
+
+	}
+
+	@RequestMapping("/anomaly_detection_history_content.do")
+	public void anomaly_detection_history_content(Model model) {
 
 	}
 

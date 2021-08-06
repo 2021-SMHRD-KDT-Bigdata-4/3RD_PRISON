@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="zxx">
@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 로그인</title>
+<title>코도소 3차 프로젝트 | 재소자 정보</title>
 
 <!-- Google Font -->
 <link
@@ -19,52 +19,33 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet" href="../resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet" href="../resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-<script type="text/javascript">
-function loginFn() {
-	var po_no = $("#po_no").val();
-	var name = $("#name").val();
-	$.ajax({
-		url : "${cpath}/loginajax.do",
-		type : "post",
-		data : {
-			"po_no" : po_no,
-			"name" : name
-		},
-		success : function(data) {
-			//alert(data);
-			if (data == "NO") {
-				alert("회원인증에 실패했습니다.");
-			} else {
-				alert("회원인증에 성공했습니다.");
-				location.href = "main.do"; // 메인화면으로...
-			}
-		},
-		error : function() {
-			alert("error");
-		}
-	});
+<script src="../resources/js/jquery-3.3.1.min.js"></script>
+<script src="../resources/js/bootstrap.min.js"></script>
+<script src="../resources/js/jquery.magnific-popup.min.js"></script>
+<script src="../resources/js/jquery.slicknav.js"></script>
+<script src="../resources/js/owl.carousel.min.js"></script>
+<script src="../resources/js/main.js"></script>
+<!-- bootstrap -->
 
-}
-
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -82,7 +63,7 @@ function loginFn() {
 						<div class="ht-info">
 							<ul>
 								<li>20:00 - May 19, 2019</li>
-								<li><a href="login.do">Sign in</a></li>
+								<li><a href="#">Logout</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -104,105 +85,154 @@ function loginFn() {
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-<<<<<<< HEAD
-							<a href="./main.jsp"><img src="" alt=""></a>
-=======
 							<a href="./main.do"><img src="../resources/img/logo.png"
 								alt=""></a>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 						</div>
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<ul class="main-menu">
-								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
-									<ul class="dropdown">
-										<li><a href="prisoner_info.do">재소자 정보</a></li>
-										<li><a href="drug_management_history.do">약물 내역</a></li>
-										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
-									</ul></li>
-								<li><a href="#">교도관</a>
-									<ul class="dropdown">
-										<li><a href="prison_officer_info.do">교도관 정보</a></li>
-										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
-									</ul></li>
-								<li><a href="#">교정사고</a>
-									<ul class="dropdown">
-										<li><a href="corrective_history.do">교정사고 내역</a></li>
-										<li><a href="anomaly_detection_history.do">이상 징후 감지
-												내역</a></li>
-									</ul></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-							<div class="nm-right search-switch">
-								<i class="fa fa-search"></i>
+							<div class="nav-menu">
+								<ul class="main-menu">
+									<li><a href="main.do">Home</a></li>
+									<li class="active"><a href="#">재소자</a>
+										<ul class="dropdown">
+											<li><a href="prisoner_info.do">재소자 정보</a></li>
+											<li><a href="drug_management_history.do">약물 내역</a></li>
+											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+										</ul></li>
+									<li><a href="#">교도관</a>
+										<ul class="dropdown">
+											<li><a href="prison_officer_info.do">교도관 정보</a></li>
+											<li><a href="patrol_history.do">순찰 내역</a></li>
+											<li><a href="cctv.do">CCTV 관리</a></li>
+										</ul></li>
+									<li><a href="#">교정사고</a>
+										<ul class="dropdown">
+											<li><a href="corrective_history.do">교정사고 내역</a></li>
+											<li><a href="anomaly_detection_history.do">이상 징후 감지
+													내역</a></li>
+										</ul></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<div class="nm-right search-switch">
+									<i class="fa fa-search"></i>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="canvas-open">
-					<i class="fa fa-bars"></i>
+					<div class="canvas-open">
+						<i class="fa fa-bars"></i>
+					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 	<!-- Header End -->
 
-	<!-- Contact Section Begin -->
-	<section class="contact-section spad">
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg"
+		data-setbg="../resources/img/hero/hero-1.jpg"
+		style='background-image: url("../resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="contact-form">
-						<h2>Login Form</h2>
-						<form action="#">
-							<div class="group-in">
-								<label for="po_no">ID</label> <input type="text" id="po_no">
-							</div>
-							<div class="group-in">
-<<<<<<< HEAD
-								<label for="name">PASSWORD</label> <input type="text" id="name">
-=======
-								<label for="password">PASSWORD</label> <input type="text"
-									id="password">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
-							</div>
-
-							<button type="submit" onclick="loginFn()">Login Now</button>
-						</form>
+				<div class="col-lg-12">
+					<div class="bs-text">
+						<h2>재소자 정보</h2>
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<div class="contact-info">
-						<h2>Contact Info</h2>
-						<p>It is a long established fact that a reader will be
-							distracted by the readable content of a page when looking at its
-							layout. The point of using Lorem Ipsum is that it has a
-							distribution of letters.</p>
-						<div class="ci-address">
-							<h5>Gwangju Office</h5>
-							<ul>
-								<li>광주 남구 송암로 60 광주CGI센터 2층</li>
-								<li>010-7140-1774</li>
-								<li>2_3jy@naver.com</li>
-							</ul>
-						</div>
-						<div class="ci-address">
-							<h5>Australia Office</h5>
-							<ul>
-								<li>광주광역시 동구 예술길 31-15 광주아트센터 3층, 스마트인재캠퍼스</li>
-								<li>062-655-1616</li>
-								<li>info.colorlib@gmail.com</li>
-							</ul>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+
+	<!-- Club Section Begin -->
+	<section class="club-section-1 spad-3">
+		<div class="search-div">
+			<form>
+				<div class="search-jailer-div">
+					<select name="search-jailer" class="search-jailer">
+						<option value="이름">이름</option>
+						<option value="수감번호">수감번호</option>
+					</select> <input class="input-jailer" type="text" name="search"
+						placeholder="Search..">
+					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<a href="jailer_info_add.do"><button type="button"
+							class="btn btn-default btn-lg">추가</button></a>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section class="club-section spad-4">
+		<div class="container">
+			<div class="club-content">
+				<div></div>
+			</div>
+			<div class="club-tab-list">
+				<div class="row">
+					<div class="col-lg-8 m-auto">
+
+						<!-- Tab panes -->
+						<div class="container">
+
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>사진</th>
+										<th>수감번호</th>
+										<th>이름</th>
+										<th>나이</th>
+										<th>성별</th>
+										<th>수감구역</th>
+										<th>방 번호</th>
+										<th>범죄 분류</th>
+										<th>전과</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td><img src="../resources/img/face/pang.jpg"
+											width="100px" height="100px"></td>
+										<td>9823</td>
+										<td>정지윤</td>
+										<td>24</td>
+										<td>여</td>
+										<td>A-1</td>
+										<td>12</td>
+										<td>폭행죄</td>
+										<td>-</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Contact Section End -->
+	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
@@ -211,7 +241,7 @@ function loginFn() {
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="" alt=""></a>
+							<a href="./index.html"><img src="img/logo.png" alt=""></a>
 						</div>
 						<ul>
 							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
@@ -313,11 +343,12 @@ function loginFn() {
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input" placeholder="Search here.....">
 			</form>
 		</div>
 	</div>
 	<!-- Search model end -->
+
 </body>
 
 </html>
