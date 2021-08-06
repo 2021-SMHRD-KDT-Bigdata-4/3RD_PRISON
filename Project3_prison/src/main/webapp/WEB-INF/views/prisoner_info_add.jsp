@@ -58,6 +58,25 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	function insertprison() {
+		var formData = $("#frm").serialize();
+		alert(formData)
+		$.ajax({
+			url : '${cpath}/prisonInAjax.do',
+			type : "post",
+			data : formData,
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("오류")
+			}
+
+		})
+	}
+	</script>
+	
 </head>
 
 <body>
@@ -158,38 +177,38 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form id="frm" method="post">
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" id = "prison_number" class="input">
+					<label>이름</label> <input type="text" id = "prison_number" class="input" name="prison_number">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" id = "age" class="input">
+					<label>나이</label> <input type="text" id = "age" class="input" name="age">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select id = "time">
+					<label>성별</label> <select id = "sex" name="sex">
 						<option id="male" value="male">남자</option>
 						<option id="female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" id = "prison_area" class="input">
+					<label>수감 구역</label> <input type="text" id = "prison_area" class="input" name="prison_area">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" id = "room_number" class="input">
+					<label>방 번호</label> <input type="text" id = "room_number" class="input" name="room_number">
 				</div>
 				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input">
+					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification">
 				</div>
 				<div class="input_field">
-					<label>전과</label> <input type="text" id = "before" class="input">
+					<label>전과</label> <input type="text" id = "before" class="input" name="before">
 				</div>
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" id = "photo" type="file"
 						name="uploadFile">
 				</div>
 				<div>
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
+					<button type="submit" class="btn btn-default btn-lg" onclick="insertprison()">추가</button>
 				</div>
 
 			</div>

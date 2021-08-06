@@ -107,7 +107,7 @@ public interface PrisonMapper {
 
     @Insert("insert into prisoner(name, age, sex, prison_area, room_number, crime_classification, before, photo) " +
             "values(#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}, #{photo}")
-    public void jailerInsert(JailerVO vo);
+    public int jailerInsert(JailerVO vo);
 
     @Update("update prisoner set prison_area=#{prison_area}, room_number={room_number} where " +
             "prison_number=#{prison_number}")
