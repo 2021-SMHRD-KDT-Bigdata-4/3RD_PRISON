@@ -165,6 +165,6 @@ public interface PrisonMapper {
     
     // 교도관 로그인 (CRUD)----------------------------------------------------------------------------------------
     @Select("select * from PRISON_OFFICER where PO_NO=#{po_no} and NAME=#{name}")
-    public List<PrisonOfficerVO> PrisonOfficerLogin(PrisonOfficerVO VO);
+    public PrisonOfficerVO PrisonOfficerLogin(PrisonOfficerVO VO);
 
 }

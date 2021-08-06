@@ -131,7 +131,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		vo.setPo_no(Integer.parseInt(po_no));
 		vo.setName(name);
 
-		List<PrisonOfficerVO> prisonOfficerVO = prisonMapper.PrisonOfficerLogin(vo);
+		PrisonOfficerVO prisonOfficerVO = prisonMapper.PrisonOfficerLogin(vo);
 
 		PrintWriter out = response.getWriter();
 		System.out.println("로그인");

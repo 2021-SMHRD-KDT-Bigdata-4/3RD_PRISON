@@ -49,7 +49,7 @@ function loginFn() {
 			"name" : name
 		},
 		success : function(data) {
-			//alert(data);
+			alert(data);
 			if (data == "NO") {
 				alert("회원인증에 실패했습니다.");
 			} else {
@@ -104,12 +104,12 @@ function loginFn() {
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-<<<<<<< HEAD
+
 							<a href="./main.jsp"><img src="" alt=""></a>
-=======
+
 							<a href="./main.do"><img src="../resources/img/logo.png"
 								alt=""></a>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+
 						</div>
 					</div>
 					<div class="col-lg-10">
@@ -162,12 +162,8 @@ function loginFn() {
 								<label for="po_no">ID</label> <input type="text" id="po_no">
 							</div>
 							<div class="group-in">
-<<<<<<< HEAD
 								<label for="name">PASSWORD</label> <input type="text" id="name">
-=======
-								<label for="password">PASSWORD</label> <input type="text"
-									id="password">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+								
 							</div>
 
 							<button type="submit" onclick="loginFn()">Login Now</button>

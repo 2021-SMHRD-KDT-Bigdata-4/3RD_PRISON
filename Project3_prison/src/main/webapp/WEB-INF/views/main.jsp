@@ -51,6 +51,19 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script type="text/javascript">
+function logoutFn() {
+	$.ajax({
+		url : "${cpath}/ajaxlogout.do",
+		type : "get",
+		success : function() {
+			location.href = "test02.jsp";
+		},
+		error : function() {
+			alert("error");
+		}
+	});
+}</script>
 </head>
 
 <body>
@@ -71,10 +84,9 @@
 								<li><c:if test="${sessionScope.prisonOfficerVO==null}">
 								<li><a href="login.do">Sign in</a></li>
 							</c:if> 
-							<c:if test="${sessionScope.userVO!=null}">
-								<li><a>
-										${sessionScope.PrisonOfficerVO.name}님 방문을 환영합니다.</a></li>
-								<a>로그아웃</a>
+							<c:if test="${sessionScope.prisonOfficerVO!=null}">
+								<li><a>${sessionScope.prisonOfficerVO.name}님 방문을 환영합니다.</a></li>
+								<li><a onclick="">로그아웃</a></li>
 							</c:if></li>
 
 							</ul>
