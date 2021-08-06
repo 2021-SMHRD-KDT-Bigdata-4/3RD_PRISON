@@ -56,8 +56,15 @@
 						<div class="ht-info">
 							<ul>
 								<li>20:00 - May 19, 2019</li>
+								<li><c:if test="${sessionScope.prisonOfficerVO==null}">
 								<li><a href="login.do">Sign in</a></li>
-								<li><a href="#">Contact</a></li>
+							</c:if> 
+							<c:if test="${sessionScope.userVO!=null}">
+								<li><a>
+										${sessionScope.PrisonOfficerVO.name}님 방문을 환영합니다.</a></li>
+								<a>로그아웃</a>
+							</c:if></li>
+
 							</ul>
 						</div>
 					</div>

@@ -1,13 +1,18 @@
 package kr.prison.mapper;
 
+import java.io.InputStream;
 import java.util.List;
 
-import java.util.List;
+
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.annotations.Insert;
 
 import kr.prison.domain.AnomalyDetectionHistoryVO;
@@ -20,9 +25,9 @@ import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.domain.SpecialManagementJailerVO;
 
+
 @Mapper
 public interface PrisonMapper {
-
     // CCTV 정보 관련(CRUD)-----------------------------------------------------------------------------------------
     @Select("select * from cctv")
     public List<CCTVVO> cctvListAjax();  // CCTV 리스트 가져오기
@@ -157,6 +162,9 @@ public interface PrisonMapper {
 
     @Delete("delete special_management_personnel where special_admin_number=#{special_admin_number}")
     public void smjDelete(int special_admin_number);
+    
+    // 교도관 로그인 (CRUD)----------------------------------------------------------------------------------------
+    @Select("select * from PRISON_OFFICER where PO_NO=#{po_no} and NAME=#{name}")
+    public List<PrisonOfficerVO> PrisonOfficerLogin(PrisonOfficerVO VO);
 
- 
 }

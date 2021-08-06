@@ -2,7 +2,7 @@ show tables;
 create database koko;
 
 
-select * from ANOMALY_DETECTION_HISTORY
+select * from PRISON_OFFICER
 -- MySQL Workbench Forward Engineering
 commit
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;

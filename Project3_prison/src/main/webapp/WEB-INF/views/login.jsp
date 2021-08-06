@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,24 +19,52 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/font-awesome.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/owl.carousel.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/magnific-popup.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/slicknav.min.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
 <!-- Js Plugins -->
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/jquery.magnific-popup.min.js"></script>
-<script src="../resources/js/jquery.slicknav.js"></script>
-<script src="../resources/js/owl.carousel.min.js"></script>
-<script src="../resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script type="text/javascript">
+function loginFn() {
+	var po_no = $("#po_no").val();
+	var name = $("#name").val();
+	$.ajax({
+		url : "${cpath}/loginajax.do",
+		type : "post",
+		data : {
+			"po_no" : po_no,
+			"name" : name
+		},
+		success : function(data) {
+			//alert(data);
+			if (data == "NO") {
+				alert("회원인증에 실패했습니다.");
+			} else {
+				alert("회원인증에 성공했습니다.");
+				location.href = "main.do"; // 메인화면으로...
+			}
+		},
+		error : function() {
+			alert("error");
+		}
+	});
+
+}
+
+</script>
 </head>
 
 <body>
@@ -74,7 +104,7 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img src="../resources/img/logo.png" alt=""></a>
+							<a href="./main.jsp"><img src="" alt=""></a>
 						</div>
 					</div>
 					<div class="col-lg-10">
@@ -123,13 +153,13 @@
 						<h2>Login Form</h2>
 						<form action="#">
 							<div class="group-in">
-								<label for="id">ID</label> <input type="text" id="id">
+								<label for="po_no">ID</label> <input type="text" id="po_no">
 							</div>
 							<div class="group-in">
-								<label for="password">PASSWORD</label> <input type="text" id="password">
+								<label for="name">PASSWORD</label> <input type="text" id="name">
 							</div>
 
-							<button type="submit">Login Now</button>
+							<button type="submit" onclick="loginFn()">Login Now</button>
 						</form>
 					</div>
 				</div>
@@ -170,7 +200,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="img/logo.png" alt=""></a>
+							<a href="./index.html"><img src="" alt=""></a>
 						</div>
 						<ul>
 							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
@@ -272,7 +302,7 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
+				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
