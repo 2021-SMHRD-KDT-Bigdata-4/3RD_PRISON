@@ -14,7 +14,7 @@ SET foreign_key_checks = 0;
  DEALLOCATE PREPARE stmt;
   
  show tables;
-
+commit
 select * from PRISONER
 =======
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
@@ -49,16 +49,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
 
-<<<<<<< HEAD
-select * from prison_officer
-insert into prison_officer values('A001', 'kim', '1234', '24', '여자', '7class', 'sec', 'insa', 'url');
-=======
-<<<<<<< HEAD
-=======
-insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '')
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
@@ -129,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISONER` (
   `PRISON_AREA` VARCHAR(45) NULL,
   `ROOM_NUMBER` VARCHAR(45) NULL,
   `CRIME_CLASSIFICATION` VARCHAR(45) NULL,
-  `BEFORE` VARCHAR(45) NULL,
+  `BEFORE_CRIME` VARCHAR(45) NULL,
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PRISON_NUMBER`))
 ENGINE = InnoDB;
