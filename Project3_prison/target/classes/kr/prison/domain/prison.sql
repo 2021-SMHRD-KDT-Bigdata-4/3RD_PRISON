@@ -1,3 +1,4 @@
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -28,9 +29,13 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   `DEPARTMENT` VARCHAR(45) NULL,
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PO_NO`))
+<<<<<<< HEAD
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+=======
+ENGINE = InnoDB;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (
@@ -100,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISONER` (
   `PRISON_AREA` VARCHAR(45) NULL,
   `ROOM_NUMBER` VARCHAR(45) NULL,
   `CRIME_CLASSIFICATION` VARCHAR(45) NULL,
-  `BEFORE` VARCHAR(45) NULL,
+  `BEFORE_CRIME` VARCHAR(45) NULL,
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PRISON_NUMBER`))
 ENGINE = InnoDB;
