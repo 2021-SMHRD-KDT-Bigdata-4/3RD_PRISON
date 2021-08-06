@@ -29,6 +29,11 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
 
+<<<<<<< HEAD
+=======
+insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '')
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
