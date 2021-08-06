@@ -161,32 +161,26 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>교도관1</label> <input type="text" id = "pono1" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>교도관2</label> <input type="text" id = "pono2" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
+					<label>순찰 날짜</label> <input type="text" id = "date" class="input">
+				</div>
+				<div class="input_field">
+					<label>순찰 시간</label> <select id="time">
+						<option value="9시">09:00-10:00</option>
+						<option value="10시">10:00-11:00</option>
+						<option value="11시">11:00-12:00</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>순찰 장소</label> <input type="text" id = "location" class="input">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+					<label>순찰 내용</label> <input type="text" id = "contents" class="input">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>

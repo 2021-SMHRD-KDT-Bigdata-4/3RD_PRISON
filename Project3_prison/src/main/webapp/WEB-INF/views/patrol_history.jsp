@@ -150,11 +150,11 @@
 				<div class="search-jailer-div">
 					<select name="search-jailer" class="search-jailer">
 						<option value="이름">이름</option>
-						<option value="수감번호">수감번호</option>
+						<option value="교도관번호">교도관번호</option>
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search..">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="jailer_info_add.do"><button type="button"
+					<a href="patrol_history_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>
 			</form>
@@ -175,53 +175,54 @@
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th>사진</th>
-										<th>수감번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
+										<th>순찰 내역 번호</th>
+										<th>순찰 날짜</th>
+										<th>순찰 시간</th>
+										<th>순찰 장소</th>
+										<th>순찰 내용</th>
+										<th>교도관1</th>
+										<th>교도관2</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
+										<td>001</td>
+										<td>2021-08-01</td>
+										<td><select name="search-jailer" class="time" id="time">
+												<option value="9시">09:00-10:00</option>
+												<option value="10시">10:00-11:00</option>
+												<option value="11시">11:00-12:00</option>
+										</select></td>
 										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>특이사항 없음</td>
+										<td>9823</td>
+										<td>9524</td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
+										<td>001</td>
+										<td>2021-08-01</td>
+										<td><select name="search-jailer" class="time" id="time">
+												<option value="9시">09:00-10:00</option>
+												<option value="10시">10:00-11:00</option>
+												<option value="11시">11:00-12:00</option>
+										</select></td>
 										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>특이사항 없음</td>
+										<td>9823</td>
+										<td>9524</td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
+										<td>001</td>
+										<td>2021-08-01</td>
+										<td><select name="search-jailer" class="time" id="time">
+												<option value="9시">09:00-10:00</option>
+												<option value="10시">10:00-11:00</option>
+												<option value="11시">11:00-12:00</option>
+										</select></td>
 										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>특이사항 없음</td>
+										<td>9823</td>
+										<td>9524</td>
 									</tr>
 								</tbody>
 							</table>

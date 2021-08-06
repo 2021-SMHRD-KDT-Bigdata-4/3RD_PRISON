@@ -149,13 +149,16 @@
 			<form>
 				<div class="search-jailer-div">
 					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
+
 						<option value="수감번호">수감번호</option>
+						<option value="약물종류">약물종류</option>
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search..">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="jailer_info_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
+					<a href="drug_management_history_add.do"><button type="button"
+							class="btn btn-default btn-lg">추가</button></a> <a
+						href="#"><button type="button"
+							class="btn btn-default btn-lg">수정</button></a>
 				</div>
 			</form>
 		</div>
@@ -175,53 +178,34 @@
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th>사진</th>
+										<th>약물관리번호</th>
 										<th>수감번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
+										<th>약물종류</th>
+										<th>복용횟수</th>
+										<th>특별약물여부</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
+										<td>1001</td>
 										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>두통약</td>
+										<td>일 3회</td>
+										<td><input type = "checkbox"></td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
+										<td>1001</td>
 										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>두통약</td>
+										<td>일 3회</td>
+										<td><input type = "checkbox"></td>
 									</tr>
 									<tr>
-										<td><img src="../resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
+										<td>1001</td>
 										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>두통약</td>
+										<td>일 3회</td>
+										<td><input type = "checkbox"></td>
 									</tr>
 								</tbody>
 							</table>

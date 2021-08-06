@@ -161,31 +161,31 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>이름</label> <input type="text" id = "prison_number" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>나이</label> <input type="text" id = "age" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
+					<label>성별</label> <select id = "time">
+						<option id="male" value="male">남자</option>
+						<option id="female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>수감 구역</label> <input type="text" id = "prison_area" class="input">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
+					<label>방 번호</label> <input type="text" id = "room_number" class="input">
 				</div>
 				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
+					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input">
 				</div>
 				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
+					<label>전과</label> <input type="text" id = "before" class="input">
 				</div>
 				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
+					<label>사진</label> <input id="file_input" id = "photo" type="file"
 						name="uploadFile">
 				</div>
 				<div>

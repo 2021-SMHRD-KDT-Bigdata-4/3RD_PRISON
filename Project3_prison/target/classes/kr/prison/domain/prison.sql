@@ -37,6 +37,9 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
 ENGINE = InnoDB;
 
 
+
+select * from prison_officer;
+
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------

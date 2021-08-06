@@ -161,32 +161,18 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>수감번호</label> <input type="text" id="dm_no" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>약물종류</label> <input type="text" id="drug_type" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
-					</select>
+					<label>복용 횟수</label> <input type="text" id="drug_count"
+						class="input">
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+					<label>특별 약물 여부</label> <input type="checkbox" id="spec_drug"
+						class="input">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>

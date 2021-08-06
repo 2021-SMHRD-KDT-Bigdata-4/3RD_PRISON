@@ -104,29 +104,32 @@
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<ul class="main-menu">
-								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
-									<ul class="dropdown">
-										<li><a href="prisoner_info.do">재소자 정보</a></li>
-										<li><a href="#">약물 내역</a></li>
-										<li><a href="#">특별 약물 내역</a></li>
-									</ul></li>
-								<li><a href="#">교도관</a>
-									<ul class="dropdown">
-										<li><a href="#">교도관 정보</a></li>
-										<li><a href="#">순찰 내역</a></li>
-										<li><a href="#">CCTV 관리</a></li>
-									</ul></li>
-								<li><a href="#">교정사고</a>
-									<ul class="dropdown">
-										<li><a href="#">교정사고 내역</a></li>
-										<li><a href="#">이상 징후 감지 내역</a></li>
-									</ul></li>
-								<li><a href="./contact.html">Contact Us</a></li>
-							</ul>
-							<div class="nm-right search-switch">
-								<i class="fa fa-search"></i>
+							<div class="nav-menu">
+								<ul class="main-menu">
+									<li><a href="main.do">Home</a></li>
+									<li class="active"><a href="#">재소자</a>
+										<ul class="dropdown">
+											<li><a href="prisoner_info.do">재소자 정보</a></li>
+											<li><a href="drug_management_history.do">약물 내역</a></li>
+											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+										</ul></li>
+									<li><a href="#">교도관</a>
+										<ul class="dropdown">
+											<li><a href="prison_officer_info.do">교도관 정보</a></li>
+											<li><a href="patrol_history.do">순찰 내역</a></li>
+											<li><a href="cctv.do">CCTV 관리</a></li>
+										</ul></li>
+									<li><a href="#">교정사고</a>
+										<ul class="dropdown">
+											<li><a href="corrective_history.do">교정사고 내역</a></li>
+											<li><a href="anomaly_detection_history.do">이상 징후 감지
+													내역</a></li>
+										</ul></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<div class="nm-right search-switch">
+									<i class="fa fa-search"></i>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -160,29 +163,30 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>교도관번호</label> <input type="text" id = "po_no" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>이름</label> <input type="text" id = "name" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
+					<label>나이</label> <input type="text" id = "age" class="input">
+				</div>
+				<div class="input_field">
+					<label>성별</label> <select id = "gender">
+						<option id = "male" value="male">남자</option>
+						<option id = "female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>급수</label> <input type="text" id = "rank" class="input">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
+					<label>직책</label> <input type="text" id = "position" class="input">
 				</div>
 				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
+					<label>부서</label> <input type="text" id = "department" class="input">
 				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
+
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" type="file"
 						name="uploadFile">

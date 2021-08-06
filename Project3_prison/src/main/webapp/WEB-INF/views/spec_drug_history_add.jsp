@@ -148,7 +148,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>재소자 추가</h2>
+						<h2>특별 약물 내역 추가</h2>
 					</div>
 				</div>
 			</div>
@@ -161,32 +161,16 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
+					<label>약물 관리 번호</label> <select id = "th_no">
+						<option value="1001">1001</option>
+						<option value="1002">1002</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>수감 번호</label> <input type="text" id = "taking_date" class="input">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+					<label>복용 일시</label> <input type="text" id = "dm_no" class="input">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
