@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
+
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (

@@ -203,7 +203,8 @@
 					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification">
 				</div>
 				<div class="input_field">
-					<label>전과</label> <input type="text" id = "before" class="input" name="before">
+					<label>전과</label> <input type="text" id = "before_crime
+" class="input" name="before_crime">
 				</div>
 				<div class="input_field">
 					

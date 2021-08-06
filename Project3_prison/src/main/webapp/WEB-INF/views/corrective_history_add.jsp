@@ -161,32 +161,19 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>수감 번호</label> <input type="text" id = "prison_number" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>발생 일시</label> <input type="text" id = "occuring_time" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
-					</select>
+					<label>발생 장소</label> <input type="text" id = "occuring_place" class="input">
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>분류</label> <input type="text" id = "classification" class="input">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+					<label>상세 내용</label> <input type="text" id = "details" class="input">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
