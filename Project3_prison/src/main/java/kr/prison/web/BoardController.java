@@ -14,7 +14,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.prison.domain.JailerVO;
 import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.mapper.PrisonMapper;
 
@@ -157,7 +159,13 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return "redirect:/main.do";
 	}
 	
-	
+	@RequestMapping("/prisonInAjax.do") //여기로 요청이오면 아래 메소드를 실행해라
+	public @ResponseBody int prisonInAjax(JailerVO vo) { //@ResponseBody 응답을 한다 뭐로? JSON 으로
+		// TO - DO
+		int cnt =prisonMapper.jailerInsert(vo);
+	System.out.println(vo);
+		return cnt; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
+	}
 }
 
 

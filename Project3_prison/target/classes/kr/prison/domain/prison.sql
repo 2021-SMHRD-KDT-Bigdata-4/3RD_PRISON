@@ -1,3 +1,18 @@
+
+
+-- 테이블 전체 삭제
+SET @tables = NULL;
+SET foreign_key_checks = 0; 
+ SELECT GROUP_CONCAT(table_schema, '.', table_name) INTO @tables
+   FROM information_schema.tables 
+   WHERE table_schema = 'koko'; -- specify DB name here.
+ SET @tables = CONCAT('DROP TABLE ', @tables);
+ PREPARE stmt FROM @tables;
+ EXECUTE stmt;
+ DEALLOCATE PREPARE stmt;
+  
+ show tables;
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -28,8 +43,6 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
-
--- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (

@@ -105,9 +105,9 @@ public interface PrisonMapper {
     @Select("select * from prisoner")
     public List<JailerVO> jailerListAjax();
 
-    @Insert("insert into prisoner(name, age, sex, prison_area, room_number, crime_classification, before, photo) " +
-            "values(#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}, #{photo}")
-    public void jailerInsert(JailerVO vo);
+    @Insert("insert into prisoner(prison_number,name, age, sex, prison_area, room_number, crime_classification, before) " +
+            "values(#{prison_number},#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before}")
+    public int jailerInsert(JailerVO vo);
 
     @Update("update prisoner set prison_area=#{prison_area}, room_number={room_number} where " +
             "prison_number=#{prison_number}")
