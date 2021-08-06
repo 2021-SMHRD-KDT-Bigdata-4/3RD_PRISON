@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-show tables;
-create database koko;
+
 
 -- 테이블 전체 삭제
 SET @tables = NULL;
@@ -14,9 +12,13 @@ SET foreign_key_checks = 0;
  DEALLOCATE PREPARE stmt;
   
  show tables;
+<<<<<<< HEAD
 commit
 select * from PRISONER
 =======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+=======
+
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 -- MySQL Workbench Forward Engineering
 
@@ -48,9 +50,12 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
+<<<<<<< HEAD
 
 
 -- -----------------------------------------------------
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (

@@ -22,15 +22,36 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
 
+<<<<<<< HEAD
 insert into prison_officer values('A001', '강기웅', '12345', '33', 'male', '8급', '일반보안', '보안과', 'url');
 insert into prison_officer values('A002', '정지윤', '11111', '24', 'female', '9급', '민원처리', '민원과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prison_officer values('A003', '김은혜', '22222', '27', 'female', '8급', '특수보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prison_officer values('A004', '정종원', '33333', '27', 'male', '8급', '교정교육', '직업훈련과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+=======
+select * from patrol_history;
+
+insert into prison_officer values('A001', '강기웅', '12345', '33', 'male', '8급', '일반보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer('A002', '정지윤', '11111', '24', 'female', '9급', '민원처리', '민원과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer('A003', '김은혜', '22222', '27', 'female', '8급', '특수보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer('A004', '정종원', '33333', '27', 'male', '8급', '교정교육', '직업훈련과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 
 -- 재소자 -------------------------------------------------------------------------------------------
-insert into prison_officer('A001', '강기웅', '12345', '33', 'male', '9급', '일반보안', '영상감시과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prison_officer('A001', '강기웅', '12345', '33', 'male', '9급', '일반보안', '영상감시과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prison_officer('A001', '강기웅', '12345', '33', 'male', '9급', '일반보안', '영상감시과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+CREATE TABLE IF NOT EXISTS `koko`.`PRISONER` (
+  `PRISON_NUMBER` VARCHAR(45) NOT NULL,
+  `NAME` VARCHAR(45) NULL,
+  `AGE` VARCHAR(45) NULL,
+  `SEX` VARCHAR(45) NULL,
+  `PRISON_AREA` VARCHAR(45) NULL,
+  `ROOM_NUMBER` VARCHAR(45) NULL,
+  `CRIME_CLASSIFICATION` VARCHAR(45) NULL,
+  `BEFORE` VARCHAR(45) NULL,
+  `PHOTO` VARCHAR(1000) NULL,
+  PRIMARY KEY (`PRISON_NUMBER`))
+ENGINE = InnoDB;
+insert into prisoner('3567', '최성우', '24', 'male', 'A동', '11', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prisoner('2481', '주익정', '27', 'male', 'B동', '3', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prisoner('6758', '정지윤', '20', 'female', 'C동', '6', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 
 
 -- 순찰 기록 -------------------------------------------------------------------------------------------
@@ -50,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-insert into prison_officer("DATE", "TIME", location, contents, prison_officer_po_no) values("11-23-2020", '1', 'A동', '특이사항 없음', 'A001');
+insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '1', 'A동', '특이사항 없음', 'A001');
 insert into prison_officer('A001', '강기웅', '12345', '33', 'male', '9급', '일반보안', '영상감시과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 insert into prison_officer('A001', '강기웅', '12345', '33', 'male', '9급', '일반보안', '영상감시과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 -- 교도관 -------------------------------------------------------------------------------------------
