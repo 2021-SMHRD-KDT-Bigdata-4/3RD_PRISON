@@ -47,8 +47,7 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
 
-select * from prison_officer
-insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '7급', '일반보안', '인사과', 'url')
+insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '')
 
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
