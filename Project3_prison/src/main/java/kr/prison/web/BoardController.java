@@ -25,6 +25,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 								// 떨어진다 대신 scan을쓴다 이는 spring컨테이너에서 관리한다
 	@Inject
 	private PrisonMapper prisonMapper;
+	
 	@RequestMapping("/main.do")
 	public void main(Model model) {
 

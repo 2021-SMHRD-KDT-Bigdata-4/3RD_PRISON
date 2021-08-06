@@ -19,23 +19,35 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- bootstrap -->
 
@@ -85,7 +97,8 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.do"><img src="${pageContext.request.contextPath}/resources/img/logo.png"
+							<a href="./main.do"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -149,8 +162,9 @@
 			<form>
 				<div class="search-jailer-div">
 					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
-						<option value="수감번호">수감번호</option>
+						<option value="CCTV번호">CCTV번호</option>
+						<option value="재소자번호">재소자번호</option>
+						<option value="이상내역번호">이상내역번호</option>
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search${pageContext.request.contextPath}">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
@@ -175,53 +189,38 @@
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th>사진</th>
-										<th>수감번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
+										<th>이상 내역 번호</th>
+										<th>알림 일시</th>
+										<th>CCTV번호</th>
+										<th>재소자 번호</th>
+										<th>이상 징후</th>
+										<th>실제 이상 징후</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>1001</td>
+										<td>2021-08-03</td>
+										<td>1001</td>
+										<td>일 3회</td>
+										<td>싸움</td>
+										<td>싸움</td>
 									</tr>
 									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>1001</td>
+										<td>2021-08-03</td>
+										<td>1001</td>
+										<td>일 3회</td>
+										<td>싸움</td>
+										<td>싸움</td>
 									</tr>
 									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>1001</td>
+										<td>2021-08-03</td>
+										<td>1001</td>
+										<td>일 3회</td>
+										<td>싸움</td>
+										<td>싸움</td>
 									</tr>
 								</tbody>
 							</table>
@@ -342,7 +341,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
