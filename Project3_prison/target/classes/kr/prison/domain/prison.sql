@@ -1,22 +1,5 @@
-show tables;
-create database koko;
-
--- 테이블 전체 삭제
-SET @tables = NULL;
-SET foreign_key_checks = 0; 
- SELECT GROUP_CONCAT(table_schema, '.', table_name) INTO @tables
-   FROM information_schema.tables 
-   WHERE table_schema = 'koko'; -- specify DB name here.
- SET @tables = CONCAT('DROP TABLE ', @tables);
- PREPARE stmt FROM @tables;
- EXECUTE stmt;
- DEALLOCATE PREPARE stmt;
-  
- show tables;
-
-select * from PRISON_OFFICER
 -- MySQL Workbench Forward Engineering
-commit
+
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
@@ -42,21 +25,17 @@ CREATE TABLE IF NOT EXISTS `koko`.`PRISON_OFFICER` (
   `RANK` VARCHAR(45) NULL,
   `POSITION` VARCHAR(45) NULL,
   `DEPARTMENT` VARCHAR(45) NULL,
-  `PHOTO` VARCHAR(45) NULL,
-  
+  `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PO_NO`))
 ENGINE = InnoDB;
-
-select * from prison_officer
-insert into prison_officer values('A001', '정지윤', '1234', '24', '여자', '7급', '일반보안', '인사과', 'url')
 
 -- -----------------------------------------------------
 -- Table `koko`.`PATROL_HISTORY`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PATROL_HISTORY` (
   `PH_NO` INT NOT NULL AUTO_INCREMENT,
-  `DATE` DATE NULL,
-  `TIME` VARCHAR(45) NULL,
+  `PH_DATE` DATE NULL,
+  `PH_TIME` VARCHAR(45) NULL,
   `LOCATION` VARCHAR(45) NULL,
   `CONTENTS` VARCHAR(45) NULL,
   `PRISON_OFFICER_PO_NO` VARCHAR(45) NOT NULL,
@@ -114,14 +93,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `koko`.`PRISONER` (
   `PRISON_NUMBER` VARCHAR(45) NOT NULL,
-  ` NAME` VARCHAR(45) NULL,
+  `NAME` VARCHAR(45) NULL,
   `AGE` VARCHAR(45) NULL,
   `SEX` VARCHAR(45) NULL,
   `PRISON_AREA` VARCHAR(45) NULL,
   `ROOM_NUMBER` VARCHAR(45) NULL,
   `CRIME_CLASSIFICATION` VARCHAR(45) NULL,
   `BEFORE` VARCHAR(45) NULL,
-  `PHOTO` VARCHAR(45) NULL,
+  `PHOTO` VARCHAR(1000) NULL,
   PRIMARY KEY (`PRISON_NUMBER`))
 ENGINE = InnoDB;
 
