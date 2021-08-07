@@ -158,42 +158,61 @@
 
 
 	<section class="club-section spad-4">
-		<form>
-			<div class="form">
-				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
-					</select>
-				</div>
-				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
-				</div>
-				<div>
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
-				</div>
-
+		<div class="container">
+			<div class="club-content">
+				<div></div>
 			</div>
-		</form>
+			<div class="club-tab-list">
+				<div class="row">
+					<div class="col-lg-8 m-auto">
+
+						<!-- Tab panes -->
+						<div class="container">
+
+							<table class="table table-hover">
+								<thead>
+									<th id="chc_thead_th">분류</th>
+									<th id="chc_thead_th">내용</th>
+								</thead>
+								<tbody id="chc_tbody">
+									<tr>
+										<th id="chc_tbody_th">이상 내역 번호</th>
+										<td><input class="form-control"
+											id="calibration_accident_number"
+											name="calibration_accident_number" readonly="readonly"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">알림 일시</th>
+										<td><input class="form-control" id="prison_number"
+											name="prison_number" readonly="readonly"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">CCTV번호</th>
+										<td><input class="form-control" id="occuring_time"
+											name="occuring_time" readonly="readonly"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">재소자 번호</th>
+										<td><input class="form-control" id="occuring_place"
+											name="occuring_place"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">이상 징후</th>
+										<td><input class="form-control" id="classification"
+											name="classification"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">실제 이상 징후</th>
+										<td><textarea class="form-control" rows="5" id="details"
+												name="details"></textarea></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<!-- Club Section End -->
 
