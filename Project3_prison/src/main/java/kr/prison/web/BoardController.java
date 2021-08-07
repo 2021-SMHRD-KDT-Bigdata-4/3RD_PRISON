@@ -131,7 +131,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		String name = request.getParameter("name");
 
 		PrisonOfficerVO vo = new PrisonOfficerVO();
-		vo.setPo_no(Integer.parseInt(po_no));
+		vo.setPo_no(po_no);
 		vo.setName(name);
 
 		PrisonOfficerVO prisonOfficerVO = prisonMapper.PrisonOfficerLogin(vo);
@@ -152,7 +152,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return null;
 
 	}
-	@RequestMapping("/looutajax.do")
+	@RequestMapping("/logoutajax.do")
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();

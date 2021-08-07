@@ -56,7 +56,7 @@
 
 function logoutFn() {
 	$.ajax({
-		url : "${cpath}/looutajax.do",
+		url : "${cpath}/logoutajax.do",
 		type : "get",
 		success : function() {
 			location.href = "main.do";
