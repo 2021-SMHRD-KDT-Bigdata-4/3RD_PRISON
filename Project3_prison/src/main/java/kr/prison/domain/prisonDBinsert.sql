@@ -24,7 +24,7 @@ insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_
 insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '2', 'B동', '특이사항 없음', 'A004');
 insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '3', 'C동', '특이사항 없음', 'A001');
 
-select * from patrol_history;
+select * from PRISON_OFFICER;
 
 -- CCTV -------------------------------------------------------------------------------------------
 
@@ -33,11 +33,39 @@ insert into cctv(area, cctv_non, location, active) values('A', '002', '2번방',
 insert into cctv(area, cctv_non, location, active) values('B', '001', '1번방', 1);
 
 select * from cctv;
--- 재소자 -------------------------------------------------------------------------------------------
 
 
 -- 교정사고기록 -------------------------------------------------------------------------------------------
+
+insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '운동장', '폭행', '일반폭행', '6758');
+insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '3567');
+insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '2481');
+
+select * from corrective_history;
+
 -- 약물관리내역 -------------------------------------------------------------------------------------------
+
+insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('감기약', 0, '6758');
+insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('정신질환약', 1, '3567');
+insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('진통제', 0, '2481');
+
+select * from drug_management_history;
 -- 특별약물복용기록 -------------------------------------------------------------------------------------------
+
+insert into spec_drug_history(taking_date, drug_management_history_dm_no) values("2020-12-15", 5);
+
+select * from spec_drug_history;
 -- 특별관리죄수 -------------------------------------------------------------------------------------------
+
+insert into special_management_personnel(reason, management_grade, prisoner_prison_number) values('폭행', '1', '6758');
+insert into special_management_personnel(reason, management_grade, prisoner_prison_number) values('규정위반', '3', '3567');
+insert into special_management_personnel(reason, management_grade, prisoner_prison_number) values('규정위반', '3', '2481');
+
+select * from special_management_personnel;
+
+
 -- 이상행동감지내역 -------------------------------------------------------------------------------------------
+insert into anomaly_detection_history(alert_date, anomalies, actual_anomalies, prison_officer_po_no, cctv_cctv_no) values("2020-12-09", '폭행', '폭행', 'A001', 5);
+
+select * from anomaly_detection_history;
+
