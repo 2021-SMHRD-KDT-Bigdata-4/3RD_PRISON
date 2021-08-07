@@ -161,37 +161,23 @@
 		<form>
 			<div class="form">
 				<div class="input_field">
-					<label>이름</label> <input type="text" class="input">
+					<label>설치 구역</label> <input type="text" class="input">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" class="input">
+					<label>CCTV번호(N)</label> <input type="text" class="input">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select>
-						<option value="male">남자</option>
-						<option value="female">여자</option>
-					</select>
+					<label>상세 위치</label> <input type="text" class="input">
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" class="input">
+					<label>활성여부</label><input type="checkbox">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>전과</label> <input type="text" class="input">
-				</div>
-				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+					<label>특이사항</label> <input type="text" class="input">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
 				</div>
-
 			</div>
 		</form>
 	</section>
