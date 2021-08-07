@@ -12,6 +12,6 @@ public class JailerVO {
 	private int room_number;         // 재소자 수감 방
 	private String crime_classification;  // 재소자 범죄 분류crime classify
 	private String before_crime;        // 재소자 전과 previous conviction
-	     // 재소자 사진 url로 하는게 나을듯 blob버려
+	private String photo;     // 재소자 사진 url로 하는게 나을듯 blob버려
 
 }
