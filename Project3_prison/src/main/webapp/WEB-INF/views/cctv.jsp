@@ -197,30 +197,20 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1001</td>
-										<td>A</td>
-										<td>1</td>
-										<td>운동장</td>
-										<td><input type="checkbox"></td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td>A</td>
-										<td>1</td>
-										<td>운동장</td>
-										<td><input type="checkbox"></td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td>A</td>
-										<td>1</td>
-										<td>운동장</td>
-										<td><input type="checkbox"></td>
-										<td>-</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.cctv_no}</td>
+											<td>${vo.area}</td>
+											<td>${vo.cctv_non}</td>
+											<td>${vo.location}</td>
+											<td><input type="checkbox" 
+											<c:if test="${vo.cctv_active eq false}">
+											checked
+											</c:if>>
+											</td>
+											<td>${vo.cctv_unique}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

@@ -9,7 +9,7 @@ public class CCTVVO {
 	private String area;
 	private String cctv_non;
 	private String location;
-	private int cctv_active;
+	private boolean cctv_active;
 	private String cctv_unique;
 	
 }

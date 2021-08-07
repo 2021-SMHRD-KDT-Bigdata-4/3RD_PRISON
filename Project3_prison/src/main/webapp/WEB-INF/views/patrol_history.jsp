@@ -19,23 +19,35 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- bootstrap -->
 
@@ -85,7 +97,8 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.do"><img src="${pageContext.request.contextPath}/resources/img/logo.png"
+							<a href="./main.do"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -185,45 +198,21 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>001</td>
-										<td>2021-08-01</td>
-										<td><select name="search-jailer" class="time" id="time">
-												<option value="9시">09:00-10:00</option>
-												<option value="10시">10:00-11:00</option>
-												<option value="11시">11:00-12:00</option>
-										</select></td>
-										<td>A-1</td>
-										<td>특이사항 없음</td>
-										<td>9823</td>
-										<td>9524</td>
-									</tr>
-									<tr>
-										<td>001</td>
-										<td>2021-08-01</td>
-										<td><select name="search-jailer" class="time" id="time">
-												<option value="9시">09:00-10:00</option>
-												<option value="10시">10:00-11:00</option>
-												<option value="11시">11:00-12:00</option>
-										</select></td>
-										<td>A-1</td>
-										<td>특이사항 없음</td>
-										<td>9823</td>
-										<td>9524</td>
-									</tr>
-									<tr>
-										<td>001</td>
-										<td>2021-08-01</td>
-										<td><select name="search-jailer" class="time" id="time">
-												<option value="9시">09:00-10:00</option>
-												<option value="10시">10:00-11:00</option>
-												<option value="11시">11:00-12:00</option>
-										</select></td>
-										<td>A-1</td>
-										<td>특이사항 없음</td>
-										<td>9823</td>
-										<td>9524</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.ph_no}</td>
+											<td>${vo.ph_date}</td>
+											<td><select name="search-jailer" class="time" id="time">
+													<option value="9시">09:00-10:00</option>
+													<option value="10시">10:00-11:00</option>
+													<option value="11시">11:00-12:00</option>
+											</select></td>
+											<td>${vo.location}</td>
+											<td>${vo.contents}</td>
+											<td>${vo.prison_officer_po_no}</td>
+											<td>9524</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
@@ -343,7 +332,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
