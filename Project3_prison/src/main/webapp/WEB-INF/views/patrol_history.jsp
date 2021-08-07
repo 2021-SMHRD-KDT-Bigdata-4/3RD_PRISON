@@ -209,8 +209,8 @@
 											</select></td>
 											<td>${vo.location}</td>
 											<td>${vo.contents}</td>
-											<td>${vo.prison_officer_po_no}</td>
-											<td>9524</td>
+											<td>${vo.prison_officer_po_no1}</td>
+											<td>${vo.prison_officer_po_no2}</td>
 										</tr>
 									</c:forEach>
 								</tbody>

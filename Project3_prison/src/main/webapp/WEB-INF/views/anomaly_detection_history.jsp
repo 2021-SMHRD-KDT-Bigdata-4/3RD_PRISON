@@ -168,8 +168,8 @@
 					</select> <input class="input-jailer" type="text" name="search"
 						placeholder="Search${pageContext.request.contextPath}">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="anomaly_detection_history_content.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
+					<a href="anomaly_detection_history_content.do"><button
+							type="button" class="btn btn-default btn-lg">추가</button></a>
 				</div>
 			</form>
 		</div>
@@ -192,36 +192,22 @@
 										<th>이상 내역 번호</th>
 										<th>알림 일시</th>
 										<th>CCTV번호</th>
-										<th>재소자 번호</th>
+										<th>교도관 번호</th>
 										<th>이상 징후</th>
 										<th>실제 이상 징후</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1001</td>
-										<td>2021-08-03</td>
-										<td>1001</td>
-										<td>일 3회</td>
-										<td>싸움</td>
-										<td>싸움</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td>2021-08-03</td>
-										<td>1001</td>
-										<td>일 3회</td>
-										<td>싸움</td>
-										<td>싸움</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td>2021-08-03</td>
-										<td>1001</td>
-										<td>일 3회</td>
-										<td>싸움</td>
-										<td>싸움</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.abnormal_history_number}</td>
+											<td>${vo.alert_date}</td>
+											<td>${vo.cctv_cctv_no}</td>
+											<td>${vo.prison_officer_po_no}</td>
+											<td>${vo.anomalies}</td>
+											<td>${vo.actual_anomalies}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

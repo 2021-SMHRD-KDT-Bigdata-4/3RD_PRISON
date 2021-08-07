@@ -20,9 +20,9 @@ select * from prisoner;
 
 -- 순찰 기록 -------------------------------------------------------------------------------------------
 
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '1', 'A동', '특이사항 없음', 'A001');
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '2', 'B동', '특이사항 없음', 'A004');
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '3', 'C동', '특이사항 없음', 'A001');
+insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '1', 'A동', '특이사항 없음', 'A001', 'A002');
+insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '2', 'B동', '특이사항 없음', 'A004', 'A003');
+insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '3', 'C동', '특이사항 없음', 'A001', 'A002');
 
 select * from patrol_history;
 
@@ -45,9 +45,9 @@ select * from corrective_history;
 
 -- 약물관리내역 -------------------------------------------------------------------------------------------
 
-insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('감기약', 0, '6758');
-insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('정신질환약', 1, '3567');
-insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) values('진통제', 0, '2481');
+insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner_prison_number) values('감기약', 0, '일 1회', '6758');
+insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner_prison_number) values('정신질환약', 1, '일 2회', '3567');
+insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner_prison_number) values('진통제', 0, '주 3회', '2481');
 
 select * from drug_management_history;
 -- 특별약물복용기록 -------------------------------------------------------------------------------------------
