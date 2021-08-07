@@ -75,17 +75,17 @@ public interface PrisonMapper {
 
 	// 교정사고 발생내역
 	// (CRUD)-----------------------------------------------------------------------------------------
-	@Select("select * from collective_history")
+	@Select("select * from corrective_history")
 	public List<CollectiveHistoryVO> chList(); // 교정사고 내역 리스트 가져오기
 
 //    @Insert("insert into CORRECTIVE_HISTORY(occuring_place, calssification, details, prisoner_prison_number) " +
 //            "values(#{occuring_place, #{classification}, #{details}, #{prisoner_prison_number})")
 //    public void chInsert(CollectiveHistoryVO vo);
 
-	@Update("update collective_history set ")
+	@Update("update corrective_history set ")
 	public void chUpdate(CollectiveHistoryVO vo);
 
-	@Delete("delete from collective_history where calibration_accident_number=#{calibration_accident_number}")
+	@Delete("delete from corrective_history where calibration_accident_number=#{calibration_accident_number}")
 	public int chDelete(int calibration_accident_number);
 
 	// 교도관 정보

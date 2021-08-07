@@ -24,7 +24,7 @@ insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_
 insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '2', 'B동', '특이사항 없음', 'A004');
 insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no) values("2020-12-11", '3', 'C동', '특이사항 없음', 'A001');
 
-select * from PRISON_OFFICER;
+select * from patrol_history;
 
 -- CCTV -------------------------------------------------------------------------------------------
 

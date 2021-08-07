@@ -199,30 +199,16 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>001</td>
-										<td>9823</td>
-										<td>2021-08-01 11:12</td>
-										<td>운동장</td>
-										<td>폭행</td>
-										<td>싸움</td>
-									</tr>
-									<tr>
-										<td>001</td>
-										<td>9823</td>
-										<td>2021-08-01 11:12</td>
-										<td>운동장</td>
-										<td>폭행</td>
-										<td>싸움</td>
-									</tr>
-									<tr>
-										<td>001</td>
-										<td>9823</td>
-										<td>2021-08-01 11:12</td>
-										<td>운동장</td>
-										<td>폭행</td>
-										<td>싸움</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.calibration_accident_number}</td>
+											<td>${vo.prisoner_prison_number}</td>
+											<td>${vo.occuring_time}</td>
+											<td>${vo.occuring_place}</td>
+											<td>${vo.classification}</td>
+											<td>${vo.details}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
