@@ -158,31 +158,62 @@
 
 
 	<section class="club-section spad-4">
-		<form id="frm" method="post">
-			<div class="form">
-				<div class="input_field_chc_content">
-					<label>번호</label> <input type="text" id="prison_number"
-						class="input" name="prison_number">
-				</div>
-				<div class="input_field_chc_content">
-					<label>이름</label> <input type="text" id="name" class="input"
-						name="name">
-				</div>
-				<div class="input_field_chc_content">
-					<label>나이</label> <input type="text" id="age" class="input"
-						name="age">
-				</div>
-				<div class="input_field_chc_content">
-					<label>전과</label> <input type="text" rows="5" id="before_crime"
-						class="input" name="before_crime">
-				</div>
-				<div>
-					<button type="submit" class="btn btn-default btn-lg"
-						onclick="insertprison()">추가</button>
-				</div>
-
+		<div class="container">
+			<div class="club-content">
+				<div></div>
 			</div>
-		</form>
+			<div class="club-tab-list">
+				<div class="row">
+					<div class="col-lg-8 m-auto">
+
+						<!-- Tab panes -->
+						<div class="container">
+
+							<table class="table table-hover">
+								<thead>
+									<th id="chc_thead_th">분류</th>
+									<th id="chc_thead_th">내용</th>
+								</thead>
+								<tbody id="chc_tbody">
+									<tr>
+										<th id="chc_tbody_th">교정 사고 번호</th>
+										<td><input class="form-control"
+											id="calibration_accident_number"
+											name="calibration_accident_number" readonly="readonly"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">수감 번호</th>
+										<td><input class="form-control" id="prison_number"
+											name="prison_number"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">발생 일시</th>
+										<td><input class="form-control" id="occuring_time"
+											name="occuring_time"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">발생 장소</th>
+										<td><input class="form-control" id="occuring_place"
+											name="occuring_place"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">분류</th>
+										<td><input class="form-control" id="classification"
+											name="classification"></td>
+									</tr>
+									<tr>
+										<th id="chc_tbody_th">상세내용</th>
+										<td><textarea class="form-control" rows="5" id="details"
+												name="details"></textarea></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</section>
 	<!-- Club Section End -->
 
