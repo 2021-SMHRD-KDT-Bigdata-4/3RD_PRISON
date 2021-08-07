@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class PrisonOfficerVO {
-	private int po_no;          // 교도관 번호
+	private String po_no;          // 교도관 번호
 	private String name;        // 교도관 이름
 	private String password;    // 교도관 비밀번호
 	private String age;            // 교도관 나이 
