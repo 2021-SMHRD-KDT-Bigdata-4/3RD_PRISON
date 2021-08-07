@@ -52,7 +52,7 @@ insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner
 select * from drug_management_history;
 -- 특별약물복용기록 -------------------------------------------------------------------------------------------
 
-insert into spec_drug_history(taking_date, drug_management_history_dm_no) values("2020-12-15", 5);
+insert into spec_drug_history(taking_date, drug_management_history_dm_no) values("2020-12-15", 3);
 
 select * from spec_drug_history;
 -- 특별관리죄수 -------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ select * from special_management_personnel;
 
 
 -- 이상행동감지내역 -------------------------------------------------------------------------------------------
-insert into anomaly_detection_history(alert_date, anomalies, actual_anomalies, prison_officer_po_no, cctv_cctv_no) values("2020-12-09", '폭행', '폭행', 'A001', 5);
+insert into anomaly_detection_history(alert_date, anomalies, actual_anomalies, prison_officer_po_no, cctv_cctv_no) values("2020-12-09", '폭행', '폭행', 'A001', 2);
 
 select * from anomaly_detection_history;
 
