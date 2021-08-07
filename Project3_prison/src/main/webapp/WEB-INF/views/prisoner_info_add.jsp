@@ -67,7 +67,7 @@
 			type : "post",
 			data : formData,
 			success : function() {
-				location.href = "main.do";
+				alert("성공")
 			},
 			error : function() {
 				alert("오류")
@@ -203,11 +203,11 @@
 					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification">
 				</div>
 				<div class="input_field">
-					<label>전과</label> <input type="text" id = "before_crime
-" class="input" name="before_crime">
+					<label>전과</label> <input type="text" id = "before_crime" class="input" name="before_crime">
 				</div>
 				<div class="input_field">
-					
+					<label>사진</label> <input id="file_input" id = "photo" type="file"
+						name="photo">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg" onclick="insertprison()">추가</button>
