@@ -203,7 +203,7 @@
 											<td>${vo.dm_no}</td>
 											<td>${vo.prisoner_prison_number}</td>
 											<td>${vo.drug_type}</td>
-											<td>${vo.spec_drug}</td>
+											<td>${vo.taking_count}</td>
 											<td><input type="checkbox" <c:if test="${vo.spec_drug eq true}">
 											checked
 											</c:if>>

@@ -11,7 +11,7 @@ public class AnomalyDetectionHistoryVO {
 	private Date alert_date;
 	private String anomalies;
 	private String actual_anomalies;
-	private int prison_officer_po_no;
+	private String prison_officer_po_no;
 	private int cctv_cctv_no;
 	
 }

@@ -11,6 +11,7 @@ public class PatrolHistoryVO {
 	private String ph_time;
 	private String location;
 	private String contents;
-	private String prison_officer_po_no;
+	private String prison_officer_po_no1;
+	private String prison_officer_po_no2;
 
 }
