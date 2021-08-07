@@ -19,23 +19,35 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- bootstrap -->
 
@@ -85,7 +97,8 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.do"><img src="${pageContext.request.contextPath}/resources/img/logo.png"
+							<a href="./main.do"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -188,39 +201,20 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>2001</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>7급</td>
-										<td>-</td>
-										<td>인사과</td>
-									</tr>
-									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>2001</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>7급</td>
-										<td>-</td>
-										<td>인사과</td>
-									</tr>
-									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>2001</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>7급</td>
-										<td>-</td>
-										<td>인사과</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td><img
+												src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
+												width="100px" height="100px"></td>
+											<td>${vo.po_no}</td>
+											<td>${vo.name}</td>
+											<td>${vo.age}</td>
+											<td>${vo.gender}</td>
+											<td>${vo.rank}</td>
+											<td>${vo.position}</td>
+											<td>${vo.department}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
@@ -340,7 +334,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>

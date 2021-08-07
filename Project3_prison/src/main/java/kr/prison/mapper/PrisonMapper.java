@@ -28,7 +28,7 @@ public interface PrisonMapper {
 	// CCTV 정보
 	// 관련(CRUD)-----------------------------------------------------------------------------------------
 	@Select("select * from cctv")
-	public List<CCTVVO> cctvListAjax(); // CCTV 리스트 가져오기
+	public List<CCTVVO> cctvList(); // CCTV 리스트 가져오기
 
 	@Insert("insert into cctv(area, cctv_non, location, active, unique) "
 			+ "values(#{area}, #{cctv_non}, #{location}, #{cctv_active}, #{cctv_unique})")
@@ -45,7 +45,7 @@ public interface PrisonMapper {
 	// 순찰기록 관련
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from patrol_history")
-	public List<PatrolHistoryVO> phListAjax(); // 순찰기록 가져오기
+	public List<PatrolHistoryVO> phList(); // 순찰기록 가져오기
 
 	@Insert("insert into patrol_history(date, time, location, contents, prison_officer_po_no) "
 			+ "values(#{date}, #{time}, #{location}, #{contents}, #{prison_officer_po_no}")
@@ -61,7 +61,7 @@ public interface PrisonMapper {
 	// (CRUD)----------------------------------------------------------------------------------------
 
 	@Select("select * from anomaly_detection_history")
-	public List<AnomalyDetectionHistoryVO> adhListAjax();
+	public List<AnomalyDetectionHistoryVO> adhList();
 
 	@Insert("insert into anomaly_detection_history(anomalies, actual_anomalies, prison_officer_po_no) "
 			+ "values(#{anomalies}, #{actual_anomalies}, #{prison_officer_po_no})")
@@ -76,7 +76,7 @@ public interface PrisonMapper {
 	// 교정사고 발생내역
 	// (CRUD)-----------------------------------------------------------------------------------------
 	@Select("select * from collective_history")
-	public List<CollectiveHistoryVO> chListAjax(); // 교정사고 내역 리스트 가져오기
+	public List<CollectiveHistoryVO> chList(); // 교정사고 내역 리스트 가져오기
 
 //    @Insert("insert into CORRECTIVE_HISTORY(occuring_place, calssification, details, prisoner_prison_number) " +
 //            "values(#{occuring_place, #{classification}, #{details}, #{prisoner_prison_number})")
@@ -91,7 +91,7 @@ public interface PrisonMapper {
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from prison_officer")
-	public List<PrisonOfficerVO> poListAjax();
+	public List<PrisonOfficerVO> poList();
 
 //    @Insert("insert into prison_officer(name, age, gender, rank, position, department, photo) " +
 //            "values(#{name}, #{age}, #{gender}, #{rank), #{position}, #{department}, #{photo}")
@@ -106,7 +106,7 @@ public interface PrisonMapper {
 	// 수감자 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from prisoner")
-	public List<JailerVO> jailerListAjax();
+	public List<JailerVO> jailerList();
 
 	@Insert("insert into prisoner (prison_number, name, age,prison_area,room_number,crime_classification,before_crime,photo) values(#{prison_number},#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before_crime},#{photo})")
 	public int jailerInsert(JailerVO vo);
@@ -121,7 +121,7 @@ public interface PrisonMapper {
 	// 약물 복용 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from drug_management_history")
-	public List<DrugManagementVO> dmListAjax();
+	public List<DrugManagementVO> dmList();
 
 	@Insert("insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) "
 			+ "values(#{drug_type}, #{spec_drug}, #{prisoner_prison_number}")
@@ -137,7 +137,7 @@ public interface PrisonMapper {
 	// 특수 약물 복용 내역
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from spec_drug_history")
-	public List<SpecDrugHistoryVO> sdhListAjax();
+	public List<SpecDrugHistoryVO> sdhList();
 
 	@Insert("insert into spec_drug_history(taking_date, drug_management_history_dm_no) "
 			+ "values(#{taking_date}, #{drug_management_history_dm_no})")
@@ -152,7 +152,7 @@ public interface PrisonMapper {
 	// 특별관리인원 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 	@Select("select * from special_management_personnel")
-	public List<SpecialManagementJailerVO> smjListAjax();
+	public List<SpecialManagementJailerVO> smjList();
 
 	@Insert("insert into special_management_personnel(reason, management_grade, prisoner_prison_number) "
 			+ "values(#{reason}, #{management_grade}, #{prisoner_prison_number})")

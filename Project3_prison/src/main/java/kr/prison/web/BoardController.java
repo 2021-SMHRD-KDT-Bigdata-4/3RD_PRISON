@@ -16,8 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.prison.domain.AnomalyDetectionHistoryVO;
+import kr.prison.domain.CCTVVO;
+import kr.prison.domain.CollectiveHistoryVO;
+import kr.prison.domain.DrugManagementVO;
 import kr.prison.domain.JailerVO;
+import kr.prison.domain.PatrolHistoryVO;
 import kr.prison.domain.PrisonOfficerVO;
+import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.mapper.PrisonMapper;
 
 
@@ -40,7 +46,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/prisoner_info.do")
 	public void prisoner_info(Model model) {
-
+		List<JailerVO> list = prisonMapper.jailerList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/prisoner_info_add.do")
@@ -50,6 +57,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/prison_officer_info.do")
 	public void prison_officer_info(Model model) {
+		List<PrisonOfficerVO> list = prisonMapper.poList();
+		model.addAttribute("list", list);
 
 	}
 
@@ -60,7 +69,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/drug_management_history.do")
 	public void drug_management_history(Model model) {
-
+		List<DrugManagementVO> list = prisonMapper.dmList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/drug_management_history_add.do")
@@ -70,7 +80,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/spec_drug_history.do")
 	public void spec_drug_history(Model model) {
-
+		List<SpecDrugHistoryVO> list = prisonMapper.sdhList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/spec_drug_history_add.do")
@@ -80,7 +91,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/patrol_history.do")
 	public void patrol_history(Model model) {
-
+		List<PatrolHistoryVO> list = prisonMapper.phList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/patrol_history_add.do")
@@ -90,7 +102,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/corrective_history.do")
 	public void corrective_history(Model model) {
-
+		List<CollectiveHistoryVO> list = prisonMapper.chList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/corrective_history_content.do")
@@ -105,7 +118,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/cctv.do")
 	public void cctv(Model model) {
-
+		List<CCTVVO> list = prisonMapper.cctvList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/cctv_add.do")
@@ -115,7 +129,8 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/anomaly_detection_history.do")
 	public void anomaly_detection_history(Model model) {
-
+		List<AnomalyDetectionHistoryVO> list = prisonMapper.adhList();
+		model.addAttribute("list", list);
 	}
 
 	@RequestMapping("/anomaly_detection_history_content.do")

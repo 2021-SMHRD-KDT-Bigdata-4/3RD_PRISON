@@ -46,6 +46,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+<script type="text/javascript">
+
+</script>
 </head>
 
 <body>
@@ -188,42 +192,20 @@
 									</tr>
 								</thead>
 								<tbody>
+								<c:forEach var="vo" items="${list}">
 									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
+										<td><img src="${vo.photo}/resources/img/face/pang.jpg"
 											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
+										<td>${vo.prison_number}</td>
+										<td>${vo.name}</td>
+										<td>${vo.age}</td>
+										<td>${vo.sex}</td>
+										<td>${vo.prison_area}</td>
+										<td>${vo.room_number}</td>
+										<td>${vo.crime_classification}</td>
+										<td>${vo.before_crime}</td>
 									</tr>
-									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td><img src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>9823</td>
-										<td>정지윤</td>
-										<td>24</td>
-										<td>여</td>
-										<td>A-1</td>
-										<td>12</td>
-										<td>폭행죄</td>
-										<td>-</td>
-									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
