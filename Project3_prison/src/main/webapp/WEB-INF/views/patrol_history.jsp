@@ -159,12 +159,13 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/patrol_history_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
-						<option value="교도관번호">교도관번호</option>
-					</select> <input class="input-jailer" type="text" name="search"
+					<select name="part" class="search-jailer">
+						<option value="ph_no">순찰기록번호</option>
+						<option value="prison_officer_po_no1">교도관번호1</option>
+						<option value="prison_officer_po_no2">교도관번호2</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
 					<button type="button" class="btn btn-default btn-lg">검색</button>
 					<a href="patrol_history_add.do"><button type="button"

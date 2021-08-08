@@ -66,6 +66,7 @@ select * from special_management_personnel;
 
 -- 이상행동감지내역 -------------------------------------------------------------------------------------------
 insert into anomaly_detection_history(alert_date, anomalies, actual_anomalies, prison_officer_po_no, cctv_cctv_no) values("2020-12-09", '폭행', '폭행', 'A001', 2);
+insert into anomaly_detection_history(alert_date, anomalies, actual_anomalies, prison_officer_po_no, cctv_cctv_no) values("2020-12-11", '자해', '자해', 'A003', 3);
 
 select * from anomaly_detection_history;
 

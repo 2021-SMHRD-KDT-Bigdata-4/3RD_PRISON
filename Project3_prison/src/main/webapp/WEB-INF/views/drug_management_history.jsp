@@ -159,15 +159,14 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/drug_management_history_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-
-						<option value="수감번호">수감번호</option>
-						<option value="약물종류">약물종류</option>
-					</select> <input class="input-jailer" type="text" name="search"
+					<select name="part" class="search-jailer">
+						<option value="prisoner_prison_number">수감번호</option>
+						<option value="drug_type">약물종류</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<button class="btn btn-default btn-lg">검색</button>
 					<a href="drug_management_history_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a> <a href="#"><button
 							type="button" class="btn btn-default btn-lg">수정</button></a>

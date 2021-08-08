@@ -159,14 +159,14 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/cctv_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-						<option value="CCTV번호">CCTV번호</option>
-						<option value="설치구역">설치구역</option>
-					</select> <input class="input-jailer" type="text" name="search"
+					<select name="part" class="search-jailer">
+						<option value="cctv_no">CCTV번호</option>
+						<option value="area">설치구역</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<button class="btn btn-default btn-lg">검색</button>
 					<a href="cctv_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>
