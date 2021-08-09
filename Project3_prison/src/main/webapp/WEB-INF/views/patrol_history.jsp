@@ -157,23 +157,7 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/patrol_history_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="ph_no">순찰기록번호</option>
-						<option value="prison_officer_po_no1">교도관번호1</option>
-						<option value="prison_officer_po_no2">교도관번호2</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="patrol_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
+	<section class="club-section-1 spad-3"></section>
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
@@ -182,45 +166,102 @@
 			<div class="club-tab-list">
 				<div class="row">
 					<div class="col-lg-8 m-auto">
-
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item"><a class="nav-link active"
+								data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab"
+								href="#tabs-2" role="tab">추가</a></li>
+						</ul>
 						<!-- Tab panes -->
-						<div class="container">
-
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>순찰 내역 번호</th>
-										<th>순찰 날짜</th>
-										<th>순찰 시간</th>
-										<th>순찰 장소</th>
-										<th>순찰 내용</th>
-										<th>교도관1</th>
-										<th>교도관2</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
-										<tr>
-											<td>${vo.ph_no}</td>
-											<td>${vo.ph_date}</td>
-											<td><select name="search-jailer" class="time" id="time">
-													<option value="9시">09:00-10:00</option>
-													<option value="10시">10:00-11:00</option>
-													<option value="11시">11:00-12:00</option>
-											</select></td>
-											<td>${vo.location}</td>
-											<td>${vo.contents}</td>
-											<td>${vo.prison_officer_po_no1}</td>
-											<td>${vo.prison_officer_po_no2}</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
+						<div class="container tab-content">
+							<div class="tab-pane active" id="tabs-1" role="tabpanel">
+								<div class="search-div">
+									<form action="${cpath}/patrol_history_search.do" method="post">
+										<div class="search-jailer-div">
+											<select name="part" class="search-jailer">
+												<option value="ph_no">순찰기록번호</option>
+												<option value="prison_officer_po_no1">교도관번호1</option>
+												<option value="prison_officer_po_no2">교도관번호2</option>
+											</select> <input class="input-jailer" type="text" name="keyword"
+												placeholder="Search${pageContext.request.contextPath}">
+											<button type="button" class="btn btn-default btn-lg">검색</button>
+										
+										</div>
+									</form>
+								</div>
+								<div class="club-tab-content">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>순찰 내역 번호</th>
+												<th>순찰 날짜</th>
+												<th>순찰 시간</th>
+												<th>순찰 장소</th>
+												<th>순찰 내용</th>
+												<th>교도관1</th>
+												<th>교도관2</th>
+											</tr>
+										</thead>
+										<tbody>
+											<c:forEach var="vo" items="${list}">
+												<tr>
+													<td>${vo.ph_no}</td>
+													<td>${vo.ph_date}</td>
+													<td><select name="search-jailer" class="time"
+														id="time">
+															<option value="9시">09:00-10:00</option>
+															<option value="10시">10:00-11:00</option>
+															<option value="11시">11:00-12:00</option>
+													</select></td>
+													<td>${vo.location}</td>
+													<td>${vo.contents}</td>
+													<td>${vo.prison_officer_po_no1}</td>
+													<td>${vo.prison_officer_po_no2}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="tab-pane" id="tabs-2" role="tabpanel">
+								<div class="club-tab-content">
+									<table class="table table-hover">
+										<button type="button" class="btn btn-default btn-lg">순찰시작</button>
+										<thead>
+											<tr>
+												<th>순찰 내역 번호</th>
+												<th>순찰 날짜</th>
+												<th>순찰 시간</th>
+												<th>순찰 장소</th>
+												<th>순찰 내용</th>
+												<th>교도관1</th>
+												<th>교도관2</th>
+											</tr>
+										</thead>
+										<tbody>
+											<c:forEach var="vo" items="${list}">
+												<tr>
+													<td>${vo.ph_no}</td>
+													<td>${vo.ph_date}</td>
+													<td><select name="search-jailer" class="time"
+														id="time">
+															<option value="9시">09:00-10:00</option>
+															<option value="10시">10:00-11:00</option>
+															<option value="11시">11:00-12:00</option>
+													</select></td>
+													<td>${vo.location}</td>
+													<td>${vo.contents}</td>
+													<td>${vo.prison_officer_po_no1}</td>
+													<td>${vo.prison_officer_po_no2}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
 	</section>
 	<!-- Club Section End -->
 
