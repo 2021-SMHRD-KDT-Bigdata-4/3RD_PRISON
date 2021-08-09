@@ -158,20 +158,19 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/drug_management_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>수감번호</label> <input type="text" id="dm_no" class="input">
+					<label>수감번호</label> <input type="text" id="prisoner_prison_number" class="input" name="prisoner_prison_number">
 				</div>
 				<div class="input_field">
-					<label>약물종류</label> <input type="text" id="drug_type" class="input">
+					<label>약물종류</label> <input type="text" id="drug_type" class="input" name="drug_type">
 				</div>
 				<div class="input_field">
-					<label>복용 횟수</label> <input type="text" id="drug_count"
-						class="input">
+					<label>복용 횟수</label> <input type="text" id="taking_count" class="input" name="taking_count">
 				</div>
 				<div class="input_field">
-					<label>특별 약물 여부</label> <input type="checkbox" id="spec_drug"
+					<label>특별 약물 여부</label> <input type="checkbox" id="spec_drug" name="spec_drug"
 						class="input">
 				</div>
 				<div>

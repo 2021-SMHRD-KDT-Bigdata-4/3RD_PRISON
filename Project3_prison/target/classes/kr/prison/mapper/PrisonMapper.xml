@@ -14,20 +14,40 @@
 		select * from anomaly_detection_history where ${part} like concat('%',#{keyword},'%')
 	</select>
 	
+	<insert id="adhInsert" parameterType="kr.prison.domain.AnomalyDetectionHistoryVO">
+	    insert into anomaly_detection_history(alert_date, anomalies, cctv_cctv_no) 
+	    values(now(), #{anomalies}, #{cctv_cctv_no})
+	</insert>
+	
 	<select id="cctvSearch" resultType="kr.prison.domain.CCTVVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from cctv where ${part} like concat('%',#{keyword},'%')
 	</select>
+	
+	<insert id="cctvInsert" parameterType="kr.prison.domain.CCTVVO">
+	    insert into cctv(area, cctv_non, location, active)
+	    values(#{area}, #{cctv_non}, #{location}, #{active})
+	</insert>
 	
 	<select id="chSearch" resultType="kr.prison.domain.CollectiveHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from corrective_history where ${part} like concat('%',#{keyword},'%')
 	</select>
 	
+	<insert id="chInsert" parameterType="kr.prison.domain.CollectiveHistoryVO">
+	    insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number)
+	    values(now(), #{occuring_place}, #{classification}, #{details}, #{prisoner_prison_number})
+	</insert>
+	
 	<select id="dmSearch" resultType="kr.prison.domain.DrugManagementVO"
 		parameterType="kr.prison.domain.SearchVO">
-		select * from drug_management where ${part} like concat('%',#{keyword},'%')
+		select * from drug_management_history where ${part} like concat('%',#{keyword},'%')
 	</select>
+	
+	<insert id="dmInsert" parameterType="kr.prison.domain.DrugManagementVO">
+	    insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner_prison_number) 
+	    values(#{drug_type}, #{spec_drug}, #{taking_count}, #{prisoner_prison_number})
+	</insert>
 	
 	<select id="phSearch" resultType="kr.prison.domain.PatrolHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
@@ -48,4 +68,9 @@
 		parameterType="kr.prison.domain.SearchVO">
 		select * from spec_drug_history where ${part} like concat('%',#{keyword},'%')
 	</select>
+	
+	<insert id="sdhInsert" parameterType="kr.prison.domain.SpecDrugHistoryVO">
+	    insert into spec_drug_history(drug_management_history_dm_no, taking_date, taking_time, prisoner_prison_number) 
+	    values(#{drug_management_history_dm_no}, now(), now(), #{prisoner_prison_number})
+	</insert>
 </mapper>

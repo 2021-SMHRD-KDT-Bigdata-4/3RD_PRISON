@@ -8,7 +8,8 @@ import lombok.Data;
 public class PatrolHistoryVO {
 	private int ph_no;
 	private Date ph_date;
-	private String ph_time;
+	private String ph_time_start;
+	private String ph_time_end;
 	private String location;
 	private String contents;
 	private String prison_officer_po_no1;

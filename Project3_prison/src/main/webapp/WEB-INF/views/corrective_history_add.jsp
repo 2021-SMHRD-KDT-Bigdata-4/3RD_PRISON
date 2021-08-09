@@ -158,22 +158,28 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/corrective_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>수감 번호</label> <input type="text" id = "prison_number" class="input">
+					<label>수감 번호</label> <input type="text" id = "prison_number" class="input" name="prisoner_prison_number">
 				</div>
 				<div class="input_field">
-					<label>발생 일시</label> <input type="text" id = "occuring_time" class="input">
+					<label>발생 장소</label> <input type="text" id = "occuring_place" class="input" name="occuring_place">
 				</div>
 				<div class="input_field">
-					<label>발생 장소</label> <input type="text" id = "occuring_place" class="input">
+					<label>분류</label> <select id = "classification" name = "classification">
+						<option id = "폭행치사" value="폭행치사">폭행치사(재소자)</option>
+						<option id = "폭행치상" value="폭행치상">폭행치상(재소자)</option>
+						<option id = "교도관폭행" value="교도관폭행">교도관폭행</option>
+						<option id = "도주" value="도주">도주</option>
+						<option id = "변사" value="변사">변사</option>
+						<option id = "병사" value="병사">병사</option>
+						<option id = "밀수품반입" value="밀수품반입">밀수품반입</option>
+						<option id = "기타규정위반" value="기타규정위반">기타규정위반</option>
+					</select>
 				</div>
 				<div class="input_field">
-					<label>분류</label> <input type="text" id = "classification" class="input">
-				</div>
-				<div class="input_field">
-					<label>상세 내용</label> <input type="text" id = "details" class="input">
+					<label>상세 내용</label> <input type="text" id = "details" class="input" name="details">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>

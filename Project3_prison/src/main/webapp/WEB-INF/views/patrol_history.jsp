@@ -162,7 +162,7 @@
 			<form action="${cpath}/patrol_history_search.do" method="post">
 				<div class="search-jailer-div">
 					<select name="part" class="search-jailer">
-						<option value="ph_no">순찰기록번호</option>
+						<option value="ph_no">순찰내역번호</option>
 						<option value="prison_officer_po_no1">교도관번호1</option>
 						<option value="prison_officer_po_no2">교도관번호2</option>
 					</select> <input class="input-jailer" type="text" name="keyword"

@@ -52,7 +52,7 @@ insert into drug_management_history(drug_type, spec_drug, taking_count, prisoner
 select * from drug_management_history;
 -- 특별약물복용기록 -------------------------------------------------------------------------------------------
 
-insert into spec_drug_history(taking_date, drug_management_history_dm_no) values("2020-12-15", 3);
+insert into spec_drug_history(taking_date, taking_time, drug_management_history_dm_no, prisoner_prison_number) values(now(), now(), 2, "3567");
 
 select * from spec_drug_history;
 -- 특별관리죄수 -------------------------------------------------------------------------------------------

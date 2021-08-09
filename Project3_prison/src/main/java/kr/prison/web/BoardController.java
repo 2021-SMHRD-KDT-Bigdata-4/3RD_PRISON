@@ -108,6 +108,12 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	}
 	
+	@RequestMapping("/drug_management_history_insert.do")
+	public String drug_management_history_insert(DrugManagementVO vo) {
+		prisonMapper.dmInsert(vo);
+		return "redirect:/drug_management_history.do";
+	}
+	
 	@RequestMapping("/drug_management_history_search.do")
 	public String drug_management_history_search(SearchVO vo, Model model) {
 		List<DrugManagementVO> list = prisonMapper.dmSearch(vo);
@@ -124,6 +130,12 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	@RequestMapping("/spec_drug_history_add.do")
 	public void spec_drug_history_add(Model model) {
 
+	}
+	
+	@RequestMapping("/spec_drug_history_insert.do")
+	public String spec_drug_history_insert(SpecDrugHistoryVO vo) {
+		prisonMapper.sdhInsert(vo);
+		return "redirect:/spec_drug_history.do";
 	}
 	
 	@RequestMapping("/spec_drug_history_search.do")
@@ -159,12 +171,18 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/corrective_history_content.do")
 	public void corrective_history_content(Model model) {
-
+		
 	}
 
 	@RequestMapping("/corrective_history_add.do")
 	public void corrective_history_add(Model model) {
 
+	}
+	
+	@RequestMapping("/corrective_history_insert.do")
+	public String corrective_history_insert(CollectiveHistoryVO vo) {
+		prisonMapper.chInsert(vo);
+		return "redirect:/corrective_history.do";
 	}
 	
 	@RequestMapping("/corrective_history_search.do")
@@ -185,6 +203,12 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	}
 	
+	@RequestMapping("/cctv_insert.do")
+	public String cctv_insert(CCTVVO vo) {
+		prisonMapper.cctvInsert(vo);
+		return "redirect:/cctv.do";
+	}
+	
 	@RequestMapping("/cctv_search.do")
 	public String cctv_search(SearchVO vo, Model model) {
 		List<CCTVVO> list = prisonMapper.cctvSearch(vo);
@@ -201,6 +225,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	@RequestMapping("/anomaly_detection_history_content.do")
 	public void anomaly_detection_history_content(Model model) {
 
+	}
+	
+	@RequestMapping("/anomaly_detection_history_insert.do")
+	public void anomaly_detection_history_insert(AnomalyDetectionHistoryVO vo) {
+		prisonMapper.adhInsert(vo);
 	}
 	
 	@RequestMapping("/anomaly_detection_history_search.do")
