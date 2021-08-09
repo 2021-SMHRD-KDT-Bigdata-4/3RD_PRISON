@@ -157,27 +157,6 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-<<<<<<< HEAD
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/patrol_history_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="ph_no">순찰내역번호</option>
-						<option value="prison_officer_po_no1">교도관번호1</option>
-						<option value="prison_officer_po_no2">교도관번호2</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="patrol_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
-=======
-	<section class="club-section-1 spad-3"></section>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
@@ -205,7 +184,7 @@
 											</select> <input class="input-jailer" type="text" name="keyword"
 												placeholder="Search${pageContext.request.contextPath}">
 											<button type="button" class="btn btn-default btn-lg">검색</button>
-										
+
 										</div>
 									</form>
 								</div>
@@ -215,7 +194,8 @@
 											<tr>
 												<th>순찰 내역 번호</th>
 												<th>순찰 날짜</th>
-												<th>순찰 시간</th>
+												<th>순찰 시작시간</th>
+												<th>순찰 종료시간</th>
 												<th>순찰 장소</th>
 												<th>순찰 내용</th>
 												<th>교도관1</th>
@@ -227,12 +207,8 @@
 												<tr>
 													<td>${vo.ph_no}</td>
 													<td>${vo.ph_date}</td>
-													<td><select name="search-jailer" class="time"
-														id="time">
-															<option value="9시">09:00-10:00</option>
-															<option value="10시">10:00-11:00</option>
-															<option value="11시">11:00-12:00</option>
-													</select></td>
+													<td>${vo.ph_time_start}</td>
+													<td>${vo.ph_time_end}</td>
 													<td>${vo.location}</td>
 													<td>${vo.contents}</td>
 													<td>${vo.prison_officer_po_no1}</td>
@@ -244,40 +220,25 @@
 								</div>
 							</div>
 							<div class="tab-pane" id="tabs-2" role="tabpanel">
-								<div class="club-tab-content">
-									<table class="table table-hover">
-										<button type="button" class="btn btn-default btn-lg">순찰시작</button>
-										<thead>
-											<tr>
-												<th>순찰 내역 번호</th>
-												<th>순찰 날짜</th>
-												<th>순찰 시간</th>
-												<th>순찰 장소</th>
-												<th>순찰 내용</th>
-												<th>교도관1</th>
-												<th>교도관2</th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:forEach var="vo" items="${list}">
-												<tr>
-													<td>${vo.ph_no}</td>
-													<td>${vo.ph_date}</td>
-													<td><select name="search-jailer" class="time"
-														id="time">
-															<option value="9시">09:00-10:00</option>
-															<option value="10시">10:00-11:00</option>
-															<option value="11시">11:00-12:00</option>
-													</select></td>
-													<td>${vo.location}</td>
-													<td>${vo.contents}</td>
-													<td>${vo.prison_officer_po_no1}</td>
-													<td>${vo.prison_officer_po_no2}</td>
-												</tr>
-											</c:forEach>
-										</tbody>
-									</table>
-								</div>
+								<form method="post" action="${cpath}/patrol_history_start">
+									<div class="club-tab-content">
+										<div class="input_field">
+											<label>교도관1</label> <input type="text" id="pono1"
+												class="input" name="prison_officer_po_no1">
+										</div>
+										<div class="input_field">
+											<label>교도관2</label> <input type="text" id="pono2"
+												class="input" name="prison_officer_po_no2">
+										</div>
+										<div class="input_field">
+											<label>순찰 장소</label> <input type="text" id="location"
+												class="input" name="location">
+										</div>
+										<div>
+											<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

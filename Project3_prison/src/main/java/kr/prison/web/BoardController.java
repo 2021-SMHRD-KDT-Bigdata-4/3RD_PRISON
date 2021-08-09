@@ -162,6 +162,12 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		model.addAttribute("list", list);
 		return "patrol_history";
 	}
+	
+	@RequestMapping("/patrol_history_start.do")
+	public String patrol_history_start(PatrolHistoryVO vo) {
+		prisonMapper.phInsert(vo);
+		return "redirect:/patrol_history_end.do";
+	}
 
 	@RequestMapping("/corrective_history.do")
 	public void corrective_history(Model model) {
