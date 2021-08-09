@@ -159,16 +159,15 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/corrective_history_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-
-						<option value="수감번호">수감번호</option>
-						<option value="분류">분류</option>
-						<option value="교정사고번호">교정사고번호</option>
-					</select> <input class="input-jailer" type="text" name="search"
+					<select name="part" class="search-jailer">
+						<option value="prisoner_prison_number">수감번호</option>
+						<option value="classification">분류</option>
+						<option value="calibration_accident_number">교정사고번호</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<button class="btn btn-default btn-lg">검색</button>
 					<a href="corrective_history_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>

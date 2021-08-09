@@ -59,22 +59,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-	function insertprison() {
-		var formData = $("#frm").serialize();
-		alert(formData)
-		$.ajax({
-			url : '${cpath}/prisonInAjax.do',
-			type : "post",
-			data : formData,
-			success : function() {
-				alert("성공")
-			},
-			error : function() {
-				alert("오류")
-			}
-
-		})
-	}
+	
 	</script>
 	
 </head>
@@ -177,7 +162,7 @@
 
 
 	<section class="club-section spad-4">
-		<form id="frm" method="post">
+		<form id="frm" method="post" action="${cpath}/prisoner_info_insert.do">
 			<div class="form"><div class="input_field">
 					<label>번호</label> <input type="text" id = "prison_number" class="input" name="prison_number">
 				</div>
@@ -210,7 +195,7 @@
 						name="photo">
 				</div>
 				<div>
-					<button type="submit" class="btn btn-default btn-lg" onclick="insertprison()">추가</button>
+					<button type="submit" class="btn btn-default btn-lg">추가</button>
 				</div>
 
 			</div>

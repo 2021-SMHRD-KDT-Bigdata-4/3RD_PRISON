@@ -160,15 +160,15 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/prison_officer_info_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
-						<option value="교도관번호">교도관 번호</option>
-						<option value="부서">부서</option>
-					</select> <input class="input-jailer" type="text" name="search"
+					<select name="part" class="search-jailer">
+						<option value="name">이름</option>
+						<option value="po_no">교도관 번호</option>
+						<option value="department">부서</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<button class="btn btn-default btn-lg">검색</button>
 					<a href="prison_officer_info_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>

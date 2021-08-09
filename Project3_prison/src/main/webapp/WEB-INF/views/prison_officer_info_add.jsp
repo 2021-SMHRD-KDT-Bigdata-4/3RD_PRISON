@@ -160,7 +160,7 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/prison_officer_info_insert.do">
 			<div class="form">
 				<div class="input_field">
 					<label>교도관번호</label> <input type="text" id = "po_no" class="input">
@@ -192,7 +192,7 @@
 						name="uploadFile">
 				</div>
 				<div>
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
+					<input type="submit" class="btn btn-default btn-lg" value="추가">
 				</div>
 
 			</div>

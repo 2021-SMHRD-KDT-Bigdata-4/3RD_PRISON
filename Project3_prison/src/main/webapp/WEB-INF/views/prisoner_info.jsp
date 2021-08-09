@@ -19,23 +19,35 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- bootstrap -->
 
@@ -46,9 +58,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	
-<script type="text/javascript">
 
+<script type="text/javascript">
+	
 </script>
 </head>
 
@@ -89,7 +101,8 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.do"><img src="${pageContext.request.contextPath}/resources/img/logo.png"
+							<a href="./main.do"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
 					</div>
@@ -151,14 +164,14 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form>
+			<form action="${cpath}/prisoner_info_search.do" method="post">
 				<div class="search-jailer-div">
-					<select name="search-jailer" class="search-jailer">
-						<option value="이름">이름</option>
-						<option value="수감번호">수감번호</option>
-					</select> <input class="input-jailer" type="text" name="search"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
+					<select name="part" class="search-jailer">
+						<option value="name">이름</option>
+						<option value="prison_number">수감번호</option>
+					</select> <input class="input-jailer" type="text" name="keyword"
+						placeholder="Search${cpath}">
+					<button class="btn btn-default btn-lg">검색</button>
 					<a href="prisoner_info_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
 				</div>
@@ -192,19 +205,18 @@
 									</tr>
 								</thead>
 								<tbody>
-								<c:forEach var="vo" items="${list}">
-									<tr>
-										<td><img src="${vo.photo}/resources/img/face/pang.jpg"
-											width="100px" height="100px"></td>
-										<td>${vo.prison_number}</td>
-										<td>${vo.name}</td>
-										<td>${vo.age}</td>
-										<td>${vo.sex}</td>
-										<td>${vo.prison_area}</td>
-										<td>${vo.room_number}</td>
-										<td>${vo.crime_classification}</td>
-										<td>${vo.before_crime}</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td><img src="${vo.photo}" width="100px" height="100px"></td>
+											<td>${vo.prison_number}</td>
+											<td>${vo.name}</td>
+											<td>${vo.age}</td>
+											<td>${vo.sex}</td>
+											<td>${vo.prison_area}</td>
+											<td>${vo.room_number}</td>
+											<td>${vo.crime_classification}</td>
+											<td>${vo.before_crime}</td>
+										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
@@ -325,7 +337,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
