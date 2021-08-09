@@ -101,9 +101,7 @@ public interface PrisonMapper {
 	@Select("select * from prison_officer")
 	public List<PrisonOfficerVO> poList();
 
-//    @Insert("insert into prison_officer(name, age, gender, rank, position, department, photo) " +
-//            "values(#{name}, #{age}, #{gender}, #{rank), #{position}, #{department}, #{photo}")
-//    public void poInsert(PrisonOfficerVO vo);
+    // public void poInsert(PrisonOfficerVO vo);
 
 	@Update("update prison_officer set ")
 	public void poUpdate(PrisonOfficerVO vo);
@@ -118,7 +116,7 @@ public interface PrisonMapper {
 	@Select("select * from prisoner")
 	public List<JailerVO> jailerList();
 
-	@Insert("insert into prisoner (prison_number, name, age,prison_area,room_number,crime_classification,before_crime,photo) values(#{prison_number},#{name}, #{age}, #{prison_area}, #{room_number}, #{crime_classification}, #{before_crime},#{photo})")
+	@Insert("insert into prisoner (prison_number, name, age, sex, prison_area,room_number,crime_classification,before_crime,photo) values(#{prison_number},#{name}, #{age}, #{sex}, #{prison_area}, #{room_number}, #{crime_classification}, #{before_crime},#{photo})")
 	public int jailerInsert(JailerVO vo);
 
 	@Update("update prisoner set prison_area=#{prison_area}, room_number={room_number} where "
