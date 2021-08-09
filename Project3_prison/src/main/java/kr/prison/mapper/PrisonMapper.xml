@@ -41,7 +41,7 @@
 	
 	<insert id="poInsert" parameterType="kr.prison.domain.PrisonOfficerVO">
 	    insert into prison_officer 
-	    values(po_no=#{po_no}, name=#{name}, age=#{age}, gender={gender}, rank={rank}, position=#{position}, department=#{department}, photo=#{photo})
+	    values(#{po_no}, #{name}, #{password}, #{age}, #{gender}, #{rank}, #{position}, #{department}, #{photo})
 	</insert>
 	
 	<select id="sdhSearch" resultType="kr.prison.domain.SpecDrugHistoryVO"
