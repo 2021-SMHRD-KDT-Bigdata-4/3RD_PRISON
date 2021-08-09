@@ -48,8 +48,6 @@ public interface PrisonMapper {
 	@Select("select * from patrol_history")
 	public List<PatrolHistoryVO> phList(); // 순찰기록 가져오기
 
-	@Insert("insert into patrol_history(date, time, location, contents, prison_officer_po_no) "
-			+ "values(#{date}, #{time}, #{location}, #{contents}, #{prison_officer_po_no}")
 	public void phInsert(PatrolHistoryVO vo);
 
 	@Update("update patrol_history set contents=#{contents} where ph_no=#{ph_no}")

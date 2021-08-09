@@ -4,10 +4,12 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.prison.mapper.PrisonMapper">
+    
 	<select id="prisonerSearch" resultType="kr.prison.domain.JailerVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from prisoner where ${part} like concat('%',#{keyword},'%')
 	</select>
+	
 	
 	<select id="adhSearch" resultType="kr.prison.domain.AnomalyDetectionHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
@@ -19,6 +21,7 @@
 	    values(now(), #{anomalies}, #{cctv_cctv_no})
 	</insert>
 	
+	
 	<select id="cctvSearch" resultType="kr.prison.domain.CCTVVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from cctv where ${part} like concat('%',#{keyword},'%')
@@ -28,6 +31,7 @@
 	    insert into cctv(area, cctv_non, location, active)
 	    values(#{area}, #{cctv_non}, #{location}, #{active})
 	</insert>
+	
 	
 	<select id="chSearch" resultType="kr.prison.domain.CollectiveHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
@@ -39,6 +43,7 @@
 	    values(now(), #{occuring_place}, #{classification}, #{details}, #{prisoner_prison_number})
 	</insert>
 	
+	
 	<select id="dmSearch" resultType="kr.prison.domain.DrugManagementVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from drug_management_history where ${part} like concat('%',#{keyword},'%')
@@ -49,10 +54,16 @@
 	    values(#{drug_type}, #{spec_drug}, #{taking_count}, #{prisoner_prison_number})
 	</insert>
 	
+	
 	<select id="phSearch" resultType="kr.prison.domain.PatrolHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from patrol_history where ${part} like concat('%',#{keyword},'%')
 	</select>
+	
+	<insert id="phInsert" parameterType="kr.prison.domain.PatrolHistoryVO">
+	    insert into patrol_history(ph_date, ph_time_start, location, prison_officer_po_no1, prison_officer_po_no2) 
+	    values(now(), now(), #{location}, #{prison_officer_po_no1}, #{prison_officer_po_no2})
+	</insert>
 	
 	<select id="poSearch" resultType="kr.prison.domain.PrisonOfficerVO"
 		parameterType="kr.prison.domain.SearchVO">
