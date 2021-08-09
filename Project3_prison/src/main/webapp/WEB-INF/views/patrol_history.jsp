@@ -36,8 +36,7 @@
 	type="text/css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css"
-	type="text/css">
-<!-- Js Plugins -->
+	type="text/css"> 
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
 <script
@@ -157,27 +156,7 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-<<<<<<< HEAD
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/patrol_history_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="ph_no">순찰내역번호</option>
-						<option value="prison_officer_po_no1">교도관번호1</option>
-						<option value="prison_officer_po_no2">교도관번호2</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button type="button" class="btn btn-default btn-lg">검색</button>
-					<a href="patrol_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
-=======
-	<section class="club-section-1 spad-3"></section>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
