@@ -31,6 +31,26 @@
 
 /* Template default CSS
 /*----------------------------------------*/
+@font-face {
+	font-family: 'ROKABold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#main_title{
+	font-family: 'MaruBuri-Regular';
+}
+
 html, body {
 	height: 100%;
 	font-family: "Roboto", sans-serif;
@@ -255,9 +275,13 @@ keyframes loader { 0% {
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -327,6 +351,8 @@ keyframes loader { 0% {
 
 
 
+
+
 rotate
 
 
@@ -360,7 +386,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -430,7 +460,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -499,7 +533,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -567,7 +605,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -637,7 +679,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -706,7 +752,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -776,7 +826,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -844,8 +898,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -915,7 +973,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -985,9 +1047,13 @@ transparent
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -1057,6 +1123,8 @@ transparent
 
 
 
+
+
 rotate
 
 
@@ -1090,7 +1158,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -1160,7 +1232,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1229,7 +1305,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -1297,7 +1377,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -1367,7 +1451,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1436,7 +1524,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -1506,7 +1598,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -1574,8 +1670,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -1645,7 +1745,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -1723,9 +1827,13 @@ transparent
 
 
 
+
+
 %
 {
 -webkit-transform
+
+
 
 
 
@@ -1795,6 +1903,8 @@ transparent
 
 
 
+
+
 rotate
 
 
@@ -1828,7 +1938,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -1898,7 +2012,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1967,7 +2085,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -2037,7 +2159,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -2105,8 +2231,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -2176,7 +2306,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 
@@ -2212,6 +2346,8 @@ transparent
 ;
 }
 100
+
+
 
 
 
@@ -2283,7 +2419,11 @@ transparent
 
 
 
+
+
 :
+
+
 
 
 
@@ -2351,7 +2491,11 @@ rotate
 
 
 
+
+
 (
+
+
 
 
 
@@ -2421,7 +2565,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -2490,7 +2638,11 @@ border
 
 
 
+
+
 :
+
+
 
 
 
@@ -2560,7 +2712,11 @@ border
 
 
 
+
+
 solid
+
+
 
 
 
@@ -2628,8 +2784,12 @@ solid
 
 
 
+
+
 ;
 border-left-color
+
+
 
 
 
@@ -2699,7 +2859,11 @@ border-left-color
 
 
 
+
+
 transparent
+
+
 
 
 

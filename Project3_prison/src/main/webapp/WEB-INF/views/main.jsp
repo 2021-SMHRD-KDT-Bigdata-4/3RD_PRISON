@@ -170,8 +170,8 @@ function logoutFn() {
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="hs-text">
-										<h4>코도소 3차 프로젝트</h4>
-										<h2>변화를 향한 믿음, 함께 만들어가는 국민안전</h2>
+										<h4 id = "main_title">코도소 3차 프로젝트</h4>
+										<h2 id = "main_title">변화를 향한 믿음, 함께 만들어가는 국민안전</h2>
 										<a href="#" class="primary-btn"> More Details</a>
 									</div>
 								</div>
