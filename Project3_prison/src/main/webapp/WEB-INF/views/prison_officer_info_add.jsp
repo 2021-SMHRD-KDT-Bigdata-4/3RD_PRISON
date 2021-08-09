@@ -192,10 +192,10 @@
 
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" type="file"
-						name="uploadFile">
+						name="photo">
 				</div>
 				<div>
-					<input type="submit" class="btn btn-default btn-lg" value="추가">
+					<button type="submit" class="btn btn-default btn-lg">추가</button>
 				</div>
 
 			</div>
