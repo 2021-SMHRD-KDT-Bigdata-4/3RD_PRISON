@@ -101,7 +101,7 @@ public interface PrisonMapper {
 	@Select("select * from prison_officer")
 	public List<PrisonOfficerVO> poList();
 
-    // public void poInsert(PrisonOfficerVO vo);
+    public void poInsert(PrisonOfficerVO vo);
 
 	@Update("update prison_officer set ")
 	public void poUpdate(PrisonOfficerVO vo);

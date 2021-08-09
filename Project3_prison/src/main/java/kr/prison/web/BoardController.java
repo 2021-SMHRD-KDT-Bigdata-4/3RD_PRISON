@@ -91,11 +91,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return "prison_officer_info";
 	}
 	
-//	@RequestMapping("/prison_officer_info_insert.do")
-//	public String prison_officer_info_insert(PrisonOfficerVO vo) {
-//		prisonMapper.poInsert(vo);
-//		return "redirect:/prison_officer_info.do";
-//	}
+	@RequestMapping("/prison_officer_info_insert.do")
+	public String prison_officer_info_insert(PrisonOfficerVO vo) {
+		prisonMapper.poInsert(vo);
+		return "redirect:/prison_officer_info.do";
+	}
 
 	@RequestMapping("/drug_management_history.do")
 	public void drug_management_history(Model model) {

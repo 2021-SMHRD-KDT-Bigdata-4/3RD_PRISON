@@ -39,6 +39,11 @@
 		select * from prison_officer where ${part} like concat('%',#{keyword},'%')
 	</select>
 	
+	<insert id="poInsert" parameterType="kr.prison.domain.PrisonOfficerVO">
+	    insert into prison_officer 
+	    values(po_no=#{po_no}, name=#{name}, age=#{age}, gender={gender}, rank={rank}, position=#{position}, department=#{department}, photo=#{photo})
+	</insert>
+	
 	<select id="sdhSearch" resultType="kr.prison.domain.SpecDrugHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
 		select * from spec_drug_history where ${part} like concat('%',#{keyword},'%')

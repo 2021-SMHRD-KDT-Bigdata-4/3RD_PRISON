@@ -6,7 +6,7 @@ import lombok.Data;
 public class PrisonOfficerVO {
 	private String po_no;          // 교도관 번호
 	private String name;        // 교도관 이름
-	//private String password;    // 교도관 비밀번호
+	// private String password;    // 교도관 비밀번호
 	private String age;            // 교도관 나이 
 	private String gender;      // 교도관 성별
 	private String rank;        // 교도관 급수(공무원 : 9, 8, 7..)
