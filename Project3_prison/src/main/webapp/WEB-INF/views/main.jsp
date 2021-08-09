@@ -52,22 +52,18 @@
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script type="text/javascript">
-
-
-function logoutFn() {
-	$.ajax({
-		url : "${cpath}/logoutajax.do",
-		type : "get",
-		success : function() {
-			location.href = "main.do";
-		},
-		error : function() {
-			alert("error");
-		}
-	});
-}
-
-
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
 </script>
 </head>
 
@@ -87,12 +83,12 @@ function logoutFn() {
 							<ul>
 								<li>20:00 - May 19, 2019</li>
 								<li><c:if test="${sessionScope.prisonOfficerVO==null}">
-								<li><a href="login.do">Sign in</a></li>
-							</c:if> 
-							<c:if test="${sessionScope.prisonOfficerVO!=null}">
-								<li><a>${sessionScope.prisonOfficerVO.name}님 방문을 환영합니다.</a><a onclick="logoutFn()">로그아웃</a></li>
-								
-							</c:if></li>
+										<li><a href="login.do">Sign in</a></li>
+									</c:if> <c:if test="${sessionScope.prisonOfficerVO!=null}">
+										<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+												환영합니다.</a><a onclick="logoutFn()">로그아웃</a></li>
+
+									</c:if></li>
 
 							</ul>
 						</div>
@@ -159,8 +155,8 @@ function logoutFn() {
 
 	<!-- Hero Section Begin -->
 	<section class="hero-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/pic1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/pic1.jpg");'>
 
 		<div class="container">
 			<div class="row">
@@ -170,8 +166,8 @@ function logoutFn() {
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="hs-text">
-										<h4 id = "main_title">코도소 3차 프로젝트</h4>
-										<h2 id = "main_title">변화를 향한 믿음, 함께 만들어가는 국민안전</h2>
+										<h4 id="main_title">코도소 3차 프로젝트</h4>
+										<h2 id="main_title">변화를 향한 믿음, 함께 만들어가는 국민안전</h2>
 										<a href="#" class="primary-btn"> More Details</a>
 									</div>
 								</div>
@@ -200,91 +196,9 @@ function logoutFn() {
 
 
 
-	<!-- Soccer Section Begin -->
-	<section class="soccer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 p-0">
-					<div class="section-title">
-						<h3>
-							Soccer <span>Feed</span>
-						</h3>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-sm-6 p-0">
-					<div class="soccer-item set-bg"
-						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-1.jpg"
-						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-1.jpg");'>
-						<div class="si-tag">Soccer</div>
-						<div class="si-text">
-							<h5>
-								<a href="#">Counting Your Chicken Before They Hatch</a>
-							</h5>
-							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 p-0">
-					<div class="soccer-item set-bg"
-						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-2.jpg"
-						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-2.jpg");'>
-						<div class="si-tag">Soccer</div>
-						<div class="si-text">
-							<h5>
-								<a href="#">Hypnotherapy For Motivation Getting The Drive
-									Back</a>
-							</h5>
-							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 p-0">
-					<div class="soccer-item set-bg"
-						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-3.jpg"
-						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-3.jpg");'>
-						<div class="si-tag">Soccer</div>
-						<div class="si-text">
-							<h5>
-								<a href="#">Astronomy Binoculars A Great Alternative</a>
-							</h5>
-							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 p-0">
-					<div class="soccer-item set-bg"
-						data-setbg="${pageContext.request.contextPath}/resources/img/soccer/soccer-4.jpg"
-						style='background-image: url("${pageContext.request.contextPath}/resources/img/soccer/soccer-4.jpg");'>
-						<div class="si-tag">Soccer</div>
-						<div class="si-text">
-							<h5>
-								<a href="#">Decorate For Less With Art Posters</a>
-							</h5>
-							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Soccer Section End -->
 
 	<!-- Latest Section Begin -->
-	<section class="latest-section">
+	<section class="soccer-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -294,23 +208,22 @@ function logoutFn() {
 						</h3>
 						<ul>
 							<li>All</li>
-							<li>World Cup</li>
-							<li>Champions</li>
-							<li>MLS</li>
+							<li>Covid-19</li>
+							<li>Prison</li>
+							<li>Society</li>
 						</ul>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="news-item left-news">
 								<div class="ni-pic set-bg"
-									data-setbg="${pageContext.request.contextPath}/resources/img/news/latest-b.jpg"
-									style='background-image: url("${pageContext.request.contextPath}/resources/img/news/latest-b.jpg");'>
-									<div class="ni-tag">Soccer</div>
+									data-setbg="${pageContext.request.contextPath}/resources/img/news/codoso-1.jpg"
+									style='background-image: url("${pageContext.request.contextPath}/resources/img/news/codoso-1.jpg");'>
+									<div class="ni-tag">코로나</div>
 								</div>
 								<div class="ni-text">
 									<h4>
-										<a href="#">Once You Learn These Hard Truths About Life,
-											You'll Become</a>
+										<a href="#">교정시설 코로나 감염 잇달아…</a>
 									</h4>
 									<ul>
 										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
@@ -327,15 +240,15 @@ function logoutFn() {
 							<div class="news-item">
 								<div class="ni-pic">
 									<img
-										src="${pageContext.request.contextPath}/resources/img/news/ln-1.jpg"
+										src="${pageContext.request.contextPath}/resources/img/news/codoso-2.jpeg"
 										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">How To Quit Smoking Using Zyban</a>
+										<a href="#">윤리와 여론 사이… 딜레마에 빠진 세계의 교정당국들</a>
 									</h5>
 									<ul>
-										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
+										<li><i class="fa fa-calendar"></i> August 5, 2021</li>
 										<li><i class="fa fa-edit"></i> 3 Comment</li>
 									</ul>
 								</div>
@@ -343,15 +256,15 @@ function logoutFn() {
 							<div class="news-item">
 								<div class="ni-pic">
 									<img
-										src="${pageContext.request.contextPath}/resources/img/news/ln-2.jpg"
+										src="${pageContext.request.contextPath}/resources/img/news/codoso-3.jpg"
 										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">Decorate For Less With Art Posters</a>
+										<a href="#">교도소서 동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
 									</h5>
 									<ul>
-										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
+										<li><i class="fa fa-calendar"></i> July 26, 2021</li>
 										<li><i class="fa fa-edit"></i> 3 Comment</li>
 									</ul>
 								</div>
@@ -359,15 +272,15 @@ function logoutFn() {
 							<div class="news-item">
 								<div class="ni-pic">
 									<img
-										src="${pageContext.request.contextPath}/resources/img/news/ln-3.jpg"
+										src="${pageContext.request.contextPath}/resources/img/news/codoso-4.jpg"
 										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">Home Business Advertising Ideas</a>
+										<a href="#">자바교도소 교정협의회, 수용자들에 아이스크림 전달</a>
 									</h5>
 									<ul>
-										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
+										<li><i class="fa fa-calendar"></i> July 27, 2021</li>
 										<li><i class="fa fa-edit"></i> 3 Comment</li>
 									</ul>
 								</div>
@@ -375,15 +288,15 @@ function logoutFn() {
 							<div class="news-item">
 								<div class="ni-pic">
 									<img
-										src="${pageContext.request.contextPath}/resources/img/news/ln-4.jpg"
+										src="${pageContext.request.contextPath}/resources/img/news/codoso-5.jpg"
 										alt="">
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">Lasik Doesn T Stop Your Eyes From Aging</a>
+										<a href="#">자바교도소 23대 주익정 소장 취임</a>
 									</h5>
 									<ul>
-										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
+										<li><i class="fa fa-calendar"></i> July 19, 2021</li>
 										<li><i class="fa fa-edit"></i> 3 Comment</li>
 									</ul>
 								</div>
@@ -500,92 +413,7 @@ function logoutFn() {
 	</section>
 	<!-- Latest Section End -->
 
-	<!-- Video Section Begin -->
-	<section class="video-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title">
-						<h3>
-							Hot <span>Videos</span>
-						</h3>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="video-slider owl-carousel">
-					<div class="col-lg-3">
-						<div class="video-item set-bg"
-							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-1.jpg"
-							style='background-image: url("${pageContext.request.contextPath}/resources/img/videos/video-1.jpg");'>
-							<div class="vi-title">
-								<h5>A World Of Infinite Opportunities</h5>
-							</div>
-							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img
-								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
-								alt=""></a>
-							<div class="vi-time">11:13</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="video-item set-bg"
-							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-2.jpg">
-							<div class="vi-title">
-								<h5>Video Games Playing With Imagination</h5>
-							</div>
-							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img
-								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
-								alt=""></a>
-							<div class="vi-time">11:13</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="video-item set-bg"
-							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-3.jpg">
-							<div class="vi-title">
-								<h5>Home Audio Recording For Everyone</h5>
-							</div>
-							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img
-								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
-								alt=""></a>
-							<div class="vi-time">11:13</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="video-item set-bg"
-							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-4.jpg"
-							style='background-image: url("${pageContext.request.contextPath}/resources/img/videos/video-4.jpg");'>
-							<div class="vi-title">
-								<h5>What If They Let You Run The Hubble</h5>
-							</div>
-							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img
-								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
-								alt=""></a>
-							<div class="vi-time">11:13</div>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="video-item set-bg"
-							data-setbg="${pageContext.request.contextPath}/resources/img/videos/video-4.jpg">
-							<div class="vi-title">
-								<h5>What If They Let You Run The Hubble</h5>
-							</div>
-							<a href="https://www.youtube.com/watch?v=dhYOPzcsbGM"
-								class="play-btn video-popup"><img
-								src="${pageContext.request.contextPath}/resources/img/videos/play.png"
-								alt=""></a>
-							<div class="vi-time">11:13</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Video Section End -->
+
 
 	<!-- Popular News Section Begin -->
 	<section class="popular-section">
