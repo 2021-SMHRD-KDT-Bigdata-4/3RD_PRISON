@@ -163,28 +163,31 @@
 		<form method="post" action="${cpath}/prison_officer_info_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>교도관번호</label> <input type="text" id = "po_no" class="input">
+					<label>교도관번호</label> <input type="text" id = "po_no" class="input" name = "po_no">
 				</div>
 				<div class="input_field">
-					<label>이름</label> <input type="text" id = "name" class="input">
+					<label>이름</label> <input type="text" id = "name" class="input" name = "name">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" id = "age" class="input">
+					<label>비밀번호</label> <input type="text" id = "password" class="input" name = "password">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select id = "gender">
+					<label>나이</label> <input type="text" id = "age" class="input" name = "age">
+				</div>
+				<div class="input_field">
+					<label>성별</label> <select id = "gender" name = "gender">
 						<option id = "male" value="male">남자</option>
 						<option id = "female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>급수</label> <input type="text" id = "rank" class="input">
+					<label>급수</label> <input type="text" id = "rank" class="input" name = "rank">
 				</div>
 				<div class="input_field">
-					<label>직책</label> <input type="text" id = "position" class="input">
+					<label>직책</label> <input type="text" id = "position" class="input" name = "position">
 				</div>
 				<div class="input_field">
-					<label>부서</label> <input type="text" id = "department" class="input">
+					<label>부서</label> <input type="text" id = "department" class="input" name = "department">
 				</div>
 
 				<div class="input_field">
