@@ -158,19 +158,13 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/spec_drug_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>약물 관리 번호</label> <select id = "th_no">
-						<option value="1001">1001</option>
-						<option value="1002">1002</option>
-					</select>
+					<label>약물 관리 번호</label> <input type="text" id = "drug_management_history_dm_no" class="input" name="drug_management_history_dm_no">
 				</div>
 				<div class="input_field">
-					<label>수감 번호</label> <input type="text" id = "taking_date" class="input">
-				</div>
-				<div class="input_field">
-					<label>복용 일시</label> <input type="text" id = "dm_no" class="input">
+					<label>수감 번호</label> <input type="text" id = "prison_number" class="input" name="prisoner_prison_number">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>

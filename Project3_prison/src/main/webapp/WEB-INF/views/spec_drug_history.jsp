@@ -162,7 +162,7 @@
 			<form action="${cpath}/spec_drug_history_search.do" method="post">
 				<div class="search-jailer-div">
 					<select name="part" class="search-jailer">
-						<option value="drug_management_history_dm_no">약물관리번호</option>
+						<option value="prisoner_prison_number">수감번호</option>
 						<option value="th_no">복용내역번호</option>
 					</select> <input class="input-jailer" type="text" name="keyword"
 						placeholder="Search${pageContext.request.contextPath}">
@@ -191,7 +191,8 @@
 										<th>복용 내역 번호</th>
 										<th>약물 관리 번호</th>
 										<th>수감번호</th>
-										<th>복용일시</th>
+										<th>복용일</th>
+										<th>복용시간</th>
 										<th>삭제</th>
 									</tr>
 								</thead>
@@ -200,8 +201,9 @@
 										<tr>
 											<td>${vo.th_no}</td>
 											<td>${vo.drug_management_history_dm_no}</td>
-											<td>9823</td>
+											<td>${vo.prisoner_prison_number}</td>
 											<td>${vo.taking_date}</td>
+											<td>${vo.taking_time}</td>
 											<td><button class="btn btn-default btn-sm">삭제</button></td>
 										</tr>
 									</c:forEach>

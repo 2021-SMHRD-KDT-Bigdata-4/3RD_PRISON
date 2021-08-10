@@ -31,8 +31,6 @@ public interface PrisonMapper {
 	@Select("select * from cctv")
 	public List<CCTVVO> cctvList(); // CCTV 리스트 가져오기
 
-	@Insert("insert into cctv(area, cctv_non, location, active, unique) "
-			+ "values(#{area}, #{cctv_non}, #{location}, #{cctv_active}, #{cctv_unique})")
 	public void cctvInsert(CCTVVO vo); // CCTV 신규 등록
 
 	// 활성화 비활성화 tinyint(type)
@@ -50,8 +48,6 @@ public interface PrisonMapper {
 	@Select("select * from patrol_history")
 	public List<PatrolHistoryVO> phList(); // 순찰기록 가져오기
 
-	@Insert("insert into patrol_history(date, time, location, contents, prison_officer_po_no) "
-			+ "values(#{date}, #{time}, #{location}, #{contents}, #{prison_officer_po_no}")
 	public void phInsert(PatrolHistoryVO vo);
 
 	@Update("update patrol_history set contents=#{contents} where ph_no=#{ph_no}")
@@ -68,8 +64,6 @@ public interface PrisonMapper {
 	@Select("select * from anomaly_detection_history")
 	public List<AnomalyDetectionHistoryVO> adhList();
 
-	@Insert("insert into anomaly_detection_history(anomalies, actual_anomalies, prison_officer_po_no) "
-			+ "values(#{anomalies}, #{actual_anomalies}, #{prison_officer_po_no})")
 	public void adhInsert(AnomalyDetectionHistoryVO vo);
 
 	@Update("update anomaly_detection_history set ")
@@ -85,9 +79,7 @@ public interface PrisonMapper {
 	@Select("select * from corrective_history")
 	public List<CollectiveHistoryVO> chList(); // 교정사고 내역 리스트 가져오기
 
-//    @Insert("insert into CORRECTIVE_HISTORY(occuring_place, calssification, details, prisoner_prison_number) " +
-//            "values(#{occuring_place, #{classification}, #{details}, #{prisoner_prison_number})")
-//    public void chInsert(CollectiveHistoryVO vo);
+    public void chInsert(CollectiveHistoryVO vo);
 
 	@Update("update corrective_history set ")
 	public void chUpdate(CollectiveHistoryVO vo);
@@ -138,8 +130,6 @@ public interface PrisonMapper {
 	@Select("select * from drug_management_history")
 	public List<DrugManagementVO> dmList();
 
-	@Insert("insert into drug_management_history(drug_type, spec_drug, prisoner_prison_number) "
-			+ "values(#{drug_type}, #{spec_drug}, #{prisoner_prison_number}")
 	public void dmInsert(DrugManagementVO vo);
 
 	@Update("update drug_management_history set drug_type=#{drug_type}, spec_drug=#{spec_drug} "
@@ -156,8 +146,6 @@ public interface PrisonMapper {
 	@Select("select * from spec_drug_history")
 	public List<SpecDrugHistoryVO> sdhList();
 
-	@Insert("insert into spec_drug_history(taking_date, drug_management_history_dm_no) "
-			+ "values(#{taking_date}, #{drug_management_history_dm_no})")
 	public void sdhInsert(SpecDrugHistoryVO vo);
 
 	@Update("update spec_drug_history set " + "where th_no=#{th_no}")

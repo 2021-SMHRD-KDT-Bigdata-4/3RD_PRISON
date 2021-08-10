@@ -158,32 +158,19 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/patrol_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>교도관1</label> <input type="text" id = "pono1" class="input">
+					<label>교도관1</label> <input type="text" id = "pono1" class="input" name="prison_officer_po_no1">
 				</div>
 				<div class="input_field">
-					<label>교도관2</label> <input type="text" id = "pono2" class="input">
+					<label>교도관2</label> <input type="text" id = "pono2" class="input" name="prison_officer_po_no2">
 				</div>
 				<div class="input_field">
-					<label>순찰 날짜</label> <input type="text" id = "date" class="input">
-				</div>
-				<div class="input_field">
-					<label>순찰 시간</label> <select id="time">
-						<option value="9시">09:00-10:00</option>
-						<option value="10시">10:00-11:00</option>
-						<option value="11시">11:00-12:00</option>
-					</select>
-				</div>
-				<div class="input_field">
-					<label>순찰 장소</label> <input type="text" id = "location" class="input">
-				</div>
-				<div class="input_field">
-					<label>순찰 내용</label> <input type="text" id = "contents" class="input">
+					<label>순찰 장소</label> <input type="text" id = "location" class="input" name="">
 				</div>
 				<div>
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
+					<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
 				</div>
 
 			</div>

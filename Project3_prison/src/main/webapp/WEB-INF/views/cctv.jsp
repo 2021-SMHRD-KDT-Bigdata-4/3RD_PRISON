@@ -193,7 +193,6 @@
 										<th>CCTV번호(N)</th>
 										<th>상세 위치</th>
 										<th>활성여부</th>
-										<th>특이사항</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -204,11 +203,10 @@
 											<td>${vo.cctv_non}</td>
 											<td>${vo.location}</td>
 											<td><input type="checkbox" 
-											<c:if test="${vo.cctv_active eq false}">
+											<c:if test="${vo.active eq true}">
 											checked
 											</c:if>>
 											</td>
-											<td>${vo.cctv_unique}</td>
 										</tr>
 									</c:forEach>
 								</tbody>

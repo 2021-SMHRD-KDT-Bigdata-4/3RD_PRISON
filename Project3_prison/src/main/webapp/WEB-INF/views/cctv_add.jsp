@@ -158,22 +158,22 @@
 
 
 	<section class="club-section spad-4">
-		<form>
+		<form method="post" action="${cpath}/cctv_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>설치 구역</label> <input type="text" class="input">
+					<label>설치 구역</label> <input type="text" class="input" name="area">
 				</div>
 				<div class="input_field">
-					<label>CCTV번호(N)</label> <input type="text" class="input">
+					<label>CCTV번호(N)</label> <input type="text" class="input" name="cctv_non">
 				</div>
 				<div class="input_field">
-					<label>상세 위치</label> <input type="text" class="input">
+					<label>상세 위치</label> <input type="text" class="input" name="location">
 				</div>
 				<div class="input_field">
-					<label>활성여부</label><input type="checkbox">
-				</div>
-				<div class="input_field">
-					<label>특이사항</label> <input type="text" class="input">
+					<label>활성화여부</label> <select id = "cctv_active" name = "active">
+						<option id = "male" value="1">활성화</option>
+						<option id = "female" value="0">비활성화</option>
+					</select>
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
