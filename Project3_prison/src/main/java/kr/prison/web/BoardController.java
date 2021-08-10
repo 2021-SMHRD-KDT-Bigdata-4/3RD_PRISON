@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.executor.ReuseExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -53,9 +54,24 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		List<JailerVO> list = prisonMapper.jailerList();
 		model.addAttribute("list", list);
 	}
-
+	
+	@RequestMapping("/prisoner_info_form.do")
+	public String prisoner_info_form(int prison_number,Model model) {
+		JailerVO vo = prisonMapper.jailer_select(prison_number);
+		model.addAttribute("vo", vo);
+		return "prisoner_info_form";
+	}
+	
+	@RequestMapping("/prisoner_info_form_up.do")
+	public String prisoner_info_form_up(JailerVO vo) {
+		prisonMapper.jailerUpdate(vo);
+		return "redirect:/prisoner_info.do";
+	}
+	
 	@RequestMapping("/prisoner_info_add.do")
 	public void prisoner_info_add(Model model) {
+		
+
 		// 페이징
 	}
 	
@@ -78,7 +94,22 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		model.addAttribute("list", list);
 
 	}
+	
+	@RequestMapping("/prison_officer_info_form.do")
+	public String prison_officer_info_from(String po_no,Model model) {
+		PrisonOfficerVO vo = prisonMapper.po_select(po_no);
+		model.addAttribute("vo", vo);
+		return "prison_officer_info_form";
+	}
+	
+	
+	@RequestMapping("/prison_officer_info_from_up.do")
+	public String prison_officer_info_from(PrisonOfficerVO vo) {
+		prisonMapper.poUpdate(vo);
+		return "redirect:/prison_officer_info.do";
 
+	}
+	
 	@RequestMapping("/prison_officer_info_add.do")
 	public void prison_officer_info_add(Model model) {
 
