@@ -69,8 +69,8 @@
 		var clock = document.getElementById("clock");
 		var now = new Date();
 
-		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1)
-				+ "-" + now.getDate() + "   " + now.getHours() + ":"
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
 				+ now.getMinutes() + ":" + now.getSeconds();
 
 		setTimeout("printTime()", 1000);
@@ -242,7 +242,8 @@
 								</div>
 								<div class="ni-text">
 									<h4>
-										<a href="#">교정시설 코로나 감염 잇달아…</a>
+										<a href="https://www.yna.co.kr/view/AKR20210804144300004"
+											id="title1">교정시설 코로나 감염 잇달아…</a>
 									</h4>
 									<ul>
 										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
@@ -263,7 +264,8 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">윤리와 여론 사이… 딜레마에 빠진 세계의 교정당국들</a>
+										<a href="https://m.dailian.co.kr/news/view/1019365">윤리와 여론
+											사이… 딜레마에 빠진 세계의 교정당국들</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> August 5, 2021</li>
@@ -279,7 +281,9 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">교도소서 동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
+										<a
+											href="https://www.mk.co.kr/news/society/view/2021/07/719221/">교도소서
+											동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 26, 2021</li>
@@ -295,7 +299,9 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">자바교도소 교정협의회, 수용자들에 아이스크림 전달</a>
+										<a
+											href="https://www.jjan.kr/news/articleView.html?idxno=2113613">자바교도소
+											교정협의회, 수용자들에 아이스크림 전달</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 27, 2021</li>
@@ -311,7 +317,7 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#" id="title1">자바교도소 23대 주익정 소장 취임</a>
+										<a href="BbungEzRong.do">자바교도소 23대 주익정 소장 취임</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 19, 2021</li>
