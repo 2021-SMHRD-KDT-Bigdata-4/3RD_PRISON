@@ -43,9 +43,19 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		// 페이징
 	}
 	
+	@RequestMapping("/clocktest.do")
+	public void clocktest(Model model) {
+		// 페이징
+	}
+	
 	@RequestMapping("/CCTVstreamingTest.do")
 	public void CCTVsreamingTest(Model model) {
 		// 페이징
+	}
+	
+	@RequestMapping("/BbungEzRong.do")
+	public void BbungEzRong(Model model) {
+		
 	}
 
 	@RequestMapping("/login.do")

@@ -220,7 +220,7 @@ function writeFn() {
 											<td><img
 												src="${pageContext.request.contextPath}/"
 												width="100px" height="100px"></td>
-											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</td>
+											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</a></td>
 											<td>${vo.name}</td>
 											<td>${vo.age}</td>
 											<td>${vo.gender}</td>

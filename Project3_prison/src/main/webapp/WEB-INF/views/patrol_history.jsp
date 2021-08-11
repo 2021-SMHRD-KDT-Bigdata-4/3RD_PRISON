@@ -155,12 +155,8 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-<<<<<<< HEAD
-	<!-- Club Section Begin -->
-=======
-	<!-- Club Section Begin -->
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+	<!-- Club Section Begin -->
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
