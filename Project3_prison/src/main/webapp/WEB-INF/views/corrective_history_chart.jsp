@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 교정 사고 내역</title>
+<title>코도소 3차 프로젝트 | 재소자 정보</title>
 
 <!-- Google Font -->
 <link
@@ -49,7 +49,8 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,39 +106,40 @@
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<ul class="main-menu">
-								<li><a href="main.do">Home</a></li>
-								<li><a href="#">재소자</a>
-									<ul class="dropdown">
-										<li><a href="prisoner_info.do">재소자 정보</a></li>
-										<li><a href="drug_management_history.do">약물 내역</a></li>
-										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
-									</ul></li>
-								<li><a href="#">교도관</a>
-									<ul class="dropdown">
-										<li><a href="prison_officer_info.do">교도관 정보</a></li>
-										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
-									</ul></li>
-								<li class="active"><a href="#">교정사고</a>
-									<ul class="dropdown">
-										<li><a href="corrective_history.do">교정사고 내역</a></li>
-										<li><a href="anomaly_detection_history.do">이상 징후 감지
-												내역</a></li>
-									</ul></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-							<div class="nm-right search-switch">
-								<i class="fa fa-search"></i>
+							<div class="nav-menu">
+								<ul class="main-menu">
+									<li><a href="main.do">Home</a></li>
+									<li class="active"><a href="#">재소자</a>
+										<ul class="dropdown">
+											<li><a href="prisoner_info.do">재소자 정보</a></li>
+											<li><a href="drug_management_history.do">약물 내역</a></li>
+											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+										</ul></li>
+									<li><a href="#">교도관</a>
+										<ul class="dropdown">
+											<li><a href="prison_officer_info.do">교도관 정보</a></li>
+											<li><a href="patrol_history.do">순찰 내역</a></li>
+											<li><a href="cctv.do">CCTV 관리</a></li>
+										</ul></li>
+									<li><a href="#">교정사고</a>
+										<ul class="dropdown">
+											<li><a href="corrective_history.do">교정사고 내역</a></li>
+											<li><a href="anomaly_detection_history.do">이상 징후 감지
+													내역</a></li>
+										</ul></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<div class="nm-right search-switch">
+									<i class="fa fa-search"></i>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="canvas-open">
-					<i class="fa fa-bars"></i>
+					<div class="canvas-open">
+						<i class="fa fa-bars"></i>
+					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 	<!-- Header End -->
 
@@ -149,7 +151,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>교정 사고 내역</h2>
+						<h2>재소자 정보</h2>
 					</div>
 				</div>
 			</div>
@@ -157,68 +159,16 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
+	<div style="width: 900px; height: 900px;">
+		<!--차트가 그려질 부분-->
+		<canvas id="myChart"></canvas>
+	</div>
+
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/corrective_history_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="prisoner_prison_number">수감번호</option>
-						<option value="classification">분류</option>
-						<option value="calibration_accident_number">교정사고번호</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button class="btn btn-default btn-lg">검색</button>
-					<a href="corrective_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
-	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
-
-						<!-- Tab panes -->
-						<div class="container">
-
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>교정 사고 번호</th>
-										<th>수감 번호</th>
-										<th>발생 일시</th>
-										<th>발생 장소</th>
-										<th>분류</th>
-										<th>상세 내용</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
-										<tr>
-											<td>${vo.calibration_accident_number}</td>
-											<td>${vo.prisoner_prison_number}</td>
-											<td>${vo.occuring_time}</td>
-											<td>${vo.occuring_place}</td>
-											<td>${vo.classification}</td>
-											<td>${vo.details}</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="search-div"></div>
 	</section>
 	<!-- Club Section End -->
-
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
 		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
@@ -311,7 +261,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

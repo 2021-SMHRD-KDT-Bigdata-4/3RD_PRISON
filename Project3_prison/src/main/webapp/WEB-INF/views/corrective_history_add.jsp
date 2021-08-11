@@ -164,7 +164,14 @@
 					<label>수감 번호</label> <input type="text" id = "prison_number" class="input" name="prisoner_prison_number">
 				</div>
 				<div class="input_field">
-					<label>발생 장소</label> <input type="text" id = "occuring_place" class="input" name="occuring_place">
+					<label>발생 장소</label> <select id = "occuring_place" name = "occuring_place">
+						<option id = "수감동화장실" value="수감동화장실">수감동화장실</option>
+						<option id = "수감동거실" value="수감동거실">수감동거실</option>
+						<option id = "출역지" value="출역지">출역지</option>
+						<option id = "운동장" value="운동장">운동장</option>
+						<option id = "복도" value="복도">복도</option>
+						<option id = "기타장소" value="기타장소">기타장소</option>
+					</select>
 				</div>
 				<div class="input_field">
 					<label>분류</label> <select id = "classification" name = "classification">
