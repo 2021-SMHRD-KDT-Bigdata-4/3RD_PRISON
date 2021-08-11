@@ -49,6 +49,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">

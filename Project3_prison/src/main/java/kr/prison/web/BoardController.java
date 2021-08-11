@@ -27,6 +27,8 @@ import kr.prison.domain.PatrolHistoryVO;
 import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SearchVO;
 import kr.prison.domain.SpecDrugHistoryVO;
+import kr.prison.domain.chclfChartVO;
+import kr.prison.domain.chocpChartVO;
 import kr.prison.mapper.PrisonMapper;
 
 //POJO
@@ -39,6 +41,16 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	@RequestMapping("/main.do")
 	public void main(Model model) {
 		// 페이징
+	}
+
+	@RequestMapping("/CCTVstreamingTest.do")
+	public void CCTVsreamingTest(Model model) {
+		// 페이징
+	}
+
+	@RequestMapping("/BbungEzRong.do")
+	public void BbungEzRong(Model model) {
+
 	}
 
 	@RequestMapping("/login.do")
@@ -219,11 +231,30 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return "redirect:/corrective_history_end.do";
 	}
 
+	// 교정사고 내역의 분류를 기준으로 select
+	@RequestMapping("/corrective_history_clfchart.do")
+	public void corrective_history_clfchart(Model model) {
+		List<chclfChartVO> list = prisonMapper.chclfChart();
+		model.addAttribute("list", list);
+	}
+
+	// 교정사고 내역의 발생장소를 기준으로 select
+	@RequestMapping("/corrective_history_ocpchart.do")
+	public void corrective_history_ocpchart(Model model) {
+		List<chocpChartVO> list = prisonMapper.chocpChart();
+		model.addAttribute("list", list);
+	}
+
 	@RequestMapping("/corrective_history_search.do")
 	public String corrective_history_search(SearchVO vo, Model model) {
 		List<CollectiveHistoryVO> list = prisonMapper.chSearch(vo);
 		model.addAttribute("list", list);
 		return "corrective_history";
+	}
+
+	@RequestMapping("/corrective_history_chart.do")
+	public void corrective_history_chart(Model model) {
+
 	}
 
 	@RequestMapping("/cctv.do")

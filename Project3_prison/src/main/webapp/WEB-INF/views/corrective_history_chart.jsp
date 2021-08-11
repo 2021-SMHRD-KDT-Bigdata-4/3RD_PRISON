@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 교정 사고 추가</title>
+<title>코도소 3차 프로젝트 | 재소자 정보</title>
 
 <!-- Google Font -->
 <link
@@ -49,6 +49,8 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,35 +60,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	function logoutFn() {
-		$.ajax({
-			url : "${cpath}/logoutajax.do",
-			type : "get",
-			success : function() {
-				location.href = "main.do";
-			},
-			error : function() {
-				alert("error");
-			}
-		});
-	}
-
-	function printTime() {
-		var clock = document.getElementById("clock");
-		var now = new Date();
-
-		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
-				+ now.getDate() + "   " + now.getHours() + ":"
-				+ now.getMinutes() + ":" + now.getSeconds();
-
-		setTimeout("printTime()", 1000);
-	}
-
-	window.onload = function() {
-		printTime();
-	};
-</script>
 </head>
 
 <body>
@@ -103,17 +76,9 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>
-									<div id="clock"></div>
-								</li>
-								<c:if test="${sessionScope.prisonOfficerVO==null}">
-									<li><a href="login.do">Sign in</a></li>
-								</c:if>
-								<c:if test="${sessionScope.prisonOfficerVO!=null}">
-									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
-											환영합니다.</a></li>
-									<li><a onclick="logoutFn()"> 로그아웃</a></li>
-								</c:if>
+								<li>20:00 - May 19, 2019</li>
+								<li><a href="#">Logout</a></li>
+								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -141,39 +106,40 @@
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<ul class="main-menu">
-								<li><a href="main.do">Home</a></li>
-								<li><a href="#">재소자</a>
-									<ul class="dropdown">
-										<li><a href="prisoner_info.do">재소자 정보</a></li>
-										<li><a href="drug_management_history.do">약물 내역</a></li>
-										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
-									</ul></li>
-								<li><a href="#">교도관</a>
-									<ul class="dropdown">
-										<li><a href="prison_officer_info.do">교도관 정보</a></li>
-										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
-									</ul></li>
-								<li class="active"><a href="#">교정사고</a>
-									<ul class="dropdown">
-										<li><a href="corrective_history.do">교정사고 내역</a></li>
-										<li><a href="anomaly_detection_history.do">이상 징후 감지
-												내역</a></li>
-									</ul></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-							<div class="nm-right search-switch">
-								<i class="fa fa-search"></i>
+							<div class="nav-menu">
+								<ul class="main-menu">
+									<li><a href="main.do">Home</a></li>
+									<li class="active"><a href="#">재소자</a>
+										<ul class="dropdown">
+											<li><a href="prisoner_info.do">재소자 정보</a></li>
+											<li><a href="drug_management_history.do">약물 내역</a></li>
+											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+										</ul></li>
+									<li><a href="#">교도관</a>
+										<ul class="dropdown">
+											<li><a href="prison_officer_info.do">교도관 정보</a></li>
+											<li><a href="patrol_history.do">순찰 내역</a></li>
+											<li><a href="cctv.do">CCTV 관리</a></li>
+										</ul></li>
+									<li><a href="#">교정사고</a>
+										<ul class="dropdown">
+											<li><a href="corrective_history.do">교정사고 내역</a></li>
+											<li><a href="anomaly_detection_history.do">이상 징후 감지
+													내역</a></li>
+										</ul></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<div class="nm-right search-switch">
+									<i class="fa fa-search"></i>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="canvas-open">
-					<i class="fa fa-bars"></i>
+					<div class="canvas-open">
+						<i class="fa fa-bars"></i>
+					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 	<!-- Header End -->
 
@@ -185,7 +151,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>교정 사고 추가</h2>
+						<h2>재소자 정보</h2>
 					</div>
 				</div>
 			</div>
@@ -193,50 +159,16 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
+	<div style="width: 900px; height: 900px;">
+		<!--차트가 그려질 부분-->
+		<canvas id="myChart"></canvas>
+	</div>
 
-	<section class="club-section spad-4">
-		<form method="post" action="${cpath}/corrective_history_insert.do">
-			<div class="form">
-				<div class="input_field">
-					<label>수감 번호</label> <input type="text" id="prison_number"
-						class="input" name="prisoner_prison_number">
-				</div>
-				<div class="input_field">
-					<label>발생 장소</label> <select id="occuring_place"
-						name="occuring_place">
-						<option id="수감동화장실" value="수감동화장실">수감동화장실</option>
-						<option id="수감동거실" value="수감동거실">수감동거실</option>
-						<option id="출역지" value="출역지">출역지</option>
-						<option id="운동장" value="운동장">운동장</option>
-						<option id="복도" value="복도">복도</option>
-						<option id="기타장소" value="기타장소">기타장소</option>
-					</select>
-				</div>
-				<div class="input_field">
-					<label>분류</label> <select id="classification" name="classification">
-						<option id="폭행치사" value="폭행치사">폭행치사(재소자)</option>
-						<option id="폭행치상" value="폭행치상">폭행치상(재소자)</option>
-						<option id="교도관폭행" value="교도관폭행">교도관폭행</option>
-						<option id="도주" value="도주">도주</option>
-						<option id="변사" value="변사">변사</option>
-						<option id="병사" value="병사">병사</option>
-						<option id="밀수품반입" value="밀수품반입">밀수품반입</option>
-						<option id="기타규정위반" value="기타규정위반">기타규정위반</option>
-					</select>
-				</div>
-				<div class="input_field">
-					<label>상세 내용</label> <input type="text" id="details" class="input"
-						name="details">
-				</div>
-				<div class="page-btn">
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
-				</div>
-
-			</div>
-		</form>
+	<!-- Club Section Begin -->
+	<section class="club-section-1 spad-3">
+		<div class="search-div"></div>
 	</section>
 	<!-- Club Section End -->
-
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
 		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
@@ -349,7 +281,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here...">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>

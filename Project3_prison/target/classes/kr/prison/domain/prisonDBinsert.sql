@@ -44,7 +44,17 @@ insert into corrective_history(occuring_time, occuring_place, classification, de
 
 select * from corrective_history;
 
-select count(case when classification = '폭행' then 1 end) from corrective_history;
+
+select
+	count(case when classification='폭행치사(재소자)' then 1 end) as case1,
+	count(case when classification='폭행치상(재소자)' then 1 end) as case2,
+	count(case when classification='교도관폭행' then 1 end) as case3,
+	count(case when classification='도주' then 1 end) as case4,
+	count(case when classification='변사' then 1 end) as case5,
+	count(case when classification='병사' then 1 end) as case6,
+	count(case when classification='밀수품반입' then 1 end) as case7,
+	count(case when classification='기타규정위반' then 1 end) as case8
+from corrective_history;
 
 -- 약물관리내역 -------------------------------------------------------------------------------------------
 
