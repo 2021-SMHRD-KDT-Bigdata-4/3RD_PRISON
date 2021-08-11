@@ -493,7 +493,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>
+							<ul>     
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

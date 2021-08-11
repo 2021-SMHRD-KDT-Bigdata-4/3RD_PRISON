@@ -49,11 +49,6 @@
 	font-style: normal;
 }
 
-#title1:hover{
-	
-	outline: none;
-	color: #000000;
-}
 
 #main_title {
 	font-family: 'MaruBuri-Regular';
@@ -5565,7 +5560,6 @@ transparent
 
 .input_field label {
 	width: 8%;
-	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
 	border-radius: 4px;
@@ -5711,6 +5705,8 @@ a
 }
 
 .search-jailer-div {
+	padding-top: 30px;
+	padding-bottom: 30px;
 	text-align: center;
 }
 
