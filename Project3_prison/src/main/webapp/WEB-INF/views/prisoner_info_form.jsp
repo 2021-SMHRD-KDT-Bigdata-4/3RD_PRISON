@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 재소자 정보</title>
+<title>코도소 3차 프로젝트 | 재소자 추가</title>
 
 <!-- Google Font -->
 <link
@@ -58,15 +58,12 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-
-
-
-
-
-
-</script>
+	<script type="text/javascript">
+	function goList() {
+		location.href = "${cpath}/boardList.do";
+	}
+	</script>
+	
 </head>
 
 <body>
@@ -166,78 +163,50 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Club Section Begin -->
-	<div  id="list1" style="display: block;"> 
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/prisoner_info_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="name">이름</option>
-						<option value="prison_number">수감번호</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${cpath}">
-					<button class="btn btn-default btn-lg">검색</button>
-					<a href="prisoner_info_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
-	</div>
 	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
-
-						<!-- Tab panes -->
-						<div id="list" class="container" style="display: block;">
-
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>사진</th>
-										<th>수감번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>수감구역</th>
-										<th>방 번호</th>
-										<th>범죄 분류</th>
-										<th>전과</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
-										<tr>
-											<td><img src="${vo.photo}" width="100px" height="100px"></td>
-											<td><a href="prisoner_info_form.do?prison_number=${vo.prison_number}">${vo.prison_number}</a></td>
-											<td>${vo.name}</td>
-											<td>${vo.age}</td>
-											<td>${vo.sex}</td>
-											<td>${vo.prison_area}</td>
-											<td>${vo.room_number}</td>
-											<td>${vo.crime_classification}</td>
-											<td>${vo.before_crime}</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-	
-
-					</div>
+		<form id="frm" method="post" action="${cpath}/prisoner_info_form_up.do">
+			<div class="form"><div class="input_field">
+					<label>번호</label> <input type="text" id = "prison_number" class="input" name="prison_number" readonly="readonly" value="${vo.prison_number}">
 				</div>
+				<div class="input_field">
+					<label>이름</label> <input type="text" id = "name" class="input" name="name" value="${vo.name}" readonly="readonly">
+				</div>
+				<div class="input_field">
+					<label>나이</label> <input type="text" id = "age" class="input" name="age" value="${vo.age}" readonly="readonly">
+				</div>
+				<div class="input_field">
+					<label>성별</label> <select id = "sex" name="sex">
+						<option id="male" value="male">남자</option>
+						<option id="female" value="female">여자</option>
+					</select>
+				</div>
+				<div class="input_field">
+					<label>수감 구역</label> <input type="text" id = "prison_area" class="input" name="prison_area" value="${vo.prison_area}">
+				</div>
+				<div class="input_field">
+					<label>방 번호</label> <input type="text" id = "room_number" class="input" name="room_number" value="${vo.room_number}">
+				</div>
+				<div class="input_field">
+					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification" readonly="readonly" value="${vo.crime_classification}">
+				</div>
+				<div class="input_field">
+					<label>전과</label> <input type="text" id = "before_crime" class="input" name="before_crime" value="${vo.before_crime}" readonly="readonly" >
+				</div>
+				<div class="input_field">
+					<label>사진</label> <input id="file_input" id = "photo" type="file"
+						name="photo" readonly="readonly">
+				</div>
+				<div>
+					<button type="submit" class="btn btn-default btn-lg">추가</button>
+					<button type="reset" class="btn btn-default btn-lg">취소</button>
+				<input type='button' value='목록' class='btn btn-default btn-lg' onclick = "goList()">
+				</div>
+
 			</div>
-		</div>
+		</form>
 	</section>
 	<!-- Club Section End -->
 
-	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
 		<div class="container">
 			<div class="row">
@@ -352,6 +321,9 @@
 		</div>
 	</div>
 	<!-- Search model end -->
+	
+
+
 
 </body>
 

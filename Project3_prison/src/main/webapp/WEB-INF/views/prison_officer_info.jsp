@@ -58,6 +58,20 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function writeFn() {
+	var data = $("#frm").serialize();
+	$.ajax({
+		url : "ajaxregister.do",
+		type : "post",
+		data : formData,
+		success : list,
+		error : function() {
+			alert("error");
+		}
+	});
+}
+</script>
 </head>
 
 <body>
@@ -182,7 +196,7 @@
 			</div>
 			<div class="club-tab-list">
 				<div class="row">
-					<div class="col-lg-8 m-auto">
+					<div class="col-lg-8 m-auto"  style="display: block" ; id="bf"> 
 
 						<!-- Tab panes -->
 						<div class="container">
@@ -206,7 +220,7 @@
 											<td><img
 												src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
 												width="100px" height="100px"></td>
-											<td>${vo.po_no}</td>
+											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</td>
 											<td>${vo.name}</td>
 											<td>${vo.age}</td>
 											<td>${vo.gender}</td>
@@ -218,6 +232,9 @@
 								</tbody>
 							</table>
 						</div>
+					</div>
+					<div style="display: none" ; id="bf">
+						<c:import url="prison_officer_info_form.jsp" />
 					</div>
 				</div>
 			</div>
