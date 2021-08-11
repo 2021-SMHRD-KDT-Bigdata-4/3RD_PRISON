@@ -59,18 +59,18 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-function writeFn() {
-	var data = $("#frm").serialize();
-	$.ajax({
-		url : "ajaxregister.do",
-		type : "post",
-		data : formData,
-		success : list,
-		error : function() {
-			alert("error");
-		}
-	});
-}
+	function writeFn() {
+		var data = $("#frm").serialize();
+		$.ajax({
+			url : "ajaxregister.do",
+			type : "post",
+			data : formData,
+			success : list,
+			error : function() {
+				alert("error");
+			}
+		});
+	}
 </script>
 </head>
 
@@ -196,7 +196,7 @@ function writeFn() {
 			</div>
 			<div class="club-tab-list">
 				<div class="row">
-					<div class="col-lg-8 m-auto"  style="display: block" ; id="bf"> 
+					<div class="col-lg-8 m-auto" style="display: block" ; id="bf">
 
 						<!-- Tab panes -->
 						<div class="container">
@@ -212,21 +212,23 @@ function writeFn() {
 										<th>급수</th>
 										<th>직책</th>
 										<th>부서</th>
+										<th>삭제</th>
 									</tr>
 								</thead>
 								<tbody>
 									<c:forEach var="vo" items="${list}">
 										<tr>
-											<td><img
-												src="${pageContext.request.contextPath}/"
+											<td><img src="${pageContext.request.contextPath}/"
 												width="100px" height="100px"></td>
-											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</a></td>
+											<td><a
+												href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</a></td>
 											<td>${vo.name}</td>
 											<td>${vo.age}</td>
 											<td>${vo.gender}</td>
 											<td>${vo.rank}</td>
 											<td>${vo.position}</td>
 											<td>${vo.department}</td>
+											<td><button class="btn btn-default btn-sm">삭제</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -334,7 +336,7 @@ function writeFn() {
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>
@@ -346,7 +348,7 @@ function writeFn() {
 		</div>
 	</footer>
 	<!-- Footer Section End -->
-	
+
 	<!-- Search model Begin -->
 	<div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">

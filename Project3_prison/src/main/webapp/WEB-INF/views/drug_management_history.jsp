@@ -159,7 +159,8 @@
 	<!-- Club Section Begin -->
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
-			<form action="${cpath}/drug_management_history_search.do" method="post">
+			<form action="${cpath}/drug_management_history_search.do"
+				method="post">
 				<div class="search-jailer-div">
 					<select name="part" class="search-jailer">
 						<option value="prisoner_prison_number">수감번호</option>
@@ -194,6 +195,7 @@
 										<th>약물종류</th>
 										<th>복용횟수</th>
 										<th>특별약물여부</th>
+										<th>삭제</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -203,10 +205,12 @@
 											<td>${vo.prisoner_prison_number}</td>
 											<td>${vo.drug_type}</td>
 											<td>${vo.taking_count}</td>
-											<td><input type="checkbox" <c:if test="${vo.spec_drug eq true}">
+											<td><input type="checkbox"
+												<c:if test="${vo.spec_drug eq true}">
 											checked
 											</c:if>>
 											</td>
+											<td><button class="btn btn-default btn-sm">삭제</button></td>
 										</tr>
 									</c:forEach>
 									<tr>
@@ -312,7 +316,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>
