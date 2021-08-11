@@ -155,12 +155,6 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-<<<<<<< HEAD
-	<!-- Club Section Begin -->
-=======
-	<!-- Club Section Begin -->
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 	<section class="club-section spad-4">
 		<div class="row">
 			<div class="col-lg-8 m-auto">
@@ -235,7 +229,7 @@
 									<label>순찰 장소</label> <input type="text" id="location"
 										class="input" name="location">
 								</div>
-								<div class = "page-btn">
+								<div class="page-btn">
 									<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
 								</div>
 							</div>

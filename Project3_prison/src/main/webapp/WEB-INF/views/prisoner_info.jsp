@@ -60,12 +60,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-
-
-
-
-
-
+	
 </script>
 </head>
 
@@ -167,23 +162,23 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<div  id="list1" style="display: block;"> 
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/prisoner_info_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="name">이름</option>
-						<option value="prison_number">수감번호</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${cpath}">
-					<button class="btn btn-default btn-lg">검색</button>
-					<a href="prisoner_info_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
+	<div id="list1" style="display: block;">
+		<section class="club-section-1 spad-3">
+			<div class="search-div">
+				<form action="${cpath}/prisoner_info_search.do" method="post">
+					<div class="search-jailer-div">
+						<select name="part" class="search-jailer">
+							<option value="name">이름</option>
+							<option value="prison_number">수감번호</option>
+						</select> <input class="input-jailer" type="text" name="keyword"
+							placeholder="Search${cpath}">
+						<button class="btn btn-default btn-lg">검색</button>
+						<a href="prisoner_info_add.do"><button type="button"
+								class="btn btn-default btn-lg">추가</button></a>
+					</div>
+				</form>
+			</div>
+		</section>
 	</div>
 	<section class="club-section spad-4">
 		<div class="container">
@@ -209,13 +204,15 @@
 										<th>방 번호</th>
 										<th>범죄 분류</th>
 										<th>전과</th>
+										<th>삭제</th>
 									</tr>
 								</thead>
 								<tbody>
 									<c:forEach var="vo" items="${list}">
 										<tr>
 											<td><img src="${vo.photo}" width="100px" height="100px"></td>
-											<td><a href="prisoner_info_form.do?prison_number=${vo.prison_number}">${vo.prison_number}</a></td>
+											<td><a
+												href="prisoner_info_form.do?prison_number=${vo.prison_number}">${vo.prison_number}</a></td>
 											<td>${vo.name}</td>
 											<td>${vo.age}</td>
 											<td>${vo.sex}</td>
@@ -223,12 +220,13 @@
 											<td>${vo.room_number}</td>
 											<td>${vo.crime_classification}</td>
 											<td>${vo.before_crime}</td>
+											<td><button class="btn btn-default btn-sm">삭제</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
 						</div>
-	
+
 
 					</div>
 				</div>
@@ -236,7 +234,7 @@
 		</div>
 	</section>
 	<!-- Club Section End -->
-<!-- Footer Section Begin -->
+	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
 		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
 		style='background-image: url("${pageContext.request.contextPath}/resources/img/footer-bg.jpg");'>
@@ -328,7 +326,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

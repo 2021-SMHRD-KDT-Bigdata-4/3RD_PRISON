@@ -64,6 +64,21 @@
 			}
 		});
 	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1)
+				+ "-" + now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
 </script>
 </head>
 
@@ -81,13 +96,16 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
+								<li>
+									<div id="clock"></div>
+								</li>
 								<c:if test="${sessionScope.prisonOfficerVO==null}">
 									<li><a href="login.do">Sign in</a></li>
 								</c:if>
 								<c:if test="${sessionScope.prisonOfficerVO!=null}">
 									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
-											환영합니다.</a><a onclick="logoutFn()">로그아웃</a></li>
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
 								</c:if>
 								<li><a href="#">Contact</a></li>
 
@@ -293,7 +311,7 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="#">자바교도소 23대 주익정 소장 취임</a>
+										<a href="#" id="title1">자바교도소 23대 주익정 소장 취임</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 19, 2021</li>
@@ -493,7 +511,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>
