@@ -40,8 +40,11 @@ select * from cctv;
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '운동장', '폭행', '일반폭행', '6758');
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '3567');
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '2481');
+insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-10", '운동장', '폭행', '일반폭행', '3567');
 
 select * from corrective_history;
+
+select count(case when classification = '폭행' then 1 end) from corrective_history;
 
 -- 약물관리내역 -------------------------------------------------------------------------------------------
 

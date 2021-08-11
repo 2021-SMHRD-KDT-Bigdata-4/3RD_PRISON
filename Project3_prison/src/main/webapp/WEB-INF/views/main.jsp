@@ -107,8 +107,6 @@
 											환영합니다.</a></li>
 									<li><a onclick="logoutFn()"> 로그아웃</a></li>
 								</c:if>
-								<li><a href="#">Contact</a></li>
-
 							</ul>
 						</div>
 					</div>
@@ -129,7 +127,7 @@
 				<div class="row">
 					<div class="col-lg-2">
 						<div class="logo">
-							<a href="./main.jsp"><img
+							<a href="./main.do"><img
 								src="${pageContext.request.contextPath}/resources/img/logo.png"
 								alt=""></a>
 						</div>
@@ -264,8 +262,8 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="https://m.dailian.co.kr/news/view/1019365">윤리와 여론
-											사이… 딜레마에 빠진 세계의 교정당국들</a>
+										<a href="https://m.dailian.co.kr/news/view/1019365"
+											id="title1">윤리와 여론 사이… 딜레마에 빠진 세계의 교정당국들</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> August 5, 2021</li>
@@ -282,8 +280,8 @@
 								<div class="ni-text">
 									<h5>
 										<a
-											href="https://www.mk.co.kr/news/society/view/2021/07/719221/">교도소서
-											동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
+											href="https://www.mk.co.kr/news/society/view/2021/07/719221/"
+											id="title1">교도소서 동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 26, 2021</li>
@@ -300,8 +298,8 @@
 								<div class="ni-text">
 									<h5>
 										<a
-											href="https://www.jjan.kr/news/articleView.html?idxno=2113613">자바교도소
-											교정협의회, 수용자들에 아이스크림 전달</a>
+											href="https://www.jjan.kr/news/articleView.html?idxno=2113613"
+											id="title1">자바교도소 교정협의회, 수용자들에 아이스크림 전달</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 27, 2021</li>
@@ -317,7 +315,7 @@
 								</div>
 								<div class="ni-text">
 									<h5>
-										<a href="BbungEzRong.do">자바교도소 23대 주익정 소장 취임</a>
+										<a href="BbungEzRong.do" id="title1">자바교도소 23대 주익정 소장 취임</a>
 									</h5>
 									<ul>
 										<li><i class="fa fa-calendar"></i> July 19, 2021</li>

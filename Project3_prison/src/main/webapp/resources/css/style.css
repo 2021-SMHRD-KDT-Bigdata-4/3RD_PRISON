@@ -53,19 +53,20 @@
 	margin-left: 50px;
 	margin-top: 25px;
 }
-
+	
 #title1 {
-	padding: 0 .3em;
-	transition: all .3s;
+  padding: 0 .3em;
+  transition: all .3s;
 }
 
 #title1:hover {
-	color: #ff8040;
+  color: #eb4607;
 }
 
 .page-btn {
 	padding: 30px;
 }
+
 
 #main_title {
 	font-family: 'MaruBuri-Regular';
@@ -313,13 +314,9 @@ keyframes loader { 0% {
 
 
 
-
-
 %
 {
 -webkit-transform
-
-
 
 
 
@@ -417,8 +414,6 @@ keyframes loader { 0% {
 
 
 
-
-
 rotate
 
 
@@ -466,11 +461,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -568,11 +559,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -669,11 +656,7 @@ transform
 
 
 
-
-
 :
-
-
 
 
 
@@ -769,11 +752,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -871,11 +850,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -972,11 +947,7 @@ border
 
 
 
-
-
 :
-
-
 
 
 
@@ -1074,11 +1045,7 @@ border
 
 
 
-
-
 solid
-
-
 
 
 
@@ -1174,12 +1141,8 @@ solid
 
 
 
-
-
 ;
 border-left-color
-
-
 
 
 
@@ -1277,11 +1240,7 @@ border-left-color
 
 
 
-
-
 transparent
-
-
 
 
 
@@ -1379,13 +1338,9 @@ transparent
 
 
 
-
-
 %
 {
 -webkit-transform
-
-
 
 
 
@@ -1483,8 +1438,6 @@ transparent
 
 
 
-
-
 rotate
 
 
@@ -1532,11 +1485,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -1634,11 +1583,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -1735,11 +1680,7 @@ transform
 
 
 
-
-
 :
-
-
 
 
 
@@ -1835,11 +1776,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -1937,11 +1874,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -2038,11 +1971,7 @@ border
 
 
 
-
-
 :
-
-
 
 
 
@@ -2140,11 +2069,7 @@ border
 
 
 
-
-
 solid
-
-
 
 
 
@@ -2240,12 +2165,8 @@ solid
 
 
 
-
-
 ;
 border-left-color
-
-
 
 
 
@@ -2343,11 +2264,7 @@ border-left-color
 
 
 
-
-
 transparent
-
-
 
 
 
@@ -2453,13 +2370,9 @@ transparent
 
 
 
-
-
 %
 {
 -webkit-transform
-
-
 
 
 
@@ -2557,8 +2470,6 @@ transparent
 
 
 
-
-
 rotate
 
 
@@ -2606,11 +2517,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -2708,11 +2615,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -2809,11 +2712,7 @@ border
 
 
 
-
-
 :
-
-
 
 
 
@@ -2911,11 +2810,7 @@ border
 
 
 
-
-
 solid
-
-
 
 
 
@@ -3011,12 +2906,8 @@ solid
 
 
 
-
-
 ;
 border-left-color
-
-
 
 
 
@@ -3114,11 +3005,7 @@ border-left-color
 
 
 
-
-
 transparent
-
-
 
 
 
@@ -3168,8 +3055,6 @@ transparent
 ;
 }
 100
-
-
 
 
 
@@ -3269,11 +3154,7 @@ transparent
 
 
 
-
-
 :
-
-
 
 
 
@@ -3369,11 +3250,7 @@ rotate
 
 
 
-
-
 (
-
-
 
 
 
@@ -3471,11 +3348,7 @@ rotate
 
 
 
-
-
 )
-
-
 
 
 
@@ -3572,11 +3445,7 @@ border
 
 
 
-
-
 :
-
-
 
 
 
@@ -3674,11 +3543,7 @@ border
 
 
 
-
-
 solid
-
-
 
 
 
@@ -3774,12 +3639,8 @@ solid
 
 
 
-
-
 ;
 border-left-color
-
-
 
 
 
@@ -3877,11 +3738,7 @@ border-left-color
 
 
 
-
-
 transparent
-
-
 
 
 

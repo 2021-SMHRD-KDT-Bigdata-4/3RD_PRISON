@@ -57,6 +57,35 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -73,9 +102,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -141,8 +178,8 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -162,6 +199,8 @@
 						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
 					<li class="nav-item"><a class="nav-link" data-toggle="tab"
 						href="#tabs-2" role="tab">추가</a></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="tab"
+						href="#tabs-3" role="tab">종료</a></li>
 				</ul>
 
 				<!-- Tab panes -->
@@ -229,7 +268,24 @@
 										class="input" name="location">
 								</div>
 								<div class="page-btn">
-									<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
+									<a href="#tabs-3">
+										<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane club-section spad-4" id="tabs-3"
+						role="tabpanel">
+						<form method="post" action="${cpath}/patrol_history_end.do">
+							<div class="form">
+								<div class="input_field">
+									<label>상세 내용</label>
+									<textarea class="form-control" rows="5" id="details"
+										name="details"></textarea>
+								</div>
+								<div class="page-btn">
+									<button type="submit" class="btn btn-default btn-lg">순찰종료</button>
 								</div>
 							</div>
 						</form>
