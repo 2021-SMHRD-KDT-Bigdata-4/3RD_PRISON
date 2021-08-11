@@ -161,13 +161,16 @@
 		<form method="post" action="${cpath}/patrol_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>교도관1</label> <input type="text" id = "pono1" class="input" name="prison_officer_po_no1">
+					<label>교도관1</label> <input type="text" id="pono1" class="input"
+						name="prison_officer_po_no1">
 				</div>
 				<div class="input_field">
-					<label>교도관2</label> <input type="text" id = "pono2" class="input" name="prison_officer_po_no2">
+					<label>교도관2</label> <input type="text" id="pono2" class="input"
+						name="prison_officer_po_no2">
 				</div>
 				<div class="input_field">
-					<label>순찰 장소</label> <input type="text" id = "location" class="input" name="">
+					<label>순찰 장소</label> <input type="text" id="location" class="input"
+						name="">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">순찰시작</button>

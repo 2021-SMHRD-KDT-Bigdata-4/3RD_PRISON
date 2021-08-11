@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="zxx">
@@ -19,51 +19,62 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css"
+	type="text/css">
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.magnific-popup.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery.slicknav.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script type="text/javascript">
-function loginFn() {
-	var po_no = $("#po_no").val();
-	var name = $("#name").val();
-	$.ajax({
-		url : "${cpath}/loginajax.do",
-		type : "post",
-		data : {
-			"po_no" : po_no,
-			"name" : name
-		},
-		success : function(data) {
-			alert(data);
-			if (data == "NO") {
-				alert("회원인증에 실패했습니다.");
-			} else {
-				alert("회원인증에 성공했습니다.");
-				location.href = "main.do"; // 메인화면으로...
+	function loginFn() {
+		var po_no = $("#po_no").val();
+		var name = $("#name").val();
+		$.ajax({
+			url : "${cpath}/loginajax.do",
+			type : "post",
+			data : {
+				"po_no" : po_no,
+				"name" : name
+			},
+			success : function(data) {
+				alert(data);
+				if (data == "NO") {
+					alert("회원인증에 실패했습니다.");
+				} else {
+					alert("회원인증에 성공했습니다.");
+					location.href = "main.do"; // 메인화면으로...
+				}
+			},
+			error : function() {
+				alert("error");
 			}
-		},
-		error : function() {
-			alert("error");
-		}
-	});
+		});
 
-}
-
+	}
 </script>
 </head>
 
@@ -105,10 +116,8 @@ function loginFn() {
 					<div class="col-lg-2">
 						<div class="logo">
 
-							<a href="./main.jsp"><img src="" alt=""></a>
-
-							<a href="./main.do"><img src="../resources/img/logo.png"
-								alt=""></a>
+							<a href="./main.jsp"><img src="" alt=""></a> <a
+								href="./main.do"><img src="../resources/img/logo.png" alt=""></a>
 
 						</div>
 					</div>
@@ -116,7 +125,7 @@ function loginFn() {
 						<div class="nav-menu">
 							<ul class="main-menu">
 								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
+								<li><a href="#">재소자</a>
 									<ul class="dropdown">
 										<li><a href="prisoner_info.do">재소자 정보</a></li>
 										<li><a href="drug_management_history.do">약물 내역</a></li>
@@ -163,7 +172,7 @@ function loginFn() {
 							</div>
 							<div class="group-in">
 								<label for="name">PASSWORD</label> <input type="text" id="name">
-								
+
 							</div>
 
 							<button type="submit" onclick="loginFn()">Login Now</button>
@@ -173,10 +182,10 @@ function loginFn() {
 				<div class="col-lg-6">
 					<div class="contact-info">
 						<h2>Contact Info</h2>
-						<p>It is a long established fact that a reader will be
-							distracted by the readable content of a page when looking at its
-							layout. The point of using Lorem Ipsum is that it has a
-							distribution of letters.</p>
+						<p>
+							2020 디지털 핵심인재 실무인재 양성사업 빅데이터 분석서비스 개발자과정(NCS) <br> 3차 프로젝트
+							코도소 (김남진, 박주현, 장영우, 주익정, 정지윤)
+						</p>
 						<div class="ci-address">
 							<h5>Gwangju Office</h5>
 							<ul>
@@ -201,19 +210,22 @@ function loginFn() {
 	<!-- Contact Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+	<footer class="footer-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/footer-bg.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="" alt=""></a>
+							<a href="./index.html"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
+								alt=""></a>
 						</div>
 						<ul>
-							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
-							<li><i class="fa fa-copy"></i> +(12) 345 6789 10</li>
-							<li><i class="fa fa-thumb-tack"></i> 40 Baria Sreet 133/2
-								New York City, United State</li>
+							<li><i class="fa fa-envelope"></i> 2_3jy@naver.com</li>
+							<li><i class="fa fa-copy"></i> +(82) 010 7140 174</li>
+							<li><i class="fa fa-thumb-tack"></i> 광주광역시 동구 대의동 10-1</li>
 						</ul>
 						<div class="fs-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
@@ -226,20 +238,20 @@ function loginFn() {
 				</div>
 				<div class="col-lg-4 col-md-6 offset-lg-1">
 					<div class="fs-widget">
-						<h4>Top Club</h4>
+						<h4>Top Prison officer</h4>
 						<ul class="fw-links">
-							<li><a href="#">Brazil</a></li>
-							<li><a href="#">Germany</a></li>
-							<li><a href="#">Italy</a></li>
-							<li><a href="#">Argentina</a></li>
-							<li><a href="#">France</a></li>
+							<li><a href="#">장영우</a></li>
+							<li><a href="#">김남진</a></li>
+							<li><a href="#">박주현</a></li>
+							<li><a href="#">정지윤</a></li>
+							<li><a href="#">주익정</a></li>
 						</ul>
 						<ul class="fw-links">
-							<li><a href="#">England</a></li>
-							<li><a href="#">Netherlands</a></li>
-							<li><a href="#">Hungary</a></li>
-							<li><a href="#">Croatia</a></li>
-							<li><a href="#">Poland</a></li>
+							<li><a href="#">김은혜</a></li>
+							<li><a href="#">노현규</a></li>
+							<li><a href="#">남수환</a></li>
+							<li><a href="#">최현영</a></li>
+							<li><a href="#">최성우</a></li>
 						</ul>
 					</div>
 				</div>
@@ -249,22 +261,22 @@ function loginFn() {
 
 						<div class="fw-item">
 							<h5>
-								<a href="#">England win shows they have the spark to go far
-									at World Cup</a>
+								<a href="#">빅데이터 4차반 종강 코앞에 두고 학생 25명<br>전원 탈주해 ...
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 17, 2021</li>
+								<li><i class="fa fa-edit"></i> 25 Comment</li>
 							</ul>
 						</div>
 						<div class="fw-item">
 							<h5>
-								<a href="#">Sri Lanka v Australia: Cricket World Cup 2019 –
-									live!</a>
+								<a href="#">빅데이터 4차반 담임 최성우, 3년의 열애 끝에<br> 결혼 발표
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 19, 2021</li>
+								<li><i class="fa fa-edit"></i> 312 Comment</li>
 							</ul>
 						</div>
 					</div>
@@ -309,7 +321,8 @@ function loginFn() {
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>

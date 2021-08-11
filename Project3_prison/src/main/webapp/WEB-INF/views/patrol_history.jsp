@@ -36,7 +36,7 @@
 	type="text/css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css"
-	type="text/css"> 
+	type="text/css">
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
 <script
@@ -156,10 +156,7 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
