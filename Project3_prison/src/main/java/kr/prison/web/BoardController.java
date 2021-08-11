@@ -42,6 +42,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	public void main(Model model) {
 		// 페이징
 	}
+	
+	@RequestMapping("/CCTVstreamingTest.do")
+	public void CCTVsreamingTest(Model model) {
+		// 페이징
+	}
 
 	@RequestMapping("/login.do")
 	public void login(Model model) {

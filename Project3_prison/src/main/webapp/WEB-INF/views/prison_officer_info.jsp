@@ -218,7 +218,7 @@ function writeFn() {
 									<c:forEach var="vo" items="${list}">
 										<tr>
 											<td><img
-												src="${pageContext.request.contextPath}/resources/img/face/pang.jpg"
+												src="${pageContext.request.contextPath}/"
 												width="100px" height="100px"></td>
 											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</td>
 											<td>${vo.name}</td>
