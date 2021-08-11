@@ -106,7 +106,7 @@
 						<div class="nav-menu">
 							<ul class="main-menu">
 								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
+								<li><a href="#">재소자</a>
 									<ul class="dropdown">
 										<li><a href="prisoner_info.do">재소자 정보</a></li>
 										<li><a href="drug_management_history.do">약물 내역</a></li>
@@ -118,7 +118,7 @@
 										<li><a href="patrol_history.do">순찰 내역</a></li>
 										<li><a href="cctv.do">CCTV 관리</a></li>
 									</ul></li>
-								<li><a href="#">교정사고</a>
+								<li class="active"><a href="#">교정사고</a>
 									<ul class="dropdown">
 										<li><a href="corrective_history.do">교정사고 내역</a></li>
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
@@ -219,19 +219,22 @@
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+	<footer class="footer-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/footer-bg.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="img/logo.png" alt=""></a>
+							<a href="./index.html"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
+								alt=""></a>
 						</div>
 						<ul>
-							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
-							<li><i class="fa fa-copy"></i> +(12) 345 6789 10</li>
-							<li><i class="fa fa-thumb-tack"></i> 40 Baria Sreet 133/2
-								New York City, United State</li>
+							<li><i class="fa fa-envelope"></i> 2_3jy@naver.com</li>
+							<li><i class="fa fa-copy"></i> +(82) 010 7140 174</li>
+							<li><i class="fa fa-thumb-tack"></i> 광주광역시 동구 대의동 10-1</li>
 						</ul>
 						<div class="fs-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
@@ -244,20 +247,20 @@
 				</div>
 				<div class="col-lg-4 col-md-6 offset-lg-1">
 					<div class="fs-widget">
-						<h4>Top Club</h4>
+						<h4>Top Prison officer</h4>
 						<ul class="fw-links">
-							<li><a href="#">Brazil</a></li>
-							<li><a href="#">Germany</a></li>
-							<li><a href="#">Italy</a></li>
-							<li><a href="#">Argentina</a></li>
-							<li><a href="#">France</a></li>
+							<li><a href="#">장영우</a></li>
+							<li><a href="#">김남진</a></li>
+							<li><a href="#">박주현</a></li>
+							<li><a href="#">정지윤</a></li>
+							<li><a href="#">주익정</a></li>
 						</ul>
 						<ul class="fw-links">
-							<li><a href="#">England</a></li>
-							<li><a href="#">Netherlands</a></li>
-							<li><a href="#">Hungary</a></li>
-							<li><a href="#">Croatia</a></li>
-							<li><a href="#">Poland</a></li>
+							<li><a href="#">김은혜</a></li>
+							<li><a href="#">노현규</a></li>
+							<li><a href="#">남수환</a></li>
+							<li><a href="#">최현영</a></li>
+							<li><a href="#">최성우</a></li>
 						</ul>
 					</div>
 				</div>
@@ -267,22 +270,22 @@
 
 						<div class="fw-item">
 							<h5>
-								<a href="#">England win shows they have the spark to go far
-									at World Cup</a>
+								<a href="#">빅데이터 4차반 종강 코앞에 두고 학생 25명<br>전원 탈주해 ...
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 17, 2021</li>
+								<li><i class="fa fa-edit"></i> 25 Comment</li>
 							</ul>
 						</div>
 						<div class="fw-item">
 							<h5>
-								<a href="#">Sri Lanka v Australia: Cricket World Cup 2019 –
-									live!</a>
+								<a href="#">빅데이터 4차반 담임 최성우, 3년의 열애 끝에<br> 결혼 발표
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 19, 2021</li>
+								<li><i class="fa fa-edit"></i> 312 Comment</li>
 							</ul>
 						</div>
 					</div>
@@ -307,7 +310,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>
+							<ul>     
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

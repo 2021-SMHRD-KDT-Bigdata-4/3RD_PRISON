@@ -105,13 +105,13 @@
 						<div class="nav-menu">
 							<ul class="main-menu">
 								<li><a href="main.do">Home</a></li>
-								<li class="active"><a href="#">재소자</a>
+								<li><a href="#">재소자</a>
 									<ul class="dropdown">
 										<li><a href="prisoner_info.do">재소자 정보</a></li>
 										<li><a href="drug_management_history.do">약물 내역</a></li>
 										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
 									</ul></li>
-								<li><a href="#">교도관</a>
+								<li class="active"><a href="#">교도관</a>
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
@@ -158,108 +158,108 @@
 	<!-- Club Section Begin -->
 
 	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
-						<ul class="nav nav-tabs" role="tablist">
-							<li class="nav-item"><a class="nav-link active"
-								data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
-							<li class="nav-item"><a class="nav-link" data-toggle="tab"
-								href="#tabs-2" role="tab">추가</a></li>
-						</ul>
-						<!-- Tab panes -->
-						<div class="container tab-content">
-							<div class="tab-pane active" id="tabs-1" role="tabpanel">
-								<div class="search-div">
-									<form action="${cpath}/patrol_history_search.do" method="post">
-										<div class="search-jailer-div">
-											<select name="part" class="search-jailer">
-												<option value="ph_no">순찰기록번호</option>
-												<option value="prison_officer_po_no1">교도관번호1</option>
-												<option value="prison_officer_po_no2">교도관번호2</option>
-											</select> <input class="input-jailer" type="text" name="keyword"
-												placeholder="Search${pageContext.request.contextPath}">
-											<button type="button" class="btn btn-default btn-lg">검색</button>
+		<div class="row">
+			<div class="col-lg-8 m-auto">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item"><a class="nav-link active"
+						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="tab"
+						href="#tabs-2" role="tab">추가</a></li>
+				</ul>
 
-										</div>
-									</form>
+				<!-- Tab panes -->
+				<div class="container tab-content">
+					<div class="tab-pane active" id="tabs-1" role="tabpanel">
+						<div class="search-div">
+							<form action="${cpath}/patrol_history_search.do" method="post">
+								<div class="search-jailer-div">
+									<select name="part" class="search-jailer">
+										<option value="ph_no">순찰기록번호</option>
+										<option value="prison_officer_po_no1">교도관번호1</option>
+										<option value="prison_officer_po_no2">교도관번호2</option>
+									</select> <input class="input-jailer" type="text" name="keyword"
+										placeholder="Search${pageContext.request.contextPath}">
+									<button type="button" class="btn btn-default btn-lg">검색</button>
+
 								</div>
-								<div class="club-tab-content">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>순찰 내역 번호</th>
-												<th>순찰 날짜</th>
-												<th>순찰 시작시간</th>
-												<th>순찰 종료시간</th>
-												<th>순찰 장소</th>
-												<th>순찰 내용</th>
-												<th>교도관1</th>
-												<th>교도관2</th>
-											</tr>
-										</thead>
-										<tbody>
-											<c:forEach var="vo" items="${list}">
-												<tr>
-													<td>${vo.ph_no}</td>
-													<td>${vo.ph_date}</td>
-													<td>${vo.ph_time_start}</td>
-													<td>${vo.ph_time_end}</td>
-													<td>${vo.location}</td>
-													<td>${vo.contents}</td>
-													<td>${vo.prison_officer_po_no1}</td>
-													<td>${vo.prison_officer_po_no2}</td>
-												</tr>
-											</c:forEach>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="tab-pane" id="tabs-2" role="tabpanel">
-								<form method="post" action="${cpath}/patrol_history_start">
-									<div class="club-tab-content">
-										<div class="input_field">
-											<label>교도관1</label> <input type="text" id="pono1"
-												class="input" name="prison_officer_po_no1">
-										</div>
-										<div class="input_field">
-											<label>교도관2</label> <input type="text" id="pono2"
-												class="input" name="prison_officer_po_no2">
-										</div>
-										<div class="input_field">
-											<label>순찰 장소</label> <input type="text" id="location"
-												class="input" name="location">
-										</div>
-										<div>
-											<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
-										</div>
-									</div>
-								</form>
-							</div>
+							</form>
+						</div>
+						<div class="club-tab-content">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>순찰 내역 번호</th>
+										<th>순찰 날짜</th>
+										<th>순찰 시작시간</th>
+										<th>순찰 종료시간</th>
+										<th>순찰 장소</th>
+										<th>순찰 내용</th>
+										<th>교도관1</th>
+										<th>교도관2</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.ph_no}</td>
+											<td>${vo.ph_date}</td>
+											<td>${vo.ph_time_start}</td>
+											<td>${vo.ph_time_end}</td>
+											<td>${vo.location}</td>
+											<td>${vo.contents}</td>
+											<td>${vo.prison_officer_po_no1}</td>
+											<td>${vo.prison_officer_po_no2}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
+					<div class="tab-pane club-section spad-4" id="tabs-2"
+						role="tabpanel">
+						<form method="post" action="${cpath}/patrol_history_start.do">
+							<div class="form">
+								<div class="input_field">
+									<label>교도관1</label> <input type="text" id="pono1" class="input"
+										name="prison_officer_po_no1">
+								</div>
+								<div class="input_field">
+									<label>교도관2</label> <input type="text" id="pono2" class="input"
+										name="prison_officer_po_no2">
+								</div>
+								<div class="input_field">
+									<label>순찰 장소</label> <input type="text" id="location"
+										class="input" name="location">
+								</div>
+								<div class = "page-btn">
+									<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
+			</div>
+		</div>
 	</section>
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+	<footer class="footer-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/footer-bg.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="fs-logo">
 						<div class="logo">
-							<a href="./index.html"><img src="img/logo.png" alt=""></a>
+							<a href="./index.html"><img
+								src="${pageContext.request.contextPath}/resources/img/logo.png"
+								alt=""></a>
 						</div>
 						<ul>
-							<li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
-							<li><i class="fa fa-copy"></i> +(12) 345 6789 10</li>
-							<li><i class="fa fa-thumb-tack"></i> 40 Baria Sreet 133/2
-								New York City, United State</li>
+							<li><i class="fa fa-envelope"></i> 2_3jy@naver.com</li>
+							<li><i class="fa fa-copy"></i> +(82) 010 7140 174</li>
+							<li><i class="fa fa-thumb-tack"></i> 광주광역시 동구 대의동 10-1</li>
 						</ul>
 						<div class="fs-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
@@ -272,20 +272,20 @@
 				</div>
 				<div class="col-lg-4 col-md-6 offset-lg-1">
 					<div class="fs-widget">
-						<h4>Top Club</h4>
+						<h4>Top Prison officer</h4>
 						<ul class="fw-links">
-							<li><a href="#">Brazil</a></li>
-							<li><a href="#">Germany</a></li>
-							<li><a href="#">Italy</a></li>
-							<li><a href="#">Argentina</a></li>
-							<li><a href="#">France</a></li>
+							<li><a href="#">장영우</a></li>
+							<li><a href="#">김남진</a></li>
+							<li><a href="#">박주현</a></li>
+							<li><a href="#">정지윤</a></li>
+							<li><a href="#">주익정</a></li>
 						</ul>
 						<ul class="fw-links">
-							<li><a href="#">England</a></li>
-							<li><a href="#">Netherlands</a></li>
-							<li><a href="#">Hungary</a></li>
-							<li><a href="#">Croatia</a></li>
-							<li><a href="#">Poland</a></li>
+							<li><a href="#">김은혜</a></li>
+							<li><a href="#">노현규</a></li>
+							<li><a href="#">남수환</a></li>
+							<li><a href="#">최현영</a></li>
+							<li><a href="#">최성우</a></li>
 						</ul>
 					</div>
 				</div>
@@ -295,22 +295,22 @@
 
 						<div class="fw-item">
 							<h5>
-								<a href="#">England win shows they have the spark to go far
-									at World Cup</a>
+								<a href="#">빅데이터 4차반 종강 코앞에 두고 학생 25명<br>전원 탈주해 ...
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 17, 2021</li>
+								<li><i class="fa fa-edit"></i> 25 Comment</li>
 							</ul>
 						</div>
 						<div class="fw-item">
 							<h5>
-								<a href="#">Sri Lanka v Australia: Cricket World Cup 2019 –
-									live!</a>
+								<a href="#">빅데이터 4차반 담임 최성우, 3년의 열애 끝에<br> 결혼 발표
+								</a>
 							</h5>
 							<ul>
-								<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-								<li><i class="fa fa-edit"></i> 3 Comment</li>
+								<li><i class="fa fa-calendar"></i> August 19, 2021</li>
+								<li><i class="fa fa-edit"></i> 312 Comment</li>
 							</ul>
 						</div>
 					</div>
