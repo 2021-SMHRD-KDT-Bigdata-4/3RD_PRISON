@@ -156,10 +156,6 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">

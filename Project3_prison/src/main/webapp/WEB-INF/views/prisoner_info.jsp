@@ -60,7 +60,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-	
+
+
+
+
+
+
 </script>
 </head>
 
@@ -162,6 +167,7 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
+	<div  id="list1" style="display: block;"> 
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
 			<form action="${cpath}/prisoner_info_search.do" method="post">
@@ -178,6 +184,7 @@
 			</form>
 		</div>
 	</section>
+	</div>
 	<section class="club-section spad-4">
 		<div class="container">
 			<div class="club-content">
@@ -188,7 +195,7 @@
 					<div class="col-lg-8 m-auto">
 
 						<!-- Tab panes -->
-						<div class="container">
+						<div id="list" class="container" style="display: block;">
 
 							<table class="table table-hover">
 								<thead>
@@ -208,7 +215,7 @@
 									<c:forEach var="vo" items="${list}">
 										<tr>
 											<td><img src="${vo.photo}" width="100px" height="100px"></td>
-											<td>${vo.prison_number}</td>
+											<td><a href="prisoner_info_form.do?prison_number=${vo.prison_number}">${vo.prison_number}</a></td>
 											<td>${vo.name}</td>
 											<td>${vo.age}</td>
 											<td>${vo.sex}</td>
@@ -221,6 +228,8 @@
 								</tbody>
 							</table>
 						</div>
+	
+
 					</div>
 				</div>
 			</div>

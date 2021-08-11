@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 교도관 정보</title>
+<title>코도소 3차 프로젝트 | 재소자 추가</title>
 
 <!-- Google Font -->
 <link
@@ -58,20 +58,12 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-function writeFn() {
-	var data = $("#frm").serialize();
-	$.ajax({
-		url : "ajaxregister.do",
-		type : "post",
-		data : formData,
-		success : list,
-		error : function() {
-			alert("error");
-		}
-	});
-}
-</script>
+	<script type="text/javascript">
+	function goList() {
+		location.href = "${cpath}/boardList.do";
+	}
+	</script>
+	
 </head>
 
 <body>
@@ -163,7 +155,7 @@ function writeFn() {
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>교도관 정보</h2>
+						<h2>재소자 정보</h2>
 					</div>
 				</div>
 			</div>
@@ -171,78 +163,50 @@ function writeFn() {
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Club Section Begin -->
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/prison_officer_info_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="name">이름</option>
-						<option value="po_no">교도관 번호</option>
-						<option value="department">부서</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button class="btn btn-default btn-lg">검색</button>
-					<a href="prison_officer_info_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
 	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto"  style="display: block" ; id="bf"> 
-
-						<!-- Tab panes -->
-						<div class="container">
-
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>사진</th>
-										<th>교도관번호</th>
-										<th>이름</th>
-										<th>나이</th>
-										<th>성별</th>
-										<th>급수</th>
-										<th>직책</th>
-										<th>부서</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
-										<tr>
-											<td><img
-												src="${pageContext.request.contextPath}/"
-												width="100px" height="100px"></td>
-											<td><a href="prison_officer_info_form.do?po_no=${vo.po_no}">${vo.po_no}</td>
-											<td>${vo.name}</td>
-											<td>${vo.age}</td>
-											<td>${vo.gender}</td>
-											<td>${vo.rank}</td>
-											<td>${vo.position}</td>
-											<td>${vo.department}</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div style="display: none" ; id="bf">
-						<c:import url="prison_officer_info_form.jsp" />
-					</div>
+		<form id="frm" method="post" action="${cpath}/prisoner_info_form_up.do">
+			<div class="form"><div class="input_field">
+					<label>번호</label> <input type="text" id = "prison_number" class="input" name="prison_number" readonly="readonly" value="${vo.prison_number}">
 				</div>
+				<div class="input_field">
+					<label>이름</label> <input type="text" id = "name" class="input" name="name" value="${vo.name}" readonly="readonly">
+				</div>
+				<div class="input_field">
+					<label>나이</label> <input type="text" id = "age" class="input" name="age" value="${vo.age}" readonly="readonly">
+				</div>
+				<div class="input_field">
+					<label>성별</label> <select id = "sex" name="sex">
+						<option id="male" value="male">남자</option>
+						<option id="female" value="female">여자</option>
+					</select>
+				</div>
+				<div class="input_field">
+					<label>수감 구역</label> <input type="text" id = "prison_area" class="input" name="prison_area" value="${vo.prison_area}">
+				</div>
+				<div class="input_field">
+					<label>방 번호</label> <input type="text" id = "room_number" class="input" name="room_number" value="${vo.room_number}">
+				</div>
+				<div class="input_field">
+					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification" readonly="readonly" value="${vo.crime_classification}">
+				</div>
+				<div class="input_field">
+					<label>전과</label> <input type="text" id = "before_crime" class="input" name="before_crime" value="${vo.before_crime}" readonly="readonly" >
+				</div>
+				<div class="input_field">
+					<label>사진</label> <input id="file_input" id = "photo" type="file"
+						name="photo" readonly="readonly">
+				</div>
+				<div>
+					<button type="submit" class="btn btn-default btn-lg">추가</button>
+					<button type="reset" class="btn btn-default btn-lg">취소</button>
+				<input type='button' value='목록' class='btn btn-default btn-lg' onclick = "goList()">
+				</div>
+
 			</div>
-		</div>
+		</form>
 	</section>
 	<!-- Club Section End -->
 
-	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
 		<div class="container">
 			<div class="row">
@@ -357,6 +321,9 @@ function writeFn() {
 		</div>
 	</div>
 	<!-- Search model end -->
+	
+
+
 
 </body>
 
