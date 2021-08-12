@@ -146,7 +146,7 @@
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
+
 									</ul></li>
 								<li><a href="#">교정사고</a>
 									<ul class="dropdown">
@@ -154,7 +154,11 @@
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -183,33 +187,17 @@
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="hs-text txt_animate">
-										 <span>변</span>
- 										 <span>화</span>
- 										 <span>를</span>
-										 <span>&nbsp;</span>
-  										 <span>향</span>
- 									     <span>한</span>
-                                         <span>&nbsp;</span>
-                                         <span>믿</span>
- 									     <span>음</span>
- 									     
+										<span>변</span> <span>화</span> <span>를</span> <span>&nbsp;</span>
+										<span>향</span> <span>한</span> <span>&nbsp;</span> <span>믿</span>
+										<span>음</span>
+
 									</div>
 									<div class="hs-text txt_animate-1">
-										 <span>함</span>
- 										 <span>께</span>
- 										 <span>&nbsp;</span>
-										 <span>만</span>
-  										 <span>들</span>
- 									     <span>어</span>
-                                         <span>가</span>
-                                         <span>는</span>
- 									     <span>&nbsp;</span>
- 									     <span>국</span>
- 									     <span>민</span>
-                                         <span>안</span>
-                                         <span>전</span>
+										<span>함</span> <span>께</span> <span>&nbsp;</span> <span>만</span>
+										<span>들</span> <span>어</span> <span>가</span> <span>는</span> <span>&nbsp;</span>
+										<span>국</span> <span>민</span> <span>안</span> <span>전</span>
 									</div>
-									<div class = "col-lg-13">
+									<div class="col-lg-13">
 										<a href="#" class="primary-btn"> More Details</a>
 									</div>
 								</div>

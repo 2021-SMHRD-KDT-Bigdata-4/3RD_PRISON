@@ -52,7 +52,7 @@ public interface PrisonMapper {
 
 	public void phInsert(PatrolHistoryVO vo);
 
-	@Update("update patrol_history set ph_time_end = now(), contents=#{contents} where ph_no=#{ph_no}")
+	@Update("update patrol_history set ph_time_end = now(), contents=#{contents} where prison_officer_po_no1=#{prison_officer_po_no1} and prison_officer_po_no2=#{prison_officer_po_no2} and ph_time_end is NULL")
 	public void phUpdate(PatrolHistoryVO vo);
 
 	@Delete("delete from partorl_history where ph_no=#{ph_no}")
@@ -68,13 +68,16 @@ public interface PrisonMapper {
 
 	public void adhInsert(AnomalyDetectionHistoryVO vo);
 
-	@Update("update anomaly_detection_history set ")
+	@Update("update anomaly_detection_history set prison_officer_po_no=#{prison_officer_po_no}, anomalies=#{anomalies}, actual_anomalies=#{actual_anomalies} where abnormal_history_number=#{abnormal_history_number}")
 	public void adhUpdate(AnomalyDetectionHistoryVO vo);
 
 	@Delete("delete from anomaly_detection_history where abnormal_history_number=#{abnormal_history_number}")
 	public int adhDelete(int abnormal_history_number);
 
 	public List<AnomalyDetectionHistoryVO> adhSearch(SearchVO vo); // 검색
+
+	@Select("select * from anomaly_detection_history where abnormal_history_number=#{abnormal_history_number}")
+	public AnomalyDetectionHistoryVO adh_select(int abnormal_history_number);
 
 	// 교정사고 발생내역
 	// (CRUD)-----------------------------------------------------------------------------------------
@@ -139,11 +142,7 @@ public interface PrisonMapper {
 
 	public void dmInsert(DrugManagementVO vo);
 
-	@Update("update drug_management_history set drug_type=#{drug_type}, spec_drug=#{spec_drug} "
-			+ "where dm_no=#{dm_no}")
-	public void dmUpdate(DrugManagementVO vo);
-
-	@Delete("delete from drug_management_history where dm_no=#{dm_no} CASCADE CONSTRAINT")
+	@Delete("delete from drug_management_history where dm_no=#{dm_no}")
 	public int dmDelete(int dm_no);
 
 	public List<DrugManagementVO> dmSearch(SearchVO vo);

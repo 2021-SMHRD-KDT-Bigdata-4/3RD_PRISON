@@ -62,22 +62,6 @@
 		from corrective_history;
 	</select>
 
-	<select id="chocpChart"
-		resultType="kr.prison.domain.chocpChartVO"
-		parameterType="kr.prison.domain.CollectiveHistoryVO">
-		select
-		count(case when occuring_place='수감동화장실' then 1
-		end) as case1,
-		count(case when occuring_place='수감동거실' then 1 end) as
-		case2,
-		count(case when occuring_place='출역지' then 1 end) as case3,
-		count(case when occuring_place='운동장' then 1 end) as case4,
-		count(case
-		when occuring_place='복도' then 1 end) as case5,
-		count(case when
-		occuring_place='기타장소' then 1 end) as case6
-		from corrective_history;
-	</select>
 
 	<select id="chSearch"
 		resultType="kr.prison.domain.CollectiveHistoryVO"

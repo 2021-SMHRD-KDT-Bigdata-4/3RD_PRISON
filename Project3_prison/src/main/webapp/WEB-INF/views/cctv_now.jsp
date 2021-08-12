@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 교정 사고 상세</title>
+<title>코도소 3차 프로젝트 | cctv</title>
 
 <!-- Google Font -->
 <link
@@ -114,7 +114,6 @@
 											환영합니다.</a></li>
 									<li><a onclick="logoutFn()"> 로그아웃</a></li>
 								</c:if>
-
 							</ul>
 						</div>
 					</div>
@@ -155,13 +154,13 @@
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
 									</ul></li>
-								<li class="active"><a href="#">교정사고</a>
+								<li><a href="#">교정사고</a>
 									<ul class="dropdown">
 										<li><a href="corrective_history.do">교정사고 내역</a></li>
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">CCTV</a>
+								<li class="active"><a href="#">CCTV</a>
 									<ul class="dropdown">
 										<li><a href="cctv.do">CCTV 관리</a></li>
 										<li><a href="cctv_now.do">실시간 CCTV</a></li>
@@ -189,7 +188,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>교정 사고 상세</h2>
+						<h2>실시간 CCTV</h2>
 					</div>
 				</div>
 			</div>
@@ -197,66 +196,14 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-
-	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
-			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
-
-						<!-- Tab panes -->
-						<div class="container">
-
-							<table class="table table-hover">
-								<thead>
-									<th id="chc_thead_th">분류</th>
-									<th id="chc_thead_th">내용</th>
-								</thead>
-								<tbody id="chc_tbody">
-									<tr>
-										<th id="chc_tbody_th">교정 사고 번호</th>
-										<td><input class="form-control"
-											id="calibration_accident_number"
-											name="calibration_accident_number" readonly="readonly"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">수감 번호</th>
-										<td><input class="form-control" id="prison_number"
-											name="prison_number"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">발생 일시</th>
-										<td><input class="form-control" id="occuring_time"
-											name="occuring_time"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">발생 장소</th>
-										<td><input class="form-control" id="occuring_place"
-											name="occuring_place"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">분류</th>
-										<td><input class="form-control" id="classification"
-											name="classification"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">상세내용</th>
-										<td><textarea class="form-control" rows="5" id="details"
-												name="details"></textarea></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+	<!-- Club Section Begin -->
+	<section class="club-section-1 spad-3">
+		<div class="raspicamera">
+			<input type="button" value="load" onclick="window.location.reload();" />
+			<iframe class="center" width="1000" height="562"
+				src="http://211.227.224.166:8080/stream" id="camera1"></iframe>
 		</div>
-
 	</section>
-	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
@@ -370,7 +317,8 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here...">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>

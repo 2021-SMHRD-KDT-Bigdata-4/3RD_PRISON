@@ -59,6 +59,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+	function goList() {
+		location.href = "${cpath}/anomaly_detection_history.do";
+	}
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -153,7 +156,6 @@
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
 									</ul></li>
 								<li class="active"><a href="#">교정사고</a>
 									<ul class="dropdown">
@@ -161,7 +163,11 @@
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -205,46 +211,58 @@
 
 						<!-- Tab panes -->
 						<div class="container">
+							<form id="frm" method="post"
+								action="${cpath}/anomaly_detection_history_update.do">
+								<table class="table table-hover">
+									<thead>
+										<th id="chc_thead_th">분류</th>
+										<th id="chc_thead_th">내용</th>
+									</thead>
+									<tbody id="chc_tbody">
+										<tr>
+											<th id="chc_tbody_th">이상 내역 번호</th>
+											<td><input class="form-control"
+												id="abnormal_history_number"
+												name="abnormal_history_number" readonly="readonly"
+												value="${vo.abnormal_history_number}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">알림 일시</th>
+											<td><input class="form-control" id="alert_date"
+												name="alert_date" readonly="readonly"
+												value="${vo.alert_date}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">CCTV번호</th>
+											<td><input class="form-control" id="cctv_cctv_no"
+												name="cctv_cctv_no" readonly="readonly"
+												value="${vo.cctv_cctv_no}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">재소자 번호</th>
+											<td><input class="form-control" id="prison_officer_po_no"
+												name="prison_officer_po_no" value="${vo.prison_officer_po_no}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">이상 징후</th>
+											<td><input class="form-control" id="anomalies"
+												name="anomalies" value="${vo.anomalies}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">실제 이상 징후</th>
+											<td><textarea class="form-control" rows="5"
+													id="actual_anomalies" name="actual_anomalies">${vo.actual_anomalies}</textarea></td>
+										</tr>
+									</tbody>
 
-							<table class="table table-hover">
-								<thead>
-									<th id="chc_thead_th">분류</th>
-									<th id="chc_thead_th">내용</th>
-								</thead>
-								<tbody id="chc_tbody">
-									<tr>
-										<th id="chc_tbody_th">이상 내역 번호</th>
-										<td><input class="form-control"
-											id="calibration_accident_number"
-											name="calibration_accident_number" readonly="readonly"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">알림 일시</th>
-										<td><input class="form-control" id="prison_number"
-											name="prison_number" readonly="readonly"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">CCTV번호</th>
-										<td><input class="form-control" id="occuring_time"
-											name="occuring_time" readonly="readonly"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">재소자 번호</th>
-										<td><input class="form-control" id="occuring_place"
-											name="occuring_place"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">이상 징후</th>
-										<td><input class="form-control" id="classification"
-											name="classification"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">실제 이상 징후</th>
-										<td><textarea class="form-control" rows="5" id="details"
-												name="details"></textarea></td>
-									</tr>
-								</tbody>
-							</table>
+								</table>
+								<div>
+									<button type="submit" class="btn btn-default btn-lg">수정</button>
+									<button type="reset" class="btn btn-default btn-lg">취소</button>
+									<input type='button' value='목록' class='btn btn-default btn-lg'
+										onclick="goList()">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
