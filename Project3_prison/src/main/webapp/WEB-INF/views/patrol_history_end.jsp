@@ -152,7 +152,6 @@
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
 									</ul></li>
 								<li><a href="#">교정사고</a>
 									<ul class="dropdown">
@@ -160,7 +159,11 @@
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -194,15 +197,16 @@
 	<section class="club-section spad-4">
 		<div class="row">
 			<div class="col-lg-8 m-auto">
-
 				<div class="tab-pane club-section spad-4" id="tabs-3"
 					role="tabpanel">
 					<form method="post" action="${cpath}/patrol_history_end.do">
 						<div class="form">
 							<div class="input_field">
 								<label>상세 내용</label>
-								<textarea class="form-control" rows="5" id="details"
-									name="details"></textarea>
+								<textarea class="form-control" rows="5" id="contents"
+									name="contents"></textarea>
+								<input id = "prison_officer_po_no1" name="prison_officer_po_no1" value="${prison_officer_po_no1}">
+								<input id = "prison_officer_po_no2" name="prison_officer_po_no2" value="${prison_officer_po_no2}">
 							</div>
 							<div class="page-btn">
 								<button type="submit" class="btn btn-default btn-lg">순찰종료</button>

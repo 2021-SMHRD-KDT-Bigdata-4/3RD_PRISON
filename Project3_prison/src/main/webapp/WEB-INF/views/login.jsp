@@ -50,7 +50,8 @@
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script type="text/javascript">
-	function loginFn() {
+
+function loginFn() {
 		var po_no = $("#po_no").val();
 		var password = $("#password").val();
 		$.ajax({
@@ -171,7 +172,6 @@
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
 									</ul></li>
 								<li><a href="#">교정사고</a>
 									<ul class="dropdown">
@@ -179,7 +179,11 @@
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -207,7 +211,8 @@
 								<label for="po_no">ID</label> <input type="text" id="po_no">
 							</div>
 							<div class="group-in">
-								<label for="password">PASSWORD</label> <input type="text" id="password">
+								<label for="password">PASSWORD</label> <input type="text"
+									id="password">
 
 							</div>
 

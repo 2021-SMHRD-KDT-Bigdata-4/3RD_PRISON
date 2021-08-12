@@ -172,7 +172,6 @@
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
-										<li><a href="cctv.do">CCTV 관리</a></li>
 									</ul></li>
 								<li><a href="#">교정사고</a>
 									<ul class="dropdown">
@@ -180,7 +179,11 @@
 										<li><a href="anomaly_detection_history.do">이상 징후 감지
 												내역</a></li>
 									</ul></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
 							</ul>
 							<div class="nm-right search-switch">
 								<i class="fa fa-search"></i>
@@ -225,10 +228,11 @@
 						placeholder="Search${pageContext.request.contextPath}">
 					<button class="btn btn-default btn-lg">검색</button>
 					<a href="drug_management_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a> <a href="#"><button
-							type="button" class="btn btn-default btn-lg">수정</button></a>
+							class="btn btn-default btn-lg">추가</button></a>
 				</div>
 			</form>
+			<form action="${cpath}/drug_management_history_update.do"
+				method="post"></form>
 		</div>
 	</section>
 	<section class="club-section spad-4">
@@ -261,12 +265,13 @@
 											<td>${vo.prisoner_prison_number}</td>
 											<td>${vo.drug_type}</td>
 											<td>${vo.taking_count}</td>
-											<td><input type="checkbox"
+											<td><input type="checkbox" name="spec_drug"
 												<c:if test="${vo.spec_drug eq true}">
 											checked
 											</c:if>>
 											</td>
-											<td><button class="btn btn-default btn-sm" onclick="goDel(${vo.dm_no})">삭제</button></td>
+											<td><button class="btn btn-default btn-sm"
+													onclick="goDel(${vo.dm_no})">삭제</button></td>
 										</tr>
 									</c:forEach>
 									<tr>

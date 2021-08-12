@@ -149,9 +149,9 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	@RequestMapping("/drug_management_history_del.do")
 	public void drug_management_history_del(int dm_no) {
-System.out.println(dm_no);
+		System.out.println(dm_no);
 	}
-	
+
 	@RequestMapping("/drug_management_history_insert.do")
 	public String drug_management_history_insert(DrugManagementVO vo) {
 		prisonMapper.dmInsert(vo);
@@ -164,7 +164,7 @@ System.out.println(dm_no);
 		model.addAttribute("list", list);
 		return "drug_management_history";
 	}
-	
+
 	@RequestMapping("/drug_management_history_delete.do")
 	public String boardDeleteAjax(int dm_no) {
 		prisonMapper.dmDelete(dm_no);
@@ -209,13 +209,20 @@ System.out.println(dm_no);
 	}
 
 	@RequestMapping("/patrol_history_start.do")
-	public String patrol_history_start(PatrolHistoryVO vo) {
+	public String patrol_history_start(PatrolHistoryVO vo, Model model) {
 		prisonMapper.phInsert(vo);
-		return "redirect:/patrol_history_end.do";
+		model.addAttribute("prison_officer_po_no1", vo.getPrison_officer_po_no1());
+		model.addAttribute("prison_officer_po_no2", vo.getPrison_officer_po_no2());
+		System.out.println(vo.getPrison_officer_po_no1());
+		return "patrol_history_end";
 	}
 
 	@RequestMapping("/patrol_history_end.do")
-	public void patrol_history_end(PatrolHistoryVO vo) {
+	public String patrol_history_end(PatrolHistoryVO vo) {
+		System.out.println("end");
+		System.out.println(vo);
+		prisonMapper.phUpdate(vo);
+		return "redirect:/patrol_history.do";
 	}
 
 	@RequestMapping("/corrective_history.do")
@@ -250,7 +257,6 @@ System.out.println(dm_no);
 	}
 
 	// 교정사고 내역의 발생장소를 기준으로 select
-
 
 	@RequestMapping("/corrective_history_search.do")
 	public String corrective_history_search(SearchVO vo, Model model) {
@@ -288,15 +294,23 @@ System.out.println(dm_no);
 		return "cctv";
 	}
 
+	@RequestMapping("/cctv_now.do")
+	public void cctv_now(Model model) {
+
+	}
+
 	@RequestMapping("/anomaly_detection_history.do")
 	public void anomaly_detection_history(Model model) {
 		List<AnomalyDetectionHistoryVO> list = prisonMapper.adhList();
 		model.addAttribute("list", list);
 	}
 
+	// 이상행동 번호 누르면 상세화면 넘어가기 !
 	@RequestMapping("/anomaly_detection_history_content.do")
-	public void anomaly_detection_history_content(Model model) {
-
+	public String anomaly_detection_history_content(int abnormal_history_number, Model model) {
+		AnomalyDetectionHistoryVO vo = prisonMapper.adh_select(abnormal_history_number);
+		model.addAttribute("vo", vo);
+		return "anomaly_detection_history_content";
 	}
 
 	@RequestMapping("/anomaly_detection_history_insert.do")
@@ -309,6 +323,13 @@ System.out.println(dm_no);
 		List<AnomalyDetectionHistoryVO> list = prisonMapper.adhSearch(vo);
 		model.addAttribute("list", list);
 		return "anomaly_detection_history";
+	}
+
+	@RequestMapping("/anomaly_detection_history_update.do")
+	public String anomaly_detection_history_update(AnomalyDetectionHistoryVO vo) {
+		System.out.println(vo);
+		prisonMapper.adhUpdate(vo);
+		return "redirect:/anomaly_detection_history.do";
 	}
 
 	@RequestMapping("/loginajax.do")
@@ -351,13 +372,12 @@ System.out.println(dm_no);
 	}
 
 	@RequestMapping("/prisonInAjax.do") // 여기로 요청이오면 아래 메소드를 실행해라
+
 	public @ResponseBody int prisonInAjax(JailerVO vo) { // @ResponseBody 응답을 한다 뭐로? JSON 으로
 		// TO - DO
 		int cnt = prisonMapper.jailerInsert(vo);
 		System.out.println(vo);
 		return cnt; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
 	}
-	
-	
-	 
+
 }

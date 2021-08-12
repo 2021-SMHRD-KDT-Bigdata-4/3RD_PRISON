@@ -2,30 +2,36 @@ show tables;
 
 -- 교도관 -------------------------------------------------------------------------------------------
 
-insert into prison_officer values('A001', '강기웅', '12345', '33', 'male', '8급', '일반보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prison_officer values('A002', '정지윤', '11111', '24', 'female', '9급', '민원처리', '민원과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prison_officer values('A003', '김은혜', '22222', '27', 'female', '8급', '특수보안', '보안과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prison_officer values('A004', '정종원', '33333', '27', 'male', '8급', '교정교육', '직업훈련과', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer values('A001', '강기웅', '12345', '33', 'male', '8급', '일반보안', '보안과', '재직', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer values('A002', '정지윤', '11111', '24', 'female', '9급', '민원처리', '민원과', '재직', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer values('A003', '김은혜', '22222', '27', 'female', '8급', '특수보안', '보안과', '재직', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prison_officer values('A004', '정종원', '33333', '27', 'male', '8급', '교정교육', '직업훈련과', '퇴직', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 
 select * from prison_officer;
 
 -- 재소자 -------------------------------------------------------------------------------------------
 
-insert into prisoner values('0', '0', '0', '0', '0', '0', '0', '0', '0');
-insert into prisoner values('3567', '최성우', '24', 'male', 'A동', '11', '절도', '2범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prisoner values('2481', '주익정', '27', 'male', 'B동', '3', '사기', '초범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
-insert into prisoner values('6758', '정지윤', '20', 'female', 'C동', '6', '폭행', '15범', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prisoner values('0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+insert into prisoner values('3567', '최성우', '24', 'male', 'A동', '11', '절도', '2범', '복역', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prisoner values('2481', '주익정', '27', 'male', 'B동', '3', '사기', '초범', '복역', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
+insert into prisoner values('6758', '정지윤', '20', 'female', 'C동', '6', '폭행', '15범', '출소', 'http://file3.instiz.net/data/file3/2018/01/29/e/c/9/ec9d85b3e456d1298feb52efcbca775a.jpg');
 
 select * from prisoner;
 
+
 -- 순찰 기록 -------------------------------------------------------------------------------------------
 
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '1', 'A동', '특이사항 없음', 'A001', 'A002');
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '2', 'B동', '특이사항 없음', 'A004', 'A003');
-insert into patrol_history(ph_date, ph_time, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", '3', 'C동', '특이사항 없음', 'A001', 'A002');
+insert into patrol_history(ph_date, ph_time_start, ph_time_end, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", "13:00:00", "14:00:00", 'A동', '특이사항 없음', 'A001', 'A002');
+insert into patrol_history(ph_date, ph_time_start, ph_time_end, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-11", "15:00:02", "16:03:00", 'B동', '특이사항 없음', 'A004', 'A003');
+insert into patrol_history(ph_date, ph_time_start, ph_time_end, location, contents, prison_officer_po_no1, prison_officer_po_no2) values("2020-12-12", "13:00:01", "14:02:11", 'C동', '특이사항 없음', 'A001', 'A002');
 
 select * from patrol_history;
 
+
+update patrol_history set ph_time_end = now(), contents='냥'
+where prison_officer_po_no1='A001' and ph_time_end is NULL;
+
+SELECT * from patrol_history WHERE ph_time_end is NULL;
 -- CCTV -------------------------------------------------------------------------------------------
 
 insert into cctv(area, cctv_non, location, active) values('A', '001', '1번방', 1);
