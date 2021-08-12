@@ -200,13 +200,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	@RequestMapping("/patrol_history_start.do")
 	public String patrol_history_start(PatrolHistoryVO vo) {
 		prisonMapper.phInsert(vo);
-		return "redirect:/patrol_history.do";
+		return "redirect:/patrol_history_end.do";
 	}
 
 	@RequestMapping("/patrol_history_end.do")
-	public String patrol_history_end(PatrolHistoryVO vo) {
-		prisonMapper.phUpdate(vo);
-		return "redirect:/patrol_history.do";
+	public void patrol_history_end(PatrolHistoryVO vo) {
 	}
 
 	@RequestMapping("/corrective_history.do")

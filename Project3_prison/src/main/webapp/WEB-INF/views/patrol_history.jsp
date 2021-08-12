@@ -199,8 +199,6 @@
 						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
 					<li class="nav-item"><a class="nav-link" data-toggle="tab"
 						href="#tabs-2" role="tab">추가</a></li>
-					<li class="nav-item"><a class="nav-link" data-toggle="tab"
-						href="#tabs-3" role="tab">종료</a></li>
 				</ul>
 
 				<!-- Tab panes -->
@@ -271,21 +269,6 @@
 									<a href="#tabs-3">
 										<button type="submit" class="btn btn-default btn-lg">순찰시작</button>
 									</a>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="tab-pane club-section spad-4" id="tabs-3"
-						role="tabpanel">
-						<form method="post" action="${cpath}/patrol_history_end.do">
-							<div class="form">
-								<div class="input_field">
-									<label>상세 내용</label>
-									<textarea class="form-control" rows="5" id="details"
-										name="details"></textarea>
-								</div>
-								<div class="page-btn">
-									<button type="submit" class="btn btn-default btn-lg">순찰종료</button>
 								</div>
 							</div>
 						</form>

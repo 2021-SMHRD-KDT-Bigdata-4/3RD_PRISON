@@ -11,10 +11,9 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 메인화면</title>
+<title>코도소 3차 프로젝트 | 순찰 내역</title>
 
 <!-- Google Font -->
-
 <link
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
 	rel="stylesheet">
@@ -38,8 +37,6 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css"
 	type="text/css">
-
-<!-- Js Plugins -->
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
 <script
@@ -51,6 +48,15 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<!-- bootstrap -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function logoutFn() {
 		$.ajax({
@@ -135,14 +141,14 @@
 					<div class="col-lg-10">
 						<div class="nav-menu">
 							<ul class="main-menu">
-								<li class="active"><a href="main.do">Home</a></li>
+								<li><a href="main.do">Home</a></li>
 								<li><a href="#">재소자</a>
 									<ul class="dropdown">
 										<li><a href="prisoner_info.do">재소자 정보</a></li>
 										<li><a href="drug_management_history.do">약물 내역</a></li>
 										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
 									</ul></li>
-								<li><a href="#">교도관</a>
+								<li class="active"><a href="#">교도관</a>
 									<ul class="dropdown">
 										<li><a href="prison_officer_info.do">교도관 정보</a></li>
 										<li><a href="patrol_history.do">순찰 내역</a></li>
@@ -170,283 +176,45 @@
 	</header>
 	<!-- Header End -->
 
-	<!-- Hero Section Begin -->
-	<section class="hero-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/pic1.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/pic1.jpg");'>
-
+	<!-- Breadcrumb Section Begin -->
+	<section class="breadcrumb-section set-bg"
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="hs-item">
-						<div class="container">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="hs-text txt_animate">
-										 <span>변</span>
- 										 <span>화</span>
- 										 <span>를</span>
-										 <span>&nbsp;</span>
-  										 <span>향</span>
- 									     <span>한</span>
-                                         <span>&nbsp;</span>
-                                         <span>믿</span>
- 									     <span>음</span>
- 									     
-									</div>
-									<div class="hs-text txt_animate-1">
-										 <span>함</span>
- 										 <span>께</span>
- 										 <span>&nbsp;</span>
-										 <span>만</span>
-  										 <span>들</span>
- 									     <span>어</span>
-                                         <span>가</span>
-                                         <span>는</span>
- 									     <span>&nbsp;</span>
- 									     <span>국</span>
- 									     <span>민</span>
-                                         <span>안</span>
-                                         <span>전</span>
-									</div>
-									<div class = "col-lg-13">
-										<a href="#" class="primary-btn"> More Details</a>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="bs-text">
+						<h2>순찰 내역</h2>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Hero Section End -->
+	<!-- Breadcrumb Section End -->
+	<section class="club-section spad-4">
+		<div class="row">
+			<div class="col-lg-8 m-auto">
 
-	<!-- Trending News Section Begin -->
-	<div class="trending-news-section">
-		<div class="container">
-			<div class="tn-title">
-				<i class="fa fa-caret-right"></i> Trending News
-			</div>
-			<div class="news-slider owl-carousel owl-loaded">
-				<div class="nt-item">영상분석을 통한 재소자 이상징후 감지 및 교정업무 통합관리 서비스</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- Trending News Section End -->
-
-
-
-
-	<!-- Latest Section Begin -->
-	<section class="soccer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="section-title latest-title">
-						<h3>
-							Latest <span>News</span>
-						</h3>
-						<ul>
-							<li>All</li>
-							<li>Covid-19</li>
-							<li>Prison</li>
-							<li>Society</li>
-						</ul>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="news-item left-news">
-								<div class="ni-pic set-bg"
-									data-setbg="${pageContext.request.contextPath}/resources/img/news/codoso-1.jpg"
-									style='background-image: url("${pageContext.request.contextPath}/resources/img/news/codoso-1.jpg");'>
-									<div class="ni-tag">코로나</div>
-								</div>
-								<div class="ni-text">
-									<h4>
-										<a href="https://www.yna.co.kr/view/AKR20210804144300004"
-											id="title1">교정시설 코로나 감염 잇달아…</a>
-									</h4>
-									<ul>
-										<li><i class="fa fa-calendar"></i> May 19, 2019</li>
-										<li><i class="fa fa-edit"></i> 3 Comment</li>
-									</ul>
-									<p>전국 교정시설에서 신종 코로나바이러스 감염증(코로나19) 확진자들이 잇달아 나오고 있다. 4일
-										법무부에 따르면 전날 인후통 증상을 보여 유전자증폭(PCR) 검사를 받은 강원북부교도소 직원 1명이 이날 확진
-										판정을 받았다.</p>
-								</div>
+				<div class="tab-pane club-section spad-4" id="tabs-3"
+					role="tabpanel">
+					<form method="post" action="${cpath}/patrol_history_end.do">
+						<div class="form">
+							<div class="input_field">
+								<label>상세 내용</label>
+								<textarea class="form-control" rows="5" id="details"
+									name="details"></textarea>
+							</div>
+							<div class="page-btn">
+								<button type="submit" class="btn btn-default btn-lg">순찰종료</button>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="news-item">
-								<div class="ni-pic">
-									<img
-										src="${pageContext.request.contextPath}/resources/img/news/codoso-2.jpeg"
-										alt="">
-								</div>
-								<div class="ni-text">
-									<h5>
-										<a href="https://m.dailian.co.kr/news/view/1019365"
-											id="title1">윤리와 여론 사이… 딜레마에 빠진 세계의 교정당국들</a>
-									</h5>
-									<ul>
-										<li><i class="fa fa-calendar"></i> August 5, 2021</li>
-										<li><i class="fa fa-edit"></i> 3 Comment</li>
-									</ul>
-								</div>
-							</div>
-							<div class="news-item">
-								<div class="ni-pic">
-									<img
-										src="${pageContext.request.contextPath}/resources/img/news/codoso-3.jpg"
-										alt="">
-								</div>
-								<div class="ni-text">
-									<h5>
-										<a
-											href="https://www.mk.co.kr/news/society/view/2021/07/719221/"
-											id="title1">교도소서 동료 수형자 초코바 훔쳐 먹고 난동…징역형</a>
-									</h5>
-									<ul>
-										<li><i class="fa fa-calendar"></i> July 26, 2021</li>
-										<li><i class="fa fa-edit"></i> 3 Comment</li>
-									</ul>
-								</div>
-							</div>
-							<div class="news-item">
-								<div class="ni-pic">
-									<img
-										src="${pageContext.request.contextPath}/resources/img/news/codoso-4.jpg"
-										alt="">
-								</div>
-								<div class="ni-text">
-									<h5>
-										<a
-											href="https://www.jjan.kr/news/articleView.html?idxno=2113613"
-											id="title1">자바교도소 교정협의회, 수용자들에 아이스크림 전달</a>
-									</h5>
-									<ul>
-										<li><i class="fa fa-calendar"></i> July 27, 2021</li>
-										<li><i class="fa fa-edit"></i> 3 Comment</li>
-									</ul>
-								</div>
-							</div>
-							<div class="news-item">
-								<div class="ni-pic">
-									<img
-										src="${pageContext.request.contextPath}/resources/img/news/codoso-5.jpg"
-										alt="">
-								</div>
-								<div class="ni-text">
-									<h5>
-										<a href="BbungEzRong.do" id="title1">자바교도소 23대 주익정 소장 취임</a>
-									</h5>
-									<ul>
-										<li><i class="fa fa-calendar"></i> July 19, 2021</li>
-										<li><i class="fa fa-edit"></i> 3 Comment</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+					</form>
 				</div>
-				<div class="col-lg-4">
-					<div class="section-title">
-						<h3>
-							이달의 <span>교도관</span>
-						</h3>
-					</div>
-					<div class="points-table">
-						<table>
-							<thead>
-								<tr>
-									<th class="th-o">순위</th>
-									<th>이름</th>
-									<th class="th-o">지각</th>
-									<th class="th-o">점수</th>
-									<th class="th-o"></th>
-									<th class="th-o">합계</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="team-name"><span>장영우</span></td>
-									<td>0</td>
-									<td>23</td>
-									<td></td>
-									<td>23</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="team-name"><span>김남진</span></td>
-									<td>0</td>
-									<td>22</td>
-									<td></td>
-									<td>22</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td class="team-name"><span>박주현</span></td>
-									<td>0</td>
-									<td>21</td>
-									<td></td>
-									<td>21</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td class="team-name"><span>정지윤</span></td>
-									<td>1</td>
-									<td>21</td>
-									<td></td>
-									<td>20</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td class="team-name"><span>김은혜</span></td>
-									<td>0</td>
-									<td>17</td>
-									<td></td>
-									<td>17</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td class="team-name"><span>김온유</span></td>
-									<td>2</td>
-									<td>18</td>
-									<td></td>
-									<td>16</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td class="team-name"><span>김영주</span></td>
-									<td>0</td>
-									<td>14</td>
-									<td></td>
-									<td>14</td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td class="team-name"><span>주익정</span></td>
-									<td>5</td>
-									<td>15</td>
-									<td></td>
-									<td>10</td>
-								</tr>
-							</tbody>
-						</table>
-						<a href="#" class="p-all">View All</a>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</section>
-	<!-- Latest Section End -->
-
-
-
-
+	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
@@ -560,13 +328,12 @@
 				<i class="fa fa-close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.">
+				<input type="text" id="search-input"
+					placeholder="Search here${pageContext.request.contextPath}${pageContext.request.contextPath}.">
 			</form>
 		</div>
 	</div>
 	<!-- Search model end -->
-
-
 
 </body>
 
