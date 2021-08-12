@@ -152,6 +152,12 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		prisonMapper.dmInsert(vo);
 		return "redirect:/drug_management_history.do";
 	}
+	
+	@RequestMapping("/drug_management_history_delete.do")
+	public String drug_management_history_delete(int idx) {
+		prisonMapper.dmDelete(idx);
+		return "redirect:/drug_management_history.do";
+	}
 
 	@RequestMapping("/drug_management_history_search.do")
 	public String drug_management_history_search(SearchVO vo, Model model) {

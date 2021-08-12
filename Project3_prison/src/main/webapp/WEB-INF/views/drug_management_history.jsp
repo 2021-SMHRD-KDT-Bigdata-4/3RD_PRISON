@@ -248,7 +248,7 @@
 											checked
 											</c:if>>
 											</td>
-											<td><button class="btn btn-default btn-sm">삭제</button></td>
+											<td><button class="btn btn-default btn-sm"}>삭제</button></td>
 										</tr>
 									</c:forEach>
 									<tr>
