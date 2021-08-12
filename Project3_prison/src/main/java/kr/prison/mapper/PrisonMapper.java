@@ -23,7 +23,7 @@ import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.domain.SpecialManagementJailerVO;
 import kr.prison.domain.chclfChartVO;
-import kr.prison.domain.chocpChartVO;
+
 import kr.prison.domain.SearchVO;
 
 @Mapper
@@ -96,7 +96,7 @@ public interface PrisonMapper {
 
 	public List<chclfChartVO> chclfChart(); // 그래프 셀렉트
 
-	public List<chocpChartVO> chocpChart(); // 그래프 셀렉트
+	
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 
@@ -141,6 +141,10 @@ public interface PrisonMapper {
 	public List<DrugManagementVO> dmList();
 
 	public void dmInsert(DrugManagementVO vo);
+
+	@Update("update drug_management_history set drug_type=#{drug_type}, spec_drug=#{spec_drug} "
+			+ "where dm_no=#{dm_no}")
+	public void dmUpdate(DrugManagementVO vo);
 
 	@Delete("delete from drug_management_history where dm_no=#{dm_no}")
 	public int dmDelete(int dm_no);

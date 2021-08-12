@@ -87,10 +87,10 @@
 		printTime();
 	};
 	
+
 	function goDel(dm_no) {
 		var dm_no = dm_no;
 		alert(dm_no);
-		
 		$.ajax({
 			url : "${cpath}/drug_management_history_delete.do",
 			type : "get",
@@ -103,6 +103,7 @@
 			}
 		})
 	}
+
 </script>
 </head>
 

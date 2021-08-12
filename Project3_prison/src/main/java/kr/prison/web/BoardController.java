@@ -29,7 +29,6 @@ import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SearchVO;
 import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.domain.chclfChartVO;
-import kr.prison.domain.chocpChartVO;
 import kr.prison.mapper.PrisonMapper;
 
 //POJO
@@ -148,6 +147,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	}
 
+	@RequestMapping("/drug_management_history_del.do")
+	public void drug_management_history_del(int dm_no) {
+		System.out.println(dm_no);
+	}
+
 	@RequestMapping("/drug_management_history_insert.do")
 	public String drug_management_history_insert(DrugManagementVO vo) {
 		prisonMapper.dmInsert(vo);
@@ -166,7 +170,6 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		prisonMapper.dmDelete(dm_no);
 		return "redirect:/drug_management_history.do";
 	}
-
 
 	@RequestMapping("/spec_drug_history.do")
 	public void spec_drug_history(Model model) {
@@ -206,7 +209,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	}
 
 	@RequestMapping("/patrol_history_start.do")
-	public String patrol_history_start(PatrolHistoryVO vo, Model model){
+	public String patrol_history_start(PatrolHistoryVO vo, Model model) {
 		prisonMapper.phInsert(vo);
 		model.addAttribute("prison_officer_po_no1", vo.getPrison_officer_po_no1());
 		model.addAttribute("prison_officer_po_no2", vo.getPrison_officer_po_no2());
@@ -252,11 +255,6 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	}
 
 	// 교정사고 내역의 발생장소를 기준으로 select
-	@RequestMapping("/corrective_history_ocpchart.do")
-	public void corrective_history_ocpchart(Model model) {
-		List<chocpChartVO> list = prisonMapper.chocpChart();
-		model.addAttribute("list", list);
-	}
 
 	@RequestMapping("/corrective_history_search.do")
 	public String corrective_history_search(SearchVO vo, Model model) {
@@ -378,14 +376,6 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		int cnt = prisonMapper.jailerInsert(vo);
 		System.out.println(vo);
 		return cnt; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
-	}
-
-	@RequestMapping("/corrective_history_ajax.do") // 여기로 요청이오면 아래 메소드를 실행해라
-	public @ResponseBody List<chocpChartVO> corrective_history_ajax() { // @ResponseBody 응답을 한다 뭐로? JSON 으로
-		// TO - DO
-		List<chocpChartVO> list = prisonMapper.chocpChart();
-		System.out.println(list);
-		return list; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
 	}
 
 }

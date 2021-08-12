@@ -64,7 +64,6 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 	function asd(data1) {
-		alert(data1);
 		// Load the Visualization API and the corechart package.
 		google.charts.load('current', {
 			'packages' : [ 'corechart' ]
@@ -77,9 +76,6 @@
 		// instantiates the pie chart, passes in the data and
 		// draws it.
 		function drawChart() {
-			alert(data1);
-			console.log(data1);
-
 			// Create the data table.
 			var data = new google.visualization.DataTable();
 			data.addColumn('string', 'Topping');
@@ -104,7 +100,12 @@
 			chart.draw(data, options);
 		}
 	}
+	
+	
 	function allhidden() {
+		
+		 alert(a);
+		 alert(a1);
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 
@@ -112,7 +113,6 @@
 			url : "${cpath}/corrective_history_ajax.do", //여기로 보내주셈
 			type : "get", //JSON = dic : {"idx":1,"name":"홍길동"}
 			success : function(data1) {
-				alert(data1);
 				asd(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
@@ -281,8 +281,22 @@
 
 					</div>
 				</form>
-				<input type="button" class="btn btn-default btn-lg"
+				
+				
+				
+				
+				
+				
+				
+					<div class="input_field">
+					<label>날짜</label>  
+					 <p><input type="month" id="occuring_place1"></p>
+					 <p><input type="month" id="occuring_place2"></p>
+				</div>
+					
+			<input type="button" class="btn btn-default btn-lg"
 					onclick="allhidden()" value="차트보기">
+		
 			</div>
 		</section>
 		<section class="club-section spad-4">
