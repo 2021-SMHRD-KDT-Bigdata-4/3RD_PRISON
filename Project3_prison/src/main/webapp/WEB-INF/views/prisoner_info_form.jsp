@@ -61,9 +61,9 @@
 
 <script type="text/javascript">
 	function goList() {
-		location.href = "${cpath}/boardList.do";
+		location.href = "${cpath}/prisoner_info.do";
 	}
-	
+
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -214,7 +214,7 @@
 				</div>
 				<div class="input_field">
 					<label>이름</label> <input type="text" id="name" class="input"
-						name="name" value="${vo.name}" readonly="readonly">
+						name="name" value="${vo.name}">
 				</div>
 				<div class="input_field">
 					<label>나이</label> <input type="text" id="age" class="input"
@@ -222,8 +222,8 @@
 				</div>
 				<div class="input_field">
 					<label>성별</label> <select id="sex" name="sex">
-						<option id="male" value="male">남자</option>
-						<option id="female" value="female">여자</option>
+						<option id="male" value="남자">남자</option>
+						<option id="female" value="여자">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
@@ -241,14 +241,19 @@
 				</div>
 				<div class="input_field">
 					<label>전과</label> <input type="text" id="before_crime"
-						class="input" name="before_crime" value="${vo.before_crime}"
-						readonly="readonly">
+						class="input" name="before_crime" value="${vo.before_crime}">
+				</div>
+				<div class="input_field">
+					<label>상태</label> <select id="present" class="input" name="present">
+						<option id="present1" value="복역">복역</option>
+						<option id="present2" value="출소">출소</option>
+					</select>
 				</div>
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" id="photo" type="file"
-						name="photo" readonly="readonly">
+						name="photo">
 				</div>
-				<div>
+				<div class="page-btn">
 					<button type="submit" class="btn btn-default btn-lg">수정</button>
 					<button type="reset" class="btn btn-default btn-lg">취소</button>
 					<input type='button' value='목록' class='btn btn-default btn-lg'

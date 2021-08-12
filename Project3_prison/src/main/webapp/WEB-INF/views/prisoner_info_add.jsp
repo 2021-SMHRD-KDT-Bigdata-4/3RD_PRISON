@@ -236,6 +236,12 @@
 						class="input" name="before_crime">
 				</div>
 				<div class="input_field">
+					<label>상태</label> <select id="present" class="input" name="present">
+						<option id="present1" value="복역">복역</option>
+						<option id="present2" value="출소">출소</option>
+					</select>
+				</div>
+				<div class="input_field">
 					<label>사진</label> <input id="file_input" id="photo" type="file"
 						name="photo">
 				</div>

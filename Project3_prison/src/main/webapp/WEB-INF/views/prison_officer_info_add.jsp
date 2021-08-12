@@ -217,8 +217,8 @@
 				</div>
 				<div class="input_field">
 					<label>성별</label> <select id="gender" name="gender">
-						<option id="male" value="male">남자</option>
-						<option id="female" value="female">여자</option>
+						<option id="male" value="남자">남자</option>
+						<option id="female" value="여자">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
@@ -233,7 +233,13 @@
 					<label>부서</label> <input type="text" id="department" class="input"
 						name="department">
 				</div>
-
+				<div class="input_field">
+					<label>상태</label> <select id="present" class="input" name="present">
+						<option id="present1" value="재직">재직</option>
+						<option id="present2" value="휴직">휴직</option>
+						<option id="present3" value="퇴사">퇴사</option>
+					</select>
+				</div>
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" type="file" name="photo">
 				</div>

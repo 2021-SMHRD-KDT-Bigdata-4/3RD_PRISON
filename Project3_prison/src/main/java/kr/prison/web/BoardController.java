@@ -244,7 +244,7 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	@RequestMapping("/corrective_history_insert.do")
 	public String corrective_history_insert(CollectiveHistoryVO vo) {
 		prisonMapper.chInsert(vo);
-		return "redirect:/corrective_history_end.do";
+		return "redirect:/corrective_history.do";
 	}
 
 	// 교정사고 내역의 분류를 기준으로 select
