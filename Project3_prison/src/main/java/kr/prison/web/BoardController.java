@@ -242,9 +242,11 @@ System.out.println(dm_no);
 
 	// 교정사고 내역의 분류를 기준으로 select
 	@RequestMapping("/corrective_history_clfchart.do")
-	public void corrective_history_clfchart(Model model) {
+	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(int startDate,int endDate,Model model) {
+		System.out.println(startDate);
+		System.out.println(endDate);
 		List<chclfChartVO> list = prisonMapper.chclfChart();
-		model.addAttribute("list", list);
+		return list;
 	}
 
 	// 교정사고 내역의 발생장소를 기준으로 select

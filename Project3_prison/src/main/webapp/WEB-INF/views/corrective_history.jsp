@@ -103,21 +103,26 @@
 	
 	
 	function allhidden() {
+		var startDate = document.getElementById("occuring_place1").value;
+
+
+		var endDate = document.getElementById("occuring_place2").value;
+
+
 		
-		 alert(a);
-		 alert(a1);
+
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 
 		$.ajax({ //서버로 요청하기위해 꼭 써야됨
-			url : "${cpath}/corrective_history_ajax.do", //여기로 보내주셈
+			url : "${cpath}/corrective_history_clfchart.do", //여기로 보내주셈
 			type : "get", //JSON = dic : {"idx":1,"name":"홍길동"}
 			success : function(data1) {
 				asd(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
 			error : function() {
-				error("error");
+				alert("실패");
 			}
 		});
 
