@@ -62,7 +62,7 @@
 		from corrective_history;
 	</select>
 
-<
+
 	<select id="chSearch"
 		resultType="kr.prison.domain.CollectiveHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">
