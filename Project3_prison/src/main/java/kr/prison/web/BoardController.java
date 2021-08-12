@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.prison.domain.AnomalyDetectionHistoryVO;
@@ -164,6 +165,12 @@ System.out.println(dm_no);
 		model.addAttribute("list", list);
 		return "drug_management_history";
 	}
+	
+	@RequestMapping("/drug_management_history_delete.do")
+	public String boardDeleteAjax(int dm_no) {
+		prisonMapper.dmDelete(dm_no);
+		return "redirect:/drug_management_history.do";
+	}
 
 	@RequestMapping("/spec_drug_history.do")
 	public void spec_drug_history(Model model) {
@@ -205,13 +212,11 @@ System.out.println(dm_no);
 	@RequestMapping("/patrol_history_start.do")
 	public String patrol_history_start(PatrolHistoryVO vo) {
 		prisonMapper.phInsert(vo);
-		return "redirect:/patrol_history.do";
+		return "redirect:/patrol_history_end.do";
 	}
 
 	@RequestMapping("/patrol_history_end.do")
-	public String patrol_history_end(PatrolHistoryVO vo) {
-		prisonMapper.phUpdate(vo);
-		return "redirect:/patrol_history.do";
+	public void patrol_history_end(PatrolHistoryVO vo) {
 	}
 
 	@RequestMapping("/corrective_history.do")

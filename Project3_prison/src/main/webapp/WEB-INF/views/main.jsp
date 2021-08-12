@@ -182,9 +182,34 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12">
-									<div class="hs-text">
-										<h4 id="main_title">코도소 3차 프로젝트</h4>
-										<h2 id="main_title">변화를 향한 믿음, 함께 만들어가는 국민안전</h2>
+									<div class="hs-text txt_animate">
+										 <span>변</span>
+ 										 <span>화</span>
+ 										 <span>를</span>
+										 <span>&nbsp;</span>
+  										 <span>향</span>
+ 									     <span>한</span>
+                                         <span>&nbsp;</span>
+                                         <span>믿</span>
+ 									     <span>음</span>
+ 									     
+									</div>
+									<div class="hs-text txt_animate-1">
+										 <span>함</span>
+ 										 <span>께</span>
+ 										 <span>&nbsp;</span>
+										 <span>만</span>
+  										 <span>들</span>
+ 									     <span>어</span>
+                                         <span>가</span>
+                                         <span>는</span>
+ 									     <span>&nbsp;</span>
+ 									     <span>국</span>
+ 									     <span>민</span>
+                                         <span>안</span>
+                                         <span>전</span>
+									</div>
+									<div class = "col-lg-13">
 										<a href="#" class="primary-btn"> More Details</a>
 									</div>
 								</div>

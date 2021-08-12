@@ -230,7 +230,6 @@
 										<th>수감번호</th>
 										<th>복용일</th>
 										<th>복용시간</th>
-										<th>삭제</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -241,7 +240,6 @@
 											<td>${vo.prisoner_prison_number}</td>
 											<td>${vo.taking_date}</td>
 											<td>${vo.taking_time}</td>
-											<td><button class="btn btn-default btn-sm">삭제</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>

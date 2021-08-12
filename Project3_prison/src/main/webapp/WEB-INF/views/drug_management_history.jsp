@@ -87,6 +87,7 @@
 		printTime();
 	};
 	
+<<<<<<< HEAD
 	function qwe(data) {
 		alert(data);
 		var dm_no = data
@@ -104,6 +105,24 @@
 		})
 	}
 	
+=======
+	function goDel(dm_no) {
+		var dm_no = dm_no;
+		alert(dm_no);
+		
+		$.ajax({
+			url : "${cpath}/drug_management_history_delete.do",
+			type : "get",
+			data : {"dm_no" : dm_no},
+			success : function() {
+				location.href = "${cpath}/drug_management_history.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		})
+	}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 </script>
 </head>
 
@@ -266,7 +285,11 @@
 											checked
 											</c:if>>
 											</td>
+<<<<<<< HEAD
 											<td><button class="btn btn-default btn-sm" onclick="qwe(${vo.dm_no})">삭제</button></td>
+=======
+											<td><button class="btn btn-default btn-sm" onclick="goDel(${vo.dm_no})">삭제</button></td>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 										</tr>
 									</c:forEach>
 									<tr>

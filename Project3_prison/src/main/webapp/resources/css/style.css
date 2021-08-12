@@ -49,18 +49,33 @@
 	font-style: normal;
 }
 
+#details {
+	margin-left: 20%;
+	display: block;
+	width: 60%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: block;
+}
+
 #spec_drug {
 	margin-left: 50px;
 	margin-top: 25px;
 }
-	
+
 #title1 {
-  padding: 0 .3em;
-  transition: all .3s;
+	padding: 0 .3em;
+	transition: all .3s;
 }
 
 #title1:hover {
-  color: #eb4607;
+	color: #eb4607;
 }
 
 .page-btn {
@@ -68,10 +83,179 @@
 }
 
 
-#main_title {
-	font-family: 'MaruBuri-Regular';
+.col-lg-13{
+	text-align: center;
+	margin-top: 5%;
 }
 
+.txt_animate {
+	font-family: 'MaruBuri-Regular';
+	font-size: 45px;
+	color: white;
+}
+
+.txt_animate span {
+  color:white;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  transition: all 4s ease;
+  animation: txtE 1.5s forwards;
+}
+
+@keyframes txtE {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color:white;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color:white;
+  }
+
+  90% {
+    transform: translate(0) scale(1.2);
+    color:white;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color:white;
+  }
+}
+.txt_animate span:nth-of-type(2) {
+  animation-delay: .1s;
+}
+.txt_animate span:nth-of-type(3) {
+  animation-delay: .2s;
+}
+.txt_animate span:nth-of-type(4) {
+  animation-delay: .3s;
+}
+.txt_animate span:nth-of-type(5) {
+  animation-delay: .4s;
+}
+.txt_animate span:nth-of-type(6) {
+  animation-delay: .5s;
+}
+.txt_animate span:nth-of-type(7) {
+  animation-delay: .6s;
+}
+.txt_animate span:nth-of-type(8) {
+  animation-delay: .7s;
+}
+.txt_animate span:nth-of-type(9) {
+  animation-delay: .8s;
+}
+.txt_animate span:nth-of-type(10) {
+  animation-delay: .9s;
+}
+
+.txt_animate-1 {
+	font-family: 'MaruBuri-Regular';
+	font-size: 45px;
+	color: white;
+}
+
+.txt_animate-1 span {
+  color:white;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  transition: all 4s ease;
+  animation: txtE 1.5s forwards;
+}
+
+@keyframes txtE {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color:white;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color:white;
+  }
+
+  90% {
+    transform: translate(0) scale(1.2);
+    color:white;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color:white;
+  }
+}
+.txt_animate-1 span:nth-of-type(2) {
+  animation-delay: .1s;
+}
+.txt_animate-1 span:nth-of-type(4) {
+  animation-delay: .2s;
+}
+.txt_animate-1 span:nth-of-type(5) {
+  animation-delay: .3s;
+}
+.txt_animate-1 span:nth-of-type(6) {
+  animation-delay: .4s;
+}
+.txt_animate-1 span:nth-of-type(7) {
+  animation-delay: .5s;
+}
+.txt_animate-1 span:nth-of-type(8) {
+  animation-delay: .6s;
+}
+.txt_animate-1 span:nth-of-type(10) {
+  animation-delay: .7s;
+}
+.txt_animate-1 span:nth-of-type(11) {
+  animation-delay: .8s;
+}
+.txt_animate-1 span:nth-of-type(12) {
+  animation-delay: .9s;
+}
+.txt_animate-1 span:nth-of-type(13) {
+  animation-delay: 1.0s;
+}
+
+
+50
+
+
+
+
+%
+{
+transform
+
+
+
+
+:
+
+
+
+
+translateY
+
+
+(
+
+
+
+
+15px
+
+
+
+
+)
+
+
+;
+}
+}
 .bs-text {
 	font-family: 'MaruBuri-Regular';
 }
@@ -314,9 +498,69 @@ keyframes loader { 0% {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -414,6 +658,36 @@ keyframes loader { 0% {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rotate
 
 
@@ -461,7 +735,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -559,7 +893,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -656,7 +1050,67 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -752,7 +1206,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -850,7 +1364,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -947,7 +1521,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1045,7 +1679,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1141,8 +1835,68 @@ solid
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;
 border-left-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1240,7 +1994,67 @@ border-left-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1338,9 +2152,69 @@ transparent
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1438,6 +2312,36 @@ transparent
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rotate
 
 
@@ -1485,7 +2389,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1583,7 +2547,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1680,7 +2704,67 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1776,7 +2860,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1874,7 +3018,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1971,7 +3175,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2069,7 +3333,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2165,8 +3489,68 @@ solid
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;
 border-left-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2264,7 +3648,67 @@ border-left-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2370,9 +3814,69 @@ transparent
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2470,6 +3974,36 @@ transparent
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rotate
 
 
@@ -2517,7 +4051,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2615,7 +4209,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2712,7 +4366,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2810,7 +4524,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2906,8 +4680,68 @@ solid
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;
 border-left-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3005,7 +4839,67 @@ border-left-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3055,6 +4949,36 @@ transparent
 ;
 }
 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3154,7 +5078,67 @@ transparent
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3250,7 +5234,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3348,7 +5392,67 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3445,7 +5549,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3543,7 +5707,67 @@ border
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3639,8 +5863,68 @@ solid
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;
 border-left-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3738,7 +6022,67 @@ border-left-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
