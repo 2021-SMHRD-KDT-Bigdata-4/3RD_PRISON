@@ -125,6 +125,7 @@
 		values(#{po_no}, #{name},
 		#{password}, #{age}, #{gender}, #{rank}, #{position},
 		#{department},
+		#{present},
 		#{photo})
 	</insert>
 

@@ -60,8 +60,9 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function goList() {
-		location.href = "${cpath}/boardList.do";
+		location.href = "${cpath}/prison_officer_info.do";
 	}
+
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -213,21 +214,20 @@
 				</div>
 				<div class="input_field">
 					<label>이름</label> <input type="text" id="name" class="input"
-						name="name" readonly="readonly" value="${vo.name}">
+						name="name" value="${vo.name}">
 				</div>
 				<div class="input_field">
 					<label>비밀번호</label> <input type="text" id="password" class="input"
-						name="password" readonly="readonly" value="${vo.password}">
+						name="password" value="${vo.password}">
 				</div>
 				<div class="input_field">
 					<label>나이</label> <input type="text" id="age" class="input"
 						name="age" readonly="readonly" value="${vo.age}">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select id="gender" name="gender"
-						readonly="readonly">
-						<option id="male" value="male">남자</option>
-						<option id="female" value="female">여자</option>
+					<label>성별</label> <select id="gender" name="gender">
+						<option id="male" value="남자">남자</option>
+						<option id="female" value="여자">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
@@ -242,12 +242,18 @@
 					<label>부서</label> <input type="text" id="department" class="input"
 						name="department" value="${vo.department}">
 				</div>
-
+				<div class="input_field">
+					<label>상태</label> <select id="present" class="input" name="present">
+						<option id="present1" value="재직">재직</option>
+						<option id="present2" value="휴직">휴직</option>
+						<option id="present3" value="퇴사">퇴사</option>
+					</select>
+				</div>
 				<div class="input_field">
 					<label>사진</label> <input id="file_input" type="file" name="photo">
 				</div>
-				<div>
-					<button type="submit" class="btn btn-default btn-lg">추가</button>
+				<div class="page-btn">
+					<button type="submit" class="btn btn-default btn-lg">수정</button>
 					<button type="reset" class="btn btn-default btn-lg">취소</button>
 					<input type='button' value='목록' class='btn btn-default btn-lg'
 						onclick="goList()">

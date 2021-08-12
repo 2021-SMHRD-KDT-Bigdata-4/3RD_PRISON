@@ -96,7 +96,6 @@ public interface PrisonMapper {
 
 	public List<chclfChartVO> chclfChart(chclfChartVO vo); // 그래프 셀렉트
 
-	
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 
@@ -108,7 +107,7 @@ public interface PrisonMapper {
 
 	public void poInsert(PrisonOfficerVO vo);
 
-	@Update("update prison_officer set rank=#{rank},position=#{position},department=#{department} where po_no=#{po_no}")
+	@Update("update prison_officer set password=#{password},name=#{name},rank=#{rank},position=#{position},department=#{department},present=#{present} where po_no=#{po_no}")
 	public void poUpdate(PrisonOfficerVO vo);
 
 	@Delete("delete from prison_officer where po_no=#{po_no}")
@@ -124,10 +123,10 @@ public interface PrisonMapper {
 	@Select("select * from prisoner where prison_number=#{prison_number}")
 	public JailerVO jailer_select(int prison_number);
 
-	@Insert("insert into prisoner (prison_number, name, age, sex, prison_area,room_number,crime_classification,before_crime,photo) values(#{prison_number},#{name}, #{age}, #{sex}, #{prison_area}, #{room_number}, #{crime_classification}, #{before_crime},#{photo})")
+	@Insert("insert into prisoner (prison_number, name, age, sex, prison_area,room_number,crime_classification,before_crime,present,photo) values(#{prison_number},#{name}, #{age}, #{sex}, #{prison_area}, #{room_number}, #{crime_classification}, #{before_crime},#{present},#{photo})")
 	public int jailerInsert(JailerVO vo);
 
-	@Update("update prisoner set prison_area=#{prison_area},room_number=#{room_number} where prison_number=#{prison_number}")
+	@Update("update prisoner set name=#{name},sex=#{sex},prison_area=#{prison_area},room_number=#{room_number},before_crime=#{before_crime},present=#{present},photo=#{photo} where prison_number=#{prison_number}")
 	public void jailerUpdate(JailerVO vo);
 
 	@Delete("delete from prisoner where prison_number=#{prison_number}")

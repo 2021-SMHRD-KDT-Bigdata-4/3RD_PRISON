@@ -250,7 +250,7 @@
 										<th>급수</th>
 										<th>직책</th>
 										<th>부서</th>
-										<th>삭제</th>
+										<th>상태</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -266,7 +266,7 @@
 											<td>${vo.rank}</td>
 											<td>${vo.position}</td>
 											<td>${vo.department}</td>
-											<td><button class="btn btn-default btn-sm">삭제</button></td>
+											<td>${vo.present}</td>
 										</tr>
 									</c:forEach>
 								</tbody>

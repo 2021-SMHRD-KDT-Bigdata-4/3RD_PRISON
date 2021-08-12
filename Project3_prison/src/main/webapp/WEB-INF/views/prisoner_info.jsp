@@ -244,7 +244,7 @@
 										<th>방 번호</th>
 										<th>범죄 분류</th>
 										<th>전과</th>
-										<th>삭제</th>
+										<th>상태</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -260,7 +260,7 @@
 											<td>${vo.room_number}</td>
 											<td>${vo.crime_classification}</td>
 											<td>${vo.before_crime}</td>
-											<td><button class="btn btn-default btn-sm">삭제</button></td>
+											<td>${vo.present}</td>
 										</tr>
 									</c:forEach>
 								</tbody>
