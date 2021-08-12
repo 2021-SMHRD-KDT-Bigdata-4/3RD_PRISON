@@ -45,23 +45,22 @@
 		resultType="kr.prison.domain.chclfChartVO"
 		parameterType="kr.prison.domain.CollectiveHistoryVO">
 		select
-		count(case when classification='폭행치사(재소자)' then 1
+		count(case when classification='폭행치사(재소자)' and occuring_time between  ${startDate} and  ${endDate} then 1
 		end) as case1,
-		count(case when classification='폭행치상(재소자)' then 1 end)
+		count(case when classification='폭행치상(재소자)' and occuring_time between  #{startDate} and  ${endDate} then 1 end)
 		as case2,
-		count(case when classification='교도관폭행' then 1 end) as case3,
-		count(case when classification='도주' then 1 end) as case4,
+		count(case when classification='교도관폭행' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case3,
+		count(case when classification='도주' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case4,
 		count(case
-		when classification='변사' then 1 end) as case5,
+		when classification='변사' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case5,
 		count(case when
-		classification='병사' then 1 end) as case6,
+		classification='병사' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case6,
 		count(case when
-		classification='밀수품반입' then 1 end) as case7,
+		classification='밀수품반입' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case7,
 		count(case when
-		classification='기타규정위반' then 1 end) as case8
+		classification='기타규정위반' and occuring_time between  ${startDate} and  ${endDate} then 1 end) as case8
 		from corrective_history;
 	</select>
-
 
 	<select id="chSearch"
 		resultType="kr.prison.domain.CollectiveHistoryVO"

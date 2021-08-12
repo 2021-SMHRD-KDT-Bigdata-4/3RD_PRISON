@@ -103,27 +103,23 @@
 	
 	
 	function allhidden() {
-		var startDate = document.getElementById("occuring_place1").value;
-
-
-		var endDate = document.getElementById("occuring_place2").value;
-
-
-		
 
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
-
+		var formData = $("#frm").serialize();
+		alert(formData)
 		$.ajax({ //서버로 요청하기위해 꼭 써야됨
 			url : "${cpath}/corrective_history_clfchart.do", //여기로 보내주셈
-			type : "get", //JSON = dic : {"idx":1,"name":"홍길동"}
+			type : "post", //JSON = dic : {"idx":1,"name":"홍길동"}
+			data : formData,
 			success : function(data1) {
+				alert(data1);
 				asd(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
 			error : function() {
 				alert("실패");
-			}
+			} 
 		});
 
 	}
@@ -294,14 +290,18 @@
 				
 				
 					<div class="input_field">
-					<label>날짜</label>  
-					 <p><input type="month" id="occuring_place1"></p>
-					 <p><input type="month" id="occuring_place2"></p>
-				</div>
 					
-			<input type="button" class="btn btn-default btn-lg"
-					onclick="allhidden()" value="차트보기">
-		
+					
+	<form id="frm" method="post">
+               <input type="date" id="startDate" name="startDate">
+					 <input type="date" id="endDate" name="endDate">
+				
+					
+			<button type="submit" class="btn btn-default btn-lg"
+					onclick="allhidden()"> 차트보기</button>
+            </form>    
+</div>
+	
 			</div>
 		</section>
 		<section class="club-section spad-4">
