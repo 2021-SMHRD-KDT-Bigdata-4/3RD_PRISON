@@ -44,7 +44,12 @@ insert into corrective_history(occuring_time, occuring_place, classification, de
 
 select * from corrective_history;
 
+<<<<<<< HEAD
+delete from corrective_history;
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 select
 	count(case when classification='폭행치사(재소자)' then 1 end) as case1,
 	count(case when classification='폭행치상(재소자)' then 1 end) as case2,
