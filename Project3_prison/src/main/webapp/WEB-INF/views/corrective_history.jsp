@@ -49,7 +49,8 @@
 <script
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +60,68 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
+	function asd(data1) {
+		alert(data1);
+		// Load the Visualization API and the corechart package.
+		google.charts.load('current', {
+			'packages' : [ 'corechart' ]
+		});
+
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.charts.setOnLoadCallback(drawChart);
+
+		// Callback that creates and populates a data table,
+		// instantiates the pie chart, passes in the data and
+		// draws it.
+		function drawChart() {
+			alert(data1);
+			console.log(data1);
+
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Topping');
+			data.addColumn('number', 'Slices');
+
+			data.addRows([ [ 'Mushrooms', data1[0].case1 ],
+					[ 'Onions', data1[0].case2 ], [ 'Olives', data1[0].case3 ],
+					[ 'Zucchini', data1[0].case4 ],
+					[ 'Pepperoni', data1[0].case5 ],
+					[ 'qweqwe', data1[0].case6 ] ]);
+
+			// Set chart options
+			var options = {
+				'title' : 'How Much Pizza I Ate Last Night',
+				'width' : 400,
+				'height' : 300
+			};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.PieChart(document
+					.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	}
+	function allhidden() {
+		$("#all").css("display", "none");
+		$("#chart_div").css("display", "block");
+
+		$.ajax({ //서버로 요청하기위해 꼭 써야됨
+			url : "${cpath}/corrective_history_ajax.do", //여기로 보내주셈
+			type : "get", //JSON = dic : {"idx":1,"name":"홍길동"}
+			success : function(data1) {
+				alert(data1);
+				asd(data1)
+			}, //성공하면 콜백함수로
+			dataType : "json",
+			error : function() {
+				error("error");
+			}
+		});
+
+	}
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -195,65 +257,77 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<section class="club-section-1 spad-3">
-		<div class="search-div">
-			<form action="${cpath}/corrective_history_search.do" method="post">
-				<div class="search-jailer-div">
-					<select name="part" class="search-jailer">
-						<option value="prisoner_prison_number">수감번호</option>
-						<option value="classification">분류</option>
-						<option value="calibration_accident_number">교정사고번호</option>
-					</select> <input class="input-jailer" type="text" name="keyword"
-						placeholder="Search${pageContext.request.contextPath}">
-					<button class="btn btn-default btn-lg">검색</button>
-					<a href="corrective_history_add.do"><button type="button"
-							class="btn btn-default btn-lg">추가</button></a>
-				</div>
-			</form>
-		</div>
-	</section>
-	<section class="club-section spad-4">
-		<div class="container">
-			<div class="club-content">
-				<div></div>
+	<div style="display: block" ; id="all">
+
+
+
+
+		<section class="club-section-1 spad-3">
+			<div class="search-div">
+				<form action="${cpath}/corrective_history_search.do" method="post">
+					<div class="search-jailer-div">
+						<select name="part" class="search-jailer">
+							<option value="prisoner_prison_number">수감번호</option>
+							<option value="classification">분류</option>
+							<option value="calibration_accident_number">교정사고번호</option>
+						</select> <input class="input-jailer" type="text" name="keyword"
+							placeholder="Search${pageContext.request.contextPath}">
+						<button class="btn btn-default btn-lg">검색</button>
+						<a href="corrective_history_add.do"><button type="button"
+								class="btn btn-default btn-lg">추가</button></a>
+
+					</div>
+				</form>
+				<input type="button" class="btn btn-default btn-lg"
+					onclick="allhidden()" value="차트보기">
 			</div>
-			<div class="club-tab-list">
-				<div class="row">
-					<div class="col-lg-8 m-auto">
+		</section>
+		<section class="club-section spad-4">
+			<div class="container">
+				<div class="club-content">
+					<div></div>
+				</div>
+				<div class="club-tab-list">
+					<div class="row">
+						<div class="col-lg-8 m-auto">
 
-						<!-- Tab panes -->
-						<div class="container">
+							<!-- Tab panes -->
+							<div class="container">
 
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>교정 사고 번호</th>
-										<th>수감 번호</th>
-										<th>발생 일시</th>
-										<th>발생 장소</th>
-										<th>분류</th>
-										<th>상세 내용</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
+								<table class="table table-hover">
+									<thead>
 										<tr>
-											<td>${vo.calibration_accident_number}</td>
-											<td>${vo.prisoner_prison_number}</td>
-											<td>${vo.occuring_time}</td>
-											<td>${vo.occuring_place}</td>
-											<td>${vo.classification}</td>
-											<td>${vo.details}</td>
+											<th>교정 사고 번호</th>
+											<th>수감 번호</th>
+											<th>발생 일시</th>
+											<th>발생 장소</th>
+											<th>분류</th>
+											<th>상세 내용</th>
 										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
+									</thead>
+									<tbody>
+										<c:forEach var="vo" items="${list}">
+											<tr>
+												<td>${vo.calibration_accident_number}</td>
+												<td>${vo.prisoner_prison_number}</td>
+												<td>${vo.occuring_time}</td>
+												<td>${vo.occuring_place}</td>
+												<td>${vo.classification}</td>
+												<td>${vo.details}</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+
+
+	</div>
+	<div style="display: none" ; id="chart_div"></div>
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
