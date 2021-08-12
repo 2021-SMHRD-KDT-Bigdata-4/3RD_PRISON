@@ -143,7 +143,7 @@ public interface PrisonMapper {
 			+ "where dm_no=#{dm_no}")
 	public void dmUpdate(DrugManagementVO vo);
 
-	@Delete("delete drug_management_history where dm_no=#{dm_no}")
+	@Delete("delete from drug_management_history where dm_no=#{dm_no} CASCADE CONSTRAINT")
 	public int dmDelete(int dm_no);
 
 	public List<DrugManagementVO> dmSearch(SearchVO vo);

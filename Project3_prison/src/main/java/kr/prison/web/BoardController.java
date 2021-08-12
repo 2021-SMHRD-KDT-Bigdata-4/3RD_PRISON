@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.prison.domain.AnomalyDetectionHistoryVO;
@@ -152,18 +153,18 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		prisonMapper.dmInsert(vo);
 		return "redirect:/drug_management_history.do";
 	}
-	
-	@RequestMapping("/drug_management_history_delete.do")
-	public String drug_management_history_delete(int idx) {
-		prisonMapper.dmDelete(idx);
-		return "redirect:/drug_management_history.do";
-	}
 
 	@RequestMapping("/drug_management_history_search.do")
 	public String drug_management_history_search(SearchVO vo, Model model) {
 		List<DrugManagementVO> list = prisonMapper.dmSearch(vo);
 		model.addAttribute("list", list);
 		return "drug_management_history";
+	}
+	
+	@RequestMapping("/drug_management_history_delete.do")
+	public String boardDeleteAjax(int dm_no) {
+		prisonMapper.dmDelete(dm_no);
+		return "redirect:/drug_management_history.do";
 	}
 
 	@RequestMapping("/spec_drug_history.do")

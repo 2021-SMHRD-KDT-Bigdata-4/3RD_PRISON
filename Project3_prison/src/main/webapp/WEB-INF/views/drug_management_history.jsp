@@ -86,6 +86,23 @@
 	window.onload = function() {
 		printTime();
 	};
+	
+	function goDel(dm_no) {
+		var dm_no = dm_no;
+		alert(dm_no);
+		
+		$.ajax({
+			url : "${cpath}/drug_management_history_delete.do",
+			type : "get",
+			data : {"dm_no" : dm_no},
+			success : function() {
+				location.href = "${cpath}/drug_management_history.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		})
+	}
 </script>
 </head>
 
@@ -248,7 +265,7 @@
 											checked
 											</c:if>>
 											</td>
-											<td><button class="btn btn-default btn-sm"}>삭제</button></td>
+											<td><button class="btn btn-default btn-sm" onclick="goDel(${vo.dm_no})">삭제</button></td>
 										</tr>
 									</c:forEach>
 									<tr>
