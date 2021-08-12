@@ -350,6 +350,15 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	System.out.println(vo);
 		return cnt; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
 	}
+	
+	@RequestMapping("/corrective_history_ajax.do") //여기로 요청이오면 아래 메소드를 실행해라
+	public @ResponseBody List<chocpChartVO> corrective_history_ajax() { //@ResponseBody 응답을 한다 뭐로? JSON 으로
+		// TO - DO
+		List<chocpChartVO> list  =prisonMapper.chocpChart();
+	System.out.println(list);
+		return list; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
+	}
+	 
 }
 
 

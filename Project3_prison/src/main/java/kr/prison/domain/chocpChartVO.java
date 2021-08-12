@@ -4,10 +4,11 @@ import lombok.Data;
 
 @Data
 public class chocpChartVO {
-	private String case1;
-	private String case2;
-	private String case3;
-	private String case4;
-	private String case5;
-	private String case6;
+	private int case1;
+	private int case2;
+	private int case3;
+	private int case4;
+	private int case5;
+	private int case6;
+	private int ok;
 }

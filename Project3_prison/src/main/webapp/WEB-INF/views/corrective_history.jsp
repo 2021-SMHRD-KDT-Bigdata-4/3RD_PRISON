@@ -59,6 +59,77 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+
+	function asd(data1) {
+		alert(data1);
+		// Load the Visualization API and the corechart package.
+	      google.charts.load('current', {'packages':['corechart']});
+
+	      // Set a callback to run when the Google Visualization API is loaded.
+	      google.charts.setOnLoadCallback(drawChart);
+
+	      // Callback that creates and populates a data table,
+	      // instantiates the pie chart, passes in the data and
+	      // draws it.
+	      function drawChart() {
+	    	alert(data1);
+	    	console.log(data1);
+	    
+
+	
+	    	
+	    	
+	        // Create the data table.
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Topping');
+	        data.addColumn('number', 'Slices');
+
+	    		
+	    	
+	data.addRows([
+	        ['Mushrooms',data1[0].case1],
+	        ['Onions', data1[0].case2],
+	        ['Olives', data1[0].case3],
+	        ['Zucchini',data1[0].case4],
+	        ['Pepperoni',data1[0].case5],
+	        ['qweqwe',data1[0].case6] 
+	      ]);
+
+	
+        // Set chart options
+	        var options = {'title':'How Much Pizza I Ate Last Night',
+	                       'width':400,
+	                       'height':300};
+
+	        // Instantiate and draw our chart, passing in some options.
+	        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+	      }
+	}
+	function allhidden() {
+		$("#all").css("display","none");
+		$("#chart_div").css("display","block");
+		
+		$.ajax({     //서버로 요청하기위해 꼭 써야됨
+	        url : "${cpath}/corrective_history_ajax.do",      //여기로 보내주셈
+	        type : "get",             //JSON = dic : {"idx":1,"name":"홍길동"}
+	        success : function (data1){
+	   		 alert(data1);
+	   		asd(data1)
+	        },     //성공하면 콜백함수로
+	        dataType : "json",
+	        error : function() { error("error");}
+	  });
+		
+		
+	}
+	
+	
+	
+	
+	</script>
 </head>
 
 <body>
@@ -158,6 +229,11 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
+	<div style="display: block"; id="all">
+	
+	
+	
+	
 	<section class="club-section-1 spad-3">
 		<div class="search-div">
 			<form action="${cpath}/corrective_history_search.do" method="post">
@@ -171,8 +247,10 @@
 					<button class="btn btn-default btn-lg">검색</button>
 					<a href="corrective_history_add.do"><button type="button"
 							class="btn btn-default btn-lg">추가</button></a>
+							
 				</div>
 			</form>
+			<input type="button" class="btn btn-default btn-lg" onclick="allhidden()" value="차트보기">
 		</div>
 	</section>
 	<section class="club-section spad-4">
@@ -217,6 +295,10 @@
 			</div>
 		</div>
 	</section>
+	
+	
+	</div>
+	<div  style="display: none"; id="chart_div"></div>
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
