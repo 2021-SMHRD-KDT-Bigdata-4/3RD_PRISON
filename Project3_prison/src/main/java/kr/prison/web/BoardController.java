@@ -147,6 +147,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	}
 
+	@RequestMapping("/drug_management_history_del.do")
+	public void drug_management_history_del(int dm_no) {
+System.out.println(dm_no);
+	}
+	
 	@RequestMapping("/drug_management_history_insert.do")
 	public String drug_management_history_insert(DrugManagementVO vo) {
 		prisonMapper.dmInsert(vo);

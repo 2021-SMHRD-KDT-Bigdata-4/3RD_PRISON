@@ -86,6 +86,24 @@
 	window.onload = function() {
 		printTime();
 	};
+	
+	function qwe(data) {
+		alert(data);
+		var dm_no = data
+		alert(dm_no);
+		$.ajax({
+			url : "${cpath}/drug_management_history_del.do",
+			type : "get",
+			data : dm_no,
+			success : function() {
+				alert("성공");
+			},
+			error : function() {
+				alert("error");
+			}
+		})
+	}
+	
 </script>
 </head>
 
@@ -248,7 +266,7 @@
 											checked
 											</c:if>>
 											</td>
-											<td><button class="btn btn-default btn-sm">삭제</button></td>
+											<td><button class="btn btn-default btn-sm" onclick="qwe(${vo.dm_no})">삭제</button></td>
 										</tr>
 									</c:forEach>
 									<tr>
