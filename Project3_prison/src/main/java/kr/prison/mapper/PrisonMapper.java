@@ -23,7 +23,7 @@ import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.domain.SpecialManagementJailerVO;
 import kr.prison.domain.chclfChartVO;
-import kr.prison.domain.chocpChartVO;
+
 import kr.prison.domain.SearchVO;
 
 @Mapper
@@ -93,7 +93,7 @@ public interface PrisonMapper {
 
 	public List<chclfChartVO> chclfChart(); // 그래프 셀렉트
 
-	public List<chocpChartVO> chocpChart(); // 그래프 셀렉트
+	
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------
 

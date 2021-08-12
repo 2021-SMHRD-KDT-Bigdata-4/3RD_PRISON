@@ -29,7 +29,6 @@ import kr.prison.domain.PrisonOfficerVO;
 import kr.prison.domain.SearchVO;
 import kr.prison.domain.SpecDrugHistoryVO;
 import kr.prison.domain.chclfChartVO;
-import kr.prison.domain.chocpChartVO;
 import kr.prison.mapper.PrisonMapper;
 
 //POJO
@@ -249,11 +248,7 @@ System.out.println(dm_no);
 	}
 
 	// 교정사고 내역의 발생장소를 기준으로 select
-	@RequestMapping("/corrective_history_ocpchart.do")
-	public void corrective_history_ocpchart(Model model) {
-		List<chocpChartVO> list = prisonMapper.chocpChart();
-		model.addAttribute("list", list);
-	}
+
 
 	@RequestMapping("/corrective_history_search.do")
 	public String corrective_history_search(SearchVO vo, Model model) {
@@ -361,12 +356,6 @@ System.out.println(dm_no);
 		return cnt; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
 	}
 	
-	@RequestMapping("/corrective_history_ajax.do") //여기로 요청이오면 아래 메소드를 실행해라
-	public @ResponseBody List<chocpChartVO> corrective_history_ajax() { //@ResponseBody 응답을 한다 뭐로? JSON 으로
-		// TO - DO
-		List<chocpChartVO> list  =prisonMapper.chocpChart();
-	System.out.println(list);
-		return list; // --> 객체를 리턴 ---{JSON API} --> 스트링 변환 -- > 응답
-	}
+	
 	 
 }
