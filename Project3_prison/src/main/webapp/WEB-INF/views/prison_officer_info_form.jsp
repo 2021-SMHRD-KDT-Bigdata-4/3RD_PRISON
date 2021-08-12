@@ -62,7 +62,34 @@
 	function goList() {
 		location.href = "${cpath}/boardList.do";
 	}
-	</script>
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -79,9 +106,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -162,48 +197,57 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	
+
 
 
 	<section class="club-section spad-4">
-	<form id="frm" method="post" action="${cpath}/prison_officer_info_from_up.do" >
+		<form id="frm" method="post"
+			action="${cpath}/prison_officer_info_from_up.do">
 			<div class="form">
 				<div class="input_field">
-					<label>교도관번호</label> <input type="text" id = "po_no" class="input" name = "po_no"  readonly="readonly" value="${vo.po_no}">
+					<label>교도관번호</label> <input type="text" id="po_no" class="input"
+						name="po_no" readonly="readonly" value="${vo.po_no}">
 				</div>
 				<div class="input_field">
-					<label>이름</label> <input type="text" id = "name" class="input" name = "name" readonly="readonly" value="${vo.name}">
+					<label>이름</label> <input type="text" id="name" class="input"
+						name="name" readonly="readonly" value="${vo.name}">
 				</div>
 				<div class="input_field">
-					<label>비밀번호</label> <input type="text" id = "password" class="input" name = "password" readonly="readonly" value="${vo.password}">
+					<label>비밀번호</label> <input type="text" id="password" class="input"
+						name="password" readonly="readonly" value="${vo.password}">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" id = "age" class="input" name = "age" readonly="readonly" value="${vo.age}">
+					<label>나이</label> <input type="text" id="age" class="input"
+						name="age" readonly="readonly" value="${vo.age}">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select id = "gender" name = "gender" readonly="readonly">
-						<option id = "male" value="male">남자</option>
-						<option id = "female" value="female">여자</option>
+					<label>성별</label> <select id="gender" name="gender"
+						readonly="readonly">
+						<option id="male" value="male">남자</option>
+						<option id="female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>급수</label> <input type="text" id = "rank" class="input" name = "rank"  value="${vo.rank}">
+					<label>급수</label> <input type="text" id="rank" class="input"
+						name="rank" value="${vo.rank}">
 				</div>
 				<div class="input_field">
-					<label>직책</label> <input type="text" id = "position" class="input" name = "position" value="${vo.position}">
+					<label>직책</label> <input type="text" id="position" class="input"
+						name="position" value="${vo.position}">
 				</div>
 				<div class="input_field">
-					<label>부서</label> <input type="text" id = "department" class="input" name = "department" value="${vo.department}">
+					<label>부서</label> <input type="text" id="department" class="input"
+						name="department" value="${vo.department}">
 				</div>
 
 				<div class="input_field">
-					<label>사진</label> <input id="file_input" type="file"
-						name="photo">
+					<label>사진</label> <input id="file_input" type="file" name="photo">
 				</div>
 				<div>
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
 					<button type="reset" class="btn btn-default btn-lg">취소</button>
-				<input type='button' value='목록' class='btn btn-default btn-lg' onclick = "goList()">
+					<input type='button' value='목록' class='btn btn-default btn-lg'
+						onclick="goList()">
 				</div>
 
 			</div>
@@ -303,7 +347,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>
@@ -315,7 +359,7 @@
 		</div>
 	</footer>
 	<!-- Footer Section End -->
-	
+
 	<!-- Search model Begin -->
 	<div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">
@@ -329,9 +373,9 @@
 		</div>
 	</div>
 	<!-- Search model end -->
-	
 
-	
+
+
 </body>
 
 </html>

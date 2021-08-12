@@ -58,6 +58,35 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -74,9 +103,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -161,34 +198,37 @@
 		<form method="post" action="${cpath}/corrective_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>수감 번호</label> <input type="text" id = "prison_number" class="input" name="prisoner_prison_number">
+					<label>수감 번호</label> <input type="text" id="prison_number"
+						class="input" name="prisoner_prison_number">
 				</div>
 				<div class="input_field">
-					<label>발생 장소</label> <select id = "occuring_place" name = "occuring_place">
-						<option id = "수감동화장실" value="수감동화장실">수감동화장실</option>
-						<option id = "수감동거실" value="수감동거실">수감동거실</option>
-						<option id = "출역지" value="출역지">출역지</option>
-						<option id = "운동장" value="운동장">운동장</option>
-						<option id = "복도" value="복도">복도</option>
-						<option id = "기타장소" value="기타장소">기타장소</option>
+					<label>발생 장소</label> <select id="occuring_place"
+						name="occuring_place">
+						<option id="수감동화장실" value="수감동화장실">수감동화장실</option>
+						<option id="수감동거실" value="수감동거실">수감동거실</option>
+						<option id="출역지" value="출역지">출역지</option>
+						<option id="운동장" value="운동장">운동장</option>
+						<option id="복도" value="복도">복도</option>
+						<option id="기타장소" value="기타장소">기타장소</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>분류</label> <select id = "classification" name = "classification">
-						<option id = "폭행치사" value="폭행치사">폭행치사(재소자)</option>
-						<option id = "폭행치상" value="폭행치상">폭행치상(재소자)</option>
-						<option id = "교도관폭행" value="교도관폭행">교도관폭행</option>
-						<option id = "도주" value="도주">도주</option>
-						<option id = "변사" value="변사">변사</option>
-						<option id = "병사" value="병사">병사</option>
-						<option id = "밀수품반입" value="밀수품반입">밀수품반입</option>
-						<option id = "기타규정위반" value="기타규정위반">기타규정위반</option>
+					<label>분류</label> <select id="classification" name="classification">
+						<option id="폭행치사" value="폭행치사">폭행치사(재소자)</option>
+						<option id="폭행치상" value="폭행치상">폭행치상(재소자)</option>
+						<option id="교도관폭행" value="교도관폭행">교도관폭행</option>
+						<option id="도주" value="도주">도주</option>
+						<option id="변사" value="변사">변사</option>
+						<option id="병사" value="병사">병사</option>
+						<option id="밀수품반입" value="밀수품반입">밀수품반입</option>
+						<option id="기타규정위반" value="기타규정위반">기타규정위반</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>상세 내용</label> <input type="text" id = "details" class="input" name="details">
+					<label>상세 내용</label> <input type="text" id="details" class="input"
+						name="details">
 				</div>
-				<div class = "page-btn">
+				<div class="page-btn">
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
 				</div>
 
@@ -289,7 +329,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

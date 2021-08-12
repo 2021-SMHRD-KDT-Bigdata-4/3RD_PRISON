@@ -58,6 +58,35 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -74,9 +103,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -309,7 +346,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

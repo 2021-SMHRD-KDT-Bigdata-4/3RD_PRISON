@@ -58,10 +58,36 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-	
-	</script>
-	
+<script type="text/javascript">
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
+
 </head>
 
 <body>
@@ -78,9 +104,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -163,35 +197,43 @@
 
 	<section class="club-section spad-4">
 		<form id="frm" method="post" action="${cpath}/prisoner_info_insert.do">
-			<div class="form"><div class="input_field">
-					<label>번호</label> <input type="text" id = "prison_number" class="input" name="prison_number">
+			<div class="form">
+				<div class="input_field">
+					<label>번호</label> <input type="text" id="prison_number"
+						class="input" name="prison_number">
 				</div>
 				<div class="input_field">
-					<label>이름</label> <input type="text" id = "name" class="input" name="name">
+					<label>이름</label> <input type="text" id="name" class="input"
+						name="name">
 				</div>
 				<div class="input_field">
-					<label>나이</label> <input type="text" id = "age" class="input" name="age">
+					<label>나이</label> <input type="text" id="age" class="input"
+						name="age">
 				</div>
 				<div class="input_field">
-					<label>성별</label> <select id = "sex" name="sex">
+					<label>성별</label> <select id="sex" name="sex">
 						<option id="male" value="male">남자</option>
 						<option id="female" value="female">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" id = "prison_area" class="input" name="prison_area">
+					<label>수감 구역</label> <input type="text" id="prison_area"
+						class="input" name="prison_area">
 				</div>
 				<div class="input_field">
-					<label>방 번호</label> <input type="text" id = "room_number" class="input" name="room_number">
+					<label>방 번호</label> <input type="text" id="room_number"
+						class="input" name="room_number">
 				</div>
 				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" id = "crime_classification" class="input" name="crime_classification">
+					<label>범죄 분류</label> <input type="text" id="crime_classification"
+						class="input" name="crime_classification">
 				</div>
 				<div class="input_field">
-					<label>전과</label> <input type="text" id = "before_crime" class="input" name="before_crime">
+					<label>전과</label> <input type="text" id="before_crime"
+						class="input" name="before_crime">
 				</div>
 				<div class="input_field">
-					<label>사진</label> <input id="file_input" id = "photo" type="file"
+					<label>사진</label> <input id="file_input" id="photo" type="file"
 						name="photo">
 				</div>
 				<div class="page-btn">
@@ -295,7 +337,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

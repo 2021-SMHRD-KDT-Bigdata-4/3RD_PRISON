@@ -40,11 +40,16 @@ select * from cctv;
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '운동장', '폭행', '일반폭행', '6758');
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '3567');
 insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-09", '세탁실', '흡연', '규정위반', '2481');
+insert into corrective_history(occuring_time, occuring_place, classification, details, prisoner_prison_number) values("2020-12-10", '운동장', '폭행', '일반폭행', '3567');
 
 select * from corrective_history;
 
+<<<<<<< HEAD
 delete from corrective_history;
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 select
 	count(case when classification='폭행치사(재소자)' then 1 end) as case1,
 	count(case when classification='폭행치상(재소자)' then 1 end) as case2,

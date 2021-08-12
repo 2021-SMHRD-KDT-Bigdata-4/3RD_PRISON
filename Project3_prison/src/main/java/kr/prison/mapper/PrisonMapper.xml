@@ -38,8 +38,9 @@
 		values(#{area}, #{cctv_non}, #{location}, #{active})
 	</insert>
 
-	<select id="chclfChart" resultType="kr.prison.domain.chclfChartVO" 
-	    parameterType="kr.prison.domain.CollectiveHistoryVO">
+	<select id="chclfChart"
+		resultType="kr.prison.domain.chclfChartVO"
+		parameterType="kr.prison.domain.CollectiveHistoryVO">
 		select
 		count(case when classification='폭행치사(재소자)' then 1 end) as case1,
 		count(case when classification='폭행치상(재소자)' then 1 end) as case2,
@@ -51,9 +52,10 @@
 		count(case when classification='기타규정위반' then 1 end) as case8
 		from corrective_history;
 	</select>
-	
-	<select id="chocpChart" resultType="kr.prison.domain.chocpChartVO" 
-	    parameterType="kr.prison.domain.CollectiveHistoryVO">
+
+	<select id="chocpChart"
+		resultType="kr.prison.domain.chocpChartVO"
+		parameterType="kr.prison.domain.CollectiveHistoryVO">
 		select
 		count(case when occuring_place='수감동화장실' then 1 end) as case1,
 		count(case when occuring_place='수감동거실' then 1 end) as case2,

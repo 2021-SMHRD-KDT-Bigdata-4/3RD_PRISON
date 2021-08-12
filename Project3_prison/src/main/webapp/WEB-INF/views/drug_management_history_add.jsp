@@ -58,6 +58,35 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -74,9 +103,18 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
+
 							</ul>
 						</div>
 					</div>
@@ -158,22 +196,26 @@
 
 
 	<section class="club-section spad-4">
-		<form method="post" action="${cpath}/drug_management_history_insert.do">
+		<form method="post"
+			action="${cpath}/drug_management_history_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>수감번호</label> <input type="text" id="prisoner_prison_number" class="input" name="prisoner_prison_number">
+					<label>수감번호</label> <input type="text" id="prisoner_prison_number"
+						class="input" name="prisoner_prison_number">
 				</div>
 				<div class="input_field">
-					<label>약물종류</label> <input type="text" id="drug_type" class="input" name="drug_type">
+					<label>약물종류</label> <input type="text" id="drug_type" class="input"
+						name="drug_type">
 				</div>
 				<div class="input_field">
-					<label>복용 횟수</label> <input type="text" id="taking_count" class="input" name="taking_count">
+					<label>복용 횟수</label> <input type="text" id="taking_count"
+						class="input" name="taking_count">
 				</div>
 				<div class="input_field">
-					<label>특별 약물 여부</label> <input type="checkbox" id="spec_drug" name="spec_drug"
-						class="input">
+					<label>특별 약물 여부</label> <input type="checkbox" id="spec_drug"
+						name="spec_drug" class="input">
 				</div>
-				<div class = "page-btn">
+				<div class="page-btn">
 					<button type="submit" class="btn btn-default btn-lg">추가</button>
 				</div>
 			</div>
@@ -273,7 +315,7 @@
 							</p>
 						</div>
 						<div class="co-widget">
-							<ul>     
+							<ul>
 								<li><a href="#">Copyright notification</a></li>
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privacy Policy</a></li>

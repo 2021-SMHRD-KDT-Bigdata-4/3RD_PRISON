@@ -52,13 +52,13 @@
 <script type="text/javascript">
 	function loginFn() {
 		var po_no = $("#po_no").val();
-		var name = $("#name").val();
+		var password = $("#password").val();
 		$.ajax({
 			url : "${cpath}/loginajax.do",
 			type : "post",
 			data : {
 				"po_no" : po_no,
-				"name" : name
+				"password" : password
 			},
 			success : function(data) {
 				alert(data);
@@ -75,6 +75,33 @@
 		});
 
 	}
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
 </script>
 </head>
 
@@ -92,8 +119,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="login.do">Sign in</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -171,7 +207,7 @@
 								<label for="po_no">ID</label> <input type="text" id="po_no">
 							</div>
 							<div class="group-in">
-								<label for="name">PASSWORD</label> <input type="text" id="name">
+								<label for="password">PASSWORD</label> <input type="text" id="password">
 
 							</div>
 
