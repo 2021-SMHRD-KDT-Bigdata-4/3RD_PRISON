@@ -256,12 +256,10 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return "redirect:/corrective_history.do";
 	}
 
-	// 교정사고 내역의 분류를 기준으로 select
-	@RequestMapping("/corrective_history_clfchart.do")
-	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(int startDate, int endDate, Model model) {
-		System.out.println(startDate);
-		System.out.println(endDate);
-		List<chclfChartVO> list = prisonMapper.chclfChart();
+	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(chclfChartVO vo, Model model) {
+		System.out.println(vo);
+		List<chclfChartVO> list = prisonMapper.chclfChart(vo);
+		System.out.println(list);
 		return list;
 	}
 
