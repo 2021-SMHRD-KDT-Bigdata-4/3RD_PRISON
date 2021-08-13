@@ -12,4 +12,6 @@ public class CollectiveHistoryVO {
 	private String classification;        // 분류
 	private String details;     // 상세내용
 	private int prisoner_prison_number; 
+	private Date startDate;
+	private Date endDate;
 }

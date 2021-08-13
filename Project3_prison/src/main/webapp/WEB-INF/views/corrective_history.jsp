@@ -134,7 +134,7 @@
 	}
 
 	function allhidden() {
-
+		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 		var formData = $("#frm").serialize();
 		alert(formData)
@@ -302,7 +302,6 @@
 					<li class="nav-item"><a class="nav-link" data-toggle="tab"
 						href="#tabs-2" role="tab">차트</a></li>
 				</ul>
-
 				<!-- Tab panes -->
 				<div class="container tab-content">
 					<div class="tab-pane active" id="tabs-1" role="tabpanel">
@@ -369,6 +368,9 @@
 		</div>
 	</section>
 
+	<div class="input_field">
+		<div style="display: none" ; id="chart_div"></div>
+	</div>
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
@@ -489,7 +491,6 @@
 		</div>
 	</div>
 	<!-- Search model end -->
-
 </body>
 
 </html>

@@ -94,7 +94,7 @@ public interface PrisonMapper {
 
 	public List<CollectiveHistoryVO> chSearch(SearchVO vo); // 검색
 
-	public List<chclfChartVO> chclfChart(chclfChartVO vo); // 그래프 셀렉트
+	public List<chclfChartVO> chclfChart(CollectiveHistoryVO vo); // 그래프 셀렉트
 
 	@Select("select * from corrective_history where calibration_accident_number=#{calibration_accident_number}")
 	public CollectiveHistoryVO chSelect(int calibration_accident_number);
