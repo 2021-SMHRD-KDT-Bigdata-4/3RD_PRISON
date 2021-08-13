@@ -60,68 +60,80 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 	function aaa(data1) {
 		alert("여끼까지 오면 aa가 불러와진것");
 
-		
-		
-		
-		google.charts.load('current', {packages: ['corechart', 'bar']});
+		google.charts.load('current', {
+			packages : [ 'corechart', 'bar' ]
+		});
 		google.charts.setOnLoadCallback(drawBasic);
 
 		function drawBasic() {
-			alert(typeof(Number(data1[0].case1)));
-			alert(typeof(data1[0].case1));
-		      var data = new google.visualization.DataTable();
-		      data.addColumn('timeofday', 'Time of Day');
-		      data.addColumn('number', 'Motivation Level');
+			alert(typeof (Number(data1[0].case1)));
+			alert(typeof (data1[0].case1));
+			var data = new google.visualization.DataTable();
+			data.addColumn('timeofday', 'Time of Day');
+			data.addColumn('number', 'Motivation Level');
 
-		      data.addRows([
-		        [{v: [8, 0, 0], f: '8 am'},Number(data1[0].case1)],
-		        [{v: [9, 0, 0], f: '9 am'},Number(data1[0].case2)],
-		        [{v: [10, 0, 0], f:'10 am'}, Number(data1[0].case3)],
-		        [{v: [11, 0, 0], f: '11 am'},Number(data1[0].case4)],
-		        [{v: [12, 0, 0], f: '12 pm'},Number(data1[0].case5)],
-		        [{v: [13, 0, 0], f: '1 pm'}, Number(data1[0].case6)],
-		        [{v: [14, 0, 0], f: '2 pm'}, Number(data1[0].case7)],
-		        [{v: [15, 0, 0], f: '3 pm'}, Number(data1[0].case8)],
-		        [{v: [16, 0, 0], f: '4 pm'}, Number(data1[0].case1)],
-		        [{v: [17, 0, 0], f: '5 pm'}, Number(data1[0].case2)],
-		      ]);
+			data.addRows([ [ {
+				v : [ 8, 0, 0 ],
+				f : '8 am'
+			}, Number(data1[0].case1) ], [ {
+				v : [ 9, 0, 0 ],
+				f : '9 am'
+			}, Number(data1[0].case2) ], [ {
+				v : [ 10, 0, 0 ],
+				f : '10 am'
+			}, Number(data1[0].case3) ], [ {
+				v : [ 11, 0, 0 ],
+				f : '11 am'
+			}, Number(data1[0].case4) ], [ {
+				v : [ 12, 0, 0 ],
+				f : '12 pm'
+			}, Number(data1[0].case5) ], [ {
+				v : [ 13, 0, 0 ],
+				f : '1 pm'
+			}, Number(data1[0].case6) ], [ {
+				v : [ 14, 0, 0 ],
+				f : '2 pm'
+			}, Number(data1[0].case7) ], [ {
+				v : [ 15, 0, 0 ],
+				f : '3 pm'
+			}, Number(data1[0].case8) ], [ {
+				v : [ 16, 0, 0 ],
+				f : '4 pm'
+			}, Number(data1[0].case1) ], [ {
+				v : [ 17, 0, 0 ],
+				f : '5 pm'
+			}, Number(data1[0].case2) ], ]);
 
-		      var options = {
-		        title: 'Motivation Level Throughout the Day',
-		        hAxis: {
-		          title: 'Time of Day',
-		          format: 'h:mm a',
-		          viewWindow: {
-		            min: [7, 30, 0],
-		            max: [17, 30, 0]
-		          }
-		        },
-		        vAxis: {
-		          title: 'Rating (scale of 1-10)'
-		        }
-		      };
+			var options = {
+				title : 'Motivation Level Throughout the Day',
+				hAxis : {
+					title : 'Time of Day',
+					format : 'h:mm a',
+					viewWindow : {
+						min : [ 7, 30, 0 ],
+						max : [ 17, 30, 0 ]
+					}
+				},
+				vAxis : {
+					title : 'Rating (scale of 1-10)'
+				}
+			};
 
-		      var chart = new google.visualization.ColumnChart(
-		        document.getElementById('chart_div'));
+			var chart = new google.visualization.ColumnChart(document
+					.getElementById('chart_div'));
 
-		      chart.draw(data, options);
-		    }
-		
+			chart.draw(data, options);
+		}
+
 	}
 
 	function allhidden() {
-<<<<<<< HEAD
-		var startDate = document.getElementById("occuring_place1").value;
-
-		var endDate = document.getElementById("occuring_place2").value;
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
-
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 		var formData = $("#frm").serialize();
@@ -137,7 +149,7 @@
 			dataType : "json",
 			error : function() {
 				alert("실패");
-			} 
+			}
 		});
 
 	}
@@ -300,7 +312,7 @@
 
 					</div>
 				</form>
-<<<<<<< HEAD
+
 
 
 
@@ -319,8 +331,6 @@
 					</form>
 				</div>
 
-=======
-<<<<<<< HEAD
 
 
 
@@ -328,42 +338,10 @@
 
 
 
-				<div class="input_field">
-					<label>날짜</label>
-					<p>
-						<input type="month" id="occuring_place1">
-					</p>
-					<p>
-						<input type="month" id="occuring_place2">
-					</p>
-				</div>
 
-				<input type="button" class="btn btn-default btn-lg"
-					onclick="allhidden()" value="차트보기">
 
-=======
-				
-				
-				
-				
-				
-				
-				
-					<div class="input_field">
-					
-					
-	<form id="frm" method="post">
-               <input type="date" id="startDate" name="startDate">
-					 <input type="date" id="endDate" name="endDate">
-				
-					
-			<button type="submit" class="btn btn-default btn-lg"
-					onclick="allhidden()"> 차트보기</button>
-            </form>    
-</div>
-	
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+
+
 			</div>
 		</section>
 		<section class="club-section spad-4">
@@ -415,10 +393,10 @@
 	<div class="input_field">
 
 
-	<div style="display: none" ; id="chart_div"></div>				
-				</div>
-	
-	
+		<div style="display: none" ; id="chart_div"></div>
+	</div>
+
+
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->

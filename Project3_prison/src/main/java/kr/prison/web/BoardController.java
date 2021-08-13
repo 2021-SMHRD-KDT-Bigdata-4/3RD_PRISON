@@ -249,20 +249,16 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 		return "redirect:/corrective_history.do";
 	}
 
-<<<<<<< HEAD
 	// 교정사고 내역의 분류를 기준으로 select
-	@RequestMapping("/corrective_history_clfchart.do")
-	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(CollectiveHistoryVO vo,Model model) {
-=======
-	@RequestMapping("/corrective_history_content_update.do")
+	
+		@RequestMapping("/corrective_history_content_update.do")
 	public String corrective_history_content_update(CollectiveHistoryVO vo) {
 		System.out.println(vo);
 		prisonMapper.chUpdate(vo);
 		return "redirect:/corrective_history.do";
 	}
-
-	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(chclfChartVO vo, Model model) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+	@RequestMapping("/corrective_history_clfchart.do")
+	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(CollectiveHistoryVO vo, Model model) {
 		System.out.println(vo);
 		List<chclfChartVO> data1 = prisonMapper.chclfChart(vo);
 		System.out.println(data1);
