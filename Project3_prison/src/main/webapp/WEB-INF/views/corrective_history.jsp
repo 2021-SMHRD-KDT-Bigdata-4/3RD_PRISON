@@ -113,9 +113,14 @@
 		    }
 		
 	}
-	
-	
+
 	function allhidden() {
+<<<<<<< HEAD
+		var startDate = document.getElementById("occuring_place1").value;
+
+		var endDate = document.getElementById("occuring_place2").value;
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
@@ -295,6 +300,7 @@
 
 					</div>
 				</form>
+<<<<<<< HEAD
 
 
 
@@ -313,6 +319,51 @@
 					</form>
 				</div>
 
+=======
+<<<<<<< HEAD
+
+
+
+
+
+
+
+				<div class="input_field">
+					<label>날짜</label>
+					<p>
+						<input type="month" id="occuring_place1">
+					</p>
+					<p>
+						<input type="month" id="occuring_place2">
+					</p>
+				</div>
+
+				<input type="button" class="btn btn-default btn-lg"
+					onclick="allhidden()" value="차트보기">
+
+=======
+				
+				
+				
+				
+				
+				
+				
+					<div class="input_field">
+					
+					
+	<form id="frm" method="post">
+               <input type="date" id="startDate" name="startDate">
+					 <input type="date" id="endDate" name="endDate">
+				
+					
+			<button type="submit" class="btn btn-default btn-lg"
+					onclick="allhidden()"> 차트보기</button>
+            </form>    
+</div>
+	
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 			</div>
 		</section>
 		<section class="club-section spad-4">
@@ -341,7 +392,8 @@
 									<tbody>
 										<c:forEach var="vo" items="${list}">
 											<tr>
-												<td>${vo.calibration_accident_number}</td>
+												<td><a
+													href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
 												<td>${vo.prisoner_prison_number}</td>
 												<td>${vo.occuring_time}</td>
 												<td>${vo.occuring_place}</td>

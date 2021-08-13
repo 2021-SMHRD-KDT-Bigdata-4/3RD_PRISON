@@ -86,7 +86,7 @@ public interface PrisonMapper {
 
 	public void chInsert(CollectiveHistoryVO vo);
 
-	@Update("update corrective_history set ")
+	@Update("update corrective_history set prisoner_prison_number=#{prisoner_prison_number}, occuring_time=#{occuring_time}, occuring_place=#{occuring_place}, classification=#{classification}, details=#{details} where calibration_accident_number=#{calibration_accident_number}")
 	public void chUpdate(CollectiveHistoryVO vo);
 
 	@Delete("delete from corrective_history where calibration_accident_number=#{calibration_accident_number}")
@@ -95,6 +95,9 @@ public interface PrisonMapper {
 	public List<CollectiveHistoryVO> chSearch(SearchVO vo); // 검색
 
 	public List<chclfChartVO> chclfChart(CollectiveHistoryVO vo); // 그래프 셀렉트
+
+	@Select("select * from corrective_history where calibration_accident_number=#{calibration_accident_number}")
+	public CollectiveHistoryVO chSelect(int calibration_accident_number);
 
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------

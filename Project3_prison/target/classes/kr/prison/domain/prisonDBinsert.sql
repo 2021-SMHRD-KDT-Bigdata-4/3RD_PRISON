@@ -27,11 +27,6 @@ insert into patrol_history(ph_date, ph_time_start, ph_time_end, location, conten
 
 select * from patrol_history;
 
-
-update patrol_history set ph_time_end = now(), contents='냥'
-where prison_officer_po_no1='A001' and ph_time_end is NULL;
-
-SELECT * from patrol_history WHERE ph_time_end is NULL;
 -- CCTV -------------------------------------------------------------------------------------------
 
 insert into cctv(area, cctv_non, location, active) values('A', '001', '1번방', 1);
