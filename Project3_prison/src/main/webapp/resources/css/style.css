@@ -8269,6 +8269,38 @@ transparent
 	box-sizing: border-box;
 }
 
+.input_field1{
+	text-align: center;
+}
+
+.input_field1 label {
+	width: 8%;
+	margin: 8px 0;
+	display: inline-block;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.input_field1 select {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.input_field1 input {
+	width: 20%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
 .input_field_chc_content input {
 	width: 40%;
 	padding: 12px 20px;

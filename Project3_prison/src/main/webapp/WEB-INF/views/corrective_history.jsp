@@ -63,53 +63,78 @@
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-	function asd(data1) {
-		// Load the Visualization API and the corechart package.
+	function aaa(data1) {
+		alert("여끼까지 오면 aa가 불러와진것");
+
 		google.charts.load('current', {
-			'packages' : [ 'corechart' ]
+			packages : [ 'corechart', 'bar' ]
 		});
+		google.charts.setOnLoadCallback(drawBasic);
 
-		// Set a callback to run when the Google Visualization API is loaded.
-		google.charts.setOnLoadCallback(drawChart);
-
-		// Callback that creates and populates a data table,
-		// instantiates the pie chart, passes in the data and
-		// draws it.
-		function drawChart() {
-			// Create the data table.
+		function drawBasic() {
+			alert(typeof (Number(data1[0].case1)));
+			alert(typeof (data1[0].case1));
 			var data = new google.visualization.DataTable();
-			data.addColumn('string', 'Topping');
-			data.addColumn('number', 'Slices');
+			data.addColumn('timeofday', 'Time of Day');
+			data.addColumn('number', 'Motivation Level');
 
-			data.addRows([ [ 'Mushrooms', data1[0].case1 ],
-					[ 'Onions', data1[0].case2 ], [ 'Olives', data1[0].case3 ],
-					[ 'Zucchini', data1[0].case4 ],
-					[ 'Pepperoni', data1[0].case5 ],
-					[ 'qweqwe', data1[0].case6 ] ]);
+			data.addRows([ [ {
+				v : [ 8, 0, 0 ],
+				f : '8 am'
+			}, Number(data1[0].case1) ], [ {
+				v : [ 9, 0, 0 ],
+				f : '9 am'
+			}, Number(data1[0].case2) ], [ {
+				v : [ 10, 0, 0 ],
+				f : '10 am'
+			}, Number(data1[0].case3) ], [ {
+				v : [ 11, 0, 0 ],
+				f : '11 am'
+			}, Number(data1[0].case4) ], [ {
+				v : [ 12, 0, 0 ],
+				f : '12 pm'
+			}, Number(data1[0].case5) ], [ {
+				v : [ 13, 0, 0 ],
+				f : '1 pm'
+			}, Number(data1[0].case6) ], [ {
+				v : [ 14, 0, 0 ],
+				f : '2 pm'
+			}, Number(data1[0].case7) ], [ {
+				v : [ 15, 0, 0 ],
+				f : '3 pm'
+			}, Number(data1[0].case8) ], [ {
+				v : [ 16, 0, 0 ],
+				f : '4 pm'
+			}, Number(data1[0].case1) ], [ {
+				v : [ 17, 0, 0 ],
+				f : '5 pm'
+			}, Number(data1[0].case2) ], ]);
 
-			// Set chart options
 			var options = {
-				'title' : 'How Much Pizza I Ate Last Night',
-				'width' : 400,
-				'height' : 300
+				title : 'Motivation Level Throughout the Day',
+				hAxis : {
+					title : 'Time of Day',
+					format : 'h:mm a',
+					viewWindow : {
+						min : [ 7, 30, 0 ],
+						max : [ 17, 30, 0 ]
+					}
+				},
+				vAxis : {
+					title : 'Rating (scale of 1-10)'
+				}
 			};
 
-			// Instantiate and draw our chart, passing in some options.
-			var chart = new google.visualization.PieChart(document
+			var chart = new google.visualization.ColumnChart(document
 					.getElementById('chart_div'));
+
 			chart.draw(data, options);
 		}
+
 	}
 
 	function allhidden() {
-<<<<<<< HEAD
-		var startDate = document.getElementById("occuring_place1").value;
 
-		var endDate = document.getElementById("occuring_place2").value;
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
-
-		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 		var formData = $("#frm").serialize();
 		alert(formData)
@@ -118,16 +143,18 @@
 			type : "post", //JSON = dic : {"idx":1,"name":"홍길동"}
 			data : formData,
 			success : function(data1) {
-				alert(data1);
-				asd(data1)
+				alert("여끼까지 오면 성공인것");
+				aaa(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
 			error : function() {
 				alert("실패");
-			} 
+			}
 		});
 
 	}
+
+	<script type="text/javascript">
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -266,119 +293,82 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<div style="display: block" ; id="all">
+	<section class="club-section spad-4">
+		<div class="row">
+			<div class="col-lg-8 m-auto">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item"><a class="nav-link active"
+						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="tab"
+						href="#tabs-2" role="tab">차트</a></li>
+				</ul>
 
-
-
-
-		<section class="club-section-1 spad-3">
-			<div class="search-div">
-				<form action="${cpath}/corrective_history_search.do" method="post">
-					<div class="search-jailer-div">
-						<select name="part" class="search-jailer">
-							<option value="prisoner_prison_number">수감번호</option>
-							<option value="classification">분류</option>
-							<option value="calibration_accident_number">교정사고번호</option>
-						</select> <input class="input-jailer" type="text" name="keyword"
-							placeholder="Search${pageContext.request.contextPath}">
-						<button class="btn btn-default btn-lg">검색</button>
-						<a href="corrective_history_add.do"><button type="button"
-								class="btn btn-default btn-lg">추가</button></a>
-
-					</div>
-				</form>
-<<<<<<< HEAD
-
-
-
-
-
-
-
-				<div class="input_field">
-					<label>날짜</label>
-					<p>
-						<input type="month" id="occuring_place1">
-					</p>
-					<p>
-						<input type="month" id="occuring_place2">
-					</p>
-				</div>
-
-				<input type="button" class="btn btn-default btn-lg"
-					onclick="allhidden()" value="차트보기">
-
-=======
-				
-				
-				
-				
-				
-				
-				
-					<div class="input_field">
-					
-					
-	<form id="frm" method="post">
-               <input type="date" id="startDate" name="startDate">
-					 <input type="date" id="endDate" name="endDate">
-				
-					
-			<button type="submit" class="btn btn-default btn-lg"
-					onclick="allhidden()"> 차트보기</button>
-            </form>    
-</div>
-	
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
-			</div>
-		</section>
-		<section class="club-section spad-4">
-			<div class="container">
-				<div class="club-content">
-					<div></div>
-				</div>
-				<div class="club-tab-list">
-					<div class="row">
-						<div class="col-lg-8 m-auto">
-
-							<!-- Tab panes -->
-							<div class="container">
-
-								<table class="table table-hover">
-									<thead>
+				<!-- Tab panes -->
+				<div class="container tab-content">
+					<div class="tab-pane active" id="tabs-1" role="tabpanel">
+						<div class="search-div">
+							<form action="${cpath}/corrective_history_search.do"
+								method="post">
+								<div class="search-jailer-div">
+									<select name="part" class="search-jailer">
+										<option value="prisoner_prison_number">수감번호</option>
+										<option value="classification">분류</option>
+										<option value="calibration_accident_number">교정사고번호</option>
+									</select> <input class="input-jailer" type="text" name="keyword"
+										placeholder="Search${pageContext.request.contextPath}">
+									<button class="btn btn-default btn-lg">검색</button>
+									<a href="corrective_history_add.do"><button type="button"
+											class="btn btn-default btn-lg">추가</button></a>
+								</div>
+							</form>
+						</div>
+						<canvas id="chart_div"></canvas>
+						<div class="club-tab-content">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>교정 사고 번호</th>
+										<th>수감 번호</th>
+										<th>발생 일시</th>
+										<th>발생 장소</th>
+										<th>분류</th>
+										<th>상세 내용</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="vo" items="${list}">
 										<tr>
-											<th>교정 사고 번호</th>
-											<th>수감 번호</th>
-											<th>발생 일시</th>
-											<th>발생 장소</th>
-											<th>분류</th>
-											<th>상세 내용</th>
+											<td><a
+												href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
+											<td>${vo.prisoner_prison_number}</td>
+											<td>${vo.occuring_time}</td>
+											<td>${vo.occuring_place}</td>
+											<td>${vo.classification}</td>
+											<td>${vo.details}</td>
 										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="vo" items="${list}">
-											<tr>
-												<td><a
-													href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
-												<td>${vo.prisoner_prison_number}</td>
-												<td>${vo.occuring_time}</td>
-												<td>${vo.occuring_place}</td>
-												<td>${vo.classification}</td>
-												<td>${vo.details}</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+									</c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
+
+					<div class="tab-pane club-section spad-4" id="tabs-2"
+						role="tabpanel">
+						<form id="frm" method="post">
+							<div class="input_field1">
+								<input type="date" id="startDate" name="startDate"> <input
+									type="date" id="endDate" name="endDate">
+								<button type="submit" class="btn btn-default btn-lg"
+									onclick="aaa()">차트보기</button>
+							</div>
+							<div id="chart_div"></div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-
-	</div>
-	<div style="display: none" ; id="chart_div"></div>
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
