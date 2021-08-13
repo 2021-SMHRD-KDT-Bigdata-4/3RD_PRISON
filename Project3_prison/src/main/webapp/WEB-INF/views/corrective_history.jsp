@@ -118,6 +118,8 @@
 		});
 
 	}
+
+	<script type="text/javascript">
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -256,113 +258,91 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<div style="display: block" ; id="all">
-
-
-
-
-		<section class="club-section-1 spad-3">
-			<div class="search-div">
-				<form action="${cpath}/corrective_history_search.do" method="post">
-					<div class="search-jailer-div">
-						<select name="part" class="search-jailer">
-							<option value="prisoner_prison_number">수감번호</option>
-							<option value="classification">분류</option>
-							<option value="calibration_accident_number">교정사고번호</option>
-						</select> <input class="input-jailer" type="text" name="keyword"
-							placeholder="Search${pageContext.request.contextPath}">
-						<button class="btn btn-default btn-lg">검색</button>
-						<a href="corrective_history_add.do"><button type="button"
-								class="btn btn-default btn-lg">추가</button></a>
-
-					</div>
-				</form>
-
-
-
-
-
-
-
-
-				<div class="input_field">
-
-
-					<form id="frm" method="post" onsubmit="return false;">
-						<input type="date" id="startDate" name="startDate"> <input
-							type="date" id="endDate" name="endDate">
-						<button type="submit" class="btn btn-default btn-lg"
-							onclick="allhidden()">차트보기</button>
-					</form>
-				</div>
-
-
-
-
-
-
-
-
-
-
-
-
-			</div>
-		</section>
-		<section class="club-section spad-4">
-			<div class="container">
-				<div class="club-content">
-					<div></div>
-				</div>
-				<div class="club-tab-list">
-					<div class="row">
-						<div class="col-lg-8 m-auto">
-
-							<!-- Tab panes -->
-							<div class="container">
-
-								<table class="table table-hover">
-									<thead>
+	<section class="club-section spad-4">
+		<div class="row">
+			<div class="col-lg-8 m-auto">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item"><a class="nav-link active"
+						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="tab"
+						href="#tabs-2" role="tab">차트</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="container tab-content">
+					<div class="tab-pane active" id="tabs-1" role="tabpanel">
+						<div class="search-div">
+							<form action="${cpath}/corrective_history_search.do"
+								method="post">
+								<div class="search-jailer-div">
+									<select name="part" class="search-jailer">
+										<option value="prisoner_prison_number">수감번호</option>
+										<option value="classification">분류</option>
+										<option value="calibration_accident_number">교정사고번호</option>
+									</select> <input class="input-jailer" type="text" name="keyword"
+										placeholder="Search${pageContext.request.contextPath}">
+									<button class="btn btn-default btn-lg">검색</button>
+									<a href="corrective_history_add.do"><button type="button"
+											class="btn btn-default btn-lg">추가</button></a>
+								</div>
+							</form>
+						</div>
+						<canvas id="chart_div"></canvas>
+						<div class="club-tab-content">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>교정 사고 번호</th>
+										<th>수감 번호</th>
+										<th>발생 일시</th>
+										<th>발생 장소</th>
+										<th>분류</th>
+										<th>상세 내용</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="vo" items="${list}">
 										<tr>
-											<th>교정 사고 번호</th>
-											<th>수감 번호</th>
-											<th>발생 일시</th>
-											<th>발생 장소</th>
-											<th>분류</th>
-											<th>상세 내용</th>
+											<td><a
+												href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
+											<td>${vo.prisoner_prison_number}</td>
+											<td>${vo.occuring_time}</td>
+											<td>${vo.occuring_place}</td>
+											<td>${vo.classification}</td>
+											<td>${vo.details}</td>
 										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="vo" items="${list}">
-											<tr>
-												<td><a
-													href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
-												<td>${vo.prisoner_prison_number}</td>
-												<td>${vo.occuring_time}</td>
-												<td>${vo.occuring_place}</td>
-												<td>${vo.classification}</td>
-												<td>${vo.details}</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+									</c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
+
+					<div class="tab-pane club-section spad-4" id="tabs-2"
+						role="tabpanel">
+						<form id="frm" method="post">
+							<div class="input_field1">
+								<input type="date" id="startDate" name="startDate"> <input
+									type="date" id="endDate" name="endDate">
+								<button type="submit" class="btn btn-default btn-lg"
+									onclick="aaa()">차트보기</button>
+							</div>
+							<div id="chart_div"></div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-
-	</div>
 	<div class="input_field">
+<<<<<<< HEAD
 
 
 		<div style="display: none; width: 900px; height: 500px;" ; id="chart_div"></div>
 		
+=======
+		<div style="display: none" ; id="chart_div"></div>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/3RD_PRISON.git
 	</div>
-
-
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
@@ -483,7 +463,6 @@
 		</div>
 	</div>
 	<!-- Search model end -->
-
 </body>
 
 </html>
