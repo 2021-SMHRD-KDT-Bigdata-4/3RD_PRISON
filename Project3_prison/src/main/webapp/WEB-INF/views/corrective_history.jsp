@@ -66,71 +66,36 @@
 	function aaa(data1) {
 		alert("여끼까지 오면 aa가 불러와진것");
 
-		google.charts.load('current', {
-			packages : [ 'corechart', 'bar' ]
-		});
-		google.charts.setOnLoadCallback(drawBasic);
 
-		function drawBasic() {
-			alert(typeof (Number(data1[0].case1)));
-			alert(typeof (data1[0].case1));
-			var data = new google.visualization.DataTable();
-			data.addColumn('timeofday', 'Time of Day');
-			data.addColumn('number', 'Motivation Level');
+        google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawVisualization);
 
-			data.addRows([ [ {
-				v : [ 8, 0, 0 ],
-				f : '8 am'
-			}, Number(data1[0].case1) ], [ {
-				v : [ 9, 0, 0 ],
-				f : '9 am'
-			}, Number(data1[0].case2) ], [ {
-				v : [ 10, 0, 0 ],
-				f : '10 am'
-			}, Number(data1[0].case3) ], [ {
-				v : [ 11, 0, 0 ],
-				f : '11 am'
-			}, Number(data1[0].case4) ], [ {
-				v : [ 12, 0, 0 ],
-				f : '12 pm'
-			}, Number(data1[0].case5) ], [ {
-				v : [ 13, 0, 0 ],
-				f : '1 pm'
-			}, Number(data1[0].case6) ], [ {
-				v : [ 14, 0, 0 ],
-				f : '2 pm'
-			}, Number(data1[0].case7) ], [ {
-				v : [ 15, 0, 0 ],
-				f : '3 pm'
-			}, Number(data1[0].case8) ], [ {
-				v : [ 16, 0, 0 ],
-				f : '4 pm'
-			}, Number(data1[0].case1) ], [ {
-				v : [ 17, 0, 0 ],
-				f : '5 pm'
-			}, Number(data1[0].case2) ], ]);
+     function drawVisualization() {
+       // Some raw data (not necessarily accurate)
+       var data = google.visualization.arrayToDataTable([
+         ['분류', '월별 기록'],
+         ['폭행치사', Number( data1[0].case1),],
+         ['폭행치사',  Number(data1[0].case2),],
+         ['폭행치상', Number( data1[0].case3),],
+         ['폭행치사', Number( data1[0].case4),],
+         ['폭행치사', Number( data1[0].case5),],
+         ['폭행치사',  Number(data1[0].case6),],
+         ['폭행치사', Number( data1[0].case7),],
+         ['폭행치사', Number( data1[0].case8),],
+       ]);
 
-			var options = {
-				title : 'Motivation Level Throughout the Day',
-				hAxis : {
-					title : 'Time of Day',
-					format : 'h:mm a',
-					viewWindow : {
-						min : [ 7, 30, 0 ],
-						max : [ 17, 30, 0 ]
-					}
-				},
-				vAxis : {
-					title : 'Rating (scale of 1-10)'
-				}
-			};
+       var options = {
+         title : '여기는 위쪽입니다',
+         
+         hAxis: {title: '분류'},
+         seriesType: 'bars',
+         bar :{groupWidth:40}
+         
+       };
 
-			var chart = new google.visualization.ColumnChart(document
-					.getElementById('chart_div'));
-
-			chart.draw(data, options);
-		}
-
+       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+       chart.draw(data, options);
+     }
 	}
 
 	function allhidden() {
@@ -393,7 +358,8 @@
 	<div class="input_field">
 
 
-		<div style="display: none" ; id="chart_div"></div>
+		<div style="display: none; width: 900px; height: 500px;" ; id="chart_div"></div>
+		
 	</div>
 
 
