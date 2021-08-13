@@ -12,7 +12,6 @@
 		concat('%',#{keyword},'%')
 	</select>
 
-
 	<select id="adhSearch"
 		resultType="kr.prison.domain.AnomalyDetectionHistoryVO"
 		parameterType="kr.prison.domain.SearchVO">

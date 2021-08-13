@@ -62,6 +62,7 @@
 	function goList() {
 		location.href = "${cpath}/anomaly_detection_history.do";
 	}
+	
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -254,9 +255,8 @@
 													id="actual_anomalies" name="actual_anomalies">${vo.actual_anomalies}</textarea></td>
 										</tr>
 									</tbody>
-
 								</table>
-								<div>
+								<div class="page-btn1">
 									<button type="submit" class="btn btn-default btn-lg">수정</button>
 									<button type="reset" class="btn btn-default btn-lg">취소</button>
 									<input type='button' value='목록' class='btn btn-default btn-lg'

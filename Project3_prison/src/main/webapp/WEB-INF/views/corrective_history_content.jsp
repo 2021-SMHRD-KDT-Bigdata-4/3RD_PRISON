@@ -59,6 +59,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+	function goList() {
+		location.href = "${cpath}/corrective_history.do";
+	}
+
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -209,46 +213,56 @@
 
 						<!-- Tab panes -->
 						<div class="container">
-
-							<table class="table table-hover">
-								<thead>
-									<th id="chc_thead_th">분류</th>
-									<th id="chc_thead_th">내용</th>
-								</thead>
-								<tbody id="chc_tbody">
-									<tr>
-										<th id="chc_tbody_th">교정 사고 번호</th>
-										<td><input class="form-control"
-											id="calibration_accident_number"
-											name="calibration_accident_number" readonly="readonly"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">수감 번호</th>
-										<td><input class="form-control" id="prison_number"
-											name="prison_number"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">발생 일시</th>
-										<td><input class="form-control" id="occuring_time"
-											name="occuring_time"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">발생 장소</th>
-										<td><input class="form-control" id="occuring_place"
-											name="occuring_place"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">분류</th>
-										<td><input class="form-control" id="classification"
-											name="classification"></td>
-									</tr>
-									<tr>
-										<th id="chc_tbody_th">상세내용</th>
-										<td><textarea class="form-control" rows="5" id="details"
-												name="details"></textarea></td>
-									</tr>
-								</tbody>
-							</table>
+							<form id="frm" method="post"
+								action="${cpath}/corrective_history_content_update.do">
+								<table class="table table-hover">
+									<thead>
+										<th id="chc_thead_th">분류</th>
+										<th id="chc_thead_th">내용</th>
+									</thead>
+									<tbody id="chc_tbody">
+										<tr>
+											<th id="chc_tbody_th">교정 사고 번호</th>
+											<td><input class="form-control"
+												id="calibration_accident_number"
+												name="calibration_accident_number" readonly="readonly"
+												value="${vo.calibration_accident_number}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">수감 번호</th>
+											<td><input class="form-control"
+												id="prisoner_prison_number" name="prisoner_prison_number"
+												value="${vo.prisoner_prison_number}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">발생 일시</th>
+											<td><input class="form-control" id="occuring_time"
+												name="occuring_time" value="${vo.occuring_time}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">발생 장소</th>
+											<td><input class="form-control" id="occuring_place"
+												name="occuring_place" value="${vo.occuring_place}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">분류</th>
+											<td><input class="form-control" id="classification"
+												name="classification" value="${vo.classification}"></td>
+										</tr>
+										<tr>
+											<th id="chc_tbody_th">상세내용</th>
+											<td><textarea class="form-control" rows="5"
+													id="details1" name="details">${vo.details}</textarea></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="page-btn1">
+									<button type="submit" class="btn btn-default btn-lg">수정</button>
+									<button type="reset" class="btn btn-default btn-lg">취소</button>
+									<input type='button' value='목록' class='btn btn-default btn-lg'
+										onclick="goList()">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
