@@ -9,3 +9,5 @@ SET foreign_key_checks = 0;
  PREPARE stmt FROM @tables;
  EXECUTE stmt;
  DEALLOCATE PREPARE stmt;
+ 
+ 

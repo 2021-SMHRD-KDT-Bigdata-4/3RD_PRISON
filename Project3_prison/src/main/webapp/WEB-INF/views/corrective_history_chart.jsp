@@ -11,7 +11,7 @@
 <meta name="keywords" content="Specer, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>코도소 3차 프로젝트 | 재소자 정보</title>
+<title>코도소 3차 프로젝트 | 교정 사고 내역</title>
 
 <!-- Google Font -->
 <link
@@ -50,7 +50,7 @@
 	src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
 <!-- bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,6 +60,100 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	function asd(data1) {
+		// Load the Visualization API and the corechart package.
+		google.charts.load('current', {
+			'packages' : [ 'corechart' ]
+		});
+		console.log(data1);
+		console.log(data1[0]);
+	
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.charts.setOnLoadCallback(drawChart);
+
+		// Callback that creates and populates a data table,
+		// instantiates the pie chart, passes in the data and
+		// draws it.
+		function drawChart() {
+			console.log(data1[0].case1);
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Topping');
+			data.addColumn('number', 'Slices');
+			data.addRows([ [ 'Mushrooms', 0 ],
+					[ 'Onions', data1[0].case2 ], 
+					[ 'Olives', data1[0].case3 ],
+					[ 'Zucchini', data1[0].case4 ],
+					[ 'Pepperoni', data1[0].case5 ],
+					[ 'qweqwe', data1[0].case6 ] ]);
+
+			// Set chart options
+			var options = {
+				'title' : 'How Much Pizza I Ate Last Night',
+				'width' : 400,
+				'height' : 300
+			};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.PieChart(document
+					.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	}
+	
+	
+	function allhidden() {
+
+		$("#all").css("display", "none");
+		$("#chart_div").css("display", "block");
+		var formData = $("#frm").serialize();
+		alert(formData)
+		$.ajax({ //서버로 요청하기위해 꼭 써야됨
+			url : "${cpath}/corrective_history_clfchart.do", //여기로 보내주셈
+			type : "post", //JSON = dic : {"idx":1,"name":"홍길동"}
+			data : formData,
+			success : function(data1) {
+				alert(data1);
+				asd(data1)
+			}, //성공하면 콜백함수로
+			dataType : "json",
+			error : function() {
+				alert("실패");
+			} 
+		});
+
+	}
+	function logoutFn() {
+		$.ajax({
+			url : "${cpath}/logoutajax.do",
+			type : "get",
+			success : function() {
+				location.href = "main.do";
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	}
+
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+
+		clock.innerHTML = now.getFullYear() + "-" + (now.getMonth() + 1) + "-"
+				+ now.getDate() + "   " + now.getHours() + ":"
+				+ now.getMinutes() + ":" + now.getSeconds();
+
+		setTimeout("printTime()", 1000);
+	}
+
+	window.onload = function() {
+		printTime();
+	};
+</script>
 </head>
 
 <body>
@@ -76,9 +170,17 @@
 					<div class="col-lg-6">
 						<div class="ht-info">
 							<ul>
-								<li>20:00 - May 19, 2019</li>
-								<li><a href="#">Logout</a></li>
-								<li><a href="#">Contact</a></li>
+								<li>
+									<div id="clock"></div>
+								</li>
+								<c:if test="${sessionScope.prisonOfficerVO==null}">
+									<li><a href="login.do">Sign in</a></li>
+								</c:if>
+								<c:if test="${sessionScope.prisonOfficerVO!=null}">
+									<li><a>${sessionScope.prisonOfficerVO.name}님 방문을
+											환영합니다.</a></li>
+									<li><a onclick="logoutFn()"> 로그아웃</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -106,43 +208,42 @@
 					</div>
 					<div class="col-lg-10">
 						<div class="nav-menu">
-							<div class="nav-menu">
-								<ul class="main-menu">
-									<li><a href="main.do">Home</a></li>
-									<li class="active"><a href="#">재소자</a>
-										<ul class="dropdown">
-											<li><a href="prisoner_info.do">재소자 정보</a></li>
-											<li><a href="drug_management_history.do">약물 내역</a></li>
-											<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
-										</ul></li>
-									<li><a href="#">교도관</a>
-										<ul class="dropdown">
-											<li><a href="prison_officer_info.do">교도관 정보</a></li>
-											<li><a href="patrol_history.do">순찰 내역</a></li>
-										</ul></li>
-									<li><a href="#">교정사고</a>
-										<ul class="dropdown">
-											<li><a href="corrective_history.do">교정사고 내역</a></li>
-											<li><a href="anomaly_detection_history.do">이상 징후 감지
-													내역</a></li>
-										</ul></li>
-									<li><a href="#">CCTV</a>
-										<ul class="dropdown">
-											<li><a href="cctv.do">CCTV 관리</a></li>
-											<li><a href="cctv_now.do">실시간 CCTV</a></li>
-										</ul></li>
-								</ul>
-								<div class="nm-right search-switch">
-									<i class="fa fa-search"></i>
-								</div>
+							<ul class="main-menu">
+								<li><a href="main.do">Home</a></li>
+								<li><a href="#">재소자</a>
+									<ul class="dropdown">
+										<li><a href="prisoner_info.do">재소자 정보</a></li>
+										<li><a href="drug_management_history.do">약물 내역</a></li>
+										<li><a href="spec_drug_history.do">특별 약물 내역</a></li>
+									</ul></li>
+								<li><a href="#">교도관</a>
+									<ul class="dropdown">
+										<li><a href="prison_officer_info.do">교도관 정보</a></li>
+										<li><a href="patrol_history.do">순찰 내역</a></li>
+									</ul></li>
+								<li class="active"><a href="#">교정사고</a>
+									<ul class="dropdown">
+										<li><a href="corrective_history.do">교정사고 내역</a></li>
+										<li><a href="anomaly_detection_history.do">이상 징후 감지
+												내역</a></li>
+									</ul></li>
+								<li><a href="#">CCTV</a>
+									<ul class="dropdown">
+										<li><a href="cctv.do">CCTV 관리</a></li>
+										<li><a href="cctv_now.do">실시간 CCTV</a></li>
+									</ul></li>
+							</ul>
+							<div class="nm-right search-switch">
+								<i class="fa fa-search"></i>
 							</div>
 						</div>
 					</div>
-					<div class="canvas-open">
-						<i class="fa fa-bars"></i>
-					</div>
+				</div>
+				<div class="canvas-open">
+					<i class="fa fa-bars"></i>
 				</div>
 			</div>
+		</div>
 	</header>
 	<!-- Header End -->
 
@@ -154,7 +255,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="bs-text">
-						<h2>재소자 정보</h2>
+						<h2>교정 사고 내역</h2>
 					</div>
 				</div>
 			</div>
@@ -162,16 +263,34 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	<div style="width: 900px; height: 900px;">
-		<!--차트가 그려질 부분-->
-		<canvas id="myChart"></canvas>
-	</div>
-
 	<!-- Club Section Begin -->
-	<section class="club-section-1 spad-3">
-		<div class="search-div"></div>
-	</section>
+	<div style="display: block" ; id="all">
+
+
+
+
+		<section class="club-section-1 spad-3">
+			<div class="search-div">
+				<div class="input_field">
+
+
+					<form id="frm" method="post">
+						<input type="date" id="startDate" name="startDate"> <input
+							type="date" id="endDate" name="endDate">
+						<button type="submit" class="btn btn-default btn-lg"
+							onclick="allhidden()">차트보기</button>
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+
+
+	</div>
+	<div style="display: none" ; id="chart_div"></div>
 	<!-- Club Section End -->
+
 	<!-- Footer Section Begin -->
 	<footer class="footer-section set-bg"
 		data-setbg="${pageContext.request.contextPath}/resources/img/footer-bg.jpg"

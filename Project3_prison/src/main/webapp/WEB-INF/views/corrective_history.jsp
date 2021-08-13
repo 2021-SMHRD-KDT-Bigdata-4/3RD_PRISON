@@ -60,45 +60,58 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-	function asd(data1) {
-		// Load the Visualization API and the corechart package.
-		google.charts.load('current', {
-			'packages' : [ 'corechart' ]
-		});
+	function aaa(data1) {
+		alert("여끼까지 오면 aa가 불러와진것");
 
-		// Set a callback to run when the Google Visualization API is loaded.
-		google.charts.setOnLoadCallback(drawChart);
+		
+		
+		
+		google.charts.load('current', {packages: ['corechart', 'bar']});
+		google.charts.setOnLoadCallback(drawBasic);
 
-		// Callback that creates and populates a data table,
-		// instantiates the pie chart, passes in the data and
-		// draws it.
-		function drawChart() {
-			// Create the data table.
-			var data = new google.visualization.DataTable();
-			data.addColumn('string', 'Topping');
-			data.addColumn('number', 'Slices');
+		function drawBasic() {
+			alert(typeof(Number(data1[0].case1)));
+			alert(typeof(data1[0].case1));
+		      var data = new google.visualization.DataTable();
+		      data.addColumn('timeofday', 'Time of Day');
+		      data.addColumn('number', 'Motivation Level');
 
-			data.addRows([ [ 'Mushrooms', data1[0].case1 ],
-					[ 'Onions', data1[0].case2 ], [ 'Olives', data1[0].case3 ],
-					[ 'Zucchini', data1[0].case4 ],
-					[ 'Pepperoni', data1[0].case5 ],
-					[ 'qweqwe', data1[0].case6 ] ]);
+		      data.addRows([
+		        [{v: [8, 0, 0], f: '8 am'},Number(data1[0].case1)],
+		        [{v: [9, 0, 0], f: '9 am'},Number(data1[0].case2)],
+		        [{v: [10, 0, 0], f:'10 am'}, Number(data1[0].case3)],
+		        [{v: [11, 0, 0], f: '11 am'},Number(data1[0].case4)],
+		        [{v: [12, 0, 0], f: '12 pm'},Number(data1[0].case5)],
+		        [{v: [13, 0, 0], f: '1 pm'}, Number(data1[0].case6)],
+		        [{v: [14, 0, 0], f: '2 pm'}, Number(data1[0].case7)],
+		        [{v: [15, 0, 0], f: '3 pm'}, Number(data1[0].case8)],
+		        [{v: [16, 0, 0], f: '4 pm'}, Number(data1[0].case1)],
+		        [{v: [17, 0, 0], f: '5 pm'}, Number(data1[0].case2)],
+		      ]);
 
-			// Set chart options
-			var options = {
-				'title' : 'How Much Pizza I Ate Last Night',
-				'width' : 400,
-				'height' : 300
-			};
+		      var options = {
+		        title: 'Motivation Level Throughout the Day',
+		        hAxis: {
+		          title: 'Time of Day',
+		          format: 'h:mm a',
+		          viewWindow: {
+		            min: [7, 30, 0],
+		            max: [17, 30, 0]
+		          }
+		        },
+		        vAxis: {
+		          title: 'Rating (scale of 1-10)'
+		        }
+		      };
 
-			// Instantiate and draw our chart, passing in some options.
-			var chart = new google.visualization.PieChart(document
-					.getElementById('chart_div'));
-			chart.draw(data, options);
-		}
+		      var chart = new google.visualization.ColumnChart(
+		        document.getElementById('chart_div'));
+
+		      chart.draw(data, options);
+		    }
+		
 	}
 	
 	
@@ -113,8 +126,8 @@
 			type : "post", //JSON = dic : {"idx":1,"name":"홍길동"}
 			data : formData,
 			success : function(data1) {
-				alert(data1);
-				asd(data1)
+				alert("여끼까지 오면 성공인것");
+				aaa(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
 			error : function() {
@@ -282,26 +295,24 @@
 
 					</div>
 				</form>
-				
-				
-				
-				
-				
-				
-				
-					<div class="input_field">
-					
-					
-	<form id="frm" method="post">
-               <input type="date" id="startDate" name="startDate">
-					 <input type="date" id="endDate" name="endDate">
-				
-					
-			<button type="submit" class="btn btn-default btn-lg"
-					onclick="allhidden()"> 차트보기</button>
-            </form>    
-</div>
-	
+
+
+
+
+
+
+
+				<div class="input_field">
+
+
+					<form id="frm" method="post" onsubmit="return false;">
+						<input type="date" id="startDate" name="startDate"> <input
+							type="date" id="endDate" name="endDate">
+						<button type="submit" class="btn btn-default btn-lg"
+							onclick="allhidden()">차트보기</button>
+					</form>
+				</div>
+
 			</div>
 		</section>
 		<section class="club-section spad-4">
@@ -349,7 +360,13 @@
 
 
 	</div>
-	<div style="display: none" ; id="chart_div"></div>
+	<div class="input_field">
+
+
+	<div style="display: none" ; id="chart_div"></div>				
+				</div>
+	
+	
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->

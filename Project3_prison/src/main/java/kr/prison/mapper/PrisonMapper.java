@@ -94,7 +94,7 @@ public interface PrisonMapper {
 
 	public List<CollectiveHistoryVO> chSearch(SearchVO vo); // 검색
 
-	public List<chclfChartVO> chclfChart(chclfChartVO vo); // 그래프 셀렉트
+	public List<chclfChartVO> chclfChart(CollectiveHistoryVO vo); // 그래프 셀렉트
 
 	// 교도관 정보
 	// (CRUD)----------------------------------------------------------------------------------------

@@ -249,11 +249,11 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 
 	// 교정사고 내역의 분류를 기준으로 select
 	@RequestMapping("/corrective_history_clfchart.do")
-	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(chclfChartVO vo,Model model) {
+	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(CollectiveHistoryVO vo,Model model) {
 		System.out.println(vo);
-		List<chclfChartVO> list = prisonMapper.chclfChart(vo);
-		System.out.println(list);
-		return list;
+		List<chclfChartVO> data1 = prisonMapper.chclfChart(vo);
+		System.out.println(data1);
+		return data1;
 	}
 
 	// 교정사고 내역의 발생장소를 기준으로 select
