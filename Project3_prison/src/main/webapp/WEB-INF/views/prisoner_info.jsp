@@ -250,7 +250,9 @@
 								<tbody>
 									<c:forEach var="vo" items="${list}">
 										<tr>
-											<td><img src="${vo.photo}" width="100px" height="100px"></td>
+											<td><img
+												src="${pageContext.request.contextPath}/resources/img/photo/${vo.photo}"
+												width="80px" height="100px"></td>
 											<td><a
 												href="prisoner_info_form.do?prison_number=${vo.prison_number}">${vo.prison_number}</a></td>
 											<td>${vo.name}</td>

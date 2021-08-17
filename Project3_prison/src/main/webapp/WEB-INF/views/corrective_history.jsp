@@ -64,86 +64,80 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 	function aaa(data1) {
-		alert("여끼까지 오면 aa가 불러와진것");
-
 		google.charts.load('current', {
-			packages : [ 'corechart', 'bar' ]
+			'packages' : [ 'corechart' ]
 		});
-		google.charts.setOnLoadCallback(drawBasic);
+		google.charts.setOnLoadCallback(drawVisualization);
 
-		function drawBasic() {
-			alert(typeof (Number(data1[0].case1)));
-			alert(typeof (data1[0].case1));
-			var data = new google.visualization.DataTable();
-			data.addColumn('timeofday', 'Time of Day');
-			data.addColumn('number', 'Motivation Level');
-
-			data.addRows([ [ {
-				v : [ 8, 0, 0 ],
-				f : '8 am'
-			}, Number(data1[0].case1) ], [ {
-				v : [ 9, 0, 0 ],
-				f : '9 am'
-			}, Number(data1[0].case2) ], [ {
-				v : [ 10, 0, 0 ],
-				f : '10 am'
-			}, Number(data1[0].case3) ], [ {
-				v : [ 11, 0, 0 ],
-				f : '11 am'
-			}, Number(data1[0].case4) ], [ {
-				v : [ 12, 0, 0 ],
-				f : '12 pm'
-			}, Number(data1[0].case5) ], [ {
-				v : [ 13, 0, 0 ],
-				f : '1 pm'
-			}, Number(data1[0].case6) ], [ {
-				v : [ 14, 0, 0 ],
-				f : '2 pm'
-			}, Number(data1[0].case7) ], [ {
-				v : [ 15, 0, 0 ],
-				f : '3 pm'
-			}, Number(data1[0].case8) ], [ {
-				v : [ 16, 0, 0 ],
-				f : '4 pm'
-			}, Number(data1[0].case1) ], [ {
-				v : [ 17, 0, 0 ],
-				f : '5 pm'
-			}, Number(data1[0].case2) ], ]);
+		function drawVisualization() {
+			// Some raw data (not necessarily accurate)
+			var data = google.visualization.arrayToDataTable([
+					[ '분류', '월별 기록' ], [ '폭행치사', Number(data1.case1), ],
+					[ '폭행치사', Number(data1.case2), ],
+					[ '폭행치상', Number(data1.case3), ],
+					[ '폭행치사', Number(data1.case4), ],
+					[ '폭행치사', Number(data1.case5), ],
+					[ '폭행치사', Number(data1.case6), ],
+					[ '폭행치사', Number(data1.case7), ],
+					[ '폭행치사', Number(data1.case8), ], ]);
 
 			var options = {
-				title : 'Motivation Level Throughout the Day',
+				title : data1.startDate + " ~ " + data1.endDate,
 				hAxis : {
-					title : 'Time of Day',
-					format : 'h:mm a',
-					viewWindow : {
-						min : [ 7, 30, 0 ],
-						max : [ 17, 30, 0 ]
-					}
+					title : '분류'
 				},
-				vAxis : {
-					title : 'Rating (scale of 1-10)'
+				yAxis : {
+					minValue : 0,
+					maxValue : 5
+				},
+				seriesType : 'bars',
+				bar : {
+					groupWidth : 40
 				}
 			};
-
-			var chart = new google.visualization.ColumnChart(document
+			var chart = new google.visualization.ComboChart(document
 					.getElementById('chart_div'));
-
 			chart.draw(data, options);
-		}
 
+			var view = "<table id = 'chtable' class='table table-bordered'>"
+			view += "<thead>";
+			view += "<tr>";
+			view += "<th>폭행치사</th>";
+			view += "<th>폭행치상</th>";
+			view += "<th>교도관폭행</th>";
+			view += "<th>도주</th>";
+			view += "<th>변사</th>";
+			view += "<th>병사</th>";
+			view += "<th>밀수품반입</th>";
+			view += "<th>기타규정위반</th>";
+			view += "</tr>";
+			view += "</thead>";
+			view += "</tbody>";
+			view += "<tr>";
+			view += "<td>" + data1[0].case1 + "</td>";
+			view += "<td>" + data1[0].case2 + "</td>";
+			view += "<td>" + data1[0].case3 + "</td>";
+			view += "<td>" + data1[0].case4 + "</td>";
+			view += "<td>" + data1[0].case5 + "</td>";
+			view += "<td>" + data1[0].case6 + "</td>";
+			view += "<td>" + data1[0].case7 + "</td>";
+			view += "<td>" + data1[0].case8 + "</td>";
+			view += "</tr>";
+			view += "</tbody>";
+			view += "</table>";
+			$("#table_field").append(view);
+		}
 	}
 
 	function allhidden() {
 		$("#all").css("display", "none");
 		$("#chart_div").css("display", "block");
 		var formData = $("#frm").serialize();
-		alert(formData)
 		$.ajax({ //서버로 요청하기위해 꼭 써야됨
 			url : "${cpath}/corrective_history_clfchart.do", //여기로 보내주셈
 			type : "post", //JSON = dic : {"idx":1,"name":"홍길동"}
 			data : formData,
 			success : function(data1) {
-				alert("여끼까지 오면 성공인것");
 				aaa(data1)
 			}, //성공하면 콜백함수로
 			dataType : "json",
@@ -153,8 +147,6 @@
 		});
 
 	}
-
-	<script type="text/javascript">
 	function logoutFn() {
 		$.ajax({
 			url : "${cpath}/logoutajax.do",
@@ -293,84 +285,82 @@
 	<!-- Breadcrumb Section End -->
 
 	<!-- Club Section Begin -->
-	<section class="club-section spad-4">
-		<div class="row">
-			<div class="col-lg-8 m-auto">
-				<ul class="nav nav-tabs" role="tablist">
-					<li class="nav-item"><a class="nav-link active"
-						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
-					<li class="nav-item"><a class="nav-link" data-toggle="tab"
-						href="#tabs-2" role="tab">차트</a></li>
-				</ul>
-				<!-- Tab panes -->
-				<div class="container tab-content">
-					<div class="tab-pane active" id="tabs-1" role="tabpanel">
-						<div class="search-div">
-							<form action="${cpath}/corrective_history_search.do"
-								method="post">
-								<div class="search-jailer-div">
-									<select name="part" class="search-jailer">
-										<option value="prisoner_prison_number">수감번호</option>
-										<option value="classification">분류</option>
-										<option value="calibration_accident_number">교정사고번호</option>
-									</select> <input class="input-jailer" type="text" name="keyword"
-										placeholder="Search${pageContext.request.contextPath}">
-									<button class="btn btn-default btn-lg">검색</button>
-									<a href="corrective_history_add.do"><button type="button"
-											class="btn btn-default btn-lg">추가</button></a>
-								</div>
-							</form>
-						</div>
-						<canvas id="chart_div"></canvas>
-						<div class="club-tab-content">
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th>교정 사고 번호</th>
-										<th>수감 번호</th>
-										<th>발생 일시</th>
-										<th>발생 장소</th>
-										<th>분류</th>
-										<th>상세 내용</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach var="vo" items="${list}">
-										<tr>
-											<td><a
-												href="corrective_history_content.do?calibration_accident_number=${vo.calibration_accident_number}">${vo.calibration_accident_number}</a></td>
-											<td>${vo.prisoner_prison_number}</td>
-											<td>${vo.occuring_time}</td>
-											<td>${vo.occuring_place}</td>
-											<td>${vo.classification}</td>
-											<td>${vo.details}</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
+	<div style="display: block" ; id="all">
+		<section class="club-section-1 spad-3">
+			<div class="search-div">
+				<form action="${cpath}/corrective_history_search.do" method="post">
+					<div class="search-jailer-div">
+						<select name="part" class="search-jailer">
+							<option value="prisoner_prison_number">수감번호</option>
+							<option value="classification">분류</option>
+							<option value="calibration_accident_number">교정사고번호</option>
+						</select> <input class="input-jailer" type="text" name="keyword"
+							placeholder="Search${pageContext.request.contextPath}">
+						<button class="btn btn-default btn-lg">검색</button>
+						<a href="corrective_history_add.do"><button type="button"
+								class="btn btn-default btn-lg">추가</button></a>
 					</div>
+				</form>
+				<div class="input_field">
+					<form id="frm" method="post" onsubmit="return false;">
+						<input type="date" id="startDate" name="startDate"> <input
+							type="date" id="endDate" name="endDate" style="margin-left: 0px;">
+						<button type="submit" class="btn btn-default btn-lg"
+							onclick="allhidden()">차트보기</button>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section class="club-section spad-4">
+			<div class="container">
+				<div class="club-content">
+					<div></div>
+				</div>
+				<div class="club-tab-list">
+					<div class="row">
+						<div class="col-lg-8 m-auto">
 
-					<div class="tab-pane club-section spad-4" id="tabs-2"
-						role="tabpanel">
-						<form id="frm" method="post">
-							<div class="input_field1">
-								<input type="date" id="startDate" name="startDate"> <input
-									type="date" id="endDate" name="endDate">
-								<button type="submit" class="btn btn-default btn-lg"
-									onclick="aaa()">차트보기</button>
+							<!-- Tab panes -->
+							<div class="container">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>교정 사고 번호</th>
+											<th>수감 번호</th>
+											<th>발생 일시</th>
+											<th>발생 장소</th>
+											<th>분류</th>
+											<th>상세 내용</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="vo" items="${list}">
+											<tr>
+												<td>${vo.calibration_accident_number}</td>
+												<td>${vo.prisoner_prison_number}</td>
+												<td>${vo.occuring_time}</td>
+												<td>${vo.occuring_place}</td>
+												<td>${vo.classification}</td>
+												<td>${vo.details}</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
 							</div>
-							<div id="chart_div"></div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<div class="input_field">
-		<div style="display: none" ; id="chart_div"></div>
+		</section>
 	</div>
+	<div class="ch_table">
+		<div class="input_field"
+			style="display: flex; align-items: stretch; justify-content: center;">
+			<div style="display: none; width: 70%; height: 600px"
+				;  id="chart_div"></div>
+		</div>
+	</div>
+
 	<!-- Club Section End -->
 
 	<!-- Footer Section Begin -->
@@ -491,6 +481,7 @@
 		</div>
 	</div>
 	<!-- Search model end -->
+
 </body>
 
 </html>

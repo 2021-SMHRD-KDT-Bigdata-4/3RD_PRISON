@@ -181,8 +181,8 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -202,11 +202,15 @@
 					<form method="post" action="${cpath}/patrol_history_end.do">
 						<div class="form">
 							<div class="input_field">
-								<label>상세 내용</label>
-								<textarea class="form-control" rows="5" id="contents"
-									name="contents"></textarea>
-								<input id = "prison_officer_po_no1" name="prison_officer_po_no1" value="${prison_officer_po_no1}">
-								<input id = "prison_officer_po_no2" name="prison_officer_po_no2" value="${prison_officer_po_no2}">
+								<label>교도관1</label><input id="prison_officer_po_no1"
+									name="prison_officer_po_no1" readonly="readonly" value="${prison_officer_po_no1}">
+								<label>교도관2</label><input id="prison_officer_po_no2"
+									name="prison_officer_po_no2" readonly="readonly" value="${prison_officer_po_no2}">
+								<div style="margin-top: 3%;">
+									<label>상세 내용</label>
+									<textarea style="width: 60%; margin-left: 21%;"
+										class="form-control" rows="5" id="contents" name="contents"></textarea>
+								</div>
 							</div>
 							<div class="page-btn">
 								<button type="submit" class="btn btn-default btn-lg">순찰종료</button>

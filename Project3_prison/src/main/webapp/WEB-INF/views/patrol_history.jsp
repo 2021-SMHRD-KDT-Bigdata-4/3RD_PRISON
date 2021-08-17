@@ -181,8 +181,8 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg"
-		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-2.jpg");'>
+		data-setbg="${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg"
+		style='background-image: url("${pageContext.request.contextPath}/resources/img/hero/hero-1.jpg");'>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -202,7 +202,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						data-toggle="tab" href="#tabs-1" role="tab">내역</a></li>
 					<li class="nav-item"><a class="nav-link" data-toggle="tab"
-						href="#tabs-2" role="tab">추가</a></li>
+						href="#tabs-2" role="tab">순찰 시작</a></li>
 				</ul>
 
 				<!-- Tab panes -->

@@ -49,6 +49,16 @@
 	font-style: normal;
 }
 
+#chtable {
+	width: 70%;
+	text-align: center;
+	margin-left: 15%;
+}
+
+#ch_table {
+	text-align: center;
+}
+
 #details {
 	margin-left: 20%;
 	display: block;
@@ -244,9 +254,17 @@
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -260,12 +278,24 @@ transform
 
 
 
+
+
+
+
 translateY
 
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -279,7 +309,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -561,9 +599,17 @@ keyframes loader { 0% {
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -725,6 +771,10 @@ keyframes loader { 0% {
 
 
 
+
+
+
+
 rotate
 
 
@@ -804,7 +854,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -966,7 +1024,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1127,7 +1193,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -1287,7 +1361,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1449,7 +1531,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1610,7 +1700,15 @@ border
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -1772,7 +1870,15 @@ border
 
 
 
+
+
+
+
 solid
+
+
+
+
 
 
 
@@ -1932,8 +2038,16 @@ solid
 
 
 
+
+
+
+
 ;
 border-left-color
+
+
+
+
 
 
 
@@ -2095,7 +2209,15 @@ border-left-color
 
 
 
+
+
+
+
 transparent
+
+
+
+
 
 
 
@@ -2257,9 +2379,17 @@ transparent
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -2421,6 +2551,10 @@ transparent
 
 
 
+
+
+
+
 rotate
 
 
@@ -2500,7 +2634,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2662,7 +2804,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2823,7 +2973,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2983,7 +3141,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -3145,7 +3311,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -3306,7 +3480,15 @@ border
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -3468,7 +3650,15 @@ border
 
 
 
+
+
+
+
 solid
+
+
+
+
 
 
 
@@ -3628,8 +3818,16 @@ solid
 
 
 
+
+
+
+
 ;
 border-left-color
+
+
+
+
 
 
 
@@ -3791,7 +3989,15 @@ border-left-color
 
 
 
+
+
+
+
 transparent
+
+
+
+
 
 
 
@@ -3961,9 +4167,17 @@ transparent
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -4125,6 +4339,10 @@ transparent
 
 
 
+
+
+
+
 rotate
 
 
@@ -4204,7 +4422,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -4366,7 +4592,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -4527,7 +4761,15 @@ border
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -4689,7 +4931,15 @@ border
 
 
 
+
+
+
+
 solid
+
+
+
+
 
 
 
@@ -4849,8 +5099,16 @@ solid
 
 
 
+
+
+
+
 ;
 border-left-color
+
+
+
+
 
 
 
@@ -5012,7 +5270,15 @@ border-left-color
 
 
 
+
+
+
+
 transparent
+
+
+
+
 
 
 
@@ -5094,6 +5360,10 @@ transparent
 ;
 }
 100
+
+
+
+
 
 
 
@@ -5257,7 +5527,15 @@ transparent
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -5417,7 +5695,15 @@ rotate
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -5579,7 +5865,15 @@ rotate
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5740,7 +6034,15 @@ border
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -5902,7 +6204,15 @@ border
 
 
 
+
+
+
+
 solid
+
+
+
+
 
 
 
@@ -6062,8 +6372,16 @@ solid
 
 
 
+
+
+
+
 ;
 border-left-color
+
+
+
+
 
 
 
@@ -6225,7 +6543,15 @@ border-left-color
 
 
 
+
+
+
+
 transparent
+
+
+
+
 
 
 
@@ -7445,6 +7771,7 @@ transparent
 	color: #ffffff;
 	font-weight: 500;
 	text-transform: uppercase;
+	font-family: MaruBuri-Regular;
 }
 
 /*---------------------
@@ -8269,7 +8596,7 @@ transparent
 	box-sizing: border-box;
 }
 
-.input_field1{
+.input_field1 {
 	text-align: center;
 }
 

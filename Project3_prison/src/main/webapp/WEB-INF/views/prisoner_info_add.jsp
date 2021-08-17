@@ -202,7 +202,7 @@
 		<form id="frm" method="post" action="${cpath}/prisoner_info_insert.do">
 			<div class="form">
 				<div class="input_field">
-					<label>번호</label> <input type="text" id="prison_number"
+					<label>수감번호</label> <input type="text" id="prison_number"
 						class="input" name="prison_number">
 				</div>
 				<div class="input_field">
@@ -215,12 +215,12 @@
 				</div>
 				<div class="input_field">
 					<label>성별</label> <select id="sex" name="sex">
-						<option id="male" value="male">남자</option>
-						<option id="female" value="female">여자</option>
+						<option id="male" value="남자">남자</option>
+						<option id="female" value="여자">여자</option>
 					</select>
 				</div>
 				<div class="input_field">
-					<label>수감 구역</label> <input type="text" id="prison_area"
+					<label>수감구역</label> <input type="text" id="prison_area"
 						class="input" name="prison_area">
 				</div>
 				<div class="input_field">
@@ -228,7 +228,7 @@
 						class="input" name="room_number">
 				</div>
 				<div class="input_field">
-					<label>범죄 분류</label> <input type="text" id="crime_classification"
+					<label>범죄분류</label> <input type="text" id="crime_classification"
 						class="input" name="crime_classification">
 				</div>
 				<div class="input_field">

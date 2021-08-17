@@ -14,5 +14,6 @@ public class chclfChartVO {
 	private String case6;
 	private String case7;
 	private String case8;
-
+	private String startDate;
+	private String endDate;
 }

@@ -250,17 +250,20 @@ public class BoardController {// new BoardController(); 어딧음? 자동으로 
 	}
 
 	// 교정사고 내역의 분류를 기준으로 select
-	
-		@RequestMapping("/corrective_history_content_update.do")
+
+	@RequestMapping("/corrective_history_content_update.do")
 	public String corrective_history_content_update(CollectiveHistoryVO vo) {
 		System.out.println(vo);
 		prisonMapper.chUpdate(vo);
 		return "redirect:/corrective_history.do";
 	}
+
 	@RequestMapping("/corrective_history_clfchart.do")
-	public @ResponseBody List<chclfChartVO> corrective_history_clfchart(CollectiveHistoryVO vo, Model model) {
-		System.out.println(vo);
-		List<chclfChartVO> data1 = prisonMapper.chclfChart(vo);
+	public @ResponseBody chclfChartVO corrective_history_clfchart(CollectiveHistoryVO vo, Model model) {
+		System.out.println(vo.getStartDate());
+		chclfChartVO data1 = prisonMapper.chclfChart(vo);
+		data1.setStartDate(String.valueOf(vo.getStartDate()));
+		data1.setEndDate(String.valueOf(vo.getEndDate()));
 		System.out.println(data1);
 		return data1;
 	}
