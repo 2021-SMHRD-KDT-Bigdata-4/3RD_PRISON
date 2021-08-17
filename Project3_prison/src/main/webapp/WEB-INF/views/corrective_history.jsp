@@ -68,19 +68,22 @@
 			'packages' : [ 'corechart' ]
 		});
 		google.charts.setOnLoadCallback(drawVisualization);
-
+		alert("여끼까지 오면 aa가 불러와진것");
+		alert(data1.case1);
+		console.log(data1.case1);
 		function drawVisualization() {
 			// Some raw data (not necessarily accurate)
 			var data = google.visualization.arrayToDataTable([
 					[ '분류', '월별 기록' ], [ '폭행치사', Number(data1.case1), ],
-					[ '폭행치사', Number(data1.case2), ],
-					[ '폭행치상', Number(data1.case3), ],
-					[ '폭행치사', Number(data1.case4), ],
-					[ '폭행치사', Number(data1.case5), ],
-					[ '폭행치사', Number(data1.case6), ],
-					[ '폭행치사', Number(data1.case7), ],
-					[ '폭행치사', Number(data1.case8), ], ]);
+					[ '폭행치상', Number(data1.case2), ],
+					[ '교도관폭행', Number(data1.case3), ],
+					[ '도주', Number(data1.case4), ],
+					[ '변사', Number(data1.case5), ],
+					[ '병사', Number(data1.case6), ],
+					[ '밀수품반입', Number(data1.case7), ],
+					[ '기타규정위반', Number(data1.case8), ], ]);
 
+	
 			var options = {
 				title : data1.startDate + " ~ " + data1.endDate,
 				hAxis : {
@@ -99,33 +102,6 @@
 					.getElementById('chart_div'));
 			chart.draw(data, options);
 
-			var view = "<table id = 'chtable' class='table table-bordered'>"
-			view += "<thead>";
-			view += "<tr>";
-			view += "<th>폭행치사</th>";
-			view += "<th>폭행치상</th>";
-			view += "<th>교도관폭행</th>";
-			view += "<th>도주</th>";
-			view += "<th>변사</th>";
-			view += "<th>병사</th>";
-			view += "<th>밀수품반입</th>";
-			view += "<th>기타규정위반</th>";
-			view += "</tr>";
-			view += "</thead>";
-			view += "</tbody>";
-			view += "<tr>";
-			view += "<td>" + data1[0].case1 + "</td>";
-			view += "<td>" + data1[0].case2 + "</td>";
-			view += "<td>" + data1[0].case3 + "</td>";
-			view += "<td>" + data1[0].case4 + "</td>";
-			view += "<td>" + data1[0].case5 + "</td>";
-			view += "<td>" + data1[0].case6 + "</td>";
-			view += "<td>" + data1[0].case7 + "</td>";
-			view += "<td>" + data1[0].case8 + "</td>";
-			view += "</tr>";
-			view += "</tbody>";
-			view += "</table>";
-			$("#table_field").append(view);
 		}
 	}
 
@@ -353,11 +329,15 @@
 			</div>
 		</section>
 	</div>
+
+
+
+
+
 	<div class="ch_table">
 		<div class="input_field"
 			style="display: flex; align-items: stretch; justify-content: center;">
-			<div style="display: none; width: 70%; height: 600px"
-				;  id="chart_div"></div>
+			<div style="display: none; width: 70%; height: 600px;" id="chart_div"></div>
 		</div>
 	</div>
 
